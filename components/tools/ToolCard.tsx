@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Tool } from "@/types/tool";
 import {
-  categoryColorMap,
+  categoryHomeStyles,
   categoryShortLabels,
 } from "@/lib/category-colors";
 import { cn } from "@/lib/utils";
@@ -18,7 +18,7 @@ export default function ToolCard({
   variant = "default",
   className,
 }: ToolCardProps) {
-  const colors = categoryColorMap[tool.category];
+  const colors = categoryHomeStyles[tool.category];
 
   if (variant === "homepage") {
     return (
@@ -30,13 +30,17 @@ export default function ToolCard({
         )}
       >
         <div className="flex items-start justify-between mb-md">
-          <span className="material-symbols-outlined text-primary-container text-display">
+          <span
+            className="material-symbols-outlined text-primary-container"
+            style={{ fontSize: "2.5rem", lineHeight: 1 }}
+          >
             {tool.icon}
           </span>
           <span
             className={cn(
               "text-[10px] font-bold px-sm py-1 rounded-lg uppercase tracking-wider",
-              colors.badge
+              colors.badgeBg,
+              colors.badgeText
             )}
           >
             {categoryShortLabels[tool.category]}
@@ -52,6 +56,8 @@ export default function ToolCard({
     );
   }
 
+  const defaultColors = categoryHomeStyles[tool.category];
+
   return (
     <Link
       href={`/${tool.slug}`}
@@ -65,8 +71,9 @@ export default function ToolCard({
         <div
           className={cn(
             "flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors",
-            colors.iconBg,
-            colors.iconHover
+            defaultColors.iconBg,
+            defaultColors.iconText,
+            defaultColors.iconHover
           )}
         >
           <span
