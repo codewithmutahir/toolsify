@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Category } from "@/types/tool";
-import { categoryCardStyles, categoryShortNames } from "@/lib/category-colors";
+import { categoryHomeStyles, categoryShortNames } from "@/lib/category-colors";
 import { cn } from "@/lib/utils";
 
 interface CategoryCardProps {
@@ -9,7 +9,7 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category, className }: CategoryCardProps) {
-  const styles = categoryCardStyles[category.slug];
+  const styles = categoryHomeStyles[category.slug];
 
   return (
     <Link
@@ -35,9 +35,9 @@ export default function CategoryCard({ category, className }: CategoryCardProps)
       </h3>
       <span
         className={cn(
-          "inline-block px-sm py-1 rounded-full font-label text-[10px]",
+          "inline-block px-sm py-1 rounded-full font-label text-[10px] font-medium",
           styles.badgeBg,
-          styles.badgeText
+          styles.badgeCountText
         )}
       >
         {category.toolCount} Tools

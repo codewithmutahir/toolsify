@@ -6,41 +6,111 @@ export interface CategoryColorClasses {
   iconHover: string;
 }
 
-export const categoryColorMap: Record<ToolCategory, CategoryColorClasses> = {
+/** Vibrant category styles matching reference design (category cards + popular tool badges) */
+export const categoryHomeStyles: Record<
+  ToolCategory,
+  {
+    iconBg: string;
+    iconText: string;
+    iconHover: string;
+    badgeBg: string;
+    badgeText: string;
+    badgeCountText: string;
+  }
+> = {
   math: {
-    badge: "bg-secondary-container/10 text-secondary-container",
-    iconBg: "bg-secondary-container/10 text-secondary-container",
-    iconHover: "group-hover:bg-secondary-container group-hover:text-on-secondary",
+    iconBg: "bg-blue-100",
+    iconText: "text-blue-600",
+    iconHover: "group-hover:bg-blue-200",
+    badgeBg: "bg-blue-50",
+    badgeText: "text-blue-600",
+    badgeCountText: "text-blue-700",
   },
   finance: {
-    badge: "bg-tertiary-container/10 text-tertiary-container",
-    iconBg: "bg-tertiary-container/10 text-tertiary-container",
-    iconHover: "group-hover:bg-tertiary-container group-hover:text-on-tertiary",
+    iconBg: "bg-green-100",
+    iconText: "text-green-600",
+    iconHover: "group-hover:bg-green-200",
+    badgeBg: "bg-green-50",
+    badgeText: "text-green-600",
+    badgeCountText: "text-green-700",
   },
   fitness: {
-    badge: "bg-tertiary/10 text-tertiary",
-    iconBg: "bg-tertiary/10 text-tertiary",
-    iconHover: "group-hover:bg-tertiary group-hover:text-on-tertiary",
+    iconBg: "bg-red-100",
+    iconText: "text-red-600",
+    iconHover: "group-hover:bg-red-200",
+    badgeBg: "bg-red-50",
+    badgeText: "text-red-600",
+    badgeCountText: "text-red-700",
   },
   text: {
-    badge: "bg-primary/10 text-primary",
-    iconBg: "bg-primary/10 text-primary",
-    iconHover: "group-hover:bg-primary group-hover:text-on-primary",
+    iconBg: "bg-amber-100",
+    iconText: "text-amber-600",
+    iconHover: "group-hover:bg-amber-200",
+    badgeBg: "bg-amber-50",
+    badgeText: "text-amber-600",
+    badgeCountText: "text-amber-700",
   },
   color: {
-    badge: "bg-surface-variant/10 text-on-surface-variant",
-    iconBg: "bg-surface-variant/10 text-on-surface-variant",
-    iconHover: "group-hover:bg-surface-variant group-hover:text-on-surface",
+    iconBg: "bg-purple-100",
+    iconText: "text-purple-600",
+    iconHover: "group-hover:bg-purple-200",
+    badgeBg: "bg-purple-50",
+    badgeText: "text-purple-600",
+    badgeCountText: "text-purple-700",
   },
   converter: {
-    badge: "bg-primary-container/10 text-primary-container",
-    iconBg: "bg-primary-container/10 text-primary-container",
-    iconHover: "group-hover:bg-primary-container group-hover:text-on-primary-container",
+    iconBg: "bg-cyan-100",
+    iconText: "text-cyan-600",
+    iconHover: "group-hover:bg-cyan-200",
+    badgeBg: "bg-cyan-50",
+    badgeText: "text-cyan-600",
+    badgeCountText: "text-cyan-700",
   },
   developer: {
-    badge: "bg-on-surface/10 text-on-surface",
-    iconBg: "bg-on-surface/10 text-on-surface",
-    iconHover: "group-hover:bg-on-surface group-hover:text-surface",
+    iconBg: "bg-gray-100",
+    iconText: "text-gray-600",
+    iconHover: "group-hover:bg-gray-200",
+    badgeBg: "bg-gray-50",
+    badgeText: "text-gray-600",
+    badgeCountText: "text-gray-700",
+  },
+};
+
+export const categoryColorMap: Record<ToolCategory, CategoryColorClasses> = {
+  math: {
+    badge: `${categoryHomeStyles.math.badgeBg} ${categoryHomeStyles.math.badgeText}`,
+    iconBg: `${categoryHomeStyles.math.iconBg} ${categoryHomeStyles.math.iconText}`,
+    iconHover: categoryHomeStyles.math.iconHover,
+  },
+  finance: {
+    badge: `${categoryHomeStyles.finance.badgeBg} ${categoryHomeStyles.finance.badgeText}`,
+    iconBg: `${categoryHomeStyles.finance.iconBg} ${categoryHomeStyles.finance.iconText}`,
+    iconHover: categoryHomeStyles.finance.iconHover,
+  },
+  fitness: {
+    badge: `${categoryHomeStyles.fitness.badgeBg} ${categoryHomeStyles.fitness.badgeText}`,
+    iconBg: `${categoryHomeStyles.fitness.iconBg} ${categoryHomeStyles.fitness.iconText}`,
+    iconHover: categoryHomeStyles.fitness.iconHover,
+  },
+  text: {
+    badge: `${categoryHomeStyles.text.badgeBg} ${categoryHomeStyles.text.badgeText}`,
+    iconBg: `${categoryHomeStyles.text.iconBg} ${categoryHomeStyles.text.iconText}`,
+    iconHover: categoryHomeStyles.text.iconHover,
+  },
+  color: {
+    badge: `${categoryHomeStyles.color.badgeBg} ${categoryHomeStyles.color.badgeText}`,
+    iconBg: `${categoryHomeStyles.color.iconBg} ${categoryHomeStyles.color.iconText}`,
+    iconHover: categoryHomeStyles.color.iconHover,
+  },
+  converter: {
+    badge: `${categoryHomeStyles.converter.badgeBg} ${categoryHomeStyles.converter.badgeText}`,
+    iconBg: `${categoryHomeStyles.converter.iconBg} ${categoryHomeStyles.converter.iconText}`,
+    iconHover: categoryHomeStyles.converter.iconHover,
+  },
+  developer: {
+    badge: `${categoryHomeStyles.developer.badgeBg} ${categoryHomeStyles.developer.badgeText}`,
+    iconBg: `${categoryHomeStyles.developer.iconBg} ${categoryHomeStyles.developer.iconText}`,
+    iconHover: categoryHomeStyles.developer.iconHover,
   },
 };
 
@@ -67,60 +137,8 @@ export const categoryShortNames: Record<ToolCategory, string> = {
   developer: "Developer",
 };
 
-export const categoryCardStyles: Record<
-  ToolCategory,
-  { iconBg: string; iconText: string; iconHover: string; badgeBg: string; badgeText: string }
-> = {
-  math: {
-    iconBg: "bg-secondary-container/10",
-    iconText: "text-secondary-container",
-    iconHover: "group-hover:bg-secondary-container/20",
-    badgeBg: "bg-secondary-container/10",
-    badgeText: "text-secondary-container",
-  },
-  finance: {
-    iconBg: "bg-tertiary-container/10",
-    iconText: "text-tertiary-container",
-    iconHover: "group-hover:bg-tertiary-container/20",
-    badgeBg: "bg-tertiary-container/10",
-    badgeText: "text-tertiary-container",
-  },
-  fitness: {
-    iconBg: "bg-primary/10",
-    iconText: "text-primary",
-    iconHover: "group-hover:bg-primary/20",
-    badgeBg: "bg-primary/10",
-    badgeText: "text-primary",
-  },
-  text: {
-    iconBg: "bg-primary-container/10",
-    iconText: "text-primary-container",
-    iconHover: "group-hover:bg-primary-container/20",
-    badgeBg: "bg-primary-container/10",
-    badgeText: "text-primary-container",
-  },
-  color: {
-    iconBg: "bg-surface-variant/30",
-    iconText: "text-on-surface-variant",
-    iconHover: "group-hover:bg-surface-variant/50",
-    badgeBg: "bg-surface-variant/30",
-    badgeText: "text-on-surface-variant",
-  },
-  converter: {
-    iconBg: "bg-tertiary/10",
-    iconText: "text-tertiary",
-    iconHover: "group-hover:bg-tertiary/20",
-    badgeBg: "bg-tertiary/10",
-    badgeText: "text-tertiary",
-  },
-  developer: {
-    iconBg: "bg-on-surface-variant/10",
-    iconText: "text-on-surface-variant",
-    iconHover: "group-hover:bg-on-surface-variant/20",
-    badgeBg: "bg-on-surface-variant/10",
-    badgeText: "text-on-surface-variant",
-  },
-};
+/** @deprecated use categoryHomeStyles */
+export const categoryCardStyles = categoryHomeStyles;
 
 export const categoryShortLabels: Record<ToolCategory, string> = {
   math: "Math",

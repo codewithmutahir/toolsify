@@ -23,7 +23,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-on-background text-on-secondary mt-2xl">
+    <footer className="bg-on-background text-on-secondary">
       <div className="max-w-container-max mx-auto px-gutter py-2xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-xl">
           {/* Logo + desc + socials */}

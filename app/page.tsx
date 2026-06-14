@@ -99,15 +99,6 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="relative pt-2xl pb-2xl overflow-hidden">
-        {/* Ambient decoration */}
-        <div className="absolute top-0 left-0 w-full h-full -z-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl hero-float" />
-          <div
-            className="absolute bottom-10 right-20 w-80 h-80 bg-secondary-container/15 rounded-full blur-3xl hero-float"
-            style={{ animationDelay: "3s" }}
-          />
-        </div>
-
         <div className="max-w-container-max mx-auto px-gutter relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
           <div className="lg:col-span-7 text-left">
             <h1 className="font-display text-display mb-md text-on-background">

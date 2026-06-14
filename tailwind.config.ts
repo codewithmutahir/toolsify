@@ -1,11 +1,31 @@
 import type { Config } from "tailwindcss";
 
+const categorySafelist = [
+  // Math — blue
+  "bg-blue-100", "text-blue-600", "group-hover:bg-blue-200", "bg-blue-50", "text-blue-700",
+  // Finance — green
+  "bg-green-100", "text-green-600", "group-hover:bg-green-200", "bg-green-50", "text-green-700",
+  // Fitness — red
+  "bg-red-100", "text-red-600", "group-hover:bg-red-200", "bg-red-50", "text-red-700",
+  // Text — amber
+  "bg-amber-100", "text-amber-600", "group-hover:bg-amber-200", "bg-amber-50", "text-amber-700",
+  // Design — purple
+  "bg-purple-100", "text-purple-600", "group-hover:bg-purple-200", "bg-purple-50", "text-purple-700",
+  // Converters — cyan
+  "bg-cyan-100", "text-cyan-600", "group-hover:bg-cyan-200", "bg-cyan-50", "text-cyan-700",
+  // Developer — gray
+  "bg-gray-100", "text-gray-600", "group-hover:bg-gray-200", "bg-gray-50", "text-gray-700",
+];
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
+    "./constants/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: categorySafelist,
   theme: {
     extend: {
       colors: {
