@@ -1,8 +1,10 @@
 "use client";
 
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { userButtonAppearance } from "@/lib/clerk-appearance";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -69,18 +71,27 @@ export default function Header() {
 
         {/* Auth (right) */}
         <div className="flex items-center gap-md shrink-0">
-          <Link
-            href="/login"
-            className="hidden sm:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-md py-sm"
-          >
-            Log In
-          </Link>
-          <Link
-            href="/signup"
-            className="bg-primary-container text-on-primary font-bold px-lg py-sm rounded-lg hover:brightness-110 active:scale-95 transition-all"
-          >
-            Sign Up
-          </Link>
+          <SignedOut>
+            <Link
+              href="/sign-in"
+              className="hidden sm:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-md py-sm"
+            >
+              Log In
+            </Link>
+            <Link
+              href="/sign-up"
+              className="bg-primary-container text-on-primary font-bold px-lg py-sm rounded-lg hover:brightness-110 active:scale-95 transition-all"
+            >
+              Sign Up
+            </Link>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton
+              appearance={userButtonAppearance}
+              afterSignOutUrl="/"
+            />
+          </SignedIn>
 
           <button
             type="button"
@@ -124,13 +135,22 @@ export default function Header() {
               className="w-full bg-surface-bright border border-outline-variant rounded-lg pl-10 py-2 font-small text-small focus:ring-2 focus:ring-primary-container/20 outline-none"
             />
           </div>
-          <Link
-            href="/login"
-            className="font-body text-body text-on-surface-variant hover:text-primary transition-colors sm:hidden"
-            onClick={() => setMobileOpen(false)}
-          >
-            Log In
-          </Link>
+          <SignedOut>
+            <Link
+              href="/sign-in"
+              className="font-body text-body text-on-surface-variant hover:text-primary transition-colors sm:hidden"
+              onClick={() => setMobileOpen(false)}
+            >
+              Log In
+            </Link>
+            <Link
+              href="/sign-up"
+              className="font-body text-body text-primary font-semibold hover:underline transition-colors sm:hidden"
+              onClick={() => setMobileOpen(false)}
+            >
+              Sign Up
+            </Link>
+          </SignedOut>
         </nav>
       </div>
     </header>

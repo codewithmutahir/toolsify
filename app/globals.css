@@ -87,6 +87,81 @@
   }
 }
 
+.otp-input:focus {
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+  outline: none;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Clerk auth — prevent input/button clipping from fixed heights + overflow */
+.cl-formFieldInput {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 3rem !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  line-height: 1.5 !important;
+}
+
+.cl-formButtonPrimary,
+.cl-socialButtonsBlockButton {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 2.75rem !important;
+  box-sizing: border-box !important;
+}
+
+.cl-cardBox,
+.cl-scrollBox {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* Email verification modal — prevent OTP/button clipping */
+.verification-modal-card {
+  overflow: visible !important;
+}
+
+.verification-modal-button {
+  height: auto !important;
+  max-height: none !important;
+  min-height: 3rem !important;
+  box-sizing: border-box !important;
+}
+
+.verification-otp-input {
+  height: 3.75rem !important;
+  max-height: none !important;
+  min-height: 3.75rem !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .verification-otp-input {
+    height: 4.25rem !important;
+    min-height: 4.25rem !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @layer base {
   .theme {
     --font-heading: var(--font-sans);
