@@ -88,7 +88,7 @@ export const categoryColorMap: Record<ToolCategory, CategoryColorClasses> = {
     iconHover: categoryHomeStyles.finance.iconHover,
   },
   fitness: {
-    badge: `${categoryHomeStyles.fitness.badgeBg} ${categoryHomeStyles.fitness.badgeText}`,
+    badge: "bg-tertiary-container/10 text-tertiary-container",
     iconBg: `${categoryHomeStyles.fitness.iconBg} ${categoryHomeStyles.fitness.iconText}`,
     iconHover: categoryHomeStyles.fitness.iconHover,
   },

@@ -93,6 +93,22 @@
   outline: none;
 }
 
+.bmi-gradient {
+  background: linear-gradient(
+    90deg,
+    #3b82f6 0%,
+    #10b981 25%,
+    #facc15 50%,
+    #f97316 75%,
+    #ef4444 100%
+  );
+}
+
+.active-toggle {
+  background-color: #ff6b35 !important;
+  color: white !important;
+}
+
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }

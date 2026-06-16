@@ -9,7 +9,7 @@ import CategoryBadge from "./CategoryBadge";
 
 interface ToolCardProps {
   tool: Tool;
-  variant?: "default" | "category" | "homepage";
+  variant?: "default" | "category" | "homepage" | "related";
   className?: string;
 }
 
@@ -56,7 +56,39 @@ export default function ToolCard({
     );
   }
 
-  const defaultColors = categoryHomeStyles[tool.category];
+  if (variant === "related") {
+    return (
+      <Link
+        href={`/${tool.slug}`}
+        className={cn(
+          "group block bg-surface-container-lowest border border-outline-variant rounded-xl p-lg",
+          "hover:shadow-xl transition-all cursor-pointer",
+          className
+        )}
+      >
+        <div
+          className={cn(
+            "w-12 h-12 rounded-lg flex items-center justify-center mb-md group-hover:scale-110 transition-transform",
+            colors.iconBg,
+            colors.iconText
+          )}
+        >
+          <span
+            className="material-symbols-outlined"
+            style={{ fontVariationSettings: "'FILL' 1" }}
+          >
+            {tool.icon}
+          </span>
+        </div>
+        <h3 className="font-h3 text-[18px] text-on-surface mb-xs group-hover:text-primary transition-colors">
+          {tool.title}
+        </h3>
+        <p className="font-small text-small text-on-surface-variant">
+          {tool.shortDesc}
+        </p>
+      </Link>
+    );
+  }
 
   return (
     <Link
@@ -71,9 +103,9 @@ export default function ToolCard({
         <div
           className={cn(
             "flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition-colors",
-            defaultColors.iconBg,
-            defaultColors.iconText,
-            defaultColors.iconHover
+            colors.iconBg,
+            colors.iconText,
+            colors.iconHover
           )}
         >
           <span

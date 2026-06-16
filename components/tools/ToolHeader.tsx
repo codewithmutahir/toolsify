@@ -36,12 +36,12 @@ export default function ToolHeader({
         <span className="text-on-surface font-medium">{title}</span>
       </nav>
 
-      <div className="mb-md">
+      <div className="flex items-center gap-sm mb-sm">
         <CategoryBadge category={category} />
       </div>
 
-      <h1 className="font-h1 text-h1 text-on-surface">{title}</h1>
-      <p className="mt-md font-body text-body text-on-surface-variant max-w-2xl">
+      <h1 className="font-h1 text-h1 text-on-surface mb-xs">{title}</h1>
+      <p className="font-body text-body text-on-surface-variant max-w-2xl">
         {description}
       </p>
     </header>

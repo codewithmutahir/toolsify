@@ -1,7 +1,7 @@
+import Link from "next/link";
 import { ToolCategory } from "@/types/tool";
 import { getToolsByCategory } from "@/constants/tools";
 import ToolCard from "./ToolCard";
-import SectionTitle from "@/components/ui/SectionTitle";
 
 interface RelatedToolsProps {
   category: ToolCategory;
@@ -20,14 +20,19 @@ export default function RelatedTools({
 
   return (
     <section className="mt-2xl">
-      <SectionTitle
-        title="Related Tools"
-        subtitle="More free tools in this category"
-        className="mb-lg"
-      />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+      <div className="flex items-center justify-between mb-lg">
+        <h2 className="font-h2 text-h2 text-on-surface">You might also like</h2>
+        <Link
+          href="/tools"
+          className="text-primary font-label text-label flex items-center gap-xs hover:underline"
+        >
+          View all tools
+          <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+        </Link>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
         {related.map((tool) => (
-          <ToolCard key={tool.slug} tool={tool} />
+          <ToolCard key={tool.slug} tool={tool} variant="related" />
         ))}
       </div>
     </section>
