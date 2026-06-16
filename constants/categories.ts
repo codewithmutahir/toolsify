@@ -77,3 +77,7 @@ export const categories: Category[] = [
     toolCount: countToolsByCategory("developer"),
   },
 ];
+
+export function getCategoryBySlug(slug: string): Category | undefined {
+  return categories.find((category) => category.slug === slug);
+}

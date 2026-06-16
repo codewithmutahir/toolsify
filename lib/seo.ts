@@ -1,5 +1,34 @@
 import { Metadata } from "next";
-import { Tool } from "@/types/tool";
+import { Category, Tool } from "@/types/tool";
+
+export function generateCategoryMetadata(category: Category): Metadata {
+  return {
+    title: `Free ${category.title} — ${category.toolCount} Tools | Toolsify`,
+    description: `${category.toolCount} free ${category.title.toLowerCase()} for everyone. No signup required.`,
+    keywords: [
+      category.title,
+      `free ${category.title.toLowerCase()}`,
+      "online tools",
+      "toolsify",
+    ],
+    openGraph: {
+      title: `${category.title} Tools | Toolsify`,
+      description: category.description,
+      url: `https://toolsify.online/tools/${category.slug}`,
+      siteName: "Toolsify",
+      type: "website",
+    },
+    twitter: {
+      card: "summary",
+      title: `${category.title} Tools | Toolsify`,
+      description: category.description,
+    },
+    alternates: {
+      canonical: `https://toolsify.online/tools/${category.slug}`,
+    },
+    robots: { index: true, follow: true },
+  };
+}
 
 export function generateToolMetadata(tool: Tool): Metadata {
   return {

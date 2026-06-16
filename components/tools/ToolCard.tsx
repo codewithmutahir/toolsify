@@ -4,12 +4,16 @@ import {
   categoryHomeStyles,
   categoryShortLabels,
 } from "@/lib/category-colors";
+import {
+  categoryBorderHover,
+  categoryIconHover,
+} from "@/lib/category-hero";
 import { cn } from "@/lib/utils";
 import CategoryBadge from "./CategoryBadge";
 
 interface ToolCardProps {
   tool: Tool;
-  variant?: "default" | "category" | "homepage" | "related";
+  variant?: "default" | "category" | "homepage" | "related" | "listing" | "browse";
   className?: string;
 }
 
@@ -86,6 +90,45 @@ export default function ToolCard({
         <p className="font-small text-small text-on-surface-variant">
           {tool.shortDesc}
         </p>
+      </Link>
+    );
+  }
+
+  if (variant === "listing" || variant === "browse") {
+    return (
+      <Link
+        href={`/${tool.slug}`}
+        className={cn(
+          "tool-card group bg-surface-container-lowest border border-outline-variant rounded-xl p-lg",
+          "hover:shadow-xl flex flex-col h-full",
+          categoryBorderHover[tool.category],
+          className
+        )}
+      >
+        <div
+          className={cn(
+            "tool-icon w-12 h-12 rounded-lg flex items-center justify-center mb-md transition-all duration-300",
+            colors.iconBg,
+            colors.iconText,
+            categoryIconHover[tool.category]
+          )}
+        >
+          <span className="material-symbols-outlined text-[28px]">{tool.icon}</span>
+        </div>
+        <h3 className="font-h3 text-h3 text-on-surface mb-xs group-hover:text-primary transition-colors">
+          {tool.title}
+        </h3>
+        <p className="font-small text-small text-on-surface-variant mb-lg flex-grow">
+          {tool.shortDesc}
+        </p>
+        {variant === "listing" ? (
+          <div className="flex items-center gap-xs text-primary font-label group-hover:gap-md transition-all">
+            <span>Calculate Now</span>
+            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </div>
+        ) : (
+          <CategoryBadge category={tool.category} />
+        )}
       </Link>
     );
   }

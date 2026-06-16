@@ -109,6 +109,32 @@
   color: white !important;
 }
 
+.tool-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+}
+
+.tool-card:hover .tool-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.category-pill-active {
+  background-color: #ff6b35;
+  color: #ffffff;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }

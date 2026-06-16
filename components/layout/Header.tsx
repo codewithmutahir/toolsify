@@ -51,7 +51,10 @@ export default function Header() {
         {/* Desktop Nav (center) */}
         <nav className="hidden md:flex items-center gap-lg">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive =
+              link.href === "/tools"
+                ? pathname === "/tools" || pathname.startsWith("/tools/")
+                : pathname === link.href;
             return (
               <Link
                 key={link.label}

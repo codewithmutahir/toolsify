@@ -46,7 +46,7 @@ export const tools: Tool[] = [
       "Find the square root of any number with precise decimal results.",
     shortDesc: "Calculate square roots",
     category: "math",
-    icon: "square_root",
+    icon: "square",
   },
   {
     slug: "lcm-gcd-calculator",

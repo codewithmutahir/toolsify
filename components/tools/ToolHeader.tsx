@@ -27,7 +27,7 @@ export default function ToolHeader({
         </Link>
         <span className="material-symbols-outlined text-[16px]">chevron_right</span>
         <Link
-          href={`/${category}`}
+          href={`/tools/${category}`}
           className="hover:text-primary transition-colors"
         >
           {categoryTitle}
