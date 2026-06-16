@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { categories } from "@/constants/categories";
 import { tools } from "@/constants/tools";
+import { searchTools } from "@/lib/search-tools";
 import { ToolCategory } from "@/types/tool";
 import { cn } from "@/lib/utils";
 import ToolCard from "./ToolCard";
@@ -12,24 +13,28 @@ import ToolCard from "./ToolCard";
 export default function AllToolsPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [searchTerm, setSearchTerm] = useState("");
+  const queryFromUrl = searchParams.get("q") ?? "";
+  const [searchTerm, setSearchTerm] = useState(queryFromUrl);
 
   const activeCategory = searchParams.get("category") as ToolCategory | null;
 
+  useEffect(() => {
+    setSearchTerm(queryFromUrl);
+  }, [queryFromUrl]);
+
   const filteredTools = useMemo(() => {
-    const query = searchTerm.trim().toLowerCase();
+    const query = searchTerm.trim();
 
-    return tools.filter((tool) => {
-      const matchesCategory =
-        !activeCategory || tool.category === activeCategory;
-      const matchesSearch =
-        !query ||
-        tool.title.toLowerCase().includes(query) ||
-        tool.shortDesc.toLowerCase().includes(query) ||
-        tool.description.toLowerCase().includes(query);
+    const categoryFiltered = tools.filter(
+      (tool) => !activeCategory || tool.category === activeCategory
+    );
 
-      return matchesCategory && matchesSearch;
-    });
+    if (!query) return categoryFiltered;
+
+    const searched = searchTools(query);
+    const searchedSlugs = new Set(searched.map((tool) => tool.slug));
+
+    return categoryFiltered.filter((tool) => searchedSlugs.has(tool.slug));
   }, [activeCategory, searchTerm]);
 
   function updateCategory(category: ToolCategory | null) {
@@ -39,6 +44,22 @@ export default function AllToolsPage() {
       params.set("category", category);
     } else {
       params.delete("category");
+    }
+
+    const query = params.toString();
+    router.replace(query ? `/tools?${query}` : "/tools", { scroll: false });
+  }
+
+  function handleSearchChange(value: string) {
+    setSearchTerm(value);
+
+    const params = new URLSearchParams(searchParams.toString());
+    const trimmed = value.trim();
+
+    if (trimmed) {
+      params.set("q", trimmed);
+    } else {
+      params.delete("q");
     }
 
     const query = params.toString();
@@ -97,7 +118,7 @@ export default function AllToolsPage() {
             <input
               type="search"
               value={searchTerm}
-              onChange={(event) => setSearchTerm(event.target.value)}
+              onChange={(event) => handleSearchChange(event.target.value)}
               placeholder="Search tools by name or keyword..."
               className="w-full bg-surface-container-low border border-outline-variant rounded-xl pl-12 pr-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all"
             />

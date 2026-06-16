@@ -12,6 +12,10 @@ function pad(n: number): string {
   return String(n);
 }
 
+function normalizeToDay(date: Date): Date {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
 export function calculateAge(
   birthDate: Date,
   asOfDate: Date = new Date()
@@ -19,15 +23,19 @@ export function calculateAge(
   if (Number.isNaN(birthDate.getTime()) || Number.isNaN(asOfDate.getTime())) {
     return null;
   }
-  if (birthDate > asOfDate) return null;
 
-  let years = asOfDate.getFullYear() - birthDate.getFullYear();
-  let months = asOfDate.getMonth() - birthDate.getMonth();
-  let days = asOfDate.getDate() - birthDate.getDate();
+  const birth = normalizeToDay(birthDate);
+  const asOf = normalizeToDay(asOfDate);
+
+  if (birth > asOf) return null;
+
+  let years = asOf.getFullYear() - birth.getFullYear();
+  let months = asOf.getMonth() - birth.getMonth();
+  let days = asOf.getDate() - birth.getDate();
 
   if (days < 0) {
     months -= 1;
-    const prevMonth = new Date(asOfDate.getFullYear(), asOfDate.getMonth(), 0);
+    const prevMonth = new Date(asOf.getFullYear(), asOf.getMonth(), 0);
     days += prevMonth.getDate();
   }
   if (months < 0) {
@@ -36,25 +44,23 @@ export function calculateAge(
   }
 
   const msPerDay = 1000 * 60 * 60 * 24;
-  const totalDays = Math.floor(
-    (asOfDate.getTime() - birthDate.getTime()) / msPerDay
-  );
+  const totalDays = Math.floor((asOf.getTime() - birth.getTime()) / msPerDay);
   const totalHours = totalDays * 24;
 
   let nextBirthday = new Date(
-    asOfDate.getFullYear(),
-    birthDate.getMonth(),
-    birthDate.getDate()
+    asOf.getFullYear(),
+    birth.getMonth(),
+    birth.getDate()
   );
-  if (nextBirthday <= asOfDate) {
+  if (nextBirthday < asOf) {
     nextBirthday = new Date(
-      asOfDate.getFullYear() + 1,
-      birthDate.getMonth(),
-      birthDate.getDate()
+      asOf.getFullYear() + 1,
+      birth.getMonth(),
+      birth.getDate()
     );
   }
-  const nextBirthdayDays = Math.ceil(
-    (nextBirthday.getTime() - asOfDate.getTime()) / msPerDay
+  const nextBirthdayDays = Math.round(
+    (nextBirthday.getTime() - asOf.getTime()) / msPerDay
   );
 
   const nextBirthdayLabel =

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AdBanner from "@/components/ads/AdBanner";
+import ToolSearch from "@/components/search/ToolSearch";
 import CategoryCard from "@/components/home/CategoryCard";
 import StatsBar from "@/components/home/StatsBar";
 import JsonLd from "@/components/seo/JsonLd";
@@ -98,7 +99,7 @@ export default function Home() {
       <JsonLd data={websiteSchema} />
 
       {/* HERO SECTION */}
-      <section className="relative pt-2xl pb-2xl overflow-hidden">
+      <section className="relative z-20 pt-2xl pb-2xl overflow-visible">
         <div className="max-w-container-max mx-auto px-gutter relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
           <div className="lg:col-span-7 text-left">
             <h1 className="font-display text-display mb-md text-on-background">
@@ -110,21 +111,8 @@ export default function Home() {
               instantly.
             </p>
 
-            <div className="mb-lg relative">
-              <div className="flex shadow-lg rounded-xl overflow-hidden border border-outline-variant search-glow">
-                <input
-                  className="flex-grow p-xl border-none focus:ring-0 text-body font-body bg-surface-container-lowest outline-none"
-                  placeholder="What do you want to do? (e.g. Merge PDF, Word Counter)"
-                  type="text"
-                />
-                <button
-                  type="button"
-                  className="bg-primary-container text-on-primary px-xl flex items-center gap-sm font-bold text-h3 hover:brightness-110 transition-all shrink-0"
-                >
-                  <span className="material-symbols-outlined">search</span>
-                  Search
-                </button>
-              </div>
+            <div className="relative z-30 mb-lg">
+              <ToolSearch variant="hero" />
             </div>
 
             <div className="flex flex-wrap gap-sm">

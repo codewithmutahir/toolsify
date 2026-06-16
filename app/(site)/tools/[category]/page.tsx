@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { categories, getCategoryBySlug } from "@/constants/categories";
 import { getToolsByCategory } from "@/constants/tools";
 import { generateCategoryMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/lib/config";
 import CategoryHero from "@/components/tools/CategoryHero";
 import JsonLd from "@/components/seo/JsonLd";
 import NewsletterCta from "@/components/tools/NewsletterCta";
@@ -41,19 +42,19 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://toolsify.online",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Tools",
-        item: "https://toolsify.online/tools",
+        item: `${SITE_URL}/tools`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.title,
-        item: `https://toolsify.online/tools/${category.slug}`,
+        item: `${SITE_URL}/tools/${category.slug}`,
       },
     ],
   };

@@ -9,6 +9,7 @@ export default function AuthBrandingPanelSignUp() {
             <span
               className="material-symbols-outlined text-primary-container text-[32px]"
               style={{ fontVariationSettings: "'FILL' 1" }}
+              aria-hidden="true"
             >
               construction
             </span>
@@ -30,7 +31,7 @@ export default function AuthBrandingPanelSignUp() {
       </div>
 
       <div className="relative z-10 flex items-center gap-sm text-white/80 font-label">
-        <span className="material-symbols-outlined text-sm">verified</span>
+        <span className="material-symbols-outlined text-sm" aria-hidden="true">verified</span>
         <span>Trusted by 500k+ global users</span>
       </div>
     </section>

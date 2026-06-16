@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { SITE_URL } from "@/lib/config";
 import { Category, Tool } from "@/types/tool";
 
 export function generateCategoryMetadata(category: Category): Metadata {
@@ -14,7 +15,7 @@ export function generateCategoryMetadata(category: Category): Metadata {
     openGraph: {
       title: `${category.title} Tools | Toolsify`,
       description: category.description,
-      url: `https://toolsify.online/tools/${category.slug}`,
+      url: `${SITE_URL}/tools/${category.slug}`,
       siteName: "Toolsify",
       type: "website",
     },
@@ -24,7 +25,7 @@ export function generateCategoryMetadata(category: Category): Metadata {
       description: category.description,
     },
     alternates: {
-      canonical: `https://toolsify.online/tools/${category.slug}`,
+      canonical: `${SITE_URL}/tools/${category.slug}`,
     },
     robots: { index: true, follow: true },
   };

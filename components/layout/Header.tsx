@@ -4,15 +4,22 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ToolSearch from "@/components/search/ToolSearch";
 import { userButtonAppearance } from "@/lib/clerk-appearance";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/tools", label: "All Tools" },
-  { href: "/tools", label: "Categories" },
+  { href: "/tools/categories", label: "Categories" },
   { href: "/pricing", label: "Pricing" },
-];
+] as const;
+
+function isNavLinkActive(pathname: string, label: string, href: string) {
+  if (label === "All Tools") return pathname === "/tools";
+  if (label === "Categories") return pathname.startsWith("/tools/");
+  return pathname === href;
+}
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,25 +43,16 @@ export default function Header() {
             <span className="font-h2 text-h2 font-bold text-primary">Toolsify</span>
           </Link>
 
-          <div className="relative hidden md:block group w-64 lg:w-96 shrink-0">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">
-              search
-            </span>
-            <input
-              type="search"
-              placeholder="Search 50+ tools..."
-              className="w-full bg-surface-bright border border-outline-variant rounded-lg pl-10 py-2 font-body text-small focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none transition-all"
-            />
-          </div>
+          <ToolSearch
+            variant="header"
+            className="hidden md:block w-64 lg:w-96 shrink-0"
+          />
         </div>
 
         {/* Desktop Nav (center) */}
         <nav className="hidden md:flex items-center gap-lg">
           {navLinks.map((link) => {
-            const isActive =
-              link.href === "/tools"
-                ? pathname === "/tools" || pathname.startsWith("/tools/")
-                : pathname === link.href;
+            const isActive = isNavLinkActive(pathname, link.label, link.href);
             return (
               <Link
                 key={link.label}
@@ -128,16 +126,10 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="relative">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">
-              search
-            </span>
-            <input
-              type="search"
-              placeholder="Search 50+ tools..."
-              className="w-full bg-surface-bright border border-outline-variant rounded-lg pl-10 py-2 font-small text-small focus:ring-2 focus:ring-primary-container/20 outline-none"
-            />
-          </div>
+          <ToolSearch
+            variant="header"
+            onNavigate={() => setMobileOpen(false)}
+          />
           <SignedOut>
             <Link
               href="/sign-in"

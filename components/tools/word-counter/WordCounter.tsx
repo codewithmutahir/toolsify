@@ -61,7 +61,11 @@ export default function WordCounter() {
           </>
         }
       >
+        <label htmlFor="word-counter-text" className="sr-only">
+          Text to analyze
+        </label>
         <textarea
+          id="word-counter-text"
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Start typing or paste your text here..."

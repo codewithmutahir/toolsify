@@ -47,7 +47,7 @@ export default function SignUpWithVerification() {
   }, [isLoaded, previewVerify, signUp]);
 
   const email = previewVerify
-    ? "siyalsiyal42@gmail.com"
+    ? "preview@example.com"
     : (signUp?.emailAddress ?? "");
 
   const handleVerify = useCallback(

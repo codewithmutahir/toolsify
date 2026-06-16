@@ -79,10 +79,14 @@ export default function PercentageCalculator() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
           <div className="space-y-sm">
-            <label className="font-label text-label font-bold text-on-surface uppercase">
+            <label
+              htmlFor="percentage-input-a"
+              className="font-label text-label font-bold text-on-surface uppercase"
+            >
               {activeTab.aLabel}
             </label>
             <input
+              id="percentage-input-a"
               type="number"
               value={a}
               onChange={(e) => setA(e.target.value)}
@@ -90,10 +94,14 @@ export default function PercentageCalculator() {
             />
           </div>
           <div className="space-y-sm">
-            <label className="font-label text-label font-bold text-on-surface uppercase">
+            <label
+              htmlFor="percentage-input-b"
+              className="font-label text-label font-bold text-on-surface uppercase"
+            >
               {activeTab.bLabel}
             </label>
             <input
+              id="percentage-input-b"
               type="number"
               value={b}
               onChange={(e) => setB(e.target.value)}

@@ -9,6 +9,10 @@ export default function ToolSkeletonGrid({
   count = 8,
   className,
 }: ToolSkeletonGridProps) {
+  const skeletonCount = Number.isFinite(count)
+    ? Math.max(0, Math.floor(count))
+    : 8;
+
   return (
     <div
       className={cn(
@@ -16,7 +20,7 @@ export default function ToolSkeletonGrid({
         className
       )}
     >
-      {Array.from({ length: count }).map((_, index) => (
+      {Array.from({ length: skeletonCount }).map((_, index) => (
         <div
           key={index}
           className="animate-pulse bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col h-full"

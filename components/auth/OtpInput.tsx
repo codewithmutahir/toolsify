@@ -82,7 +82,7 @@ export default function OtpInput({
           }}
           type="text"
           inputMode="numeric"
-          autoComplete={index === 0 ? "one-time-code" : "off"}
+          autoComplete="off"
           autoFocus={index === 0}
           maxLength={1}
           value={digit}

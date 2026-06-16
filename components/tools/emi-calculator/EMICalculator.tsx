@@ -55,10 +55,14 @@ export default function EMICalculator() {
       >
         <div className="space-y-lg mb-xl">
           <div className="space-y-sm">
-            <label className="font-label text-label font-bold text-on-surface uppercase">
+            <label
+              htmlFor="emi-loan-amount"
+              className="font-label text-label font-bold text-on-surface uppercase"
+            >
               Loan amount
             </label>
             <input
+              id="emi-loan-amount"
               type="number"
               min="0"
               value={principal}
@@ -67,10 +71,14 @@ export default function EMICalculator() {
             />
           </div>
           <div className="space-y-sm">
-            <label className="font-label text-label font-bold text-on-surface uppercase">
+            <label
+              htmlFor="emi-interest-rate"
+              className="font-label text-label font-bold text-on-surface uppercase"
+            >
               Interest rate (% per year)
             </label>
             <input
+              id="emi-interest-rate"
               type="number"
               min="0"
               step="0.1"
@@ -81,7 +89,10 @@ export default function EMICalculator() {
           </div>
           <div className="space-y-sm">
             <div className="flex justify-between items-end">
-              <label className="font-label text-label font-bold text-on-surface uppercase">
+              <label
+                htmlFor="emi-tenure"
+                className="font-label text-label font-bold text-on-surface uppercase"
+              >
                 Tenure
               </label>
               <UnitToggle
@@ -91,6 +102,7 @@ export default function EMICalculator() {
               />
             </div>
             <input
+              id="emi-tenure"
               type="number"
               min="1"
               value={tenure}
