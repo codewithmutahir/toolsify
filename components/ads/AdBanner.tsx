@@ -8,8 +8,8 @@ interface AdBannerProps {
 
 const formatSizes: Record<AdBannerProps["format"], string> = {
   leaderboard: "h-24 w-full",
-  rectangle: "h-64 w-80",
-  skyscraper: "h-[600px] w-40",
+  rectangle: "h-64 w-full max-w-none",
+  skyscraper: "h-[600px] w-full",
 };
 
 export default function AdBanner({ slot, format, className }: AdBannerProps) {
