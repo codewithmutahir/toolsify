@@ -1,0 +1,170 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect } from "react";
+import { cn } from "@/lib/utils";
+
+type SignUpPromptSheetProps = {
+  open: boolean;
+  onDismiss: () => void;
+};
+
+const benefits = [
+  {
+    icon: "rocket_launch",
+    title: "Early access to premium tools",
+    description: "Be first to try advanced features as they launch.",
+    badge: "Coming soon",
+  },
+  {
+    icon: "lightbulb",
+    title: "Request new tools",
+    description: "Tell us what to build next — members get priority.",
+    badge: "Members only",
+  },
+  {
+    icon: "bookmark",
+    title: "Save favorites & history",
+    description: "Pick up where you left off across visits.",
+  },
+] as const;
+
+export default function SignUpPromptSheet({
+  open,
+  onDismiss,
+}: SignUpPromptSheetProps) {
+  useEffect(() => {
+    if (!open) return;
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") onDismiss();
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open, onDismiss]);
+
+  if (!open) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end md:items-center justify-center bg-on-background/40 backdrop-blur-sm p-0 md:p-md"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="signup-prompt-title"
+      onClick={onDismiss}
+    >
+      <div
+        className={cn(
+          "relative bg-surface-container-lowest w-full md:max-w-[520px]",
+          "rounded-t-2xl md:rounded-2xl shadow-xl",
+          "p-lg sm:p-xl flex flex-col",
+          "animate-signup-sheet md:animate-fade-in",
+          "max-h-[90vh] overflow-y-auto"
+        )}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="md:hidden w-10 h-1 rounded-full bg-outline-variant/60 mx-auto mb-lg shrink-0" />
+
+        <button
+          type="button"
+          onClick={onDismiss}
+          className="absolute top-md right-md md:top-lg md:right-lg w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors"
+          aria-label="Dismiss"
+        >
+          <span className="material-symbols-outlined text-[20px]">close</span>
+        </button>
+
+        <div className="flex items-start gap-md mb-lg pr-8">
+          <div className="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center shrink-0">
+            <span
+              className="material-symbols-outlined text-[32px] text-primary"
+              style={{ fontVariationSettings: "'FILL' 1" }}
+              aria-hidden="true"
+            >
+              construction
+            </span>
+          </div>
+          <div>
+            <h2
+              id="signup-prompt-title"
+              className="font-h2 text-h2 text-on-surface mb-xs"
+            >
+              You&apos;re getting value from Toolsify
+            </h2>
+            <p className="font-body text-body text-on-surface-variant">
+              Create a free account to unlock more — your tools stay free.
+            </p>
+          </div>
+        </div>
+
+        <ul className="flex flex-col gap-sm mb-xl">
+          {benefits.map((benefit) => (
+            <li
+              key={benefit.title}
+              className="flex items-start gap-md rounded-xl bg-surface-container-low p-md border border-outline-variant/40"
+            >
+              <span
+                className="material-symbols-outlined text-primary-container text-[22px] mt-0.5 shrink-0"
+                aria-hidden="true"
+              >
+                {benefit.icon}
+              </span>
+              <div className="min-w-0 text-left">
+                <div className="flex items-center gap-sm flex-wrap mb-0.5">
+                  <p className="font-body text-body font-semibold text-on-surface">
+                    {benefit.title}
+                  </p>
+                  {"badge" in benefit && benefit.badge && (
+                    <span className="font-label text-[10px] font-bold uppercase tracking-wider px-sm py-0.5 rounded-full bg-primary-fixed text-primary">
+                      {benefit.badge}
+                    </span>
+                  )}
+                </div>
+                <p className="font-small text-small text-on-surface-variant">
+                  {benefit.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-col gap-sm">
+          <Link
+            href="/sign-up"
+            className={cn(
+              "w-full min-h-12 flex items-center justify-center",
+              "bg-primary-container text-on-primary font-display font-bold text-body",
+              "rounded-lg transition-all hover:brightness-110 active:scale-[0.98]"
+            )}
+          >
+            Create free account
+          </Link>
+          <Link
+            href="/sign-in"
+            className={cn(
+              "w-full min-h-12 flex items-center justify-center",
+              "border border-outline-variant text-on-surface font-semibold text-body",
+              "rounded-lg transition-all hover:bg-surface-container-low active:scale-[0.98]"
+            )}
+          >
+            Sign in
+          </Link>
+          <button
+            type="button"
+            onClick={onDismiss}
+            className="w-full min-h-10 font-small text-small text-on-surface-variant hover:text-primary transition-colors"
+          >
+            Not now
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

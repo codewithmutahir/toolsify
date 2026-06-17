@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { areAdsEnabled } from "@/lib/ads";
 
 interface AdBannerProps {
   slot: string;
@@ -13,6 +14,8 @@ const formatSizes: Record<AdBannerProps["format"], string> = {
 };
 
 export default function AdBanner({ slot, format, className }: AdBannerProps) {
+  if (!areAdsEnabled()) return null;
+
   const isProd = process.env.NODE_ENV === "production";
 
   if (isProd) {

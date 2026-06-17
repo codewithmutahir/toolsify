@@ -204,6 +204,28 @@
   }
 }
 
+.animate-signup-sheet {
+  animation: signup-sheet-in 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-signup-sheet,
+  .animate-fade-in {
+    animation: none;
+  }
+}
+
+@keyframes signup-sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @layer base {
   .theme {
     --font-heading: var(--font-sans);

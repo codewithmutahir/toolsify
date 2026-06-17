@@ -149,6 +149,15 @@ export default function ToolSearch({
 
     function handleGlobalKeyDown(e: KeyboardEvent) {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        const active = document.activeElement;
+        const isTypingElsewhere =
+          active &&
+          active !== inputRef.current &&
+          (active instanceof HTMLInputElement ||
+            active instanceof HTMLTextAreaElement ||
+            (active instanceof HTMLElement && active.isContentEditable));
+        if (isTypingElsewhere) return;
+
         e.preventDefault();
         inputRef.current?.focus();
         inputRef.current?.select();
