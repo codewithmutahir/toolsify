@@ -24,6 +24,25 @@ interface ToolSearchProps {
   inputClassName?: string;
   placeholder?: string;
   onNavigate?: () => void;
+  enableShortcut?: boolean;
+}
+
+function KeyboardShortcutBadge({ isMac }: { isMac: boolean }) {
+  return (
+    <div className="relative group hidden md:flex items-center gap-xs mr-sm flex-shrink-0">
+      <kbd className="inline-flex items-center justify-center h-5 px-1.5 bg-surface-container border border-outline-variant rounded text-[10px] font-label text-on-surface-variant font-medium leading-none">
+        {isMac ? "⌘" : "Ctrl"}
+      </kbd>
+      <kbd className="inline-flex items-center justify-center h-5 px-1.5 bg-surface-container border border-outline-variant rounded text-[10px] font-label text-on-surface-variant font-medium leading-none">
+        K
+      </kbd>
+      <div className="absolute top-full right-0 mt-xs opacity-0 invisible group-hover:opacity-100 group-hover:visible z-[60] pointer-events-none transition-opacity duration-150">
+        <div className="bg-inverse-surface text-inverse-on-surface font-label text-label px-sm py-xs rounded-lg whitespace-nowrap shadow-lg">
+          Quick search
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function ToolSearch({
@@ -32,6 +51,7 @@ export default function ToolSearch({
   inputClassName,
   placeholder,
   onNavigate,
+  enableShortcut = false,
 }: ToolSearchProps) {
   const router = useRouter();
   const listboxId = useId();
@@ -41,9 +61,12 @@ export default function ToolSearch({
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isHighlighted, setIsHighlighted] = useState(false);
+  const [isMac, setIsMac] = useState(false);
 
   const results = useMemo(
-    () => searchTools(query, MAX_RESULTS),
+    () => searchTools(query, { limit: MAX_RESULTS, implementedOnly: true }),
     [query]
   );
 
@@ -118,6 +141,28 @@ export default function ToolSearch({
   }, [query]);
 
   useEffect(() => {
+    setIsMac(navigator.platform.toUpperCase().includes("MAC"));
+  }, []);
+
+  useEffect(() => {
+    if (!enableShortcut) return;
+
+    function handleGlobalKeyDown(e: KeyboardEvent) {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        inputRef.current?.focus();
+        inputRef.current?.select();
+        setIsOpen(true);
+        setIsHighlighted(true);
+        setTimeout(() => setIsHighlighted(false), 600);
+      }
+    }
+
+    document.addEventListener("keydown", handleGlobalKeyDown);
+    return () => document.removeEventListener("keydown", handleGlobalKeyDown);
+  }, [enableShortcut]);
+
+  useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
         containerRef.current &&
@@ -184,27 +229,45 @@ export default function ToolSearch({
   }
 
   return (
-    <div ref={containerRef} className={cn("relative", className)}>
-      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">
-        search
-      </span>
-      <input
-        ref={inputRef}
-        type="search"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        onFocus={() => setIsOpen(true)}
-        onKeyDown={handleKeyDown}
-        placeholder={placeholder ?? defaultPlaceholder}
-        role="combobox"
-        aria-expanded={showDropdown}
-        aria-controls={listboxId}
-        aria-autocomplete="list"
+    <div ref={containerRef} className={cn("relative overflow-visible", className)}>
+      <div
         className={cn(
-          "w-full bg-surface-bright border border-outline-variant rounded-lg pl-10 py-2 font-body text-small focus:ring-2 focus:ring-primary-container/20 focus:border-primary-container outline-none transition-all",
-          inputClassName
+          "flex items-center w-full bg-surface-bright border rounded-lg transition-all overflow-visible",
+          isHighlighted
+            ? "border-primary-container ring-2 ring-primary-container/30 scale-[1.01]"
+            : isFocused
+              ? "border-primary-container ring-2 ring-primary-container/20"
+              : "border-outline-variant"
         )}
-      />
+      >
+        <span className="material-symbols-outlined pl-3 text-on-surface-variant pointer-events-none shrink-0">
+          search
+        </span>
+        <input
+          ref={inputRef}
+          type="search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          onFocus={() => {
+            setIsOpen(true);
+            setIsFocused(true);
+          }}
+          onBlur={() => setIsFocused(false)}
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder ?? defaultPlaceholder}
+          role="combobox"
+          aria-expanded={showDropdown}
+          aria-controls={listboxId}
+          aria-autocomplete="list"
+          className={cn(
+            "flex-1 min-w-0 bg-transparent border-none py-2 px-2 font-body text-small outline-none focus:ring-0",
+            inputClassName
+          )}
+        />
+        {enableShortcut && !query && !isFocused && (
+          <KeyboardShortcutBadge isMac={isMac} />
+        )}
+      </div>
 
       {showDropdown && (
         <ToolSearchDropdown

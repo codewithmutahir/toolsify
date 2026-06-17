@@ -10,62 +10,94 @@ export const tools: Tool[] = [
     shortDesc: "Calculate any percentage instantly",
     category: "math",
     icon: "percent",
+    tags: ["percentage", "math", "calculator"],
+    implemented: true,
     featured: true,
   },
   {
-    slug: "fraction-calculator",
-    title: "Fraction Calculator",
+    slug: "simple-interest-calculator",
+    title: "Simple Interest Calculator",
     description:
-      "Add, subtract, multiply, and divide fractions with step-by-step results.",
-    shortDesc: "Add, subtract, multiply fractions",
+      "Calculate simple interest and total amount from principal, rate, and time.",
+    shortDesc: "Principal, rate, time → interest",
     category: "math",
-    icon: "calculate",
+    icon: "savings",
+    tags: ["interest", "math", "finance"],
+    implemented: true,
+  },
+  {
+    slug: "discount-calculator",
+    title: "Discount Calculator",
+    description:
+      "Calculate final price and savings from original price and discount percentage.",
+    shortDesc: "Find sale price and savings",
+    category: "math",
+    icon: "sell",
+    tags: ["discount", "sale", "math"],
+    implemented: true,
   },
   {
     slug: "average-calculator",
     title: "Average Calculator",
     description:
-      "Calculate the mean, median, and average of a set of numbers quickly.",
-    shortDesc: "Find mean and median averages",
+      "Calculate the mean, median, mode, min, and max of a set of numbers quickly.",
+    shortDesc: "Mean, median, mode, min, max",
     category: "math",
     icon: "functions",
+    tags: ["average", "mean", "statistics", "math"],
+    implemented: true,
   },
   {
-    slug: "ratio-calculator",
-    title: "Ratio Calculator",
+    slug: "matrix-calculator",
+    title: "Matrix Calculator",
     description:
-      "Simplify ratios and solve proportion problems with ease.",
-    shortDesc: "Simplify and solve ratios",
+      "Add, multiply, transpose matrices and calculate determinants with step-by-step results.",
+    shortDesc: "Add, multiply, transpose, determinant",
     category: "math",
-    icon: "compare_arrows",
+    icon: "grid_on",
+    tags: ["matrix", "linear algebra", "math"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Hard",
   },
   {
-    slug: "square-root-calculator",
-    title: "Square Root Calculator",
+    slug: "quadratic-solver",
+    title: "Quadratic Equation Solver",
     description:
-      "Find the square root of any number with precise decimal results.",
-    shortDesc: "Calculate square roots",
+      "Solve quadratic equations with a visual parabola graph and step-by-step solutions.",
+    shortDesc: "Solve quadratics with parabola graph",
     category: "math",
-    icon: "superscript",
+    icon: "show_chart",
+    tags: ["quadratic", "equation", "graph", "math"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Medium",
   },
   {
-    slug: "lcm-gcd-calculator",
-    title: "LCM & GCD Calculator",
+    slug: "standard-deviation-calculator",
+    title: "Statistics Calculator",
     description:
-      "Find the least common multiple and greatest common divisor of two or more numbers.",
-    shortDesc: "Find LCM and GCD of numbers",
+      "Calculate mean, median, mode, standard deviation, and variance for any dataset.",
+    shortDesc: "Mean, median, mode, std dev, variance",
+    category: "math",
+    icon: "analytics",
+    tags: ["statistics", "standard deviation", "variance", "math"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Doable",
+  },
+  {
+    slug: "number-base-converter",
+    title: "Number Base Converter",
+    description:
+      "Convert numbers between binary, octal, decimal, and hexadecimal with live conversion.",
+    shortDesc: "Binary, octal, decimal, hex conversion",
     category: "math",
     icon: "pin",
-  },
-  {
-    slug: "scientific-calculator",
-    title: "Scientific Calculator",
-    description:
-      "Perform advanced math operations including trigonometry, logarithms, and exponents.",
-    shortDesc: "Advanced math operations online",
-    category: "math",
-    icon: "science",
-    featured: true,
+    tags: ["binary", "hexadecimal", "base conversion", "math"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Doable",
   },
 
   // Finance
@@ -77,6 +109,8 @@ export const tools: Tool[] = [
     shortDesc: "Calculate monthly loan EMI",
     category: "finance",
     icon: "payments",
+    tags: ["emi", "loan", "finance"],
+    implemented: true,
     featured: true,
   },
   {
@@ -87,43 +121,9 @@ export const tools: Tool[] = [
     shortDesc: "Project investment growth",
     category: "finance",
     icon: "trending_up",
+    tags: ["compound interest", "investment", "finance"],
+    implemented: true,
     featured: true,
-  },
-  {
-    slug: "loan-calculator",
-    title: "Loan Calculator",
-    description:
-      "Calculate total interest, monthly payments, and amortization for any loan.",
-    shortDesc: "Total interest and payments",
-    category: "finance",
-    icon: "account_balance",
-  },
-  {
-    slug: "sip-calculator",
-    title: "SIP Calculator",
-    description:
-      "Estimate returns on systematic investment plans with monthly contributions.",
-    shortDesc: "Estimate SIP returns",
-    category: "finance",
-    icon: "savings",
-  },
-  {
-    slug: "mortgage-calculator",
-    title: "Mortgage Calculator",
-    description:
-      "Calculate monthly mortgage payments including principal and interest.",
-    shortDesc: "Monthly mortgage payments",
-    category: "finance",
-    icon: "home",
-  },
-  {
-    slug: "gst-calculator",
-    title: "GST Calculator",
-    description:
-      "Add or remove GST from any amount and calculate net and gross prices.",
-    shortDesc: "Add or remove GST",
-    category: "finance",
-    icon: "receipt_long",
   },
   {
     slug: "salary-calculator",
@@ -133,6 +133,69 @@ export const tools: Tool[] = [
     shortDesc: "Convert salary rates",
     category: "finance",
     icon: "attach_money",
+    tags: ["salary", "income", "finance"],
+    implemented: true,
+  },
+  {
+    slug: "tip-calculator",
+    title: "Tip Calculator",
+    description:
+      "Calculate tip amount and split the bill evenly among multiple people.",
+    shortDesc: "Tip and split the bill",
+    category: "finance",
+    icon: "restaurant",
+    tags: ["tip", "restaurant", "finance"],
+    implemented: true,
+  },
+  {
+    slug: "percentage-change-calculator",
+    title: "Percentage Change Calculator",
+    description:
+      "Calculate the percentage increase or decrease between two values.",
+    shortDesc: "Percent increase or decrease",
+    category: "finance",
+    icon: "trending_up",
+    tags: ["percentage change", "growth", "finance"],
+    implemented: true,
+  },
+  {
+    slug: "cagr-calculator",
+    title: "CAGR Calculator",
+    description:
+      "Calculate Compound Annual Growth Rate with an interactive growth chart.",
+    shortDesc: "Compound annual growth rate + chart",
+    category: "finance",
+    icon: "trending_up",
+    tags: ["cagr", "growth rate", "investment", "finance"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Doable",
+  },
+  {
+    slug: "roi-calculator",
+    title: "ROI Calculator",
+    description:
+      "Calculate return on investment with timeline projections and breakdowns.",
+    shortDesc: "Return on investment with timeline",
+    category: "finance",
+    icon: "savings",
+    tags: ["roi", "return on investment", "finance"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Doable",
+  },
+  {
+    slug: "break-even-calculator",
+    title: "Break-Even Calculator",
+    description:
+      "Find your break-even point using fixed and variable costs with a visual chart.",
+    shortDesc: "Fixed/variable costs, visual chart",
+    category: "finance",
+    icon: "balance",
+    tags: ["break even", "business", "finance"],
+    implemented: false,
+    searchVolume: "Medium",
+    difficulty: "Medium",
   },
 
   // Fitness & Health
@@ -144,16 +207,9 @@ export const tools: Tool[] = [
     shortDesc: "Check your body mass index",
     category: "fitness",
     icon: "monitor_weight",
+    tags: ["bmi", "health", "fitness"],
+    implemented: true,
     featured: true,
-  },
-  {
-    slug: "bmr-calculator",
-    title: "BMR Calculator",
-    description:
-      "Calculate your Basal Metabolic Rate — the calories your body burns at rest.",
-    shortDesc: "Calories burned at rest",
-    category: "fitness",
-    icon: "local_fire_department",
   },
   {
     slug: "calorie-calculator",
@@ -163,15 +219,8 @@ export const tools: Tool[] = [
     shortDesc: "Daily calorie needs",
     category: "fitness",
     icon: "restaurant",
-  },
-  {
-    slug: "body-fat-calculator",
-    title: "Body Fat Calculator",
-    description:
-      "Estimate body fat percentage using the US Navy method with body measurements.",
-    shortDesc: "Estimate body fat %",
-    category: "fitness",
-    icon: "fitness_center",
+    tags: ["calories", "diet", "fitness"],
+    implemented: true,
   },
   {
     slug: "ideal-weight-calculator",
@@ -181,6 +230,8 @@ export const tools: Tool[] = [
     shortDesc: "Find your ideal weight",
     category: "fitness",
     icon: "scale",
+    tags: ["ideal weight", "health", "fitness"],
+    implemented: true,
   },
   {
     slug: "age-calculator",
@@ -190,7 +241,35 @@ export const tools: Tool[] = [
     shortDesc: "Exact age from birth date",
     category: "fitness",
     icon: "cake",
+    tags: ["age", "birthday", "date"],
+    implemented: true,
     featured: true,
+  },
+  {
+    slug: "macro-calculator",
+    title: "Macro Calculator",
+    description:
+      "Calculate protein, carbs, and fat targets based on your fitness goal and body stats.",
+    shortDesc: "Protein, carbs, fat targets by goal",
+    category: "fitness",
+    icon: "restaurant_menu",
+    tags: ["macros", "nutrition", "diet", "fitness"],
+    implemented: false,
+    searchVolume: "Very High",
+    difficulty: "Doable",
+  },
+  {
+    slug: "one-rep-max-calculator",
+    title: "One Rep Max Calculator",
+    description:
+      "Estimate your one-rep max using multiple formulas for all major lifts.",
+    shortDesc: "Multiple formulas, all major lifts",
+    category: "fitness",
+    icon: "fitness_center",
+    tags: ["one rep max", "strength", "gym", "fitness"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Doable",
   },
 
   // Text Tools
@@ -202,6 +281,8 @@ export const tools: Tool[] = [
     shortDesc: "Count words and characters",
     category: "text",
     icon: "text_fields",
+    tags: ["word count", "text", "writing"],
+    implemented: true,
     featured: true,
   },
   {
@@ -212,6 +293,8 @@ export const tools: Tool[] = [
     shortDesc: "Count characters with spaces",
     category: "text",
     icon: "counter_1",
+    tags: ["character count", "text", "seo"],
+    implemented: true,
   },
   {
     slug: "case-converter",
@@ -221,6 +304,19 @@ export const tools: Tool[] = [
     shortDesc: "Change text case instantly",
     category: "text",
     icon: "title",
+    tags: ["case converter", "text", "uppercase", "lowercase"],
+    implemented: true,
+  },
+  {
+    slug: "text-repeater",
+    title: "Text Repeater",
+    description:
+      "Repeat any text multiple times with a custom separator between copies.",
+    shortDesc: "Repeat text with separator",
+    category: "text",
+    icon: "repeat",
+    tags: ["text repeater", "duplicate", "text"],
+    implemented: true,
   },
   {
     slug: "lorem-ipsum-generator",
@@ -230,46 +326,11 @@ export const tools: Tool[] = [
     shortDesc: "Generate placeholder text",
     category: "text",
     icon: "article",
-  },
-  {
-    slug: "text-diff",
-    title: "Text Diff",
-    description:
-      "Compare two texts side by side and highlight the differences between them.",
-    shortDesc: "Compare two texts",
-    category: "text",
-    icon: "difference",
-  },
-  {
-    slug: "remove-duplicates",
-    title: "Remove Duplicates",
-    description:
-      "Remove duplicate lines from a list of text while preserving order.",
-    shortDesc: "Remove duplicate lines",
-    category: "text",
-    icon: "filter_list",
+    tags: ["lorem ipsum", "placeholder", "text"],
+    implemented: true,
   },
 
   // Color & Design
-  {
-    slug: "color-picker",
-    title: "Color Picker",
-    description:
-      "Pick any color and get its hex, RGB, and HSL values instantly.",
-    shortDesc: "Pick and convert colors",
-    category: "color",
-    icon: "colorize",
-    featured: true,
-  },
-  {
-    slug: "hex-to-rgb",
-    title: "Hex to RGB Converter",
-    description:
-      "Convert hex color codes to RGB and RGBA values for web development.",
-    shortDesc: "Convert hex to RGB",
-    category: "color",
-    icon: "palette",
-  },
   {
     slug: "color-converter",
     title: "Color Converter",
@@ -278,6 +339,8 @@ export const tools: Tool[] = [
     shortDesc: "Convert color formats",
     category: "color",
     icon: "invert_colors",
+    tags: ["color", "hex", "rgb", "design"],
+    implemented: true,
   },
 
   // Unit Converters
@@ -289,74 +352,144 @@ export const tools: Tool[] = [
     shortDesc: "Convert any unit",
     category: "converter",
     icon: "sync_alt",
+    tags: ["unit converter", "metric", "imperial"],
+    implemented: true,
     featured: true,
   },
   {
-    slug: "length-converter",
-    title: "Length Converter",
+    slug: "timezone-converter",
+    title: "Timezone Converter",
     description:
-      "Convert between meters, feet, inches, miles, kilometers, and more.",
-    shortDesc: "Convert length units",
+      "Convert times across world clocks with DST awareness and a meeting planner.",
+    shortDesc: "World clock, DST aware, meeting planner",
     category: "converter",
-    icon: "straighten",
+    icon: "public",
+    tags: ["timezone", "world clock", "meeting planner"],
+    implemented: false,
+    searchVolume: "Very High",
+    difficulty: "Medium",
   },
   {
-    slug: "weight-converter",
-    title: "Weight Converter",
+    slug: "cooking-converter",
+    title: "Cooking Measurement Converter",
     description:
-      "Convert between kilograms, pounds, ounces, grams, and stones.",
-    shortDesc: "Convert weight units",
+      "Convert cups, tablespoons, milliliters, and grams by ingredient for recipes.",
+    shortDesc: "Cups, tbsp, ml, grams by ingredient",
     category: "converter",
-    icon: "scale",
-  },
-  {
-    slug: "temperature-converter",
-    title: "Temperature Converter",
-    description:
-      "Convert between Celsius, Fahrenheit, and Kelvin temperature scales.",
-    shortDesc: "Celsius, Fahrenheit, Kelvin",
-    category: "converter",
-    icon: "thermostat",
+    icon: "skillet",
+    tags: ["cooking", "recipe", "measurement", "converter"],
+    implemented: false,
+    searchVolume: "High",
+    difficulty: "Doable",
   },
 
   // Developer Tools
   {
-    slug: "json-formatter",
-    title: "JSON Formatter",
+    slug: "regex-tester",
+    title: "Regex Tester & Debugger",
     description:
-      "Format, validate, and beautify JSON data with syntax highlighting.",
-    shortDesc: "Format and validate JSON",
+      "Test regular expressions with live match highlighting, capture groups, and flags.",
+    shortDesc: "Live match highlighting, capture groups",
+    category: "developer",
+    icon: "regular_expression",
+    tags: ["regex", "regular expression", "developer"],
+    implemented: true,
+    featured: true,
+    searchVolume: "Very High",
+    difficulty: "Hard",
+  },
+  {
+    slug: "json-formatter",
+    title: "JSON Formatter & Validator",
+    description:
+      "Format, minify, validate JSON data with a collapsible tree view and syntax highlighting.",
+    shortDesc: "Format, minify, validate, tree view",
     category: "developer",
     icon: "data_object",
+    tags: ["json", "formatter", "validator", "developer"],
+    implemented: true,
     featured: true,
+    searchVolume: "Very High",
+    difficulty: "Medium",
   },
   {
-    slug: "password-generator",
-    title: "Password Generator",
+    slug: "jwt-decoder",
+    title: "JWT Decoder & Inspector",
     description:
-      "Generate strong, secure random passwords with customizable length and characters.",
-    shortDesc: "Generate secure passwords",
+      "Decode JWT header and payload, check expiry, and inspect claims instantly.",
+    shortDesc: "Decode header/payload, expiry check",
     category: "developer",
-    icon: "key",
+    icon: "vpn_key",
+    tags: ["jwt", "token", "decode", "developer"],
+    implemented: true,
     featured: true,
+    searchVolume: "High",
+    difficulty: "Medium",
   },
   {
-    slug: "base64-encoder",
-    title: "Base64 Encoder",
+    slug: "cron-expression-generator",
+    title: "Cron Expression Generator",
     description:
-      "Encode and decode text and files to and from Base64 format.",
-    shortDesc: "Encode and decode Base64",
+      "Build cron expressions visually with human-readable schedule translation.",
+    shortDesc: "Visual builder + human-readable output",
     category: "developer",
-    icon: "lock",
+    icon: "schedule",
+    tags: ["cron", "schedule", "developer"],
+    implemented: true,
+    searchVolume: "High",
+    difficulty: "Hard",
   },
   {
-    slug: "url-encoder",
-    title: "URL Encoder",
+    slug: "gradient-generator",
+    title: "CSS Gradient Generator",
     description:
-      "Encode and decode URLs and query strings for safe web transmission.",
-    shortDesc: "Encode and decode URLs",
+      "Create CSS gradients with live preview and copy-ready CSS code.",
+    shortDesc: "Live preview + copy CSS",
     category: "developer",
-    icon: "link",
+    icon: "gradient",
+    tags: ["css", "gradient", "design", "developer"],
+    implemented: true,
+    searchVolume: "High",
+    difficulty: "Hard",
+  },
+  {
+    slug: "color-palette-generator",
+    title: "Color Palette Generator",
+    description:
+      "Generate complementary, triadic, and analogous color palettes for design projects.",
+    shortDesc: "Complementary, triadic, analogous palettes",
+    category: "developer",
+    icon: "palette",
+    tags: ["color palette", "design", "developer"],
+    implemented: true,
+    searchVolume: "High",
+    difficulty: "Medium",
+  },
+  {
+    slug: "hash-generator",
+    title: "Hash Generator",
+    description:
+      "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text input.",
+    shortDesc: "MD5, SHA-1, SHA-256, SHA-512",
+    category: "developer",
+    icon: "tag",
+    tags: ["hash", "sha256", "md5", "developer"],
+    implemented: true,
+    searchVolume: "High",
+    difficulty: "Doable",
+  },
+  {
+    slug: "markdown-editor",
+    title: "Markdown Editor & Preview",
+    description:
+      "Write markdown in a split-pane editor with live HTML preview.",
+    shortDesc: "Split-pane live preview",
+    category: "developer",
+    icon: "markdown",
+    tags: ["markdown", "editor", "preview", "developer"],
+    implemented: true,
+    searchVolume: "Medium",
+    difficulty: "Medium",
   },
 ];
 
@@ -368,6 +501,20 @@ export function getToolsByCategory(category: Tool["category"]): Tool[] {
   return tools.filter((tool) => tool.category === category);
 }
 
+export function getImplementedTools(): Tool[] {
+  return tools.filter((tool) => tool.implemented);
+}
+
 export function getFeaturedTools(): Tool[] {
-  return tools.filter((tool) => tool.featured);
+  return tools.filter((tool) => tool.featured && tool.implemented);
+}
+
+export function getCategoriesWithImplementedTools(): Tool["category"][] {
+  const categories = new Set<Tool["category"]>();
+  for (const tool of tools) {
+    if (tool.implemented) {
+      categories.add(tool.category);
+    }
+  }
+  return Array.from(categories);
 }

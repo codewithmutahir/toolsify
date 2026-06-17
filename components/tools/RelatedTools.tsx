@@ -13,7 +13,7 @@ export default function RelatedTools({
   currentSlug,
 }: RelatedToolsProps) {
   const related = getToolsByCategory(category)
-    .filter((tool) => tool.slug !== currentSlug)
+    .filter((tool) => tool.implemented && tool.slug !== currentSlug)
     .slice(0, 4);
 
   if (related.length === 0) return null;

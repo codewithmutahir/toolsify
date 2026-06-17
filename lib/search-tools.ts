@@ -17,6 +17,7 @@ const fuse = new Fuse(searchDocuments, {
     { name: "title", weight: 0.6 },
     { name: "shortDesc", weight: 0.3 },
     { name: "description", weight: 0.25 },
+    { name: "tags", weight: 0.2 },
     { name: "categoryLabel", weight: 0.1 },
   ],
   threshold: 0.4,
@@ -24,10 +25,22 @@ const fuse = new Fuse(searchDocuments, {
   minMatchCharLength: 2,
 });
 
-export function searchTools(query: string, limit?: number): Tool[] {
+export interface SearchToolsOptions {
+  limit?: number;
+  implementedOnly?: boolean;
+}
+
+export function searchTools(query: string, options?: SearchToolsOptions): Tool[] {
+  const { limit, implementedOnly = false } = options ?? {};
   const trimmed = query.trim();
   if (trimmed.length < 2) return [];
 
   const results = fuse.search(trimmed, limit ? { limit } : undefined);
-  return results.map((result) => result.item);
+  const matched = results.map((result) => result.item);
+
+  if (!implementedOnly) {
+    return matched;
+  }
+
+  return matched.filter((tool) => tool.implemented);
 }

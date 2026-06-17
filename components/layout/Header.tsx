@@ -46,6 +46,7 @@ export default function Header() {
           <ToolSearch
             variant="header"
             className="hidden md:block w-64 lg:w-96 shrink-0"
+            enableShortcut
           />
         </div>
 
