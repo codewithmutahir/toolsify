@@ -7,6 +7,10 @@ export type ToolCategory =
   | "converter"
   | "developer";
 
+export type SearchVolume = "Very High" | "High" | "Medium";
+
+export type ToolDifficulty = "Hard" | "Medium" | "Doable";
+
 export interface Tool {
   slug: string;
   title: string;
@@ -14,8 +18,12 @@ export interface Tool {
   shortDesc: string;
   category: ToolCategory;
   icon: string;
+  tags: string[];
+  implemented: boolean;
   featured?: boolean;
   new?: boolean;
+  searchVolume?: SearchVolume;
+  difficulty?: ToolDifficulty;
 }
 
 export interface Category {

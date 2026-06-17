@@ -1,11 +1,11 @@
 "use client";
 
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import AppUserButton from "@/components/auth/AppUserButton";
 import ToolSearch from "@/components/search/ToolSearch";
-import { userButtonAppearance } from "@/lib/clerk-appearance";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -46,6 +46,7 @@ export default function Header() {
           <ToolSearch
             variant="header"
             className="hidden md:block w-64 lg:w-96 shrink-0"
+            enableShortcut
           />
         </div>
 
@@ -88,10 +89,13 @@ export default function Header() {
           </SignedOut>
 
           <SignedIn>
-            <UserButton
-              appearance={userButtonAppearance}
-              afterSignOutUrl="/"
-            />
+            <Link
+              href="/dashboard"
+              className="hidden lg:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-sm py-sm"
+            >
+              Dashboard
+            </Link>
+            <AppUserButton />
           </SignedIn>
 
           <button
@@ -130,6 +134,15 @@ export default function Header() {
             variant="header"
             onNavigate={() => setMobileOpen(false)}
           />
+          <SignedIn>
+            <Link
+              href="/dashboard"
+              className="font-body text-body text-primary font-semibold hover:underline transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              Dashboard
+            </Link>
+          </SignedIn>
           <SignedOut>
             <Link
               href="/sign-in"

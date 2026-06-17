@@ -1,12 +1,20 @@
 import Link from "next/link";
+import { categories } from "@/constants/categories";
+import { getFeaturedTools, getImplementedTools } from "@/constants/tools";
 
-const toolLinks = [
-  { href: "/bmi-calculator", label: "BMI Calculator" },
-  { href: "/percentage-calculator", label: "Percentage Calculator" },
-  { href: "/emi-calculator", label: "EMI Calculator" },
-  { href: "/word-counter", label: "Word Counter" },
-  { href: "/json-formatter", label: "JSON Formatter" },
-];
+const toolLinks = getFeaturedTools().map((tool) => ({
+  href: `/${tool.slug}`,
+  label: tool.title,
+}));
+
+const categoryLinks = categories
+  .filter((category) =>
+    getImplementedTools().some((tool) => tool.category === category.slug)
+  )
+  .map((category) => ({
+    href: `/tools/${category.slug}`,
+    label: category.title,
+  }));
 
 const companyLinks = [
   { href: "/privacy", label: "Privacy Policy" },
@@ -61,7 +69,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Tools links */}
+          {/* Tools + category links */}
           <div>
             <h3 className="font-h3 text-h3 text-on-secondary mb-md">Tools</h3>
             <ul className="space-y-sm">
@@ -76,6 +84,25 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            {categoryLinks.length > 0 && (
+              <>
+                <h3 className="font-h3 text-h3 text-on-secondary mb-md mt-lg">
+                  Categories
+                </h3>
+                <ul className="space-y-sm">
+                  {categoryLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="font-small text-small text-surface-variant hover:text-primary-container transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
 
           {/* Company links */}

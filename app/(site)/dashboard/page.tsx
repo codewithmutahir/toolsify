@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import DashboardOverview from "@/components/dashboard/DashboardOverview";
+import DashboardShell from "@/components/dashboard/DashboardShell";
 
 export const metadata: Metadata = {
   title: "Dashboard | Toolsify",
-  description: "Your Toolsify dashboard — saved tools and history coming soon.",
+  description: "Your Toolsify dashboard — favorites, history, and tool requests.",
 };
 
 export default async function DashboardPage() {
@@ -14,14 +16,11 @@ export default async function DashboardPage() {
   const user = await currentUser();
 
   return (
-    <div className="max-w-container-max mx-auto px-gutter py-2xl">
-      <h1 className="font-h1 text-h1 text-on-surface mb-md">
-        Welcome back, {user?.firstName ?? "there"}!
-      </h1>
-      <p className="font-body text-body text-on-surface-variant">
-        Your dashboard is coming soon. Tools history and favorites will appear
-        here.
-      </p>
-    </div>
+    <DashboardShell
+      title={`Welcome back, ${user?.firstName ?? "there"}!`}
+      description="Your personal hub for saved tools, recent activity, and feature requests."
+    >
+      <DashboardOverview />
+    </DashboardShell>
   );
 }

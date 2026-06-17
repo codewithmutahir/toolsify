@@ -85,6 +85,7 @@ export const userButtonAppearance: Appearance = {
       "hover:bg-surface-container-low rounded-lg",
     userButtonPopoverActionButtonText:
       "font-body text-body text-on-surface",
+    userButtonPopoverFooter: "hidden",
   },
   variables: {
     colorPrimary: "#ff6b35",

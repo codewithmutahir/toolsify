@@ -39,7 +39,14 @@ export default function WordCounter() {
     { label: "No spaces", value: stats.charactersNoSpaces },
     { label: "Sentences", value: stats.sentences },
     { label: "Paragraphs", value: stats.paragraphs },
-    { label: "Reading time", value: `${stats.readingTimeMinutes} min` },
+    { label: "Reading time", value: stats.words > 0 ? `${stats.readingTimeMinutes} min` : "—" },
+    {
+      label: "Reading level",
+      value: stats.fleschKincaidGrade !== null
+        ? `Grade ${stats.fleschKincaidGrade}`
+        : "—",
+    },
+    { label: "Difficulty", value: stats.readingLevel },
   ];
 
   return (
@@ -73,7 +80,7 @@ export default function WordCounter() {
           className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all resize-y min-h-[200px] mb-xl"
         />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-md mb-xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-md mb-xl">
           {statItems.map((item) => (
             <div
               key={item.label}
