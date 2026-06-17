@@ -21,6 +21,7 @@ export default function HashGenerator() {
   const [fileBuffer, setFileBuffer] = useState<ArrayBuffer | null>(null);
   const [hashes, setHashes] = useState<Record<string, string> | null>(null);
   const [loading, setLoading] = useState(false);
+  const [fileError, setFileError] = useState<string | null>(null);
 
   const debouncedText = useDebouncedValue(text, 200);
 
@@ -34,10 +35,20 @@ export default function HashGenerator() {
         return;
       }
       setLoading(true);
-      const result = await hashAll(debouncedText);
-      if (!cancelled) {
-        setHashes(result);
-        setLoading(false);
+      try {
+        const result = await hashAll(debouncedText);
+        if (!cancelled) {
+          setHashes(result);
+        }
+      } catch (error) {
+        console.error("Failed to compute hashes:", error);
+        if (!cancelled) {
+          setHashes(null);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     }
     compute();
@@ -51,12 +62,21 @@ export default function HashGenerator() {
     if (!file) return;
 
     setLoading(true);
+    setFileError(null);
     setFileName(file.name);
-    const buffer = await file.arrayBuffer();
-    setFileBuffer(buffer);
-    const result = await hashAll(buffer);
-    setHashes(result);
-    setLoading(false);
+    try {
+      const buffer = await file.arrayBuffer();
+      setFileBuffer(buffer);
+      const result = await hashAll(buffer);
+      setHashes(result);
+    } catch (error) {
+      console.error("Failed to hash file:", error);
+      setFileError("Failed to read or hash the selected file.");
+      setHashes(null);
+      setFileBuffer(null);
+    } finally {
+      setLoading(false);
+    }
   }
 
   const schema = {
@@ -164,6 +184,10 @@ export default function HashGenerator() {
           <p className="font-body text-small text-on-surface-variant mb-lg">
             Computing hashes...
           </p>
+        )}
+
+        {fileError && (
+          <p className="font-body text-small text-error mb-lg">{fileError}</p>
         )}
 
         {hashes && (

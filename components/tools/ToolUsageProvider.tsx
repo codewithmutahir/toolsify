@@ -23,7 +23,7 @@ export function useReportToolUsage() {
 }
 
 function isMeaningfulInteraction(target: EventTarget | null): boolean {
-  if (!(target instanceof HTMLElement)) return false;
+  if (!(target instanceof Element)) return false;
 
   const el = target.closest(
     "input, textarea, select, button"

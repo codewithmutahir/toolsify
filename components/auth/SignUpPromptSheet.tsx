@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 type SignUpPromptSheetProps = {
   open: boolean;
   onDismiss: () => void;
 };
+
+const FOCUSABLE_SELECTOR =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 const benefits = [
   {
@@ -33,11 +36,41 @@ export default function SignUpPromptSheet({
   open,
   onDismiss,
 }: SignUpPromptSheetProps) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     if (!open) return;
 
+    previousFocusRef.current = document.activeElement as HTMLElement | null;
+
+    const panel = panelRef.current;
+    const focusableElements = panel?.querySelectorAll<HTMLElement>(
+      FOCUSABLE_SELECTOR
+    );
+    focusableElements?.[0]?.focus();
+
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") onDismiss();
+      if (event.key === "Escape") {
+        onDismiss();
+        return;
+      }
+
+      if (event.key !== "Tab" || !panel) return;
+
+      const focusable = panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
 
     const previousOverflow = document.body.style.overflow;
@@ -47,6 +80,7 @@ export default function SignUpPromptSheet({
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
+      previousFocusRef.current?.focus();
     };
   }, [open, onDismiss]);
 
@@ -61,6 +95,7 @@ export default function SignUpPromptSheet({
       onClick={onDismiss}
     >
       <div
+        ref={panelRef}
         className={cn(
           "relative bg-surface-container-lowest w-full md:max-w-[520px]",
           "rounded-t-2xl md:rounded-2xl shadow-xl",

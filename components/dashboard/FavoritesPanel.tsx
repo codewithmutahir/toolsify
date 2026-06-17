@@ -7,6 +7,7 @@ import ToolCard from "@/components/tools/ToolCard";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { getToolBySlug } from "@/constants/tools";
 import { getFavorites } from "@/lib/user-tool-data";
+import type { Tool } from "@/types/tool";
 
 export default function FavoritesPanel() {
   const { user, isLoaded } = useUser();
@@ -23,7 +24,7 @@ export default function FavoritesPanel() {
 
   const favoriteTools = favoriteSlugs
     .map((slug) => getToolBySlug(slug))
-    .filter(Boolean);
+    .filter((tool): tool is Tool => tool !== undefined);
 
   if (favoriteTools.length === 0) {
     return (
@@ -40,7 +41,7 @@ export default function FavoritesPanel() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
       {favoriteTools.map((tool) => (
-        <ToolCard key={tool!.slug} tool={tool!} variant="listing" />
+        <ToolCard key={tool.slug} tool={tool} variant="listing" />
       ))}
     </div>
   );

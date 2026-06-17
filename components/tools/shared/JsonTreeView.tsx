@@ -14,16 +14,22 @@ function getValueType(value: unknown): string {
   return typeof value;
 }
 
+function isObject(value: unknown): value is object {
+  return typeof value === "object" && value !== null;
+}
+
 function JsonNode({
   label,
   value,
   depth = 0,
   defaultOpen = true,
+  visited = new WeakSet<object>(),
 }: {
   label?: string;
   value: unknown;
   depth?: number;
   defaultOpen?: boolean;
+  visited?: WeakSet<object>;
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const type = getValueType(value);
@@ -47,6 +53,24 @@ function JsonNode({
         <PrimitiveValue value={value} />
       </div>
     );
+  }
+
+  if (isObject(value) && visited.has(value)) {
+    return (
+      <div
+        className="flex items-start gap-xs py-0.5 font-mono text-small"
+        style={{ paddingLeft: depth * 16 }}
+      >
+        {label !== undefined && (
+          <span className="text-on-surface-variant shrink-0">{label}:</span>
+        )}
+        <span className="text-on-surface-variant italic">[Circular]</span>
+      </div>
+    );
+  }
+
+  if (isObject(value)) {
+    visited.add(value);
   }
 
   const bracketOpen = type === "array" ? "[" : "{";
@@ -85,6 +109,7 @@ function JsonNode({
               value={child}
               depth={depth + 1}
               defaultOpen={depth < 1}
+              visited={visited}
             />
           ))}
           <div style={{ paddingLeft: depth * 16 }} className="text-on-surface">
@@ -123,7 +148,7 @@ export default function JsonTreeView({ data, className }: JsonTreeViewProps) {
         className
       )}
     >
-      <JsonNode value={data} defaultOpen />
+      <JsonNode value={data} defaultOpen visited={new WeakSet()} />
     </div>
   );
 }

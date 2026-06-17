@@ -20,12 +20,15 @@ export const caseModes: { id: CaseMode; label: string }[] = [
 function toTitleCase(text: string): string {
   return text
     .toLowerCase()
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+    .replace(/(^|\s)(\w)/g, (_, sep, letter) => sep + letter.toUpperCase());
 }
 
 function toSentenceCase(text: string): string {
   const lower = text.toLowerCase();
-  return lower.charAt(0).toUpperCase() + lower.slice(1);
+  return lower.replace(
+    /(^|[.!?]\s+)([a-z])/g,
+    (_, prefix, letter) => prefix + letter.toUpperCase()
+  );
 }
 
 function toCamelCase(text: string): string {

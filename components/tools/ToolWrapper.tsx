@@ -33,9 +33,7 @@ export default function ToolWrapper({
     <main className="max-w-container-max mx-auto px-gutter md:px-xl py-lg">
       <ToolHeader title={title} description={description} category={category} />
 
-      <div className="flex justify-end -mt-md mb-md">
-        <FavoriteButton slug={slug} />
-      </div>
+      <FavoriteButton slug={slug} />
 
       {adsEnabled && (
         <AdBanner slot="leaderboard-top" format="leaderboard" className="mb-xl" />

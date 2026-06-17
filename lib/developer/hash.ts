@@ -1,4 +1,34 @@
-export function md5(input: string): string {
+function utf8Encode(str: string): number[] {
+  const bytes: number[] = [];
+  for (let i = 0; i < str.length; i += 1) {
+    let code = str.charCodeAt(i);
+    if (code < 0x80) {
+      bytes.push(code);
+    } else if (code < 0x800) {
+      bytes.push(0xc0 | (code >> 6), 0x80 | (code & 0x3f));
+    } else if (code < 0xd800 || code >= 0xe000) {
+      bytes.push(
+        0xe0 | (code >> 12),
+        0x80 | ((code >> 6) & 0x3f),
+        0x80 | (code & 0x3f)
+      );
+    } else {
+      i += 1;
+      code =
+        0x10000 +
+        (((code & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff));
+      bytes.push(
+        0xf0 | (code >> 18),
+        0x80 | ((code >> 12) & 0x3f),
+        0x80 | ((code >> 6) & 0x3f),
+        0x80 | (code & 0x3f)
+      );
+    }
+  }
+  return bytes;
+}
+
+function md5FromBytes(initialBytes: number[] | Uint8Array): string {
   function rotateLeft(value: number, shift: number): number {
     return (value << shift) | (value >>> (32 - shift));
   }
@@ -12,37 +42,7 @@ export function md5(input: string): string {
     return hex;
   }
 
-  function utf8Encode(str: string): number[] {
-    const bytes: number[] = [];
-    for (let i = 0; i < str.length; i += 1) {
-      let code = str.charCodeAt(i);
-      if (code < 0x80) {
-        bytes.push(code);
-      } else if (code < 0x800) {
-        bytes.push(0xc0 | (code >> 6), 0x80 | (code & 0x3f));
-      } else if (code < 0xd800 || code >= 0xe000) {
-        bytes.push(
-          0xe0 | (code >> 12),
-          0x80 | ((code >> 6) & 0x3f),
-          0x80 | (code & 0x3f)
-        );
-      } else {
-        i += 1;
-        code =
-          0x10000 +
-          (((code & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff));
-        bytes.push(
-          0xf0 | (code >> 18),
-          0x80 | ((code >> 12) & 0x3f),
-          0x80 | ((code >> 6) & 0x3f),
-          0x80 | (code & 0x3f)
-        );
-      }
-    }
-    return bytes;
-  }
-
-  const bytes = utf8Encode(input);
+  const bytes = Array.from(initialBytes);
   const originalLength = bytes.length * 8;
   bytes.push(0x80);
   while (bytes.length % 64 !== 56) bytes.push(0);
@@ -116,6 +116,12 @@ export function md5(input: string): string {
   return [a0, b0, c0, d0].map(toHex).join("");
 }
 
+export function md5(input: string | Uint8Array): string {
+  const bytes =
+    typeof input === "string" ? utf8Encode(input) : Array.from(input);
+  return md5FromBytes(bytes);
+}
+
 export async function shaHash(
   algorithm: "SHA-1" | "SHA-256" | "SHA-512",
   input: string | ArrayBuffer
@@ -133,7 +139,6 @@ export async function shaHash(
 export async function hashAll(
   input: string | ArrayBuffer
 ): Promise<Record<"MD5" | "SHA-1" | "SHA-256" | "SHA-512", string>> {
-  const text = typeof input === "string" ? input : null;
   const [sha1, sha256, sha512] = await Promise.all([
     shaHash("SHA-1", input),
     shaHash("SHA-256", input),
@@ -141,18 +146,11 @@ export async function hashAll(
   ]);
 
   return {
-    MD5: text !== null ? md5(text) : md5FromBuffer(input as ArrayBuffer),
+    MD5: md5(
+      typeof input === "string" ? input : new Uint8Array(input as ArrayBuffer)
+    ),
     "SHA-1": sha1,
     "SHA-256": sha256,
     "SHA-512": sha512,
   };
-}
-
-function md5FromBuffer(buffer: ArrayBuffer): string {
-  const bytes = new Uint8Array(buffer);
-  let binary = "";
-  for (let i = 0; i < bytes.length; i += 1) {
-    binary += String.fromCharCode(bytes[i]);
-  }
-  return md5(binary);
 }

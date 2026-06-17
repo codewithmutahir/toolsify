@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface CopyButtonProps {
@@ -14,13 +14,33 @@ export default function CopyButton({
   label = "Copy",
   className,
 }: CopyButtonProps) {
-  const [copied, setCopied] = useState(false);
+  const [feedback, setFeedback] = useState<"copied" | "error" | null>(null);
+  const feedbackTimeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (feedbackTimeoutRef.current !== null) {
+        window.clearTimeout(feedbackTimeoutRef.current);
+      }
+    };
+  }, []);
 
   async function handleCopy() {
     if (!value) return;
-    await navigator.clipboard.writeText(value);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(value);
+      setFeedback("copied");
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      setFeedback("error");
+    }
+    if (feedbackTimeoutRef.current !== null) {
+      window.clearTimeout(feedbackTimeoutRef.current);
+    }
+    feedbackTimeoutRef.current = window.setTimeout(() => {
+      setFeedback(null);
+      feedbackTimeoutRef.current = null;
+    }, 2000);
   }
 
   return (
@@ -34,9 +54,17 @@ export default function CopyButton({
       )}
     >
       <span className="material-symbols-outlined text-sm">
-        {copied ? "check" : "content_copy"}
+        {feedback === "copied"
+          ? "check"
+          : feedback === "error"
+            ? "error"
+            : "content_copy"}
       </span>
-      {copied ? "Copied" : label}
+      {feedback === "copied"
+        ? "Copied"
+        : feedback === "error"
+          ? "Copy failed"
+          : label}
     </button>
   );
 }

@@ -12,6 +12,11 @@ const DEFAULT_STATE: ToolUsageState = {
   lastPromptedAtCount: 0,
 };
 
+function toUsageCount(value: unknown): number {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
+}
+
 function readState(): ToolUsageState {
   if (typeof window === "undefined") return DEFAULT_STATE;
 
@@ -21,8 +26,8 @@ function readState(): ToolUsageState {
 
     const parsed = JSON.parse(raw) as Partial<ToolUsageState>;
     return {
-      totalMeaningfulUses: parsed.totalMeaningfulUses ?? 0,
-      lastPromptedAtCount: parsed.lastPromptedAtCount ?? 0,
+      totalMeaningfulUses: toUsageCount(parsed.totalMeaningfulUses),
+      lastPromptedAtCount: toUsageCount(parsed.lastPromptedAtCount),
     };
   } catch {
     return DEFAULT_STATE;
@@ -31,7 +36,11 @@ function readState(): ToolUsageState {
 
 function writeState(state: ToolUsageState) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (error) {
+    console.error("Failed to persist tool usage state:", error);
+  }
 }
 
 export function shouldShowPrompt(state: ToolUsageState): boolean {
