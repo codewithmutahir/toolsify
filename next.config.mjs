@@ -1,18 +1,55 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === "production";
 
+/** Clerk FAPI host is embedded in the publishable key (dev + prod instances differ). */
+function getClerkFapiOrigin() {
+  const key = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  if (!key) return null;
+
+  const encoded = key.replace(/^pk_(test|live)_/, "");
+  try {
+    const host = Buffer.from(encoded, "base64")
+      .toString("utf-8")
+      .replace(/\$$/, "");
+    if (!host) return null;
+    return host.startsWith("http") ? host : `https://${host}`;
+  } catch {
+    return null;
+  }
+}
+
+const clerkFapiOrigin = getClerkFapiOrigin();
+const clerkOrigins = [
+  "https://*.clerk.accounts.dev",
+  "https://*.clerk.com",
+  ...(clerkFapiOrigin ? [clerkFapiOrigin] : []),
+].join(" ");
+
+const scriptSrc = [
+  "'self'",
+  "'unsafe-inline'",
+  ...(isProduction ? [] : ["'unsafe-eval'"]),
+  clerkOrigins,
+  "https://challenges.cloudflare.com",
+  "https://us-assets.i.posthog.com",
+  "https://www.googletagmanager.com",
+  "https://www.google-analytics.com",
+  "https://pagead2.googlesyndication.com",
+  "https://va.vercel-scripts.com",
+].join(" ");
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com https://us-assets.i.posthog.com https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://va.vercel-scripts.com",
+  `script-src ${scriptSrc}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https://img.clerk.com https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com",
   "font-src 'self' https://fonts.gstatic.com data:",
-  "connect-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://us.i.posthog.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://pagead2.googlesyndication.com https://vitals.vercel-insights.com",
-  "frame-src 'self' https://*.clerk.accounts.dev https://*.clerk.com https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com",
+  `connect-src 'self' ${clerkOrigins} https://clerk-telemetry.com https://*.clerk-telemetry.com https://us.i.posthog.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://pagead2.googlesyndication.com https://vitals.vercel-insights.com`,
+  `frame-src 'self' ${clerkOrigins} https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com`,
   "worker-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
-  "form-action 'self' https://*.clerk.accounts.dev https://*.clerk.com",
+  `form-action 'self' ${clerkOrigins}`,
   "frame-ancestors 'none'",
   ...(isProduction ? ["upgrade-insecure-requests"] : []),
 ].join("; ");
