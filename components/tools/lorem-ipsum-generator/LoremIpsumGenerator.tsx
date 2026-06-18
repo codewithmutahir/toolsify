@@ -12,11 +12,25 @@ export default function LoremIpsumGenerator() {
   const [paragraphs, setParagraphs] = useState("3");
   const [wrapHtml, setWrapHtml] = useState(false);
   const [output, setOutput] = useState("");
+  const [copyFeedback, setCopyFeedback] = useState<"copied" | "error" | null>(
+    null
+  );
 
   const generate = useCallback(() => {
     const count = parseInt(paragraphs, 10) || 1;
     setOutput(generateLoremIpsum(count, wrapHtml));
   }, [paragraphs, wrapHtml]);
+
+  const copyOutput = async () => {
+    try {
+      await navigator.clipboard.writeText(output);
+      setCopyFeedback("copied");
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      setCopyFeedback("error");
+    }
+    window.setTimeout(() => setCopyFeedback(null), 2000);
+  };
 
   const schema = {
     "@context": "https://schema.org",
@@ -85,10 +99,14 @@ export default function LoremIpsumGenerator() {
               <p className="font-label text-label text-on-surface-variant uppercase font-bold">Output</p>
               <button
                 type="button"
-                onClick={() => navigator.clipboard.writeText(output)}
+                onClick={copyOutput}
                 className="text-primary-container font-label text-label font-bold hover:opacity-80"
               >
-                Copy
+                {copyFeedback === "copied"
+                  ? "Copied"
+                  : copyFeedback === "error"
+                    ? "Copy failed"
+                    : "Copy"}
               </button>
             </div>
             <textarea

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RequestToolCta from "@/components/tools/RequestToolCta";
 import { categories } from "@/constants/categories";
 import { getFeaturedTools, getImplementedTools } from "@/constants/tools";
 
@@ -17,10 +18,9 @@ const categoryLinks = categories
   }));
 
 const companyLinks = [
-  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms of Service" },
   { href: "/contact", label: "Contact Us" },
-  { href: "/api-status", label: "API Status" },
 ];
 
 const socialLinks = [
@@ -122,26 +122,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h3 className="font-h3 text-h3 text-on-secondary mb-md">Newsletter</h3>
-            <p className="font-small text-small text-surface-variant mb-md">
-              Get updates on new tools and features.
-            </p>
-            <form className="flex gap-sm">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 bg-inverse-surface border border-outline-variant rounded-lg px-md py-sm font-small text-small text-inverse-on-surface placeholder:text-surface-variant focus:ring-2 focus:ring-primary-container outline-none"
-              />
-              <button
-                type="submit"
-                className="bg-primary-container text-on-primary-container px-md py-sm rounded-lg font-label text-label hover:opacity-90 active:scale-95 transition-all shrink-0"
-              >
-                Join
-              </button>
-            </form>
-          </div>
+          <RequestToolCta
+            variant="compact"
+            description="Suggest tools we should add to Toolsify."
+          />
         </div>
 
         {/* Bottom bar */}

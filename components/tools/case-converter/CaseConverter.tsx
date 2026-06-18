@@ -30,8 +30,20 @@ export default function CaseConverter() {
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   };
 
-  const copyToClipboard = async (value: string) => {
-    await navigator.clipboard.writeText(value);
+  const [copyFeedback, setCopyFeedback] = useState<{
+    id: string;
+    ok: boolean;
+  } | null>(null);
+
+  const copyToClipboard = async (value: string, id: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopyFeedback({ id, ok: true });
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      setCopyFeedback({ id, ok: false });
+    }
+    window.setTimeout(() => setCopyFeedback(null), 2000);
   };
 
   return (
@@ -75,11 +87,21 @@ export default function CaseConverter() {
                 </p>
                 <button
                   type="button"
-                  onClick={() => copyToClipboard(item.result)}
+                  onClick={() => copyToClipboard(item.result, item.id)}
                   className="text-primary-container font-label text-label font-bold hover:opacity-80 flex items-center gap-xs"
                 >
-                  <span className="material-symbols-outlined text-sm">content_copy</span>
-                  Copy
+                  <span className="material-symbols-outlined text-sm">
+                    {copyFeedback?.id === item.id
+                      ? copyFeedback.ok
+                        ? "check"
+                        : "error"
+                      : "content_copy"}
+                  </span>
+                  {copyFeedback?.id === item.id
+                    ? copyFeedback.ok
+                      ? "Copied"
+                      : "Copy failed"
+                    : "Copy"}
                 </button>
               </div>
               <p className="font-body text-body text-on-surface break-all">{item.result || "—"}</p>

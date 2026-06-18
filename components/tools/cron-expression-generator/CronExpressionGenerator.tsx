@@ -205,6 +205,7 @@ export default function CronExpressionGenerator() {
                       <option value="specific">Specific value</option>
                       <option value="interval">Every N</option>
                       <option value="range">Range</option>
+                      <option value="list">List</option>
                     </select>
 
                     {field.mode === "specific" && (
@@ -264,6 +265,20 @@ export default function CronExpressionGenerator() {
                           className="bg-surface-container-low border border-outline-variant rounded-lg px-md py-sm font-body text-small outline-none"
                         />
                       </div>
+                    )}
+
+                    {field.mode === "list" && (
+                      <input
+                        type="text"
+                        value={field.list}
+                        onChange={(event) =>
+                          updateField(meta.key as keyof CronState, {
+                            list: event.target.value,
+                          })
+                        }
+                        placeholder={`e.g. ${meta.min},${meta.min + 1}`}
+                        className="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-sm font-mono text-small outline-none"
+                      />
                     )}
                   </div>
                 </div>

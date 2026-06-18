@@ -16,8 +16,8 @@ export default function ToolFaq({
     <div className="mt-xl">
       <h2 className="font-h2 text-h2 text-on-surface mb-md">{title}</h2>
       <dl className="space-y-md">
-        {items.map((item) => (
-          <div key={item.question}>
+        {items.map((item, index) => (
+          <div key={index}>
             <dt className="font-h3 text-h3 text-on-surface mb-xs">
               {item.question}
             </dt>

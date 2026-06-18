@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1a2e"/>
+  <rect width="1200" height="630" fill="url(#grad)" opacity="0.5"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16213e"/>
+      <stop offset="1" stop-color="#1a1a2e"/>
+    </linearGradient>
+  </defs>
+  <text x="600" y="280" text-anchor="middle" fill="#E85D04" font-family="system-ui,sans-serif" font-size="96" font-weight="800">Toolsify</text>
+  <text x="600" y="360" text-anchor="middle" fill="#ffffff" opacity="0.85" font-family="system-ui,sans-serif" font-size="36">Free Online Calculators, Converters &amp; Tools</text>
+</svg>

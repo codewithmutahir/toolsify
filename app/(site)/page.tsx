@@ -5,6 +5,7 @@ import AdBanner from "@/components/ads/AdBanner";
 import ToolSearch from "@/components/search/ToolSearch";
 import CategoryCard from "@/components/home/CategoryCard";
 import StatsBar from "@/components/home/StatsBar";
+import RequestToolCta from "@/components/tools/RequestToolCta";
 import JsonLd from "@/components/seo/JsonLd";
 import ToolCard from "@/components/tools/ToolCard";
 import { categories } from "@/constants/categories";
@@ -217,6 +218,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <RequestToolCta />
 
       {/* STATS BAR */}
       <StatsBar />

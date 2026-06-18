@@ -10,6 +10,7 @@ import {
   useState,
 } from "react";
 import ToolSearchDropdown from "@/components/search/ToolSearchDropdown";
+import posthog from "@/lib/posthog";
 import { searchTools } from "@/lib/search-tools";
 import { cn } from "@/lib/utils";
 import { Tool } from "@/types/tool";
@@ -83,15 +84,28 @@ export default function ToolSearch({
     [onNavigate, router]
   );
 
+  const trackSearch = useCallback(
+    (searchQuery: string, searchResults: Tool[]) => {
+      if (!process.env.NEXT_PUBLIC_POSTHOG_KEY) return;
+      posthog.capture("search_performed", {
+        query: searchQuery,
+        results_count: searchResults.length,
+        found_result: searchResults.length > 0,
+      });
+    },
+    []
+  );
+
   const navigateToFullSearch = useCallback(() => {
     const trimmed = query.trim();
     if (!trimmed) return;
 
+    trackSearch(trimmed, results);
     setIsOpen(false);
     setActiveIndex(-1);
     onNavigate?.();
     router.push(`/tools?q=${encodeURIComponent(trimmed)}`);
-  }, [onNavigate, query, router]);
+  }, [onNavigate, query, results, router, trackSearch]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (!showDropdown && event.key === "Enter" && query.trim()) {

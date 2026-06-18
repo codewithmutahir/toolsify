@@ -20,37 +20,42 @@ type UserToolData = {
 const STORAGE_PREFIX = "toolsify_user_data";
 const MAX_HISTORY = 20;
 
-const DEFAULT_DATA: UserToolData = {
-  favorites: [],
-  history: [],
-  requests: [],
-};
+function defaultData(): UserToolData {
+  return {
+    favorites: [],
+    history: [],
+    requests: [],
+  };
+}
 
 function getStorageKey(userId: string): string {
   return `${STORAGE_PREFIX}_${userId}`;
 }
 
 function readData(userId: string): UserToolData {
-  if (typeof window === "undefined") return DEFAULT_DATA;
+  if (typeof window === "undefined") return defaultData();
 
   try {
     const raw = localStorage.getItem(getStorageKey(userId));
-    if (!raw) return DEFAULT_DATA;
+    if (!raw) return defaultData();
 
     const parsed = JSON.parse(raw) as Partial<UserToolData>;
     return {
-      favorites: parsed.favorites ?? [],
-      history: parsed.history ?? [],
-      requests: parsed.requests ?? [],
+      favorites: Array.isArray(parsed.favorites) ? parsed.favorites : [],
+      history: Array.isArray(parsed.history) ? parsed.history : [],
+      requests: Array.isArray(parsed.requests) ? parsed.requests : [],
     };
   } catch {
-    return DEFAULT_DATA;
+    return defaultData();
   }
 }
 
 function writeData(userId: string, data: UserToolData) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(getStorageKey(userId), JSON.stringify(data));
+  try {
+    localStorage.setItem(getStorageKey(userId), JSON.stringify(data));
+  } catch {
+  }
 }
 
 export function getFavorites(userId: string): string[] {

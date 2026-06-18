@@ -1,4 +1,4 @@
-export type CronFieldMode = "every" | "specific" | "interval" | "range";
+export type CronFieldMode = "every" | "specific" | "interval" | "range" | "list";
 
 export interface CronFieldState {
   mode: CronFieldMode;
@@ -6,6 +6,7 @@ export interface CronFieldState {
   interval: number;
   rangeStart: number;
   rangeEnd: number;
+  list: string;
 }
 
 export interface CronState {
@@ -31,6 +32,7 @@ export function defaultCronField(min: number): CronFieldState {
     interval: 1,
     rangeStart: min,
     rangeEnd: min + 1,
+    list: String(min),
   };
 }
 
@@ -58,6 +60,8 @@ export function fieldToCronPart(
       return `*/${clamp(field.interval, 1, max)}`;
     case "range":
       return `${clamp(field.rangeStart, min, max)}-${clamp(field.rangeEnd, min, max)}`;
+    case "list":
+      return field.list;
     default:
       return "*";
   }
@@ -105,11 +109,44 @@ export function parseCronExpression(expression: string): {
   }
 }
 
+function validateCronSubPart(part: string, min: number, max: number): void {
+  const trimmed = part.trim();
+  if (trimmed === "*") return;
+  if (trimmed.startsWith("*/")) {
+    const interval = Number(trimmed.slice(2));
+    if (Number.isNaN(interval) || interval < 1) {
+      throw new Error(`Invalid interval: ${part}`);
+    }
+    return;
+  }
+  if (trimmed.includes("-")) {
+    const [start, end] = trimmed.split("-").map(Number);
+    if ([start, end].some(Number.isNaN)) {
+      throw new Error(`Invalid range: ${part}`);
+    }
+    if (start < min || end > max || start > end) {
+      throw new Error(`Out of range: ${part}`);
+    }
+    return;
+  }
+  const specific = Number(trimmed);
+  if (Number.isNaN(specific)) {
+    throw new Error(`Invalid value: ${part}`);
+  }
+  if (specific < min || specific > max) {
+    throw new Error(`Out of range: ${part}`);
+  }
+}
+
 function parseCronPart(
   part: string,
   min: number,
   max: number
 ): CronFieldState {
+  if (part.includes(",")) {
+    part.split(",").forEach((item) => validateCronSubPart(item, min, max));
+    return { ...defaultCronField(min), mode: "list", list: part };
+  }
   if (part === "*") {
     return { ...defaultCronField(min), mode: "every" };
   }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import DOMPurify from "dompurify";
+import createDOMPurify from "dompurify";
 import { marked } from "marked";
 import JsonLd from "@/components/seo/JsonLd";
 import CopyButton from "@/components/tools/shared/CopyButton";
@@ -50,7 +50,8 @@ export default function MarkdownEditor() {
 
   const html = useMemo(() => {
     const raw = marked.parse(markdown, { async: false }) as string;
-    return DOMPurify.sanitize(raw);
+    if (typeof window === "undefined") return "";
+    return createDOMPurify(window).sanitize(raw);
   }, [markdown]);
 
   function applyToolbarAction(action: ToolbarAction) {

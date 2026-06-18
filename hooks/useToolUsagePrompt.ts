@@ -2,6 +2,8 @@
 
 import { useAuth } from "@clerk/nextjs";
 import { useCallback, useRef, useState } from "react";
+import { getToolBySlug } from "@/constants/tools";
+import posthog from "@/lib/posthog";
 import {
   markPromptShown,
   recordMeaningfulUse,
@@ -19,6 +21,14 @@ export function useToolUsagePrompt(slug: string) {
     if (reportedThisVisit.current) return;
 
     reportedThisVisit.current = true;
+
+    const tool = getToolBySlug(slug);
+    if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+      posthog.capture("tool_used", {
+        tool_slug: slug,
+        tool_category: tool?.category ?? "unknown",
+      });
+    }
 
     if (isSignedIn && userId) {
       recordToolHistory(userId, slug);

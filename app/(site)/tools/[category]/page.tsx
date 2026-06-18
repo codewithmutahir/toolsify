@@ -6,7 +6,7 @@ import { generateCategoryMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
 import CategoryHero from "@/components/tools/CategoryHero";
 import JsonLd from "@/components/seo/JsonLd";
-import NewsletterCta from "@/components/tools/NewsletterCta";
+import RequestToolCta from "@/components/tools/RequestToolCta";
 import ToolCard from "@/components/tools/ToolCard";
 
 type CategoryPageProps = {
@@ -111,8 +111,8 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         </div>
       </section>
 
-      <NewsletterCta
-        description={`Get notified when we add new ${category.title.toLowerCase()} calculators or utility tools to our platform.`}
+      <RequestToolCta
+        description={`Signed-in members can request new ${category.title.toLowerCase()} calculators or utility tools for our roadmap.`}
       />
     </>
   );

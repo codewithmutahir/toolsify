@@ -22,14 +22,22 @@ const PALETTE_SECTIONS = [
 
 export default function ColorPaletteGenerator() {
   const [baseColor, setBaseColor] = useState("#FF6B35");
-  const [copiedHex, setCopiedHex] = useState<string | null>(null);
+  const [copyFeedback, setCopyFeedback] = useState<{
+    hex: string;
+    ok: boolean;
+  } | null>(null);
 
   const palettes = useMemo(() => generatePalettes(baseColor), [baseColor]);
 
   async function copyHex(hex: string) {
-    await navigator.clipboard.writeText(hex);
-    setCopiedHex(hex);
-    window.setTimeout(() => setCopiedHex(null), 1500);
+    try {
+      await navigator.clipboard.writeText(hex);
+      setCopyFeedback({ hex, ok: true });
+    } catch (error) {
+      console.error("Failed to copy to clipboard:", error);
+      setCopyFeedback({ hex, ok: false });
+    }
+    window.setTimeout(() => setCopyFeedback(null), 1500);
   }
 
   const schema = {
@@ -135,9 +143,11 @@ export default function ColorPaletteGenerator() {
                           {swatch.label}
                         </p>
                       )}
-                      {copiedHex === swatch.hex && (
-                        <p className="font-label text-label text-tertiary">
-                          Copied!
+                      {copyFeedback?.hex === swatch.hex && (
+                        <p
+                          className={`font-label text-label ${copyFeedback.ok ? "text-tertiary" : "text-error"}`}
+                        >
+                          {copyFeedback.ok ? "Copied!" : "Copy failed"}
                         </p>
                       )}
                     </button>
