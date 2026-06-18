@@ -11,7 +11,13 @@ export function getContactEmail() {
 }
 
 export function getResendFromAddress() {
-  return (
-    process.env.RESEND_FROM_EMAIL ?? "Toolsify <onboarding@resend.dev>"
-  );
+  const fromEmail = process.env.RESEND_FROM_EMAIL;
+
+  if (process.env.NODE_ENV === "production" && !fromEmail) {
+    throw new Error(
+      "RESEND_FROM_EMAIL must be set in production. The onboarding@resend.dev domain is only available in non-production environments."
+    );
+  }
+
+  return fromEmail ?? "Toolsify <onboarding@resend.dev>";
 }

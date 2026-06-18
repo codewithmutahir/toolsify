@@ -1,14 +1,33 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
+  checkRateLimit,
+  getClientIp,
+  rateLimitResponse,
+} from "@/lib/rate-limit";
+import {
   getContactEmail,
   getResendClient,
   getResendFromAddress,
 } from "@/lib/resend";
+import { escapeHtml } from "@/lib/utils";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: NextRequest) {
   try {
+    const ipLimit = await checkRateLimit(getClientIp(request), {
+      prefix: "contact:ip",
+      limit: 5,
+      window: "1 h",
+    });
+
+    if (!ipLimit.allowed) {
+      return NextResponse.json(rateLimitResponse(ipLimit.retryAfter), {
+        status: 429,
+        headers: { "Retry-After": String(ipLimit.retryAfter) },
+      });
+    }
+
     const { name, email, subject, message } = await request.json();
 
     if (!name?.trim() || name.trim().length < 2) {
@@ -20,6 +39,21 @@ export async function POST(request: NextRequest) {
         { error: "Valid email is required" },
         { status: 400 }
       );
+    }
+
+    const trimmedEmail = email.trim().toLowerCase();
+
+    const emailLimit = await checkRateLimit(trimmedEmail, {
+      prefix: "contact:email",
+      limit: 3,
+      window: "1 h",
+    });
+
+    if (!emailLimit.allowed) {
+      return NextResponse.json(rateLimitResponse(emailLimit.retryAfter), {
+        status: 429,
+        headers: { "Retry-After": String(emailLimit.retryAfter) },
+      });
     }
 
     if (!message?.trim() || message.trim().length < 10) {
@@ -40,7 +74,6 @@ export async function POST(request: NextRequest) {
     }
 
     const trimmedName = name.trim();
-    const trimmedEmail = email.trim();
     const trimmedSubject = subject?.trim() || "General inquiry";
     const trimmedMessage = message.trim();
 
@@ -51,11 +84,11 @@ export async function POST(request: NextRequest) {
       subject: `📬 Contact: ${trimmedSubject}`,
       html: `
         <h2>New Contact Message</h2>
-        <p><strong>Name:</strong> ${trimmedName}</p>
-        <p><strong>Email:</strong> ${trimmedEmail}</p>
-        <p><strong>Subject:</strong> ${trimmedSubject}</p>
+        <p><strong>Name:</strong> ${escapeHtml(trimmedName)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(trimmedEmail)}</p>
+        <p><strong>Subject:</strong> ${escapeHtml(trimmedSubject)}</p>
         <p><strong>Message:</strong></p>
-        <p>${trimmedMessage.replace(/\n/g, "<br/>")}</p>
+        <p>${escapeHtml(trimmedMessage).replace(/\n/g, "<br/>")}</p>
         <hr/>
         <p style="color: #666; font-size: 12px;">Sent from Toolsify contact form</p>
       `,
