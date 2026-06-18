@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { areAdsEnabled } from "@/lib/ads";
 
@@ -13,24 +16,15 @@ const formatSizes: Record<AdBannerProps["format"], string> = {
   skyscraper: "h-[600px] w-full",
 };
 
-export default function AdBanner({ slot, format, className }: AdBannerProps) {
-  if (!areAdsEnabled()) return null;
-
-  const isProd = process.env.NODE_ENV === "production";
-
-  if (isProd) {
-    return (
-      <div
-        data-ad-slot={slot}
-        className={cn(formatSizes[format], className)}
-        aria-label={`Advertisement ${format}`}
-      />
-    );
-  }
-
+function DevAdPlaceholder({
+  format,
+  className,
+}: {
+  format: AdBannerProps["format"];
+  className?: string;
+}) {
   return (
     <div
-      data-ad-slot={slot}
       className={cn(
         "border-2 border-dashed border-outline-variant rounded-xl",
         "bg-surface-container-low flex flex-col items-center justify-center gap-sm",
@@ -46,5 +40,40 @@ export default function AdBanner({ slot, format, className }: AdBannerProps) {
         AD PLACEMENT SPACE
       </p>
     </div>
+  );
+}
+
+declare global {
+  interface Window {
+    adsbygoogle?: Record<string, unknown>[];
+  }
+}
+
+export default function AdBanner({ slot, format, className }: AdBannerProps) {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "production") return;
+    if (!areAdsEnabled()) return;
+
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch {
+      // AdSense may not be loaded yet
+    }
+  }, []);
+
+  if (!areAdsEnabled()) return null;
+
+  if (process.env.NODE_ENV === "development") {
+    return <DevAdPlaceholder format={format} className={className} />;
+  }
+
+  return (
+    <ins
+      className={cn("adsbygoogle block", formatSizes[format], className)}
+      data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}
+      data-ad-slot={slot}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
   );
 }

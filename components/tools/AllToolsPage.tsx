@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
+import RequestToolButton from "@/components/tools/RequestToolButton";
 import { useRouter, useSearchParams } from "next/navigation";
 import { categories } from "@/constants/categories";
 import { tools } from "@/constants/tools";
@@ -158,12 +158,7 @@ export default function AllToolsPage() {
               for the community.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="relative z-10 bg-primary-container text-on-primary px-xl py-md rounded-lg font-label font-bold hover:opacity-90 active:scale-95 transition-all shrink-0"
-          >
-            Request a Tool
-          </Link>
+          <RequestToolButton className="relative z-10" />
         </div>
       </section>
     </main>

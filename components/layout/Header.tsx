@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/tools", label: "All Tools" },
   { href: "/tools/categories", label: "Categories" },
-  { href: "/pricing", label: "Pricing" },
 ] as const;
 
 function isNavLinkActive(pathname: string, label: string, href: string) {
