@@ -36,7 +36,7 @@ function buildFetchOrigins(request: Request): string[] {
   if (process.env.VERCEL_URL) {
     origins.add(`https://${process.env.VERCEL_URL}`);
   }
-  return [...origins];
+  return Array.from(origins);
 }
 
 async function fetchPageHtml(
