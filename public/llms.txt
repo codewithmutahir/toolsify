@@ -2,7 +2,7 @@
 
 > Free online calculators, converters, and utility tools. Fast, accurate, and no signup required.
 
-Toolsify provides browser-based tools for math, finance, fitness, text, design, converters, and developers. Use this file to understand the site structure and preferred pages for indexing or AI-assisted answers.
+Toolsify provides browser-based tools for math, finance, fitness, text, design, converters, and developers. Each tool has a public JSON API. Discover all tools via [/api/tools-index](https://toolsify.online/api/tools-index).
 
 ## Main pages
 
@@ -22,19 +22,41 @@ Toolsify provides browser-based tools for math, finance, fitness, text, design, 
 - [Converters](https://toolsify.online/tools/converter)
 - [Developer Tools](https://toolsify.online/tools/developer)
 
-## Popular tools
+## All tools (28)
 
-- [BMI Calculator](https://toolsify.online/bmi-calculator)
-- [Percentage Calculator](https://toolsify.online/percentage-calculator)
-- [Word Counter](https://toolsify.online/word-counter)
-- [EMI Calculator](https://toolsify.online/emi-calculator)
-- [JSON Formatter](https://toolsify.online/json-formatter)
-- [Color Converter](https://toolsify.online/color-converter)
-- [Unit Converter](https://toolsify.online/unit-converter)
-- [Markdown Editor](https://toolsify.online/markdown-editor)
+- [Percentage Calculator](https://toolsify.online/percentage-calculator) — API: `https://toolsify.online/api/tools/percentage-calculator`
+- [Simple Interest Calculator](https://toolsify.online/simple-interest-calculator) — API: `https://toolsify.online/api/tools/simple-interest-calculator`
+- [Discount Calculator](https://toolsify.online/discount-calculator) — API: `https://toolsify.online/api/tools/discount-calculator`
+- [Average Calculator](https://toolsify.online/average-calculator) — API: `https://toolsify.online/api/tools/average-calculator`
+- [EMI Calculator](https://toolsify.online/emi-calculator) — API: `https://toolsify.online/api/tools/emi-calculator`
+- [Compound Interest Calculator](https://toolsify.online/compound-interest-calculator) — API: `https://toolsify.online/api/tools/compound-interest-calculator`
+- [Salary Calculator](https://toolsify.online/salary-calculator) — API: `https://toolsify.online/api/tools/salary-calculator`
+- [Tip Calculator](https://toolsify.online/tip-calculator) — API: `https://toolsify.online/api/tools/tip-calculator`
+- [Percentage Change Calculator](https://toolsify.online/percentage-change-calculator) — API: `https://toolsify.online/api/tools/percentage-change-calculator`
+- [BMI Calculator](https://toolsify.online/bmi-calculator) — API: `https://toolsify.online/api/tools/bmi-calculator`
+- [Calorie Calculator](https://toolsify.online/calorie-calculator) — API: `https://toolsify.online/api/tools/calorie-calculator`
+- [Ideal Weight Calculator](https://toolsify.online/ideal-weight-calculator) — API: `https://toolsify.online/api/tools/ideal-weight-calculator`
+- [Age Calculator](https://toolsify.online/age-calculator) — API: `https://toolsify.online/api/tools/age-calculator`
+- [Word Counter](https://toolsify.online/word-counter) — API: `https://toolsify.online/api/tools/word-counter`
+- [Character Counter](https://toolsify.online/character-counter) — API: `https://toolsify.online/api/tools/character-counter`
+- [Case Converter](https://toolsify.online/case-converter) — API: `https://toolsify.online/api/tools/case-converter`
+- [Text Repeater](https://toolsify.online/text-repeater) — API: `https://toolsify.online/api/tools/text-repeater`
+- [Lorem Ipsum Generator](https://toolsify.online/lorem-ipsum-generator) — API: `https://toolsify.online/api/tools/lorem-ipsum-generator`
+- [Color Converter](https://toolsify.online/color-converter) — API: `https://toolsify.online/api/tools/color-converter`
+- [Unit Converter](https://toolsify.online/unit-converter) — API: `https://toolsify.online/api/tools/unit-converter`
+- [Regex Tester & Debugger](https://toolsify.online/regex-tester) — API: `https://toolsify.online/api/tools/regex-tester`
+- [JSON Formatter & Validator](https://toolsify.online/json-formatter) — API: `https://toolsify.online/api/tools/json-formatter`
+- [JWT Decoder & Inspector](https://toolsify.online/jwt-decoder) — API: `https://toolsify.online/api/tools/jwt-decoder`
+- [Cron Expression Generator](https://toolsify.online/cron-expression-generator) — API: `https://toolsify.online/api/tools/cron-expression-generator`
+- [CSS Gradient Generator](https://toolsify.online/gradient-generator) — API: `https://toolsify.online/api/tools/gradient-generator`
+- [Color Palette Generator](https://toolsify.online/color-palette-generator) — API: `https://toolsify.online/api/tools/color-palette-generator`
+- [Hash Generator](https://toolsify.online/hash-generator) — API: `https://toolsify.online/api/tools/hash-generator`
+- [Markdown Editor & Preview](https://toolsify.online/markdown-editor) — API: `https://toolsify.online/api/tools/markdown-editor`
 
-## Agent authentication
+## Agent discovery
 
+- [Tool registry API](https://toolsify.online/api/tools-index)
+- [OpenAPI spec](https://toolsify.online/api/openapi)
 - [auth.md](https://toolsify.online/auth.md) — agent registration instructions
 - [OAuth Protected Resource Metadata](https://toolsify.online/.well-known/oauth-protected-resource)
 - [OAuth Authorization Server Metadata](https://toolsify.online/.well-known/oauth-authorization-server)
