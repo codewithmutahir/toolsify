@@ -1,12 +1,17 @@
 "use client";
 
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import AppUserButton from "@/components/auth/AppUserButton";
+import AuthLinksFallback from "@/components/layout/AuthLinksFallback";
 import ToolSearch from "@/components/search/ToolSearch";
 import { cn } from "@/lib/utils";
+
+const HeaderAuthSection = dynamic(
+  () => import("@/components/layout/HeaderAuthSection"),
+  { ssr: false, loading: () => <AuthLinksFallback /> }
+);
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -70,32 +75,9 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Auth (right) */}
+        {/* Auth (right) — Clerk loads after paint to keep LCP off the critical path */}
         <div className="flex items-center gap-md shrink-0">
-          <SignedOut>
-            <Link
-              href="/sign-in"
-              className="hidden sm:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-md py-sm"
-            >
-              Log In
-            </Link>
-            <Link
-              href="/sign-up"
-              className="bg-primary-container text-on-primary font-bold px-lg py-sm rounded-lg hover:brightness-110 active:scale-95 transition-all"
-            >
-              Sign Up
-            </Link>
-          </SignedOut>
-
-          <SignedIn>
-            <Link
-              href="/dashboard"
-              className="hidden lg:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-sm py-sm"
-            >
-              Dashboard
-            </Link>
-            <AppUserButton />
-          </SignedIn>
+          <HeaderAuthSection />
 
           <button
             type="button"
@@ -133,31 +115,6 @@ export default function Header() {
             variant="header"
             onNavigate={() => setMobileOpen(false)}
           />
-          <SignedIn>
-            <Link
-              href="/dashboard"
-              className="font-body text-body text-primary font-semibold hover:underline transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              Dashboard
-            </Link>
-          </SignedIn>
-          <SignedOut>
-            <Link
-              href="/sign-in"
-              className="font-body text-body text-on-surface-variant hover:text-primary transition-colors sm:hidden"
-              onClick={() => setMobileOpen(false)}
-            >
-              Log In
-            </Link>
-            <Link
-              href="/sign-up"
-              className="font-body text-body text-primary font-semibold hover:underline transition-colors sm:hidden"
-              onClick={() => setMobileOpen(false)}
-            >
-              Sign Up
-            </Link>
-          </SignedOut>
         </nav>
       </div>
     </header>
