@@ -3,7 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Suspense } from "react";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import PostHogProvider from "@/components/analytics/PostHogProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
