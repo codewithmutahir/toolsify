@@ -7,7 +7,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import PostHogProvider from "@/components/analytics/PostHogProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
-import MaterialSymbolsStylesheet from "@/components/fonts/MaterialSymbolsStylesheet";
+import WebMcpProvider from "@/components/webmcp/WebMcpProvider";
+import "@fontsource-variable/material-symbols-outlined/full.css";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -68,7 +69,7 @@ export default function RootLayout({
           )}
         </head>
         <body className="font-body antialiased bg-background text-on-background min-h-screen">
-          <MaterialSymbolsStylesheet />
+          <WebMcpProvider />
           <GoogleAnalytics />
           <Suspense fallback={null}>
             <PostHogProvider>{children}</PostHogProvider>

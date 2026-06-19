@@ -2,10 +2,14 @@ import {
   clerkMiddleware,
   createRouteMatcher,
 } from "@clerk/nextjs/server";
+import { handleMarkdownNegotiation } from "@/lib/markdown-negotiation/middleware";
 
 const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
+  const markdownResponse = handleMarkdownNegotiation(req);
+  if (markdownResponse) return markdownResponse;
+
   if (isProtectedRoute(req)) auth().protect();
 });
 

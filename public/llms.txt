@@ -33,6 +33,12 @@ Toolsify provides browser-based tools for math, finance, fitness, text, design, 
 - [Unit Converter](https://toolsify.online/unit-converter)
 - [Markdown Editor](https://toolsify.online/markdown-editor)
 
+## Agent authentication
+
+- [auth.md](https://toolsify.online/auth.md) — agent registration instructions
+- [OAuth Protected Resource Metadata](https://toolsify.online/.well-known/oauth-protected-resource)
+- [OAuth Authorization Server Metadata](https://toolsify.online/.well-known/oauth-authorization-server)
+
 ## Optional
 
 - [Sitemap](https://toolsify.online/sitemap.xml)

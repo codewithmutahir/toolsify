@@ -5,7 +5,7 @@ export default function AuthLinksFallback() {
     <>
       <Link
         href="/sign-in"
-        className="hidden sm:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-md py-sm"
+        className="font-body text-body text-on-surface-variant hover:text-primary font-medium px-md py-sm"
       >
         Log In
       </Link>
