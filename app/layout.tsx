@@ -3,17 +3,20 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Suspense } from "react";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import PostHogProvider from "@/components/analytics/PostHogProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import MaterialSymbolsStylesheet from "@/components/fonts/MaterialSymbolsStylesheet";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   variable: "--font-plus-jakarta",
   display: "swap",
+  adjustFontFallback: true,
+  preload: true,
 });
 
 const inter = Inter({
@@ -21,6 +24,8 @@ const inter = Inter({
   weight: ["400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
+  adjustFontFallback: true,
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -53,21 +58,18 @@ export default function RootLayout({
         className={`${plusJakarta.variable} ${inter.variable} scroll-smooth`}
       >
         <head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-            rel="stylesheet"
-          />
-          <GoogleAnalytics />
           {adsenseClientId && (
             <Script
               async
               src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}`}
               crossOrigin="anonymous"
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
           )}
         </head>
         <body className="font-body antialiased bg-background text-on-background min-h-screen">
+          <MaterialSymbolsStylesheet />
+          <GoogleAnalytics />
           <Suspense fallback={null}>
             <PostHogProvider>{children}</PostHogProvider>
           </Suspense>

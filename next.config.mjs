@@ -85,6 +85,34 @@ const nextConfig = {
         source: "/ads.txt",
         headers: [{ key: "Content-Type", value: "text/plain" }],
       },
+      {
+        source: "/llms.txt",
+        headers: [
+          { key: "Content-Type", value: "text/plain; charset=utf-8" },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      {
+        source: "/_next/static/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/(.*)\\.(svg|ico|webp|avif|png|jpg|jpeg|woff2|woff|ttf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
   compress: true,

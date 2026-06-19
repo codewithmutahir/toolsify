@@ -1,0 +1,39 @@
+# Toolsify
+
+> Free online calculators, converters, and utility tools. Fast, accurate, and no signup required.
+
+Toolsify provides browser-based tools for math, finance, fitness, text, design, converters, and developers. Use this file to understand the site structure and preferred pages for indexing or AI-assisted answers.
+
+## Main pages
+
+- [Home](https://toolsify.online/)
+- [All Tools](https://toolsify.online/tools)
+- [Browse Categories](https://toolsify.online/tools/categories)
+- [Contact](https://toolsify.online/contact)
+- [Privacy Policy](https://toolsify.online/privacy-policy)
+
+## Categories
+
+- [Math & Calculators](https://toolsify.online/tools/math)
+- [Finance](https://toolsify.online/tools/finance)
+- [Fitness & Health](https://toolsify.online/tools/fitness)
+- [Text Tools](https://toolsify.online/tools/text)
+- [Design & Color](https://toolsify.online/tools/color)
+- [Converters](https://toolsify.online/tools/converter)
+- [Developer Tools](https://toolsify.online/tools/developer)
+
+## Popular tools
+
+- [BMI Calculator](https://toolsify.online/bmi-calculator)
+- [Percentage Calculator](https://toolsify.online/percentage-calculator)
+- [Word Counter](https://toolsify.online/word-counter)
+- [EMI Calculator](https://toolsify.online/emi-calculator)
+- [JSON Formatter](https://toolsify.online/json-formatter)
+- [Color Converter](https://toolsify.online/color-converter)
+- [Unit Converter](https://toolsify.online/unit-converter)
+- [Markdown Editor](https://toolsify.online/markdown-editor)
+
+## Optional
+
+- [Sitemap](https://toolsify.online/sitemap.xml)
+- [Robots](https://toolsify.online/robots.txt)
