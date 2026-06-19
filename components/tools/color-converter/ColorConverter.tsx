@@ -1,17 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import JsonLd from "@/components/seo/JsonLd";
-import ToolWrapper from "@/components/tools/ToolWrapper";
-import {
-  colorFromHex,
-  colorFromHsl,
-  colorFromRgb,
-  type ColorValues,
-} from "@/lib/calculators/color-converter";
-import { getToolBySlug } from "@/constants/tools";
-
-const tool = getToolBySlug("color-converter")!;
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useToolApi } from "@/hooks/useToolApi";
+import type { ColorValues } from "@/lib/calculators/color-converter";
 
 const defaultColor: ColorValues = {
   hex: "#FF6B35",
@@ -39,24 +30,39 @@ export default function ColorConverter() {
     setL(String(color.hsl.l));
   }, []);
 
-  useEffect(() => {
+  const requestBody = useMemo(() => {
     if (activeField === "hex") {
-      const color = colorFromHex(hex);
-      if (color) applyColor(color);
+      if (!/^#[0-9A-Fa-f]{6}$/.test(hex)) return null;
+      return { format: "hex", hex };
     }
-  }, [hex, activeField, applyColor]);
+    if (activeField === "rgb") {
+      const rv = parseFloat(r);
+      const gv = parseFloat(g);
+      const bv = parseFloat(b);
+      if (Number.isNaN(rv) || Number.isNaN(gv) || Number.isNaN(bv)) return null;
+      return { format: "rgb", r: rv, g: gv, b: bv };
+    }
+    const hv = parseFloat(h);
+    const sv = parseFloat(s);
+    const lv = parseFloat(l);
+    if (Number.isNaN(hv) || Number.isNaN(sv) || Number.isNaN(lv)) return null;
+    return { format: "hsl", h: hv, s: sv, l: lv };
+  }, [activeField, hex, r, g, b, h, s, l]);
+
+  const { data: colorResult } = useToolApi<ColorValues>(
+    "color-converter",
+    requestBody
+  );
+
+  useEffect(() => {
+    if (colorResult) applyColor(colorResult);
+  }, [colorResult, applyColor]);
 
   const handleRgbChange = (field: "r" | "g" | "b", value: string) => {
     setActiveField("rgb");
     if (field === "r") setR(value);
     if (field === "g") setG(value);
     if (field === "b") setB(value);
-    const color = colorFromRgb(
-      parseFloat(field === "r" ? value : r),
-      parseFloat(field === "g" ? value : g),
-      parseFloat(field === "b" ? value : b)
-    );
-    if (color) applyColor(color);
   };
 
   const handleHslChange = (field: "h" | "s" | "l", value: string) => {
@@ -64,12 +70,6 @@ export default function ColorConverter() {
     if (field === "h") setH(value);
     if (field === "s") setS(value);
     if (field === "l") setL(value);
-    const color = colorFromHsl(
-      parseFloat(field === "h" ? value : h),
-      parseFloat(field === "s" ? value : s),
-      parseFloat(field === "l" ? value : l)
-    );
-    if (color) applyColor(color);
   };
 
   const handleHexChange = (value: string) => {
@@ -79,90 +79,66 @@ export default function ColorConverter() {
 
   const previewColor = hex.match(/^#[0-9A-Fa-f]{6}$/) ? hex : defaultColor.hex;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: tool.title,
-    url: `https://toolsify.online/${tool.slug}`,
-    description: tool.description,
-    applicationCategory: "DesignApplication",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  };
-
   return (
     <>
-      <JsonLd data={schema} />
-      <ToolWrapper
-        title={tool.title}
-        description={tool.description}
-        category={tool.category}
-        slug={tool.slug}
-        seoContent={
-          <>
-            <h2 className="font-h2 text-h2 text-on-surface mb-md">Convert between HEX, RGB, and HSL</h2>
-            <p className="font-body text-body text-on-surface-variant leading-relaxed">
-              Edit any color format and all other fields update automatically. Preview
-              your color in real time — perfect for web design and development.
-            </p>
-          </>
-        }
-      >
-        <div
-          className="w-full h-32 rounded-xl border border-outline-variant mb-xl transition-colors"
-          style={{ backgroundColor: previewColor }}
-        />
+      <div
+        className="w-full h-32 rounded-xl border border-outline-variant mb-xl transition-colors"
+        style={{ backgroundColor: previewColor }}
+      />
 
-        <div className="space-y-lg">
-          <div className="space-y-sm">
-            <label htmlFor="color-hex" className="font-label text-label font-bold text-on-surface uppercase">
-              HEX
-            </label>
-            <input
-              id="color-hex"
-              type="text"
-              value={hex}
-              onChange={(e) => handleHexChange(e.target.value)}
-              className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none uppercase"
-            />
-          </div>
-
-          <div className="grid grid-cols-3 gap-md">
-            {(["r", "g", "b"] as const).map((channel) => (
-              <div key={channel} className="space-y-sm">
-                <label className="font-label text-label font-bold text-on-surface uppercase">
-                  {channel.toUpperCase()}
-                </label>
-                <input
-                  type="number"
-                  min="0"
-                  max="255"
-                  value={channel === "r" ? r : channel === "g" ? g : b}
-                  onChange={(e) => handleRgbChange(channel, e.target.value)}
-                  className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-3 gap-md">
-            {(["h", "s", "l"] as const).map((channel) => (
-              <div key={channel} className="space-y-sm">
-                <label className="font-label text-label font-bold text-on-surface uppercase">
-                  {channel.toUpperCase()}
-                </label>
-                <input
-                  type="number"
-                  min="0"
-                  max={channel === "h" ? 360 : 100}
-                  value={channel === "h" ? h : channel === "s" ? s : l}
-                  onChange={(e) => handleHslChange(channel, e.target.value)}
-                  className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none"
-                />
-              </div>
-            ))}
-          </div>
+      <div className="space-y-lg">
+        <div className="space-y-sm">
+          <label
+            htmlFor="color-hex"
+            className="font-label text-label font-bold text-on-surface uppercase"
+          >
+            HEX
+          </label>
+          <input
+            id="color-hex"
+            type="text"
+            value={hex}
+            onChange={(e) => handleHexChange(e.target.value)}
+            className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none uppercase"
+          />
         </div>
-      </ToolWrapper>
+
+        <div className="grid grid-cols-3 gap-md">
+          {(["r", "g", "b"] as const).map((channel) => (
+            <div key={channel} className="space-y-sm">
+              <label className="font-label text-label font-bold text-on-surface uppercase">
+                {channel.toUpperCase()}
+              </label>
+              <input
+                type="number"
+                min="0"
+                max="255"
+                value={channel === "r" ? r : channel === "g" ? g : b}
+                onChange={(e) => handleRgbChange(channel, e.target.value)}
+                className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-3 gap-md">
+          {(["h", "s", "l"] as const).map((channel) => (
+            <div key={channel} className="space-y-sm">
+              <label className="font-label text-label font-bold text-on-surface uppercase">
+                {channel.toUpperCase()}
+              </label>
+              <input
+                type="number"
+                min="0"
+                max={channel === "h" ? 360 : 100}
+                value={channel === "h" ? h : channel === "s" ? s : l}
+                onChange={(e) => handleHslChange(channel, e.target.value)}
+                className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }

@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import { getToolBySlug } from "@/constants/tools";
 import { generateToolMetadata } from "@/lib/seo";
+import ToolLoader from "@/components/tools/ToolLoader";
+import ToolPageShell from "@/components/tools/ToolPageShell";
 import {
   implementedToolSlugs,
   isImplementedToolSlug,
-  toolComponents,
 } from "@/components/tools/tool-registry";
 
 type ToolPageProps = {
@@ -35,6 +36,9 @@ export default function ToolPage({ params }: ToolPageProps) {
     notFound();
   }
 
-  const Component = toolComponents[slug];
-  return <Component />;
+  return (
+    <ToolPageShell tool={tool} slug={slug}>
+      <ToolLoader slug={slug} />
+    </ToolPageShell>
+  );
 }
