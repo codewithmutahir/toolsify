@@ -40,6 +40,14 @@ export function useToolApi<T>(
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+
+      const contentType = response.headers.get("content-type") ?? "";
+      if (!contentType.includes("application/json")) {
+        setData(null);
+        setError(tApi("networkError"));
+        return;
+      }
+
       const json = (await response.json()) as ToolApiResponse<T>;
       if (!json.success) {
         setData(null);

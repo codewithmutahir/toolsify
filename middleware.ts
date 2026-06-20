@@ -19,6 +19,16 @@ export default clerkMiddleware((auth, req) => {
 
   if (isProtectedRoute(req)) auth().protect();
 
+  const { pathname } = req.nextUrl;
+  // API and Clerk routes must not get locale redirects (breaks POST + JSON).
+  if (
+    pathname.startsWith("/api") ||
+    pathname.startsWith("/__clerk") ||
+    pathname.startsWith("/trpc")
+  ) {
+    return;
+  }
+
   return intlMiddleware(req);
 });
 
