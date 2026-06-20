@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import CopyButton from "@/components/tools/shared/CopyButton";
 import JsonTreeView from "@/components/tools/shared/JsonTreeView";
 import { byteSize } from "@/lib/developer/json";
@@ -29,6 +30,7 @@ async function callJsonApi(
 }
 
 export default function JsonFormatter() {
+  const tApi = useTranslations("toolApi");
   const [input, setInput] = useState(SAMPLE_JSON);
   const [output, setOutput] = useState<string | null>(null);
   const [validationMessage, setValidationMessage] = useState<string | null>(null);
@@ -51,7 +53,7 @@ export default function JsonFormatter() {
       setValidationMessage("Valid JSON formatted successfully.");
     } catch {
       setValidationOk(false);
-      setValidationMessage("Unable to reach the calculation API.");
+      setValidationMessage(tApi("networkError"));
     }
   }
 
@@ -70,7 +72,7 @@ export default function JsonFormatter() {
       setValidationMessage("Valid JSON minified successfully.");
     } catch {
       setValidationOk(false);
-      setValidationMessage("Unable to reach the calculation API.");
+      setValidationMessage(tApi("networkError"));
     }
   }
 
@@ -89,7 +91,7 @@ export default function JsonFormatter() {
       setOutput(null);
     } catch {
       setValidationOk(false);
-      setValidationMessage("Unable to reach the calculation API.");
+      setValidationMessage(tApi("networkError"));
       setParsedData(null);
     }
   }

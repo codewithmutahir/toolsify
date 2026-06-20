@@ -1,11 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import UnitToggle from "@/components/tools/UnitToggle";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { EMIResult, TenureUnit } from "@/lib/calculators/emi";
 
 export default function EMICalculator() {
+  const t = useToolUi("emi-calculator");
+  const tUnits = useTranslations("common.units");
   const [principal, setPrincipal] = useState("500000");
   const [rate, setRate] = useState("8.5");
   const [tenure, setTenure] = useState("20");
@@ -14,16 +18,19 @@ export default function EMICalculator() {
   const requestBody = useMemo(() => {
     const p = parseFloat(principal);
     const r = parseFloat(rate);
-    const t = parseFloat(tenure);
-    if (Number.isNaN(p) || Number.isNaN(r) || Number.isNaN(t)) return null;
-    if (p <= 0 || r < 0 || t <= 0) return null;
-    return { principal: p, annualRate: r, tenure: t, tenureUnit };
+    const tVal = parseFloat(tenure);
+    if (Number.isNaN(p) || Number.isNaN(r) || Number.isNaN(tVal)) return null;
+    if (p <= 0 || r < 0 || tVal <= 0) return null;
+    return { principal: p, annualRate: r, tenure: tVal, tenureUnit };
   }, [principal, rate, tenure, tenureUnit]);
 
   const { data: result, error } = useToolApi<EMIResult>(
     "emi-calculator",
     requestBody
   );
+
+  const tenureLabel = (unit: TenureUnit) =>
+    unit === "years" ? tUnits("years") : tUnits("months");
 
   return (
     <>
@@ -33,7 +40,7 @@ export default function EMICalculator() {
             htmlFor="emi-loan-amount"
             className="font-label text-label font-bold text-on-surface uppercase"
           >
-            Loan amount
+            {t("loanAmount")}
           </label>
           <input
             id="emi-loan-amount"
@@ -49,7 +56,7 @@ export default function EMICalculator() {
             htmlFor="emi-interest-rate"
             className="font-label text-label font-bold text-on-surface uppercase"
           >
-            Interest rate (% per year)
+            {t("interestRate")}
           </label>
           <input
             id="emi-interest-rate"
@@ -67,12 +74,13 @@ export default function EMICalculator() {
               htmlFor="emi-tenure"
               className="font-label text-label font-bold text-on-surface uppercase"
             >
-              Tenure
+              {t("tenure")}
             </label>
             <UnitToggle
               options={["years", "months"] as const}
               value={tenureUnit}
               onChange={setTenureUnit}
+              getLabel={tenureLabel}
             />
           </div>
           <input
@@ -95,7 +103,7 @@ export default function EMICalculator() {
       {result && (
         <>
           <div className="tool-result mb-xl">
-            <p className="tool-result-label mb-sm">Monthly EMI</p>
+            <p className="tool-result-label mb-sm">{t("monthlyEmi")}</p>
             <p className="tool-result-value">
               {result.emi.toLocaleString(undefined, {
                 minimumFractionDigits: 2,
@@ -107,7 +115,7 @@ export default function EMICalculator() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-md mb-xl">
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center">
               <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                Total interest
+                {t("totalInterest")}
               </p>
               <p className="font-h3 text-h3 text-on-surface">
                 {result.totalInterest.toLocaleString(undefined, {
@@ -117,7 +125,7 @@ export default function EMICalculator() {
             </div>
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center">
               <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                Total payment
+                {t("totalPayment")}
               </p>
               <p className="font-h3 text-h3 text-on-surface">
                 {result.totalPayment.toLocaleString(undefined, {
@@ -129,23 +137,23 @@ export default function EMICalculator() {
 
           <div className="space-y-sm">
             <p className="font-label text-label text-on-surface-variant uppercase font-bold">
-              Principal vs interest
+              {t("principalVsInterest")}
             </p>
             <div className="flex h-4 w-full rounded-full overflow-hidden">
               <div
                 className="bg-primary-container"
                 style={{ width: `${result.principalRatio}%` }}
-                title={`Principal ${result.principalRatio}%`}
+                title={t("principalPercent", { percent: result.principalRatio })}
               />
               <div
                 className="bg-secondary-container"
                 style={{ width: `${result.interestRatio}%` }}
-                title={`Interest ${result.interestRatio}%`}
+                title={t("interestPercent", { percent: result.interestRatio })}
               />
             </div>
             <div className="flex justify-between font-small text-small text-on-surface-variant">
-              <span>Principal {result.principalRatio}%</span>
-              <span>Interest {result.interestRatio}%</span>
+              <span>{t("principalPercent", { percent: result.principalRatio })}</span>
+              <span>{t("interestPercent", { percent: result.interestRatio })}</span>
             </div>
           </div>
         </>

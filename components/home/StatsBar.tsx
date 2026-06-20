@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface StatItemProps {
   value: number;
@@ -63,6 +64,8 @@ function StatItem({ value, suffix = "", label, className }: StatItemProps) {
 }
 
 export default function StatsBar() {
+  const t = useTranslations("home.stats");
+
   return (
     <section className="bg-primary-container py-xl">
       <div className="max-w-container-max mx-auto px-gutter">
@@ -70,18 +73,18 @@ export default function StatsBar() {
           <StatItem
             value={50}
             suffix="+"
-            label="Pro Tools Available"
+            label={t("proTools")}
             className="flex flex-col items-center"
           />
           <StatItem
             value={100}
             suffix="K+"
-            label="Active Monthly Users"
+            label={t("activeUsers")}
             className="flex flex-col items-center border-y md:border-y-0 md:border-x border-on-primary/20 py-lg md:py-0"
           />
           <StatItem
             value={0}
-            label="Signup Required"
+            label={t("signupRequired")}
             className="flex flex-col items-center"
           />
         </div>

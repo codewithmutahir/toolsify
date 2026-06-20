@@ -1,9 +1,16 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Tool } from "@/types/tool";
+import { useMessages } from "next-intl";
 import {
   categoryHomeStyles,
-  categoryShortLabels,
 } from "@/lib/category-colors";
+import {
+  getLocalizedCategoryShortLabel,
+} from "@/lib/i18n/localize";
+import { categoryShortLabels } from "@/lib/category-colors";
 import {
   categoryBorderHover,
   categoryIconHover,
@@ -18,6 +25,8 @@ interface ToolCardProps {
 }
 
 function ComingSoonBadge({ className }: { className?: string }) {
+  const t = useTranslations("common");
+
   return (
     <span
       className={cn(
@@ -25,7 +34,7 @@ function ComingSoonBadge({ className }: { className?: string }) {
         className
       )}
     >
-      Coming Soon
+      {t("comingSoon")}
     </span>
   );
 }
@@ -35,8 +44,15 @@ export default function ToolCard({
   variant = "default",
   className,
 }: ToolCardProps) {
+  const t = useTranslations("common");
+  const messages = useMessages();
   const colors = categoryHomeStyles[tool.category];
   const isComingSoon = !tool.implemented;
+  const shortLabel = getLocalizedCategoryShortLabel(
+    tool.category,
+    messages,
+    categoryShortLabels[tool.category]
+  );
 
   if (variant === "homepage") {
     return (
@@ -61,7 +77,7 @@ export default function ToolCard({
               colors.badgeText
             )}
           >
-            {categoryShortLabels[tool.category]}
+            {shortLabel}
           </span>
         </div>
         <h4 className="font-h3 text-h3 text-on-background mb-sm group-hover:text-primary transition-colors">
@@ -144,7 +160,7 @@ export default function ToolCard({
           <ComingSoonBadge />
         ) : variant === "listing" ? (
           <div className="flex items-center gap-xs text-primary font-label group-hover:gap-md transition-all">
-            <span>Calculate Now</span>
+            <span>{t("calculateNow")}</span>
             <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
           </div>
         ) : (
@@ -241,7 +257,7 @@ export default function ToolCard({
       </div>
       {variant === "category" && (
         <p className="mt-md font-small text-small font-bold text-primary-container group-hover:underline">
-          Calculate Now →
+          {t("calculateNow")} →
         </p>
       )}
     </Link>

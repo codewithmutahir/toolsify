@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import OtpInput from "@/components/auth/OtpInput";
 import { cn } from "@/lib/utils";
 

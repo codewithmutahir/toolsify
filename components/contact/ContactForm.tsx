@@ -1,27 +1,33 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useTranslations } from "next-intl";
+import RecaptchaNotice from "@/components/recaptcha/RecaptchaNotice";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import { useRecaptchaToken } from "@/hooks/useRecaptchaToken";
 import { cn } from "@/lib/utils";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
+  const t = useTranslations("forms.contact");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
+  const { getToken } = useRecaptchaToken();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
 
     try {
+      const recaptchaToken = await getToken("contact");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
+        body: JSON.stringify({ name, email, subject, message, recaptchaToken }),
       });
 
       if (res.ok) {
@@ -46,16 +52,18 @@ export default function ContactForm() {
           className="text-[48px] text-tertiary-container mb-md mx-auto"
           filled
         />
-        <h2 className="font-h2 text-h2 text-on-surface mb-sm">Message sent!</h2>
+        <h2 className="font-h2 text-h2 text-on-surface mb-sm">
+          {t("successTitle")}
+        </h2>
         <p className="font-body text-body text-on-surface-variant mb-lg">
-          Thanks for reaching out. We&apos;ll get back to you as soon as we can.
+          {t("successDescription")}
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
           className="font-label text-label text-primary-container hover:underline"
         >
-          Send another message
+          {t("sendAnother")}
         </button>
       </div>
     );
@@ -69,13 +77,13 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
         <label className="flex flex-col gap-xs">
           <span className="font-label text-label text-on-surface-variant uppercase tracking-wider">
-            Name *
+            {t("name")} *
           </span>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Your name"
+            placeholder={t("namePlaceholder")}
             required
             maxLength={100}
             className="tool-input"
@@ -83,13 +91,13 @@ export default function ContactForm() {
         </label>
         <label className="flex flex-col gap-xs">
           <span className="font-label text-label text-on-surface-variant uppercase tracking-wider">
-            Email *
+            {t("email")} *
           </span>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
+            placeholder={t("emailPlaceholder")}
             required
             className="tool-input"
           />
@@ -98,13 +106,13 @@ export default function ContactForm() {
 
       <label className="flex flex-col gap-xs">
         <span className="font-label text-label text-on-surface-variant uppercase tracking-wider">
-          Subject
+          {t("subject")}
         </span>
         <input
           type="text"
           value={subject}
           onChange={(e) => setSubject(e.target.value)}
-          placeholder="What is this about?"
+          placeholder={t("subjectPlaceholder")}
           maxLength={200}
           className="tool-input"
         />
@@ -112,12 +120,12 @@ export default function ContactForm() {
 
       <label className="flex flex-col gap-xs">
         <span className="font-label text-label text-on-surface-variant uppercase tracking-wider">
-          Message *
+          {t("message")} *
         </span>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="How can we help?"
+          placeholder={t("messagePlaceholder")}
           required
           minLength={10}
           maxLength={5000}
@@ -129,7 +137,7 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="font-small text-small text-error flex items-center gap-xs">
           <MaterialIcon name="error" className="text-[18px]" />
-          Something went wrong. Please try again later.
+          {t("error")}
         </p>
       )}
 
@@ -147,8 +155,10 @@ export default function ContactForm() {
           "disabled:opacity-60 disabled:cursor-not-allowed"
         )}
       >
-        {status === "loading" ? "Sending..." : "Send Message"}
+        {status === "loading" ? t("sending") : t("send")}
       </button>
+
+      <RecaptchaNotice />
     </form>
   );
 }

@@ -1,0 +1,655 @@
+{
+  "common": {
+    "siteName": "Toolsify",
+    "home": "Inicio",
+    "comingSoon": "Próximamente",
+    "calculateNow": "Calcular ahora",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "reset": "Restablecer",
+    "clear": "Limpiar",
+    "result": "Resultado",
+    "results": "Resultados",
+    "loading": "Cargando...",
+    "error": "Error",
+    "closeMenu": "Cerrar menú",
+    "openMenu": "Abrir menú",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundDescription": "La página que buscas no existe o ha sido movida.",
+    "backToHome": "Volver al inicio",
+    "builtFor": "Creado para velocidad, claridad y confiabilidad profesional.",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "calculating": "Calculando…",
+    "units": {
+      "years": "años",
+      "months": "meses",
+      "days": "días",
+      "yearShort": "a",
+      "kg": "kg",
+      "lbs": "lbs",
+      "cm": "cm",
+      "ft": "ft",
+      "male": "Masculino",
+      "female": "Femenino"
+    }
+  },
+  "toolApi": {
+    "networkError": "No se puede conectar con la API de cálculo.",
+    "calculationFailed": "El cálculo falló.",
+    "invalidJson": "El cuerpo de la solicitud debe ser JSON válido.",
+    "toolNotFound": "Herramienta no encontrada.",
+    "invalidWeightOrHeight": "Valores de peso o altura no válidos."
+  },
+  "nav": {
+    "home": "Inicio",
+    "allTools": "Todas las herramientas",
+    "categories": "Categorías",
+    "logIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "dashboard": "Panel"
+  },
+  "footer": {
+    "description": "Calculadoras, convertidores y herramientas en línea gratis. Rápidas, precisas y sin registro.",
+    "tools": "Herramientas",
+    "categories": "Categorías",
+    "company": "Empresa",
+    "privacyPolicy": "Política de privacidad",
+    "termsOfService": "Términos de servicio",
+    "contactUs": "Contáctanos",
+    "requestToolDescription": "Sugiere herramientas para agregar a Toolsify."
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "en": "Inglés",
+    "ur": "Urdu",
+    "es": "Español"
+  },
+  "home": {
+    "heroTitle": "Herramientas en línea gratis para todos",
+    "heroDescription": "Rápidas, gratis y fáciles de usar. Sin registro. Accede a documentos, matemáticas y herramientas para desarrolladores al instante.",
+    "heroImageAlt": "Ilustración principal de Toolsify",
+    "browseByCategory": "Explorar por categoría",
+    "browseByCategoryDescription": "Encuentra la herramienta adecuada para tu tarea",
+    "viewAllTools": "Ver todas las {count}+ herramientas",
+    "popularTools": "Herramientas populares",
+    "howItWorks": "Cómo funciona Toolsify",
+    "suggestionPills": {
+      "bmiCalculator": "Calculadora BMI",
+      "wordCounter": "Contador de palabras",
+      "emiCalculator": "Calculadora EMI",
+      "percentageCalculator": "Calculadora de porcentajes",
+      "colorConverter": "Convertidor de colores"
+    },
+    "howItWorksSteps": {
+      "search": {
+        "title": "1. Buscar",
+        "description": "Encuentra la herramienta perfecta en nuestra biblioteca con la búsqueda o categorías."
+      },
+      "use": {
+        "title": "2. Usar al instante",
+        "description": "Introduce tus datos o sube archivos. Sin cuentas ni tiempos de espera."
+      },
+      "results": {
+        "title": "3. Obtener resultados",
+        "description": "Descarga archivos o copia resultados con un solo clic."
+      }
+    },
+    "stats": {
+      "proTools": "Herramientas pro disponibles",
+      "activeUsers": "Usuarios activos mensuales",
+      "signupRequired": "Registro requerido"
+    },
+    "requestTool": {
+      "heading": "Solicitar una herramienta",
+      "description": "Los miembros registrados pueden sugerir calculadoras y utilidades.",
+      "button": "Solicitar herramienta",
+      "signInToRequest": "Inicia sesión para solicitar",
+      "compactButton": "Solicitar herramienta",
+      "signInCompact": "Inicia sesión para solicitar"
+    }
+  },
+  "search": {
+    "placeholder": "Buscar herramientas...",
+    "heroPlaceholder": "Buscar herramienta (ej. BMI, contador de palabras, EMI...)",
+    "quickSearch": "Búsqueda rápida",
+    "submit": "Buscar",
+    "noResults": "No se encontraron herramientas",
+    "noResultsFor": "No se encontraron herramientas para \"{query}\"",
+    "searchAllTools": "Buscar todas las herramientas",
+    "viewAllResults": "Ver todos los resultados para \"{query}\"",
+    "resultsLabel": "Resultados de búsqueda",
+    "tryDifferent": "Prueba con otra búsqueda"
+  },
+  "toolsPage": {
+    "title": "Todas las herramientas en línea gratis",
+    "description": "Explora {count}+ calculadoras, convertidores y herramientas de texto. Filtra por categoría o busca — sin registro.",
+    "filterAll": "Todas",
+    "searchPlaceholder": "Buscar herramientas...",
+    "showing": "Mostrando {count} herramientas",
+    "noToolsFound": "No se encontraron herramientas",
+    "adjustFilters": "Ajusta la búsqueda o el filtro de categoría.",
+    "missingToolHeading": "¿No encuentras la herramienta que necesitas?",
+    "missingToolDescription": "Solicita una nueva calculadora o utilidad y la consideraremos para Toolsify."
+  },
+  "toolPage": {
+    "howToUse": "Cómo usar",
+    "faqTitle": "Preguntas frecuentes",
+    "examplesTitle": "Ejemplos",
+    "relatedTools": "Herramientas relacionadas",
+    "aboutTool": "Acerca de esta herramienta",
+    "toolInterface": "Interfaz de la herramienta"
+  },
+  "toolCommon": {
+    "defaultHowTo": {
+      "open": "Abrir {tool}",
+      "openText": "Ve a la página de {tool} en Toolsify.",
+      "enterValues": "Introduce tus valores",
+      "enterValuesText": "Completa los campos requeridos en la interfaz de arriba.",
+      "viewResults": "Ver resultados",
+      "viewResultsText": "Los resultados se actualizan al instante. Copia o usa el resultado según necesites."
+    },
+    "defaultFaqs": {
+      "isFreeQuestion": "¿{tool} es gratis?",
+      "isFreeAnswer": "Sí. Todas las herramientas de Toolsify son gratis y no requieren registro.",
+      "dataQuestion": "¿Guardan mis datos?",
+      "dataAnswer": "La mayoría de herramientas se ejecutan en tu navegador. Si se usa una API, los datos se procesan para el resultado y no se almacenan.",
+      "accuracyQuestion": "¿Qué precisión tiene {tool}?",
+      "accuracyAnswer": "{description} Los resultados son para uso general; verifica cálculos críticos por tu cuenta."
+    },
+    "defaultExample": {
+      "title": "Inicio rápido",
+      "description": "Usa {tool} con valores típicos de tu caso y revisa el resultado arriba."
+    }
+  },
+  "signUpPrompt": {
+    "title": "Toolsify te está siendo útil",
+    "subtitle": "Crea una cuenta gratis para desbloquear más — las herramientas siguen siendo gratis.",
+    "dismiss": "Cerrar",
+    "createAccount": "Crear cuenta gratis",
+    "signIn": "Iniciar sesión",
+    "notNow": "Ahora no",
+    "benefits": {
+      "earlyAccess": {
+        "title": "Acceso anticipado a herramientas premium",
+        "description": "Prueba primero las funciones avanzadas cuando se lancen.",
+        "badge": "Próximamente"
+      },
+      "requestTools": {
+        "title": "Solicitar nuevas herramientas",
+        "description": "Dinos qué construir — los miembros tienen prioridad.",
+        "badge": "Solo miembros"
+      },
+      "favorites": {
+        "title": "Guardar favoritos e historial",
+        "description": "Retoma donde lo dejaste en cada visita."
+      }
+    }
+  },
+  "forms": {
+    "contact": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "you@example.com",
+      "subjectPlaceholder": "¿De qué se trata?",
+      "messagePlaceholder": "¿Cómo podemos ayudarte?",
+      "send": "Enviar mensaje",
+      "sending": "Enviando...",
+      "successTitle": "¡Mensaje enviado!",
+      "successDescription": "Gracias por contactarnos. Responderemos lo antes posible.",
+      "sendAnother": "Enviar otro mensaje",
+      "error": "Algo salió mal. Inténtalo de nuevo más tarde."
+    },
+    "requestTool": {
+      "title": "Solicitar herramienta",
+      "toolName": "Nombre de la herramienta",
+      "description": "Descripción",
+      "useCase": "Caso de uso",
+      "submit": "Enviar solicitud",
+      "submitting": "Enviando...",
+      "success": "¡Solicitud enviada!",
+      "error": "No se pudo enviar. Inténtalo de nuevo."
+    }
+  },
+  "metadata": {
+    "site": {
+      "title": "Toolsify — Herramientas en línea gratis",
+      "description": "Calculadoras, convertidores y herramientas en línea gratis. Rápidas y precisas."
+    },
+    "home": {
+      "title": "Herramientas en línea gratis — Calculadoras y convertidores | Toolsify",
+      "description": "BMI, porcentajes, contador de palabras, EMI y 50+ herramientas gratis. Sin registro.",
+      "keywords": [
+        "herramientas en línea gratis",
+        "calculadora",
+        "convertidor",
+        "calculadora BMI",
+        "contador de palabras",
+        "toolsify"
+      ]
+    },
+    "tools": {
+      "title": "Todas las herramientas gratis | Toolsify",
+      "description": "50+ herramientas en línea gratis: calculadoras, convertidores y texto.",
+      "keywords": [
+        "herramientas en línea gratis",
+        "calculadoras",
+        "toolsify"
+      ]
+    },
+    "categories": {
+      "title": "Categorías de herramientas | Toolsify",
+      "description": "Explora herramientas gratis por categoría en Toolsify."
+    },
+    "contact": {
+      "title": "Contáctanos | Toolsify",
+      "description": "Contacta al equipo de Toolsify."
+    },
+    "privacy": {
+      "title": "Política de privacidad | Toolsify",
+      "description": "Política de privacidad de Toolsify."
+    },
+    "terms": {
+      "title": "Términos de servicio | Toolsify",
+      "description": "Términos de servicio de Toolsify."
+    },
+    "toolTitle": "{title} — Herramienta en línea gratis | Toolsify",
+    "toolDescription": "Usa nuestra {title} gratis. {description} Sin registro.",
+    "categoryTitle": "{category} gratis — {count} herramientas | Toolsify",
+    "categoryDescription": "{count} {category} gratis. Sin registro requerido."
+  },
+  "categories": {
+    "math": {
+      "title": "Matemáticas y calculadoras",
+      "description": "Calculadoras de matemáticas gratis para porcentajes, fracciones y más.",
+      "shortLabel": "Mates",
+      "shortName": "Matemáticas"
+    },
+    "finance": {
+      "title": "Finanzas",
+      "description": "Calcula EMI, interés compuesto, préstamos y más.",
+      "shortLabel": "Finanzas",
+      "shortName": "Finanzas"
+    },
+    "fitness": {
+      "title": "Fitness y salud",
+      "description": "BMI, BMR, calorías y peso ideal.",
+      "shortLabel": "Fitness",
+      "shortName": "Fitness"
+    },
+    "text": {
+      "title": "Herramientas de texto",
+      "description": "Cuenta palabras, cambia mayúsculas y manipula texto.",
+      "shortLabel": "Texto",
+      "shortName": "Texto"
+    },
+    "color": {
+      "title": "Color y diseño",
+      "description": "Elige colores y convierte entre HEX, RGB y más.",
+      "shortLabel": "Diseño",
+      "shortName": "Diseño"
+    },
+    "converter": {
+      "title": "Convertidores de unidades",
+      "description": "Convierte longitud, peso, temperatura y más.",
+      "shortLabel": "Convertidor",
+      "shortName": "Convertidores"
+    },
+    "developer": {
+      "title": "Herramientas para desarrolladores",
+      "description": "Formatea JSON, Base64 y utilidades para desarrolladores.",
+      "shortLabel": "Dev",
+      "shortName": "Desarrollador"
+    }
+  },
+  "tools": {
+    "percentage-calculator": {
+      "title": "Calculadora de porcentajes",
+      "description": "Calcula porcentajes, aumentos, disminuciones y proporciones.",
+      "shortDesc": "Calcula cualquier porcentaje al instante",
+      "ui": {
+        "tabOf": "X% de Y",
+        "tabWhatPercent": "¿X es qué % de Y?",
+        "tabChange": "% de cambio",
+        "labelPercentageX": "Porcentaje (X)",
+        "labelNumberY": "Número (Y)",
+        "labelNumberX": "Número (X)",
+        "labelFromX": "Desde (X)",
+        "labelToY": "Hasta (Y)",
+        "resultOf": "{a}% de {b} es {value}",
+        "resultWhatPercent": "{a} es {value}% de {b}",
+        "resultChange": "El cambio de {a} a {b} es {value}%"
+      }
+    },
+    "simple-interest-calculator": {
+      "title": "Calculadora de interés simple",
+      "description": "Calcula interés simple y total desde capital, tasa y tiempo.",
+      "shortDesc": "Capital, tasa, tiempo → interés",
+      "ui": {
+        "principal": "Capital",
+        "rate": "Tasa (%)",
+        "timeYears": "Tiempo (años)",
+        "yearShort": "a",
+        "interestEarned": "Interés ganado",
+        "totalAmount": "Monto total"
+      }
+    },
+    "discount-calculator": {
+      "title": "Calculadora de descuentos",
+      "description": "Calcula precio final y ahorro desde precio original y descuento.",
+      "shortDesc": "Precio de oferta y ahorro",
+      "ui": {
+        "originalPrice": "Precio original",
+        "discountPercent": "Descuento (%)",
+        "finalPrice": "Precio final",
+        "youSave": "Ahorras {amount}"
+      }
+    },
+    "average-calculator": {
+      "title": "Calculadora de promedio",
+      "description": "Calcula media, mediana, moda, mínimo y máximo de un conjunto de números.",
+      "shortDesc": "Media, mediana, moda, mín, máx",
+      "ui": {
+        "numbersInput": "Números",
+        "numbersPlaceholder": "Introduce números separados por comas o líneas...",
+        "mean": "Media",
+        "median": "Mediana",
+        "mode": "Moda",
+        "min": "Mín",
+        "max": "Máx",
+        "count": "Cantidad",
+        "enterNumbers": "Introduce al menos un número válido para ver resultados."
+      }
+    },
+    "matrix-calculator": {
+      "title": "Calculadora de matrices",
+      "description": "Suma, multiplica, transpone matrices y calcula determinantes paso a paso.",
+      "shortDesc": "Suma, multiplica, transpone, determinante"
+    },
+    "quadratic-solver": {
+      "title": "Solucionador de ecuaciones cuadráticas",
+      "description": "Resuelve ecuaciones cuadráticas con gráfico de parábola y pasos.",
+      "shortDesc": "Resuelve cuadráticas con gráfico"
+    },
+    "standard-deviation-calculator": {
+      "title": "Calculadora de estadísticas",
+      "description": "Media, mediana, moda, desviación estándar y varianza para cualquier conjunto.",
+      "shortDesc": "Media, mediana, moda, std dev, varianza"
+    },
+    "number-base-converter": {
+      "title": "Convertidor de bases numéricas",
+      "description": "Convierte números entre binario, octal, decimal y hexadecimal.",
+      "shortDesc": "Conversión binario, octal, decimal, hex"
+    },
+    "emi-calculator": {
+      "title": "Calculadora EMI",
+      "description": "Calcula la EMI mensual de préstamos hipotecarios, de auto y personales.",
+      "shortDesc": "Calcula EMI mensual",
+      "ui": {
+        "loanAmount": "Importe del préstamo",
+        "interestRate": "Tasa de interés (% anual)",
+        "tenure": "Plazo",
+        "monthlyEmi": "EMI mensual",
+        "totalInterest": "Interés total",
+        "totalPayment": "Pago total",
+        "principalVsInterest": "Capital vs interés",
+        "principalPercent": "Capital {percent}%",
+        "interestPercent": "Interés {percent}%"
+      }
+    },
+    "compound-interest-calculator": {
+      "title": "Calculadora de interés compuesto",
+      "description": "Ve cómo crecen tus inversiones con interés compuesto a lo largo del tiempo.",
+      "shortDesc": "Proyecta el crecimiento de inversiones",
+      "ui": {
+        "principal": "Capital",
+        "annualRate": "Tasa anual (%)",
+        "timeYears": "Tiempo (años)",
+        "compounding": "Capitalización",
+        "totalAmount": "Monto total",
+        "totalInterest": "Interés total",
+        "yearByYearBreakdown": "Desglose año por año",
+        "year": "Año",
+        "balance": "Saldo",
+        "interestEarned": "Interés ganado",
+        "frequencyAnnually": "Anual",
+        "frequencySemiannually": "Semestral",
+        "frequencyQuarterly": "Trimestral",
+        "frequencyMonthly": "Mensual",
+        "frequencyDaily": "Diario"
+      }
+    },
+    "salary-calculator": {
+      "title": "Calculadora de salario",
+      "description": "Convierte entre salario anual, mensual y por hora.",
+      "shortDesc": "Convierte tasas de salario",
+      "ui": {
+        "annualSalary": "Salario anual",
+        "monthly": "Mensual",
+        "weekly": "Semanal",
+        "daily": "Diario",
+        "hourly": "Por hora"
+      }
+    },
+    "tip-calculator": {
+      "title": "Calculadora de propinas",
+      "description": "Calcula la propina y divide la cuenta entre varias personas.",
+      "shortDesc": "Propina y dividir la cuenta",
+      "ui": {
+        "billAmount": "Importe del bill",
+        "tipPercent": "Propina (%)",
+        "people": "Personas",
+        "tip": "Propina",
+        "total": "Total",
+        "perPerson": "Por persona"
+      }
+    },
+    "percentage-change-calculator": {
+      "title": "Calculadora de cambio porcentual",
+      "description": "Calcula el aumento o disminución porcentual entre dos valores.",
+      "shortDesc": "Aumento o disminución porcentual",
+      "ui": {
+        "originalValue": "Valor original",
+        "newValue": "Valor nuevo",
+        "percentageChange": "Cambio porcentual",
+        "absoluteChange": "Cambio absoluto: {change}"
+      }
+    },
+    "cagr-calculator": {
+      "title": "Calculadora CAGR",
+      "description": "Calcula la tasa de crecimiento anual compuesto con gráfico interactivo.",
+      "shortDesc": "Tasa de crecimiento anual + gráfico"
+    },
+    "roi-calculator": {
+      "title": "Calculadora ROI",
+      "description": "Calcula el retorno de inversión con proyecciones y desglose temporal.",
+      "shortDesc": "Retorno de inversión con cronología"
+    },
+    "break-even-calculator": {
+      "title": "Calculadora de punto de equilibrio",
+      "description": "Encuentra el punto de equilibrio con costos fijos y variables y gráfico.",
+      "shortDesc": "Costos fijos/variables, gráfico visual"
+    },
+    "bmi-calculator": {
+      "title": "Calculadora BMI",
+      "description": "Calcula tu índice de masa corporal y categoría de peso según altura y peso.",
+      "shortDesc": "Consulta tu BMI",
+      "ui": {
+        "weight": "Peso",
+        "height": "Altura",
+        "resultsAriaLabel": "Resultados de BMI",
+        "yourBmiIs": "Tu BMI es",
+        "categoryUnderweight": "Bajo peso",
+        "categoryNormal": "Peso normal",
+        "categoryOverweight": "Sobrepeso",
+        "categoryObese": "Obesidad"
+      }
+    },
+    "calorie-calculator": {
+      "title": "Calculadora de calorías",
+      "description": "Estima necesidades diarias según edad, peso, altura y actividad.",
+      "shortDesc": "Necesidades calóricas diarias",
+      "ui": {
+        "age": "Edad",
+        "gender": "Género",
+        "weightKg": "Peso (kg)",
+        "heightCm": "Altura (cm)",
+        "activityLevel": "Nivel de actividad",
+        "bmr": "BMR",
+        "tdee": "TDEE",
+        "loseWeight": "Perder peso",
+        "maintain": "Mantener",
+        "gainWeight": "Ganar peso",
+        "loseWeightSub": "−500 cal",
+        "maintainSub": "TDEE",
+        "gainWeightSub": "+500 cal",
+        "activitySedentary": "Sedentario (poco o nada de ejercicio)",
+        "activityLight": "Ligero (1–3 días/semana)",
+        "activityModerate": "Moderado (3–5 días/semana)",
+        "activityActive": "Activo (6–7 días/semana)",
+        "activityVeryActive": "Muy activo (trabajo físico)"
+      }
+    },
+    "ideal-weight-calculator": {
+      "title": "Calculadora de peso ideal",
+      "description": "Encuentra tu rango de peso ideal según altura con múltiples fórmulas.",
+      "shortDesc": "Encuentra tu peso ideal",
+      "ui": {
+        "heightCm": "Altura (cm)",
+        "gender": "Género",
+        "recommendedRange": "Rango recomendado",
+        "formulaDevine": "Devine",
+        "formulaRobinson": "Robinson",
+        "formulaMiller": "Miller",
+        "formulaHamwi": "Hamwi"
+      }
+    },
+    "age-calculator": {
+      "title": "Calculadora de edad",
+      "description": "Calcula tu edad exacta en años, meses y días desde tu fecha de nacimiento.",
+      "shortDesc": "Edad exacta desde fecha de nacimiento",
+      "ui": {
+        "dateOfBirth": "Fecha de nacimiento",
+        "asOfDate": "Fecha de referencia",
+        "yourAge": "Tu edad",
+        "years": "Años",
+        "months": "Meses",
+        "days": "Días",
+        "livedSummary": "Has vivido {days} días, o aproximadamente {hours} horas.",
+        "invalidDateRange": "Introduce una fecha de nacimiento válida anterior a la fecha de referencia.",
+        "nextBirthdayIn": "Próximo cumpleaños en {days} días",
+        "nextBirthdayToday": "¡Feliz cumpleaños! Hoy es tu cumpleaños.",
+        "ageSummary": "{years} años, {months} meses, {days} días"
+      }
+    },
+    "macro-calculator": {
+      "title": "Calculadora de macros",
+      "description": "Calcula proteínas, carbohidratos y grasas según tu objetivo y datos corporales.",
+      "shortDesc": "Proteínas, carbs, grasas por objetivo"
+    },
+    "one-rep-max-calculator": {
+      "title": "Calculadora de one-rep max",
+      "description": "Estima tu máximo de una repetición con múltiples fórmulas para lifts principales.",
+      "shortDesc": "Múltiples fórmulas, lifts principales"
+    },
+    "word-counter": {
+      "title": "Contador de palabras",
+      "description": "Cuenta palabras, caracteres, frases y párrafos al instante.",
+      "shortDesc": "Cuenta palabras y caracteres"
+    },
+    "character-counter": {
+      "title": "Contador de caracteres",
+      "description": "Cuenta caracteres con y sin espacios para límites de redes y SEO.",
+      "shortDesc": "Cuenta caracteres con espacios"
+    },
+    "case-converter": {
+      "title": "Convertidor de mayúsculas",
+      "description": "Convierte texto a mayúsculas, minúsculas, título y más.",
+      "shortDesc": "Cambia el caso del texto al instante"
+    },
+    "text-repeater": {
+      "title": "Repetidor de texto",
+      "description": "Repite cualquier texto varias veces con un separador personalizado.",
+      "shortDesc": "Repite texto con separador"
+    },
+    "lorem-ipsum-generator": {
+      "title": "Generador Lorem Ipsum",
+      "description": "Genera texto placeholder lorem ipsum para mockups y prototipos.",
+      "shortDesc": "Genera texto placeholder"
+    },
+    "color-converter": {
+      "title": "Convertidor de colores",
+      "description": "Convierte colores entre HEX, RGB, HSL y CMYK.",
+      "shortDesc": "Convierte formatos de color"
+    },
+    "unit-converter": {
+      "title": "Convertidor de unidades",
+      "description": "Convierte unidades comunes de longitud, peso, volumen y más.",
+      "shortDesc": "Convierte cualquier unidad"
+    },
+    "timezone-converter": {
+      "title": "Convertidor de zonas horarias",
+      "description": "Convierte horas con relojes mundiales, DST y planificador de reuniones.",
+      "shortDesc": "Reloj mundial, DST, reuniones"
+    },
+    "cooking-converter": {
+      "title": "Convertidor de medidas de cocina",
+      "description": "Convierte tazas, cucharadas, ml y gramos por ingrediente para recetas.",
+      "shortDesc": "Tazas, tbsp, ml, gramos por ingrediente"
+    },
+    "regex-tester": {
+      "title": "Probador de Regex",
+      "description": "Prueba expresiones regulares con resaltado en vivo, grupos y flags.",
+      "shortDesc": "Resaltado en vivo, grupos de captura"
+    },
+    "json-formatter": {
+      "title": "Formateador JSON",
+      "description": "Formatea, minifica y valida JSON con vista de árbol y resaltado.",
+      "shortDesc": "Formatea, minifica, valida, vista árbol"
+    },
+    "jwt-decoder": {
+      "title": "Decodificador JWT",
+      "description": "Decodifica header y payload JWT, verifica expiración y claims.",
+      "shortDesc": "Decodifica header/payload, verifica expiración"
+    },
+    "cron-expression-generator": {
+      "title": "Generador de expresiones Cron",
+      "description": "Crea expresiones cron visualmente con traducción legible.",
+      "shortDesc": "Constructor visual + salida legible"
+    },
+    "gradient-generator": {
+      "title": "Generador de gradientes CSS",
+      "description": "Crea gradientes CSS con vista previa en vivo y CSS listo para copiar.",
+      "shortDesc": "Vista previa en vivo + copiar CSS"
+    },
+    "color-palette-generator": {
+      "title": "Generador de paletas de color",
+      "description": "Genera paletas complementarias, triádicas y análogas para diseño.",
+      "shortDesc": "Paletas complementarias, triádicas, análogas"
+    },
+    "hash-generator": {
+      "title": "Generador de hash",
+      "description": "Genera hashes MD5, SHA-1, SHA-256 y SHA-512 desde cualquier texto.",
+      "shortDesc": "MD5, SHA-1, SHA-256, SHA-512",
+      "ui": {
+        "modeText": "Texto",
+        "modeFile": "Archivo",
+        "textPlaceholder": "Introduce texto para hashear...",
+        "filePrompt": "Haz clic o arrastra un archivo para hashear",
+        "fileError": "No se pudo leer o hashear el archivo seleccionado.",
+        "algorithm": "Algoritmo",
+        "hash": "Hash",
+        "filePromptAlt": "Arrastra o selecciona un archivo para hashear",
+        "computingHashes": "Calculando hashes...",
+        "fileSize": "Tamaño del archivo: {size} bytes"
+      }
+    },
+    "markdown-editor": {
+      "title": "Editor Markdown",
+      "description": "Escribe markdown en editor dividido con vista previa HTML en vivo.",
+      "shortDesc": "Vista previa en vivo en panel dividido"
+    }
+  }
+}

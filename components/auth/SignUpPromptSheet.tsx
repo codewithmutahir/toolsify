@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -9,35 +10,22 @@ type SignUpPromptSheetProps = {
   onDismiss: () => void;
 };
 
-const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-const benefits = [
-  {
-    icon: "rocket_launch",
-    title: "Early access to premium tools",
-    description: "Be first to try advanced features as they launch.",
-    badge: "Coming soon",
-  },
-  {
-    icon: "lightbulb",
-    title: "Request new tools",
-    description: "Tell us what to build next — members get priority.",
-    badge: "Members only",
-  },
-  {
-    icon: "bookmark",
-    title: "Save favorites & history",
-    description: "Pick up where you left off across visits.",
-  },
+const benefitKeys = [
+  { key: "earlyAccess", icon: "rocket_launch" },
+  { key: "requestTools", icon: "lightbulb" },
+  { key: "favorites", icon: "bookmark" },
 ] as const;
 
 export default function SignUpPromptSheet({
   open,
   onDismiss,
 }: SignUpPromptSheetProps) {
+  const t = useTranslations("signUpPrompt");
   const panelRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+
+  const FOCUSABLE_SELECTOR =
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
   useEffect(() => {
     if (!open) return;
@@ -111,7 +99,7 @@ export default function SignUpPromptSheet({
           type="button"
           onClick={onDismiss}
           className="absolute top-md right-md md:top-lg md:right-lg w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors"
-          aria-label="Dismiss"
+          aria-label={t("dismiss")}
         >
           <span className="material-symbols-outlined text-[20px]">close</span>
         </button>
@@ -131,43 +119,49 @@ export default function SignUpPromptSheet({
               id="signup-prompt-title"
               className="font-h2 text-h2 text-on-surface mb-xs"
             >
-              You&apos;re getting value from Toolsify
+              {t("title")}
             </h2>
             <p className="font-body text-body text-on-surface-variant">
-              Create a free account to unlock more — your tools stay free.
+              {t("subtitle")}
             </p>
           </div>
         </div>
 
         <ul className="flex flex-col gap-sm mb-xl">
-          {benefits.map((benefit) => (
-            <li
-              key={benefit.title}
-              className="flex items-start gap-md rounded-xl bg-surface-container-low p-md border border-outline-variant/40"
-            >
-              <span
-                className="material-symbols-outlined text-primary-container text-[22px] mt-0.5 shrink-0"
-                aria-hidden="true"
+          {benefitKeys.map((benefit) => {
+            const badge = t.has(`benefits.${benefit.key}.badge`)
+              ? t(`benefits.${benefit.key}.badge`)
+              : null;
+
+            return (
+              <li
+                key={benefit.key}
+                className="flex items-start gap-md rounded-xl bg-surface-container-low p-md border border-outline-variant/40"
               >
-                {benefit.icon}
-              </span>
-              <div className="min-w-0 text-left">
-                <div className="flex items-center gap-sm flex-wrap mb-0.5">
-                  <p className="font-body text-body font-semibold text-on-surface">
-                    {benefit.title}
+                <span
+                  className="material-symbols-outlined text-primary-container text-[22px] mt-0.5 shrink-0"
+                  aria-hidden="true"
+                >
+                  {benefit.icon}
+                </span>
+                <div className="min-w-0 text-start">
+                  <div className="flex items-center gap-sm flex-wrap mb-0.5">
+                    <p className="font-body text-body font-semibold text-on-surface">
+                      {t(`benefits.${benefit.key}.title`)}
+                    </p>
+                    {badge && (
+                      <span className="font-label text-[10px] font-bold uppercase tracking-wider px-sm py-0.5 rounded-full bg-primary-fixed text-primary">
+                        {badge}
+                      </span>
+                    )}
+                  </div>
+                  <p className="font-small text-small text-on-surface-variant">
+                    {t(`benefits.${benefit.key}.description`)}
                   </p>
-                  {"badge" in benefit && benefit.badge && (
-                    <span className="font-label text-[10px] font-bold uppercase tracking-wider px-sm py-0.5 rounded-full bg-primary-fixed text-primary">
-                      {benefit.badge}
-                    </span>
-                  )}
                 </div>
-                <p className="font-small text-small text-on-surface-variant">
-                  {benefit.description}
-                </p>
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex flex-col gap-sm">
@@ -179,7 +173,7 @@ export default function SignUpPromptSheet({
               "rounded-lg transition-all hover:brightness-110 active:scale-[0.98]"
             )}
           >
-            Create free account
+            {t("createAccount")}
           </Link>
           <Link
             href="/sign-in"
@@ -189,14 +183,14 @@ export default function SignUpPromptSheet({
               "rounded-lg transition-all hover:bg-surface-container-low active:scale-[0.98]"
             )}
           >
-            Sign in
+            {t("signIn")}
           </Link>
           <button
             type="button"
             onClick={onDismiss}
             className="w-full min-h-10 font-small text-small text-on-surface-variant hover:text-primary transition-colors"
           >
-            Not now
+            {t("notNow")}
           </button>
         </div>
       </div>

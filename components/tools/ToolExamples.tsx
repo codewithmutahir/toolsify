@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import type { ToolExample } from "@/types/tool-content";
 
 interface ToolExamplesProps {
@@ -5,11 +8,15 @@ interface ToolExamplesProps {
 }
 
 export default function ToolExamples({ examples }: ToolExamplesProps) {
+  const t = useTranslations("toolPage");
+
   if (examples.length === 0) return null;
 
   return (
-    <section aria-label="Examples" className="mt-2xl">
-      <h2 className="font-h2 text-h2 text-on-surface mb-md">Examples</h2>
+    <section aria-label={t("examplesTitle")} className="mt-2xl">
+      <h2 className="font-h2 text-h2 text-on-surface mb-md">
+        {t("examplesTitle")}
+      </h2>
       <div className="space-y-md">
         {examples.map((example, index) => (
           <article

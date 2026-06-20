@@ -2,9 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { SalaryBreakdown } from "@/lib/calculators/salary";
 
 export default function SalaryCalculator() {
+  const t = useToolUi("salary-calculator");
   const [annual, setAnnual] = useState("60000");
 
   const requestBody = useMemo(() => {
@@ -20,10 +22,10 @@ export default function SalaryCalculator() {
 
   const breakdown = result
     ? [
-        { label: "Monthly", value: result.monthly },
-        { label: "Weekly", value: result.weekly },
-        { label: "Daily", value: result.daily },
-        { label: "Hourly", value: result.hourly },
+        { key: "monthly", value: result.monthly },
+        { key: "weekly", value: result.weekly },
+        { key: "daily", value: result.daily },
+        { key: "hourly", value: result.hourly },
       ]
     : [];
 
@@ -31,7 +33,7 @@ export default function SalaryCalculator() {
     <>
       <div className="space-y-sm mb-xl">
         <label htmlFor="salary-annual" className="font-label text-label font-bold text-on-surface uppercase">
-          Annual salary
+          {t("annualSalary")}
         </label>
         <input
           id="salary-annual"
@@ -53,10 +55,10 @@ export default function SalaryCalculator() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
           {breakdown.map((item) => (
             <div
-              key={item.label}
+              key={item.key}
               className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center"
             >
-              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{item.label}</p>
+              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t(item.key)}</p>
               <p className="font-h2 text-h2 text-primary-container">{item.value.toLocaleString()}</p>
             </div>
           ))}

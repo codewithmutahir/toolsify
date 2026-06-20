@@ -1,0 +1,1837 @@
+{
+  "common": {
+    "siteName": "Toolsify",
+    "home": "Home",
+    "comingSoon": "Coming Soon",
+    "calculateNow": "Calculate Now",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "reset": "Reset",
+    "clear": "Clear",
+    "result": "Result",
+    "results": "Results",
+    "loading": "Loading...",
+    "error": "Error",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "The page you are looking for does not exist or has been moved.",
+    "backToHome": "Back to home",
+    "builtFor": "Built for speed, clarity, and professional reliability.",
+    "allRightsReserved": "All rights reserved.",
+    "calculating": "Calculating…",
+    "units": {
+      "years": "years",
+      "months": "months",
+      "days": "days",
+      "yearShort": "yr",
+      "kg": "kg",
+      "lbs": "lbs",
+      "cm": "cm",
+      "ft": "ft",
+      "male": "Male",
+      "female": "Female"
+    }
+  },
+  "toolApi": {
+    "networkError": "Unable to reach the calculation API.",
+    "calculationFailed": "Calculation failed.",
+    "invalidJson": "Request body must be valid JSON.",
+    "toolNotFound": "Tool not found.",
+    "invalidWeightOrHeight": "Invalid weight or height values."
+  },
+  "nav": {
+    "home": "Home",
+    "allTools": "All Tools",
+    "categories": "Categories",
+    "logIn": "Log In",
+    "signUp": "Sign Up",
+    "dashboard": "Dashboard"
+  },
+  "footer": {
+    "description": "Free online calculators, converters, and utility tools. Fast, accurate, and no signup required.",
+    "tools": "Tools",
+    "categories": "Categories",
+    "company": "Company",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contactUs": "Contact Us",
+    "requestToolDescription": "Suggest tools we should add to Toolsify."
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ur": "Urdu",
+    "es": "Spanish"
+  },
+  "home": {
+    "heroTitle": "Free Online Tools for Everyone",
+    "heroDescription": "Fast, free, and easy-to-use. No signup required. Access a professional suite of document, math, and developer tools instantly.",
+    "heroImageAlt": "Toolsify hero illustration",
+    "browseByCategory": "Browse by Category",
+    "browseByCategoryDescription": "Find the right tool for your specific task",
+    "viewAllTools": "View all {count}+ Tools",
+    "popularTools": "Popular Tools",
+    "howItWorks": "How Toolsify Works",
+    "suggestionPills": {
+      "bmiCalculator": "BMI Calculator",
+      "wordCounter": "Word Counter",
+      "emiCalculator": "EMI Calculator",
+      "percentageCalculator": "Percentage Calculator",
+      "colorConverter": "Color Converter"
+    },
+    "howItWorksSteps": {
+      "search": {
+        "title": "1. Search",
+        "description": "Find the perfect tool from our extensive library using the search bar or categories."
+      },
+      "use": {
+        "title": "2. Use Instantly",
+        "description": "Enter your data or upload files. No accounts or waiting times involved."
+      },
+      "results": {
+        "title": "3. Get Results",
+        "description": "Download your processed files or copy your results immediately with one click."
+      }
+    },
+    "stats": {
+      "proTools": "Pro Tools Available",
+      "activeUsers": "Active Monthly Users",
+      "signupRequired": "Signup Required"
+    },
+    "requestTool": {
+      "heading": "Request a tool",
+      "description": "Signed-in members can suggest calculators and utilities we should build next.",
+      "button": "Request a Tool",
+      "signInToRequest": "Sign in to request a tool",
+      "compactButton": "Request a tool",
+      "signInCompact": "Sign in to request"
+    }
+  },
+  "search": {
+    "placeholder": "Search tools...",
+    "heroPlaceholder": "Search for a tool (e.g. BMI, Word Counter, EMI...)",
+    "quickSearch": "Quick search",
+    "submit": "Search",
+    "noResults": "No tools found",
+    "noResultsFor": "No tools found for \"{query}\"",
+    "searchAllTools": "Search all tools",
+    "viewAllResults": "View all results for \"{query}\"",
+    "resultsLabel": "Search results",
+    "tryDifferent": "Try a different search term"
+  },
+  "toolsPage": {
+    "title": "All Free Online Tools",
+    "description": "Browse {count}+ free calculators, converters, and text tools. Filter by category or search to find exactly what you need — no signup required.",
+    "filterAll": "All",
+    "searchPlaceholder": "Search tools...",
+    "showing": "Showing {count} tools",
+    "noToolsFound": "No tools found",
+    "adjustFilters": "Try adjusting your search or category filter.",
+    "missingToolHeading": "Can't find the tool you need?",
+    "missingToolDescription": "Request a new calculator or utility and we'll consider adding it to Toolsify."
+  },
+  "toolPage": {
+    "howToUse": "How to use",
+    "faqTitle": "Frequently Asked Questions",
+    "examplesTitle": "Examples",
+    "relatedTools": "Related Tools",
+    "aboutTool": "About this tool",
+    "toolInterface": "Tool interface"
+  },
+  "signUpPrompt": {
+    "title": "You're getting value from Toolsify",
+    "subtitle": "Create a free account to unlock more — your tools stay free.",
+    "dismiss": "Dismiss",
+    "createAccount": "Create free account",
+    "signIn": "Sign in",
+    "notNow": "Not now",
+    "benefits": {
+      "earlyAccess": {
+        "title": "Early access to premium tools",
+        "description": "Be first to try advanced features as they launch.",
+        "badge": "Coming soon"
+      },
+      "requestTools": {
+        "title": "Request new tools",
+        "description": "Tell us what to build next — members get priority.",
+        "badge": "Members only"
+      },
+      "favorites": {
+        "title": "Save favorites & history",
+        "description": "Pick up where you left off across visits."
+      }
+    }
+  },
+  "toolCommon": {
+    "defaultHowTo": {
+      "open": "Open {tool}",
+      "openText": "Navigate to the {tool} page on Toolsify.",
+      "enterValues": "Enter your values",
+      "enterValuesText": "Fill in the required inputs in the tool interface above.",
+      "viewResults": "View results",
+      "viewResultsText": "Results update instantly. Copy or use the output as needed."
+    },
+    "defaultFaqs": {
+      "isFreeQuestion": "Is the {tool} free?",
+      "isFreeAnswer": "Yes. Every tool on Toolsify is free to use with no signup required.",
+      "dataQuestion": "Do you store my data?",
+      "dataAnswer": "Most Toolsify tools run in your browser. When an API is used, inputs are processed to return a result and are not stored.",
+      "accuracyQuestion": "How accurate is this {tool}?",
+      "accuracyAnswer": "{description} Results are intended for general use; verify critical calculations independently."
+    },
+    "defaultExample": {
+      "title": "Quick start",
+      "description": "Use the {tool} with typical values for your scenario and review the output above."
+    }
+  },
+  "forms": {
+    "contact": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@example.com",
+      "subjectPlaceholder": "What is this about?",
+      "messagePlaceholder": "How can we help?",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message sent!",
+      "successDescription": "Thanks for reaching out. We'll get back to you as soon as we can.",
+      "sendAnother": "Send another message",
+      "error": "Something went wrong. Please try again later."
+    },
+    "requestTool": {
+      "title": "Request a tool",
+      "toolName": "Tool name",
+      "description": "Description",
+      "useCase": "Use case",
+      "submit": "Submit request",
+      "submitting": "Submitting...",
+      "success": "Request submitted!",
+      "error": "Failed to submit. Please try again."
+    }
+  },
+  "metadata": {
+    "site": {
+      "title": "Toolsify — Free Online Tools",
+      "description": "Free online calculators, converters, and utility tools. Fast, accurate, and no signup required."
+    },
+    "home": {
+      "title": "Free Online Tools — Calculators, Converters & More | Toolsify",
+      "description": "Free online tools including BMI calculator, percentage calculator, word counter, EMI calculator, and 50+ more. No signup required. Fast and accurate.",
+      "keywords": [
+        "free online tools",
+        "calculator",
+        "converter",
+        "BMI calculator",
+        "word counter",
+        "EMI calculator",
+        "toolsify"
+      ]
+    },
+    "tools": {
+      "title": "All Free Online Tools — 50+ Calculators & Converters | Toolsify",
+      "description": "Browse 50+ free online tools including calculators, converters, text tools, and more.",
+      "keywords": [
+        "free online tools",
+        "all tools",
+        "calculators",
+        "converters",
+        "toolsify"
+      ]
+    },
+    "categories": {
+      "title": "Tool Categories | Toolsify",
+      "description": "Browse free online tools by category on Toolsify."
+    },
+    "contact": {
+      "title": "Contact Us | Toolsify",
+      "description": "Get in touch with the Toolsify team."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Toolsify",
+      "description": "Toolsify privacy policy and data practices."
+    },
+    "terms": {
+      "title": "Terms of Service | Toolsify",
+      "description": "Toolsify terms of service."
+    },
+    "toolTitle": "{title} — Free Online Tool | Toolsify",
+    "toolDescription": "Use our free online {title}. {description} No signup required. Fast and accurate.",
+    "categoryTitle": "Free {category} — {count} Tools | Toolsify",
+    "categoryDescription": "{count} free {category} for everyone. No signup required."
+  },
+  "categories": {
+    "math": {
+      "title": "Math & Calculators",
+      "description": "Free online math calculators for percentages, fractions, averages, and more. Fast, accurate results with no signup.",
+      "shortLabel": "Math",
+      "shortName": "Math"
+    },
+    "finance": {
+      "title": "Finance",
+      "description": "Calculate EMI, compound interest, loans, SIP, and more with our free finance calculators.",
+      "shortLabel": "Finance",
+      "shortName": "Finance"
+    },
+    "fitness": {
+      "title": "Fitness & Health",
+      "description": "Track your health with BMI, BMR, calorie, body fat, and ideal weight calculators.",
+      "shortLabel": "Fitness",
+      "shortName": "Fitness"
+    },
+    "text": {
+      "title": "Text Tools",
+      "description": "Count words, convert case, generate lorem ipsum, and manipulate text with free online tools.",
+      "shortLabel": "Text",
+      "shortName": "Text Tools"
+    },
+    "color": {
+      "title": "Color & Design",
+      "description": "Pick colors, convert hex to RGB, and work with color formats for design projects.",
+      "shortLabel": "Design",
+      "shortName": "Design"
+    },
+    "converter": {
+      "title": "Unit Converters",
+      "description": "Convert length, weight, temperature, and more between metric and imperial units.",
+      "shortLabel": "Converter",
+      "shortName": "Converters"
+    },
+    "developer": {
+      "title": "Developer Tools",
+      "description": "Format JSON, encode Base64, generate passwords, and other utilities for developers.",
+      "shortLabel": "Dev",
+      "shortName": "Developer"
+    }
+  },
+  "tools": {
+    "percentage-calculator": {
+      "title": "Percentage Calculator",
+      "description": "Calculate percentages, percentage increase, decrease, and find what percent one number is of another.",
+      "shortDesc": "Calculate any percentage instantly",
+      "ui": {
+        "tabOf": "X% of Y",
+        "tabWhatPercent": "X is what % of Y?",
+        "tabChange": "% change",
+        "labelPercentageX": "Percentage (X)",
+        "labelNumberY": "Number (Y)",
+        "labelNumberX": "Number (X)",
+        "labelFromX": "From (X)",
+        "labelToY": "To (Y)",
+        "resultOf": "{a}% of {b} is {value}",
+        "resultWhatPercent": "{a} is {value}% of {b}",
+        "resultChange": "Change from {a} to {b} is {value}%"
+      },
+      "content": {
+        "introduction": "Find a percentage of a number, determine what percent one value is of another, or calculate percentage increase and decrease.",
+        "howToSteps": [
+          {
+            "name": "Choose a mode",
+            "text": "Select X% of Y, X is what % of Y, or percent change between two values."
+          },
+          {
+            "name": "Enter values",
+            "text": "Type the two numbers required for your selected mode."
+          },
+          {
+            "name": "Read the result",
+            "text": "The calculated percentage and a plain-language label appear below."
+          }
+        ],
+        "examples": [
+          {
+            "title": "20% of 150",
+            "description": "Mode: X% of Y. Enter 20 and 150 to get 30."
+          },
+          {
+            "title": "Percent change",
+            "description": "From 80 to 100 is a 25% increase."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Can I calculate percent increase and decrease?",
+            "answer": "Yes. Use the percent change tab and enter the original and new values."
+          },
+          {
+            "question": "What if the second number is zero?",
+            "answer": "Division by zero is undefined. The calculator returns no result when the denominator is zero."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes. No account or payment is required."
+          }
+        ]
+      }
+    },
+    "simple-interest-calculator": {
+      "title": "Simple Interest Calculator",
+      "description": "Calculate simple interest and total amount from principal, rate, and time.",
+      "shortDesc": "Principal, rate, time → interest",
+      "ui": {
+        "principal": "Principal",
+        "rate": "Rate (%)",
+        "timeYears": "Time (years)",
+        "yearShort": "yr",
+        "interestEarned": "Interest earned",
+        "totalAmount": "Total amount"
+      },
+      "content": {
+        "introduction": "Calculate simple interest and total amount from principal, annual rate, and time in years.",
+        "howToSteps": [
+          {
+            "name": "Enter principal",
+            "text": "Type the initial loan or investment amount."
+          },
+          {
+            "name": "Set rate and time",
+            "text": "Enter annual interest rate (%) and duration in years."
+          },
+          {
+            "name": "View results",
+            "text": "See interest earned and total amount."
+          }
+        ],
+        "examples": [
+          {
+            "title": "$10,000 at 5% for 3 years",
+            "description": "Principal 10000, rate 5, time 3 yields $1,500 interest and $11,500 total."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What is simple interest?",
+            "answer": "Simple interest is calculated only on the original principal, not on accumulated interest."
+          },
+          {
+            "question": "When should I use compound interest instead?",
+            "answer": "Use compound interest when earnings are reinvested and interest accrues on prior interest."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes. No account is required."
+          }
+        ]
+      }
+    },
+    "discount-calculator": {
+      "title": "Discount Calculator",
+      "description": "Calculate final price and savings from original price and discount percentage.",
+      "shortDesc": "Find sale price and savings",
+      "ui": {
+        "originalPrice": "Original price",
+        "discountPercent": "Discount (%)",
+        "finalPrice": "Final price",
+        "youSave": "You save {amount}"
+      },
+      "content": {
+        "introduction": "Find the final sale price and total savings from an original price and discount percentage.",
+        "howToSteps": [
+          {
+            "name": "Enter original price",
+            "text": "Type the full price before discount."
+          },
+          {
+            "name": "Enter discount percent",
+            "text": "Type the discount as a percentage (e.g. 20 for 20% off)."
+          },
+          {
+            "name": "See savings",
+            "text": "View final price and amount saved."
+          }
+        ],
+        "examples": [
+          {
+            "title": "20% off $100",
+            "description": "Original price 100 with 20% discount gives a final price of $80 and $20 saved."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Can I enter discounts over 100%?",
+            "answer": "No. Discounts are limited to 0–100% for valid results."
+          },
+          {
+            "question": "Does this include tax?",
+            "answer": "No. Tax is calculated on the final price separately depending on your region."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "average-calculator": {
+      "title": "Average Calculator",
+      "description": "Calculate the mean, median, mode, min, and max of a set of numbers quickly.",
+      "shortDesc": "Mean, median, mode, min, max",
+      "ui": {
+        "numbersInput": "Numbers",
+        "numbersPlaceholder": "Enter numbers separated by commas or new lines...",
+        "mean": "Mean",
+        "median": "Median",
+        "mode": "Mode",
+        "min": "Min",
+        "max": "Max",
+        "count": "Count",
+        "enterNumbers": "Enter at least one valid number to see results."
+      },
+      "content": {
+        "introduction": "Calculate mean, median, mode, minimum, and maximum from any list of numbers.",
+        "howToSteps": [
+          {
+            "name": "Enter numbers",
+            "text": "Paste or type numbers separated by commas, spaces, or new lines."
+          },
+          {
+            "name": "Review statistics",
+            "text": "Mean, median, mode, min, max, and count appear instantly."
+          },
+          {
+            "name": "Copy results",
+            "text": "Use the stats for homework, spreadsheets, or data summaries."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Test scores",
+            "description": "Enter 85, 90, 78, 92, 88 to get mean 86.6 and median 88."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "How is the mode calculated?",
+            "answer": "The mode is the most frequently occurring value. Multiple modes may be listed."
+          },
+          {
+            "question": "What number formats are accepted?",
+            "answer": "Integers and decimals separated by commas, spaces, or line breaks."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "matrix-calculator": {
+      "title": "Matrix Calculator",
+      "description": "Add, multiply, transpose matrices and calculate determinants with step-by-step results.",
+      "shortDesc": "Add, multiply, transpose, determinant"
+    },
+    "quadratic-solver": {
+      "title": "Quadratic Equation Solver",
+      "description": "Solve quadratic equations with a visual parabola graph and step-by-step solutions.",
+      "shortDesc": "Solve quadratics with parabola graph"
+    },
+    "standard-deviation-calculator": {
+      "title": "Statistics Calculator",
+      "description": "Calculate mean, median, mode, standard deviation, and variance for any dataset.",
+      "shortDesc": "Mean, median, mode, std dev, variance"
+    },
+    "number-base-converter": {
+      "title": "Number Base Converter",
+      "description": "Convert numbers between binary, octal, decimal, and hexadecimal with live conversion.",
+      "shortDesc": "Binary, octal, decimal, hex conversion"
+    },
+    "emi-calculator": {
+      "title": "EMI Calculator",
+      "description": "Calculate your monthly EMI for home loans, car loans, and personal loans.",
+      "shortDesc": "Calculate monthly loan EMI",
+      "ui": {
+        "loanAmount": "Loan amount",
+        "interestRate": "Interest rate (% per year)",
+        "tenure": "Tenure",
+        "monthlyEmi": "Monthly EMI",
+        "totalInterest": "Total interest",
+        "totalPayment": "Total payment",
+        "principalVsInterest": "Principal vs interest",
+        "principalPercent": "Principal {percent}%",
+        "interestPercent": "Interest {percent}%"
+      },
+      "content": {
+        "introduction": "Calculate monthly EMI for home loans, car loans, and personal loans with total interest and principal breakdown.",
+        "howToSteps": [
+          {
+            "name": "Enter loan amount",
+            "text": "Type the principal loan amount."
+          },
+          {
+            "name": "Set rate and tenure",
+            "text": "Enter annual interest rate and loan tenure in years or months."
+          },
+          {
+            "name": "View EMI",
+            "text": "See monthly EMI, total payment, and interest vs principal split."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Home loan example",
+            "description": "₹50,00,000 at 8.5% for 20 years gives a monthly EMI you can compare across lenders."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What is EMI?",
+            "answer": "EMI (Equated Monthly Installment) is a fixed payment toward principal and interest each month."
+          },
+          {
+            "question": "Does this include fees or insurance?",
+            "answer": "No. This calculator covers principal and interest only. Add processing fees separately."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes. No account or payment is required."
+          }
+        ]
+      }
+    },
+    "compound-interest-calculator": {
+      "title": "Compound Interest Calculator",
+      "description": "See how your investments grow over time with compound interest calculations.",
+      "shortDesc": "Project investment growth",
+      "ui": {
+        "principal": "Principal",
+        "annualRate": "Annual rate (%)",
+        "timeYears": "Time (years)",
+        "compounding": "Compounding",
+        "totalAmount": "Total amount",
+        "totalInterest": "Total interest",
+        "yearByYearBreakdown": "Year-by-year breakdown",
+        "year": "Year",
+        "balance": "Balance",
+        "interestEarned": "Interest earned",
+        "frequencyAnnually": "Annually",
+        "frequencySemiannually": "Semi-annually",
+        "frequencyQuarterly": "Quarterly",
+        "frequencyMonthly": "Monthly",
+        "frequencyDaily": "Daily"
+      },
+      "content": {
+        "introduction": "Project how investments grow with compound interest, including year-by-year balance breakdown.",
+        "howToSteps": [
+          {
+            "name": "Enter principal",
+            "text": "Type your starting investment amount."
+          },
+          {
+            "name": "Set rate and duration",
+            "text": "Enter annual rate, years, and compounding frequency."
+          },
+          {
+            "name": "Review growth",
+            "text": "See total amount, interest earned, and yearly breakdown."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Monthly compounding",
+            "description": "$10,000 at 8% for 10 years with monthly compounding grows faster than annual compounding."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What compounding frequencies are supported?",
+            "answer": "Annually, semi-annually, quarterly, monthly, and daily."
+          },
+          {
+            "question": "Are taxes or fees included?",
+            "answer": "No. Results show gross growth before taxes, fees, or withdrawals."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes. No signup is required."
+          }
+        ]
+      }
+    },
+    "salary-calculator": {
+      "title": "Salary Calculator",
+      "description": "Convert between annual, monthly, and hourly salary rates.",
+      "shortDesc": "Convert salary rates",
+      "ui": {
+        "annualSalary": "Annual salary",
+        "monthly": "Monthly",
+        "weekly": "Weekly",
+        "daily": "Daily",
+        "hourly": "Hourly"
+      },
+      "content": {
+        "introduction": "Convert an annual salary into monthly, weekly, daily, and hourly equivalents.",
+        "howToSteps": [
+          {
+            "name": "Enter annual salary",
+            "text": "Type your yearly gross salary."
+          },
+          {
+            "name": "View breakdown",
+            "text": "See monthly, weekly, daily, and hourly amounts."
+          },
+          {
+            "name": "Compare offers",
+            "text": "Use hourly and monthly figures to compare job offers."
+          }
+        ],
+        "examples": [
+          {
+            "title": "$60,000 per year",
+            "description": "Equals about $5,000/month, $1,154/week, or $28.85/hour at 40 hours/week."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What hours per week are assumed?",
+            "answer": "Hourly rate assumes a 40-hour work week and 52 weeks per year."
+          },
+          {
+            "question": "Is tax deducted?",
+            "answer": "No. Figures are gross (pre-tax) salary conversions."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "tip-calculator": {
+      "title": "Tip Calculator",
+      "description": "Calculate tip amount and split the bill evenly among multiple people.",
+      "shortDesc": "Tip and split the bill",
+      "ui": {
+        "billAmount": "Bill amount",
+        "tipPercent": "Tip (%)",
+        "people": "People",
+        "tip": "Tip",
+        "total": "Total",
+        "perPerson": "Per person"
+      },
+      "content": {
+        "introduction": "Calculate tip amount, total bill, and per-person share when splitting with friends.",
+        "howToSteps": [
+          {
+            "name": "Enter bill amount",
+            "text": "Type the pre-tip bill total."
+          },
+          {
+            "name": "Set tip and party size",
+            "text": "Choose tip percentage and number of people."
+          },
+          {
+            "name": "Split the bill",
+            "text": "See tip, total, and amount per person."
+          }
+        ],
+        "examples": [
+          {
+            "title": "$50 bill, 18% tip, 2 people",
+            "description": "Tip $9, total $59, and $29.50 per person."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Are quick tip buttons available?",
+            "answer": "Yes. Tap 10%, 15%, 18%, 20%, or 25% for common tip rates."
+          },
+          {
+            "question": "Is tip calculated before or after tax?",
+            "answer": "Tip is calculated on the bill amount you enter (typically pre-tax)."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "percentage-change-calculator": {
+      "title": "Percentage Change Calculator",
+      "description": "Calculate the percentage increase or decrease between two values.",
+      "shortDesc": "Percent increase or decrease",
+      "ui": {
+        "originalValue": "Original value",
+        "newValue": "New value",
+        "percentageChange": "Percentage change",
+        "absoluteChange": "Absolute change: {change}"
+      },
+      "content": {
+        "introduction": "Find the percent increase or decrease between an original value and a new value.",
+        "howToSteps": [
+          {
+            "name": "Enter original value",
+            "text": "Type the starting amount."
+          },
+          {
+            "name": "Enter new value",
+            "text": "Type the updated amount."
+          },
+          {
+            "name": "Read percent change",
+            "text": "See percentage change and absolute difference."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Price increase",
+            "description": "From $80 to $100 is a +25% change with an absolute increase of $20."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What if the original value is zero?",
+            "answer": "Percent change from zero is undefined; the calculator returns no result."
+          },
+          {
+            "question": "Can this show decreases?",
+            "answer": "Yes. Negative percent change indicates a decrease from the original."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "cagr-calculator": {
+      "title": "CAGR Calculator",
+      "description": "Calculate Compound Annual Growth Rate with an interactive growth chart.",
+      "shortDesc": "Compound annual growth rate + chart"
+    },
+    "roi-calculator": {
+      "title": "ROI Calculator",
+      "description": "Calculate return on investment with timeline projections and breakdowns.",
+      "shortDesc": "Return on investment with timeline"
+    },
+    "break-even-calculator": {
+      "title": "Break-Even Calculator",
+      "description": "Find your break-even point using fixed and variable costs with a visual chart.",
+      "shortDesc": "Fixed/variable costs, visual chart"
+    },
+    "bmi-calculator": {
+      "title": "BMI Calculator",
+      "description": "Calculate your Body Mass Index and see your weight category based on height and weight.",
+      "shortDesc": "Check your body mass index",
+      "ui": {
+        "weight": "Weight",
+        "height": "Height",
+        "resultsAriaLabel": "BMI results",
+        "yourBmiIs": "Your BMI is",
+        "categoryUnderweight": "Underweight",
+        "categoryNormal": "Normal weight",
+        "categoryOverweight": "Overweight",
+        "categoryObese": "Obese"
+      },
+      "content": {
+        "introduction": "Calculate your Body Mass Index (BMI) instantly from height and weight. Supports metric and imperial units with a visual category indicator.",
+        "howToSteps": [
+          {
+            "name": "Enter weight",
+            "text": "Type your weight and choose kilograms or pounds."
+          },
+          {
+            "name": "Enter height",
+            "text": "Type your height and choose centimeters or feet."
+          },
+          {
+            "name": "Read your BMI",
+            "text": "Your BMI value and weight category appear in the results section."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Adult metric example",
+            "description": "Weight 70 kg and height 175 cm gives a BMI of about 22.9 (normal weight)."
+          },
+          {
+            "title": "Imperial example",
+            "description": "Weight 154 lbs and height 5 ft 9 in converts to metric internally before calculating BMI."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What is a healthy BMI range?",
+            "answer": "For most adults, a BMI between 18.5 and 24.9 is considered normal weight. Below 18.5 is underweight; 25–29.9 is overweight; 30 and above is obese."
+          },
+          {
+            "question": "Is BMI accurate for athletes?",
+            "answer": "BMI does not distinguish muscle from fat. Athletes with high muscle mass may have a high BMI despite low body fat."
+          },
+          {
+            "question": "Is my health data sent to a server?",
+            "answer": "No. BMI calculation can run in your browser. The public API is available for agents and validates the same formula server-side."
+          }
+        ],
+        "article": "Body Mass Index (BMI) is a widely used screening measure for weight categories. It is calculated as weight in kilograms divided by height in meters squared. While useful for population-level trends, BMI should be interpreted alongside other health factors."
+      }
+    },
+    "calorie-calculator": {
+      "title": "Calorie Calculator",
+      "description": "Estimate daily calorie needs based on age, weight, height, and activity level.",
+      "shortDesc": "Daily calorie needs",
+      "ui": {
+        "age": "Age",
+        "gender": "Gender",
+        "weightKg": "Weight (kg)",
+        "heightCm": "Height (cm)",
+        "activityLevel": "Activity level",
+        "bmr": "BMR",
+        "tdee": "TDEE",
+        "loseWeight": "Lose weight",
+        "maintain": "Maintain",
+        "gainWeight": "Gain weight",
+        "loseWeightSub": "−500 cal",
+        "maintainSub": "TDEE",
+        "gainWeightSub": "+500 cal",
+        "activitySedentary": "Sedentary (little or no exercise)",
+        "activityLight": "Light (1–3 days/week)",
+        "activityModerate": "Moderate (3–5 days/week)",
+        "activityActive": "Active (6–7 days/week)",
+        "activityVeryActive": "Very active (physical job)"
+      },
+      "content": {
+        "introduction": "Estimate daily calorie needs (BMR and TDEE) using the Mifflin-St Jeor equation and activity level.",
+        "howToSteps": [
+          {
+            "name": "Enter body stats",
+            "text": "Provide age, gender, weight (kg), and height (cm)."
+          },
+          {
+            "name": "Select activity level",
+            "text": "Choose how active you are day to day."
+          },
+          {
+            "name": "View calorie targets",
+            "text": "See maintenance, weight loss, and weight gain targets."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Moderately active adult",
+            "description": "A 30-year-old at 70 kg and 175 cm with moderate activity gets a TDEE estimate for meal planning."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What formula is used?",
+            "answer": "The Mifflin-St Jeor equation for BMR, multiplied by an activity factor for TDEE."
+          },
+          {
+            "question": "Are these medical recommendations?",
+            "answer": "No. Results are estimates. Consult a healthcare provider for personalized nutrition advice."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "ideal-weight-calculator": {
+      "title": "Ideal Weight Calculator",
+      "description": "Find your ideal body weight range based on height using multiple formulas.",
+      "shortDesc": "Find your ideal weight",
+      "ui": {
+        "heightCm": "Height (cm)",
+        "gender": "Gender",
+        "recommendedRange": "Recommended range",
+        "formulaDevine": "Devine",
+        "formulaRobinson": "Robinson",
+        "formulaMiller": "Miller",
+        "formulaHamwi": "Hamwi"
+      },
+      "content": {
+        "introduction": "Estimate ideal body weight using Devine, Robinson, Miller, and Hamwi formulas based on height and gender.",
+        "howToSteps": [
+          {
+            "name": "Enter height",
+            "text": "Type your height in centimeters."
+          },
+          {
+            "name": "Select gender",
+            "text": "Choose male or female for formula selection."
+          },
+          {
+            "name": "Compare formulas",
+            "text": "Review each formula result and the suggested weight range."
+          }
+        ],
+        "examples": [
+          {
+            "title": "175 cm male",
+            "description": "Compare four clinical formulas to see a recommended weight range in kg and lbs."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Which formula is most accurate?",
+            "answer": "Each formula was developed for different populations. The range across all four is often more useful than any single result."
+          },
+          {
+            "question": "Does this account for muscle mass?",
+            "answer": "No. Athletes and muscular individuals may weigh more than these estimates suggest."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "age-calculator": {
+      "title": "Age Calculator",
+      "description": "Calculate your exact age in years, months, and days from your date of birth.",
+      "shortDesc": "Exact age from birth date",
+      "ui": {
+        "dateOfBirth": "Date of birth",
+        "asOfDate": "As of date",
+        "yourAge": "Your age",
+        "years": "Years",
+        "months": "Months",
+        "days": "Days",
+        "livedSummary": "You've lived {days} days, or approximately {hours} hours.",
+        "invalidDateRange": "Please enter a valid birth date that is before the \"as of\" date.",
+        "nextBirthdayIn": "Next birthday in {days} days",
+        "nextBirthdayToday": "Happy birthday! Today is your birthday.",
+        "ageSummary": "{years} years, {months} months, {days} days"
+      },
+      "content": {
+        "introduction": "Calculate your exact age in years, months, and days from your date of birth, with total days lived and next birthday countdown.",
+        "howToSteps": [
+          {
+            "name": "Enter birth date",
+            "text": "Select your date of birth using the date picker."
+          },
+          {
+            "name": "Set as-of date",
+            "text": "Optionally choose a different reference date (defaults to today)."
+          },
+          {
+            "name": "Read your age",
+            "text": "View years, months, days, and lifetime statistics."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Birthday countdown",
+            "description": "See how many days remain until your next birthday from today's date."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Can I calculate age as of a past date?",
+            "answer": "Yes. Change the as-of date to compute age on any historical date."
+          },
+          {
+            "question": "Why does my age show months and days?",
+            "answer": "Partial years are expressed as remaining months and days for precision beyond whole years."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes. No signup is required."
+          }
+        ]
+      }
+    },
+    "macro-calculator": {
+      "title": "Macro Calculator",
+      "description": "Calculate protein, carbs, and fat targets based on your fitness goal and body stats.",
+      "shortDesc": "Protein, carbs, fat targets by goal"
+    },
+    "one-rep-max-calculator": {
+      "title": "One Rep Max Calculator",
+      "description": "Estimate your one-rep max using multiple formulas for all major lifts.",
+      "shortDesc": "Multiple formulas, all major lifts"
+    },
+    "word-counter": {
+      "title": "Word Counter",
+      "description": "Count words, characters, sentences, and paragraphs in your text instantly.",
+      "shortDesc": "Count words and characters",
+      "ui": {
+        "textLabel": "Text to analyze",
+        "textPlaceholder": "Start typing or paste your text here...",
+        "words": "Words",
+        "characters": "Characters",
+        "noSpaces": "No spaces",
+        "sentences": "Sentences",
+        "paragraphs": "Paragraphs",
+        "readingTime": "Reading time",
+        "readingLevel": "Reading level",
+        "difficulty": "Difficulty",
+        "limitTwitter": "Twitter",
+        "limitMeta": "Meta description",
+        "limitLinkedIn": "LinkedIn"
+      },
+      "content": {
+        "introduction": "Count words, characters, sentences, and paragraphs with reading time estimates and social character-limit progress bars.",
+        "howToSteps": [
+          {
+            "name": "Paste or type",
+            "text": "Enter or paste your text into the editor."
+          },
+          {
+            "name": "Review stats",
+            "text": "Word, character, and readability stats update as you type."
+          },
+          {
+            "name": "Check limits",
+            "text": "Compare character count against Twitter, LinkedIn, and meta description limits."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Blog post draft",
+            "description": "Paste a 800-word article to see reading time and Flesch-Kincaid grade level."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "How is reading time calculated?",
+            "answer": "Reading time assumes roughly 200 words per minute, a common editorial estimate."
+          },
+          {
+            "question": "Is my text stored?",
+            "answer": "Text is sent to the Toolsify API for analysis and is not stored."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes. No signup is required."
+          }
+        ]
+      }
+    },
+    "character-counter": {
+      "title": "Character Counter",
+      "description": "Count characters with and without spaces for social media and SEO limits.",
+      "shortDesc": "Count characters with spaces",
+      "ui": {
+        "textPlaceholder": "Type or paste your text here...",
+        "characters": "Characters",
+        "noSpaces": "No spaces",
+        "words": "Words",
+        "lines": "Lines"
+      },
+      "content": {
+        "introduction": "Count characters with and without spaces, plus platform-specific limit progress for social posts.",
+        "howToSteps": [
+          {
+            "name": "Paste text",
+            "text": "Type or paste your caption, meta description, or post."
+          },
+          {
+            "name": "Review counts",
+            "text": "See characters, words, lines, and bytes."
+          },
+          {
+            "name": "Check limits",
+            "text": "Progress bars show proximity to Twitter, LinkedIn, and SMS limits."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Tweet draft",
+            "description": "Verify a post stays within 280 characters before publishing."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Are emojis counted as one character?",
+            "answer": "Emojis may count as multiple Unicode code units depending on the platform."
+          },
+          {
+            "question": "What limits are shown?",
+            "answer": "Common limits for Twitter/X, LinkedIn, Instagram, and SMS are included."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "case-converter": {
+      "title": "Case Converter",
+      "description": "Convert text to uppercase, lowercase, title case, sentence case, and more.",
+      "shortDesc": "Change text case instantly",
+      "ui": {
+        "inputLabel": "Text to convert",
+        "inputPlaceholder": "Type or paste text here...",
+        "uppercase": "UPPERCASE",
+        "lowercase": "lowercase",
+        "titleCase": "Title Case",
+        "sentenceCase": "Sentence case",
+        "alternating": "Alternating",
+        "inverse": "Inverse Case",
+        "copy": "Copy",
+        "copied": "Copied",
+        "copyFailed": "Copy failed"
+      },
+      "content": {
+        "introduction": "Convert text to uppercase, lowercase, title case, sentence case, camelCase, snake_case, or kebab-case.",
+        "howToSteps": [
+          {
+            "name": "Paste text",
+            "text": "Enter the string you want to transform."
+          },
+          {
+            "name": "Pick a case style",
+            "text": "Select from seven common naming and formatting conventions."
+          },
+          {
+            "name": "Copy output",
+            "text": "Copy the converted text for code, titles, or data cleanup."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Variable naming",
+            "description": "Convert \"user profile id\" to userProfileId (camelCase) or user_profile_id (snake_case)."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What is title case?",
+            "answer": "Capitalizes the first letter of each major word, common for headings."
+          },
+          {
+            "question": "Does camelCase handle spaces?",
+            "answer": "Yes. Words are split on spaces and punctuation before casing rules are applied."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "text-repeater": {
+      "title": "Text Repeater",
+      "description": "Repeat any text multiple times with a custom separator between copies.",
+      "shortDesc": "Repeat text with separator",
+      "ui": {
+        "textToRepeat": "Text to repeat",
+        "repeatCount": "Repeat count",
+        "separator": "Separator",
+        "output": "Output"
+      },
+      "content": {
+        "introduction": "Repeat any text a specified number of times with a custom separator between copies.",
+        "howToSteps": [
+          {
+            "name": "Enter text",
+            "text": "Type the string to repeat."
+          },
+          {
+            "name": "Set count and separator",
+            "text": "Choose how many times to repeat and what goes between copies."
+          },
+          {
+            "name": "Copy output",
+            "text": "Copy the repeated result for testing or bulk data."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Generate test lines",
+            "description": "Repeat \"test\" 5 times with newline separator for mock log data."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is there a maximum repeat count?",
+            "answer": "Very large counts may be slow or hit API limits. Use reasonable values for testing."
+          },
+          {
+            "question": "Can I use a custom separator?",
+            "answer": "Yes. Use comma, newline, space, or any custom separator string."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "lorem-ipsum-generator": {
+      "title": "Lorem Ipsum Generator",
+      "description": "Generate placeholder lorem ipsum text for design mockups and prototypes.",
+      "shortDesc": "Generate placeholder text",
+      "ui": {
+        "paragraphs": "Paragraphs",
+        "words": "Words",
+        "bytes": "Bytes",
+        "startWithLorem": "Start with \"Lorem ipsum\"",
+        "generate": "Generate",
+        "copy": "Copy"
+      },
+      "content": {
+        "introduction": "Generate placeholder Lorem Ipsum paragraphs for mockups, wireframes, and design comps.",
+        "howToSteps": [
+          {
+            "name": "Choose paragraph count",
+            "text": "Select how many paragraphs to generate (1–20)."
+          },
+          {
+            "name": "Optional HTML wrap",
+            "text": "Enable <p> tags for direct use in HTML prototypes."
+          },
+          {
+            "name": "Generate and copy",
+            "text": "Click Generate, then copy the placeholder text."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Landing page mockup",
+            "description": "Generate 3 paragraphs of filler text for a hero and feature section layout."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is the text random each time?",
+            "answer": "Yes. Each generation produces varied Lorem Ipsum-style placeholder content."
+          },
+          {
+            "question": "What does HTML wrap do?",
+            "answer": "Wraps each paragraph in <p> tags for quick HTML prototyping."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "color-converter": {
+      "title": "Color Converter",
+      "description": "Convert colors between HEX, RGB, HSL, and CMYK color formats.",
+      "shortDesc": "Convert color formats",
+      "ui": {
+        "hex": "HEX",
+        "rgb": "RGB",
+        "hsl": "HSL",
+        "pickColor": "Pick a color"
+      },
+      "content": {
+        "introduction": "Convert colors between HEX, RGB, and HSL with a live preview swatch.",
+        "howToSteps": [
+          {
+            "name": "Pick a format",
+            "text": "Edit HEX, RGB, or HSL — other formats update automatically."
+          },
+          {
+            "name": "Adjust values",
+            "text": "Fine-tune channels with inputs or the color preview."
+          },
+          {
+            "name": "Copy values",
+            "text": "Use converted values in CSS, design tools, or code."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Brand orange #FF6B35",
+            "description": "Converts to rgb(255, 107, 53) and hsl(18, 100%, 60%)."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Which color formats are supported?",
+            "answer": "HEX (#RRGGBB), RGB (0–255), and HSL (hue 0–360, saturation and lightness 0–100%)."
+          },
+          {
+            "question": "Can I paste CSS color values?",
+            "answer": "Paste hex codes directly. RGB and HSL values can be entered in the respective fields."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "unit-converter": {
+      "title": "Unit Converter",
+      "description": "Convert between common units of length, weight, volume, and more.",
+      "shortDesc": "Convert any unit",
+      "ui": {
+        "value": "Value",
+        "from": "From",
+        "to": "To",
+        "result": "Result",
+        "categoryLength": "Length",
+        "categoryWeight": "Weight",
+        "categoryTemperature": "Temperature",
+        "categoryArea": "Area",
+        "categoryVolume": "Volume",
+        "categorySpeed": "Speed",
+        "categoryTime": "Time"
+      },
+      "content": {
+        "introduction": "Convert length, weight, temperature, speed, and area between metric and imperial units instantly.",
+        "howToSteps": [
+          {
+            "name": "Pick a category",
+            "text": "Select length, weight, temperature, speed, or area."
+          },
+          {
+            "name": "Choose units",
+            "text": "Set from and to units (e.g. miles to kilometers)."
+          },
+          {
+            "name": "Enter a value",
+            "text": "Type the amount to convert and copy the result."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Miles to kilometers",
+            "description": "Convert 26.2 miles (marathon distance) to approximately 42.16 km."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "How precise are conversions?",
+            "answer": "Results use standard conversion factors with up to six decimal places."
+          },
+          {
+            "question": "Does temperature use Celsius or Fahrenheit?",
+            "answer": "Both. Select °C, °F, or Kelvin in the temperature category."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "timezone-converter": {
+      "title": "Timezone Converter",
+      "description": "Convert times across world clocks with DST awareness and a meeting planner.",
+      "shortDesc": "World clock, DST aware, meeting planner"
+    },
+    "cooking-converter": {
+      "title": "Cooking Measurement Converter",
+      "description": "Convert cups, tablespoons, milliliters, and grams by ingredient for recipes.",
+      "shortDesc": "Cups, tbsp, ml, grams by ingredient"
+    },
+    "regex-tester": {
+      "title": "Regex Tester & Debugger",
+      "description": "Test regular expressions with live match highlighting, capture groups, and flags.",
+      "shortDesc": "Live match highlighting, capture groups",
+      "ui": {
+        "pattern": "Pattern",
+        "flags": "Flags",
+        "testString": "Test string",
+        "matches": "Matches",
+        "noMatches": "No matches",
+        "matchCount": "{count} matches",
+        "groups": "Groups"
+      },
+      "content": {
+        "introduction": "Test regular expressions against sample text with live match highlighting and capture groups.",
+        "howToSteps": [
+          {
+            "name": "Enter a pattern",
+            "text": "Type your regex pattern and select flags."
+          },
+          {
+            "name": "Add test text",
+            "text": "Paste or type the string you want to match against."
+          },
+          {
+            "name": "Review matches",
+            "text": "See highlighted matches and capture group details below."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Validate an email pattern",
+            "description": "Use the Email preset pattern and paste sample addresses to see which match."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What regex flavor does this use?",
+            "answer": "This tool uses JavaScript regular expressions, the same flavor supported by modern browsers and Node.js."
+          },
+          {
+            "question": "Does my data leave my browser?",
+            "answer": "Pattern matching is processed through the Toolsify API. Avoid pasting confidential text if that is a concern."
+          },
+          {
+            "question": "What do the regex flags mean?",
+            "answer": "g = global, i = case-insensitive, m = multiline, s = dotAll, u = unicode."
+          }
+        ]
+      }
+    },
+    "json-formatter": {
+      "title": "JSON Formatter & Validator",
+      "description": "Format, minify, validate JSON data with a collapsible tree view and syntax highlighting.",
+      "shortDesc": "Format, minify, validate, tree view",
+      "ui": {
+        "inputLabel": "JSON input",
+        "outputLabel": "Output",
+        "format": "Format",
+        "minify": "Minify",
+        "validate": "Validate",
+        "copyOutput": "Copy output",
+        "validJson": "Valid JSON",
+        "invalidJson": "Invalid JSON"
+      },
+      "content": {
+        "introduction": "Format, minify, and validate JSON with a collapsible tree view and syntax-aware error messages.",
+        "howToSteps": [
+          {
+            "name": "Paste JSON",
+            "text": "Paste raw JSON into the editor."
+          },
+          {
+            "name": "Format or minify",
+            "text": "Click Format for readable output or Minify for a single line."
+          },
+          {
+            "name": "Inspect the tree",
+            "text": "Expand nodes in the tree view to explore nested structures."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Pretty-print an API response",
+            "description": "Paste a compact API JSON payload and click Format to make it readable."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is this safe for sensitive JSON data?",
+            "answer": "JSON is processed through the Toolsify API to format and validate. Do not paste secrets you cannot send to a server."
+          },
+          {
+            "question": "Can I minify JSON here too?",
+            "answer": "Yes. Use the Minify button to remove whitespace and produce a compact single-line JSON string."
+          },
+          {
+            "question": "Will invalid JSON show where the error is?",
+            "answer": "When possible, the validator reports the parse error message along with an approximate line and column."
+          }
+        ]
+      }
+    },
+    "jwt-decoder": {
+      "title": "JWT Decoder & Inspector",
+      "description": "Decode JWT header and payload, check expiry, and inspect claims instantly.",
+      "shortDesc": "Decode header/payload, expiry check",
+      "ui": {
+        "tokenLabel": "JWT token",
+        "tokenPlaceholder": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "header": "Header",
+        "payload": "Payload",
+        "signature": "Signature",
+        "invalidToken": "Invalid JWT token"
+      },
+      "content": {
+        "introduction": "Decode JSON Web Token headers and payloads, inspect claims, and check expiry — entirely in your browser.",
+        "howToSteps": [
+          {
+            "name": "Paste a JWT",
+            "text": "Paste a three-part JWT string into the input field."
+          },
+          {
+            "name": "Review decoded parts",
+            "text": "Inspect the header, payload, and signature sections."
+          },
+          {
+            "name": "Check time claims",
+            "text": "Look at exp, iat, and nbf for issuance and expiry timing."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Debug a session token",
+            "description": "Paste an access token to confirm audience, issuer, and expiration before troubleshooting auth."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is my token uploaded anywhere?",
+            "answer": "Inputs are sent to the Toolsify API for decoding and are not stored. For maximum privacy, use tokens you are comfortable processing through an online service."
+          },
+          {
+            "question": "Does this verify my JWT signature?",
+            "answer": "No. Signature verification requires the issuer's secret or public key. This tool only decodes the header and payload."
+          },
+          {
+            "question": "Why should I be careful pasting JWTs online?",
+            "answer": "JWTs can contain sensitive session data. Only decode tokens you are comfortable exposing."
+          }
+        ]
+      }
+    },
+    "cron-expression-generator": {
+      "title": "Cron Expression Generator",
+      "description": "Build cron expressions visually with human-readable schedule translation.",
+      "shortDesc": "Visual builder + human-readable output",
+      "ui": {
+        "minute": "Minute",
+        "hour": "Hour",
+        "dayOfMonth": "Day of month",
+        "month": "Month",
+        "dayOfWeek": "Day of week",
+        "expression": "Expression",
+        "copyExpression": "Copy expression",
+        "nextRuns": "Next runs",
+        "description": "Description"
+      },
+      "content": {
+        "introduction": "Build cron expressions visually with human-readable schedule descriptions and upcoming run times.",
+        "howToSteps": [
+          {
+            "name": "Use the builder",
+            "text": "Set minute, hour, day, month, and weekday fields visually."
+          },
+          {
+            "name": "Or edit raw",
+            "text": "Switch to Raw Input to type a five-field cron string directly."
+          },
+          {
+            "name": "Copy the expression",
+            "text": "Copy the generated cron string for your scheduler or CI config."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Every weekday at 9 AM",
+            "description": "Minute 0, hour 9, day-of-month *, month *, weekday 1–5 → 0 9 * * 1-5."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What does * mean in cron?",
+            "answer": "An asterisk means every value for that field. For example, * in the minute field means every minute."
+          },
+          {
+            "question": "How do I run a job every 15 minutes?",
+            "answer": "Use */15 in the minute field with the other fields set to * (for example: */15 * * * *)."
+          },
+          {
+            "question": "Can I type a raw cron expression directly?",
+            "answer": "Yes. Switch to Raw Input mode to edit the expression manually while keeping the visual builder in sync when possible."
+          }
+        ]
+      }
+    },
+    "gradient-generator": {
+      "title": "CSS Gradient Generator",
+      "description": "Create CSS gradients with live preview and copy-ready CSS code.",
+      "shortDesc": "Live preview + copy CSS",
+      "ui": {
+        "angle": "Angle",
+        "addColor": "Add color stop",
+        "removeColorStop": "Remove color stop",
+        "copyCss": "Copy CSS",
+        "cssOutput": "CSS output"
+      },
+      "content": {
+        "introduction": "Create CSS linear gradients with live preview, draggable color stops, and copy-ready code.",
+        "howToSteps": [
+          {
+            "name": "Add color stops",
+            "text": "Set two or more colors and their positions on the gradient."
+          },
+          {
+            "name": "Adjust angle",
+            "text": "Change gradient direction in degrees."
+          },
+          {
+            "name": "Copy CSS",
+            "text": "Copy the generated linear-gradient() rule for your stylesheet."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Sunset hero background",
+            "description": "Blend #FF6B35 to #0058BE at 135deg for a vibrant header gradient."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What CSS syntax is generated?",
+            "answer": "Standard linear-gradient() with degree angle and color-stop percentages."
+          },
+          {
+            "question": "Can I use more than two colors?",
+            "answer": "Yes. Add multiple stops for richer multi-color gradients."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "color-palette-generator": {
+      "title": "Color Palette Generator",
+      "description": "Generate complementary, triadic, and analogous color palettes for design projects.",
+      "shortDesc": "Complementary, triadic, analogous palettes",
+      "ui": {
+        "baseColor": "Base color",
+        "generate": "Generate palettes",
+        "copyHex": "Copy HEX",
+        "copied": "Copied",
+        "copyFailed": "Copy failed"
+      },
+      "content": {
+        "introduction": "Generate complementary, analogous, triadic, and monochromatic palettes from a base color.",
+        "howToSteps": [
+          {
+            "name": "Choose a base color",
+            "text": "Pick or type a hex color as your starting point."
+          },
+          {
+            "name": "Browse harmonies",
+            "text": "Review complementary, analogous, triadic, and monochromatic sets."
+          },
+          {
+            "name": "Copy swatches",
+            "text": "Click any swatch to copy its hex code."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Design system seed color",
+            "description": "Start from #FF6B35 to build a cohesive palette for a landing page."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What is a complementary palette?",
+            "answer": "Colors opposite on the color wheel — high contrast for accents and CTAs."
+          },
+          {
+            "question": "Can I randomize the base color?",
+            "answer": "Yes. Use the random color control to explore new combinations."
+          },
+          {
+            "question": "Is this tool free?",
+            "answer": "Yes."
+          }
+        ]
+      }
+    },
+    "hash-generator": {
+      "title": "Hash Generator",
+      "description": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text input.",
+      "shortDesc": "MD5, SHA-1, SHA-256, SHA-512",
+      "ui": {
+        "modeText": "Text",
+        "modeFile": "File",
+        "textPlaceholder": "Enter text to hash...",
+        "filePrompt": "Click or drag a file to hash",
+        "fileError": "Failed to read or hash the selected file.",
+        "algorithm": "Algorithm",
+        "hash": "Hash",
+        "filePromptAlt": "Drop or select a file to hash",
+        "computingHashes": "Computing hashes...",
+        "fileSize": "File size: {size} bytes"
+      },
+      "content": {
+        "introduction": "Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from text or files instantly in your browser.",
+        "howToSteps": [
+          {
+            "name": "Choose input mode",
+            "text": "Select Text or File depending on what you want to hash."
+          },
+          {
+            "name": "Provide input",
+            "text": "Paste text or select a file to hash."
+          },
+          {
+            "name": "Copy a digest",
+            "text": "Copy any generated hash with one click."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Checksum a string",
+            "description": "Paste \"hello\" to compare SHA-256 output against known test vectors."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is MD5 secure?",
+            "answer": "MD5 is no longer considered secure for passwords or digital signatures. It is still useful for quick checksums and legacy compatibility."
+          },
+          {
+            "question": "Can I hash a file instead of text?",
+            "answer": "Yes. Switch to File mode and select any file. File hashing runs locally in your browser."
+          },
+          {
+            "question": "Does my data leave my browser?",
+            "answer": "Text mode uses the Toolsify API. File mode hashes locally with the Web Crypto API and an in-browser MD5 implementation."
+          }
+        ]
+      }
+    },
+    "markdown-editor": {
+      "title": "Markdown Editor & Preview",
+      "description": "Write markdown in a split-pane editor with live HTML preview.",
+      "shortDesc": "Split-pane live preview",
+      "ui": {
+        "editor": "Editor",
+        "preview": "Preview",
+        "copyMarkdown": "Copy Markdown",
+        "copyHtml": "Copy as HTML",
+        "toolbarBold": "Bold",
+        "toolbarItalic": "Italic",
+        "toolbarLink": "Link",
+        "toolbarImage": "Image",
+        "toolbarCode": "Code block",
+        "toolbarBullet": "Bullet list",
+        "toolbarNumbered": "Numbered list",
+        "toolbarHeading": "Heading"
+      },
+      "content": {
+        "introduction": "Write Markdown in a split-pane editor with live HTML preview powered by a secure sanitizer.",
+        "howToSteps": [
+          {
+            "name": "Write Markdown",
+            "text": "Type headings, lists, links, and code blocks in the editor pane."
+          },
+          {
+            "name": "Preview live",
+            "text": "See rendered HTML update as you type."
+          },
+          {
+            "name": "Copy output",
+            "text": "Copy Markdown source or use the preview for documentation drafts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "README draft",
+            "description": "Write a project README with headings and bullet lists, then preview before publishing."
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is GitHub Flavored Markdown supported?",
+            "answer": "Common Markdown syntax is supported. Some GFM extensions may vary."
+          },
+          {
+            "question": "Is the preview sanitized?",
+            "answer": "Yes. HTML output is sanitized before rendering to reduce XSS risk."
+          },
+          {
+            "question": "Is my content stored?",
+            "answer": "No. Editing and preview happen in your browser; content is not saved on our servers."
+          }
+        ]
+      }
+    }
+  }
+}

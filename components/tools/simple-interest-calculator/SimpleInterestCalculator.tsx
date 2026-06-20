@@ -2,9 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { SimpleInterestResult } from "@/lib/calculators/simple-interest";
 
 export default function SimpleInterestCalculator() {
+  const t = useToolUi("simple-interest-calculator");
   const [principal, setPrincipal] = useState("10000");
   const [rate, setRate] = useState("5");
   const [time, setTime] = useState("3");
@@ -12,10 +14,10 @@ export default function SimpleInterestCalculator() {
   const requestBody = useMemo(() => {
     const p = parseFloat(principal);
     const r = parseFloat(rate);
-    const t = parseFloat(time);
-    if (Number.isNaN(p) || Number.isNaN(r) || Number.isNaN(t)) return null;
-    if (p < 0 || r < 0 || t < 0) return null;
-    return { principal: p, rate: r, time: t };
+    const tVal = parseFloat(time);
+    if (Number.isNaN(p) || Number.isNaN(r) || Number.isNaN(tVal)) return null;
+    if (p < 0 || r < 0 || tVal < 0) return null;
+    return { principal: p, rate: r, time: tVal };
   }, [principal, rate, time]);
 
   const { data: result, error } = useToolApi<SimpleInterestResult>(
@@ -23,14 +25,34 @@ export default function SimpleInterestCalculator() {
     requestBody
   );
 
+  const fields = [
+    {
+      id: "principal",
+      label: t("principal"),
+      value: principal,
+      set: setPrincipal,
+      suffix: "",
+    },
+    {
+      id: "rate",
+      label: t("rate"),
+      value: rate,
+      set: setRate,
+      suffix: "%",
+    },
+    {
+      id: "time",
+      label: t("timeYears"),
+      value: time,
+      set: setTime,
+      suffix: t("yearShort"),
+    },
+  ];
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
-        {[
-          { id: "principal", label: "Principal", value: principal, set: setPrincipal, suffix: "" },
-          { id: "rate", label: "Rate (%)", value: rate, set: setRate, suffix: "%" },
-          { id: "time", label: "Time (years)", value: time, set: setTime, suffix: "yr" },
-        ].map((field) => (
+        {fields.map((field) => (
           <div key={field.id} className="space-y-sm">
             <label
               htmlFor={field.id}
@@ -68,7 +90,7 @@ export default function SimpleInterestCalculator() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
           <div className="bg-surface-container-low border border-outline-variant rounded-xl p-lg text-center">
             <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-              Interest earned
+              {t("interestEarned")}
             </p>
             <p className="font-display text-h1 text-primary-container">
               {result.interest.toLocaleString()}
@@ -76,7 +98,7 @@ export default function SimpleInterestCalculator() {
           </div>
           <div className="bg-surface-container-low border border-outline-variant rounded-xl p-lg text-center">
             <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-              Total amount
+              {t("totalAmount")}
             </p>
             <p className="font-display text-h1 text-tertiary-container">
               {result.total.toLocaleString()}

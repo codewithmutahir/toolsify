@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useAuth } from "@clerk/nextjs";
+import { Link } from "@/i18n/navigation";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import RequestToolModal from "@/components/tools/RequestToolModal";
 import { cn } from "@/lib/utils";
@@ -15,20 +16,26 @@ type RequestToolCtaProps = {
 
 export default function RequestToolCta({
   variant = "banner",
-  heading = "Request a tool",
-  description = "Signed-in members can suggest calculators and utilities we should build next.",
+  heading,
+  description,
 }: RequestToolCtaProps) {
+  const t = useTranslations("home.requestTool");
   const { isSignedIn, isLoaded } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+
+  const resolvedHeading = heading ?? t("heading");
+  const resolvedDescription = description ?? t("description");
 
   if (!isLoaded) return null;
 
   if (variant === "compact") {
     return (
       <div>
-        <h3 className="font-h3 text-h3 text-on-secondary mb-md">{heading}</h3>
+        <h3 className="font-h3 text-h3 text-on-secondary mb-md">
+          {resolvedHeading}
+        </h3>
         <p className="font-small text-small text-surface-variant mb-md">
-          {description}
+          {resolvedDescription}
         </p>
         {isSignedIn ? (
           <>
@@ -37,7 +44,7 @@ export default function RequestToolCta({
               onClick={() => setIsOpen(true)}
               className="inline-flex items-center justify-center bg-primary-container text-on-primary-container px-md py-sm rounded-lg font-label text-label hover:opacity-90 active:scale-95 transition-all"
             >
-              Request a tool
+              {t("compactButton")}
             </button>
             <RequestToolModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
           </>
@@ -46,7 +53,7 @@ export default function RequestToolCta({
             href="/sign-in"
             className="inline-flex items-center justify-center bg-primary-container text-on-primary-container px-md py-sm rounded-lg font-label text-label hover:opacity-90 active:scale-95 transition-all"
           >
-            Sign in to request
+            {t("signInCompact")}
           </Link>
         )}
       </div>
@@ -60,10 +67,10 @@ export default function RequestToolCta({
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full opacity-10 -translate-y-1/2 translate-x-1/2 blur-3xl" />
           <div className="relative z-10">
             <h2 className="font-h2 text-h2 text-inverse-on-surface mb-sm">
-              {heading}
+              {resolvedHeading}
             </h2>
             <p className="font-body text-body text-surface-variant opacity-80 max-w-md">
-              {description}
+              {resolvedDescription}
             </p>
           </div>
           {isSignedIn ? (
@@ -77,7 +84,7 @@ export default function RequestToolCta({
               )}
             >
               <MaterialIcon name="lightbulb" className="text-[20px]" />
-              Request a Tool
+              {t("button")}
             </button>
           ) : (
             <Link
@@ -88,7 +95,7 @@ export default function RequestToolCta({
                 "hover:opacity-90 transition-opacity shrink-0"
               )}
             >
-              Sign in to request a tool
+              {t("signInToRequest")}
             </Link>
           )}
         </div>

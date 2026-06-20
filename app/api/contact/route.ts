@@ -9,6 +9,7 @@ import {
   getResendClient,
   getResendFromAddress,
 } from "@/lib/resend";
+import { verifyRecaptchaToken } from "@/lib/recaptcha";
 import { escapeHtml } from "@/lib/utils";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,7 +29,17 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    const { name, email, subject, message } = await request.json();
+    const { name, email, subject, message, recaptchaToken } =
+      await request.json();
+
+    const host = request.headers.get("host")?.split(":")[0];
+    const captcha = await verifyRecaptchaToken(recaptchaToken, "contact", host);
+    if (!captcha.ok) {
+      return NextResponse.json(
+        { error: "Captcha verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     if (!name?.trim() || name.trim().length < 2) {
       return NextResponse.json({ error: "Name is required" }, { status: 400 });

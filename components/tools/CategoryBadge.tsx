@@ -1,5 +1,9 @@
+"use client";
+
+import { useMessages } from "next-intl";
 import { ToolCategory } from "@/types/tool";
 import { categoryColorMap, getCategoryTitle } from "@/lib/category-colors";
+import { getLocalizedCategoryTitle } from "@/lib/i18n/localize";
 import { cn } from "@/lib/utils";
 
 interface CategoryBadgeProps {
@@ -7,9 +11,18 @@ interface CategoryBadgeProps {
   className?: string;
 }
 
-export default function CategoryBadge({ category, className }: CategoryBadgeProps) {
+export default function CategoryBadge({
+  category,
+  className,
+}: CategoryBadgeProps) {
+  const messages = useMessages();
   const colors = categoryColorMap[category];
-  const label = getCategoryTitle(category).split(" ")[0].toUpperCase();
+  const title = getLocalizedCategoryTitle(
+    category,
+    messages,
+    getCategoryTitle(category)
+  );
+  const label = title.split(" ")[0].toUpperCase();
 
   return (
     <span

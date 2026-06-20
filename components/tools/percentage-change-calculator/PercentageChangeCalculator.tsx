@@ -2,10 +2,12 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { PercentageChangeResult } from "@/lib/calculators/percentage-change";
 import { cn } from "@/lib/utils";
 
 export default function PercentageChangeCalculator() {
+  const t = useToolUi("percentage-change-calculator");
   const [original, setOriginal] = useState("100");
   const [newValue, setNewValue] = useState("125");
 
@@ -22,12 +24,16 @@ export default function PercentageChangeCalculator() {
     requestBody
   );
 
+  const absoluteChangeFormatted = result
+    ? `${result.isIncrease ? "+" : ""}${result.absoluteChange}`
+    : "";
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
         <div className="space-y-sm">
           <label htmlFor="pc-original" className="font-label text-label font-bold text-on-surface uppercase">
-            Original value
+            {t("originalValue")}
           </label>
           <input
             id="pc-original"
@@ -39,7 +45,7 @@ export default function PercentageChangeCalculator() {
         </div>
         <div className="space-y-sm">
           <label htmlFor="pc-new" className="font-label text-label font-bold text-on-surface uppercase">
-            New value
+            {t("newValue")}
           </label>
           <input
             id="pc-new"
@@ -67,7 +73,7 @@ export default function PercentageChangeCalculator() {
           )}
         >
           <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-            Percentage change
+            {t("percentageChange")}
           </p>
           <p
             className={cn(
@@ -79,8 +85,7 @@ export default function PercentageChangeCalculator() {
             {result.percentChange}%
           </p>
           <p className="font-body text-body text-on-surface-variant">
-            Absolute change: {result.isIncrease ? "+" : ""}
-            {result.absoluteChange}
+            {t("absoluteChange", { change: absoluteChangeFormatted })}
           </p>
         </div>
       )}

@@ -1,9 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useState } from "react";
+import LanguageSwitcher from "@/components/i18n/LanguageSwitcher";
 import AuthLinksFallback from "@/components/layout/AuthLinksFallback";
 import ToolSearch from "@/components/search/ToolSearch";
 import { cn } from "@/lib/utils";
@@ -13,26 +14,27 @@ const HeaderAuthSection = dynamic(
   { ssr: false, loading: () => <AuthLinksFallback /> }
 );
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/tools", label: "All Tools" },
-  { href: "/tools/categories", label: "Categories" },
-] as const;
-
-function isNavLinkActive(pathname: string, label: string, href: string) {
-  if (label === "All Tools") return pathname === "/tools";
-  if (label === "Categories") return pathname.startsWith("/tools/");
-  return pathname === href;
-}
-
 export default function Header() {
+  const t = useTranslations("nav");
+  const tCommon = useTranslations("common");
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/", label: t("home"), key: "home" },
+    { href: "/tools", label: t("allTools"), key: "allTools" },
+    { href: "/tools/categories", label: t("categories"), key: "categories" },
+  ] as const;
+
+  function isNavLinkActive(key: string, href: string) {
+    if (key === "allTools") return pathname === "/tools";
+    if (key === "categories") return pathname.startsWith("/tools/");
+    return pathname === href;
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-surface border-b border-outline-variant shadow-sm">
       <div className="max-w-container-max mx-auto px-gutter py-sm flex items-center justify-between gap-md">
-        {/* Logo + Search (left) */}
         <div className="flex items-center gap-xl min-w-0">
           <Link
             href="/"
@@ -44,7 +46,9 @@ export default function Header() {
             >
               construction
             </span>
-            <span className="font-h2 text-h2 font-bold text-primary">Toolsify</span>
+            <span className="font-h2 text-h2 font-bold text-primary">
+              Toolsify
+            </span>
           </Link>
 
           <ToolSearch
@@ -54,13 +58,12 @@ export default function Header() {
           />
         </div>
 
-        {/* Desktop Nav (center) */}
         <nav className="hidden md:flex items-center gap-lg">
           {navLinks.map((link) => {
-            const isActive = isNavLinkActive(pathname, link.label, link.href);
+            const isActive = isNavLinkActive(link.key, link.href);
             return (
               <Link
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 className={cn(
                   "font-body text-body transition-colors duration-200",
@@ -75,14 +78,16 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Auth (right) — Clerk loads after paint to keep LCP off the critical path */}
         <div className="flex items-center gap-md shrink-0">
+          <LanguageSwitcher variant="compact" className="hidden lg:flex" />
           <HeaderAuthSection />
 
           <button
             type="button"
             className="md:hidden p-sm text-on-surface"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-label={
+              mobileOpen ? tCommon("closeMenu") : tCommon("openMenu")
+            }
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -93,7 +98,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={cn(
           "md:hidden border-t border-outline-variant bg-surface overflow-hidden transition-all",
@@ -103,7 +107,7 @@ export default function Header() {
         <nav className="flex flex-col px-gutter py-md gap-md">
           {navLinks.map((link) => (
             <Link
-              key={link.label}
+              key={link.key}
               href={link.href}
               className="font-body text-body text-on-surface-variant hover:text-primary transition-colors"
               onClick={() => setMobileOpen(false)}
@@ -111,6 +115,7 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <LanguageSwitcher />
           <ToolSearch
             variant="header"
             onNavigate={() => setMobileOpen(false)}

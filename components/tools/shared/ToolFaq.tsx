@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 interface FaqItem {
   question: string;
   answer: string;
@@ -8,13 +12,13 @@ interface ToolFaqProps {
   items: FaqItem[];
 }
 
-export default function ToolFaq({
-  title = "Frequently Asked Questions",
-  items,
-}: ToolFaqProps) {
+export default function ToolFaq({ title, items }: ToolFaqProps) {
+  const t = useTranslations("toolPage");
+  const heading = title ?? t("faqTitle");
+
   return (
     <div className="mt-xl">
-      <h2 className="font-h2 text-h2 text-on-surface mb-md">{title}</h2>
+      <h2 className="font-h2 text-h2 text-on-surface mb-md">{heading}</h2>
       <dl className="space-y-md">
         {items.map((item, index) => (
           <div key={index}>

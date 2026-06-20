@@ -2,15 +2,24 @@ import {
   clerkMiddleware,
   createRouteMatcher,
 } from "@clerk/nextjs/server";
+import createIntlMiddleware from "next-intl/middleware";
+import { routing } from "@/i18n/routing";
 import { handleMarkdownNegotiation } from "@/lib/markdown-negotiation/middleware";
 
-const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
+const intlMiddleware = createIntlMiddleware(routing);
+
+const isProtectedRoute = createRouteMatcher([
+  "/:locale/dashboard(.*)",
+  "/dashboard(.*)",
+]);
 
 export default clerkMiddleware((auth, req) => {
   const markdownResponse = handleMarkdownNegotiation(req);
   if (markdownResponse) return markdownResponse;
 
   if (isProtectedRoute(req)) auth().protect();
+
+  return intlMiddleware(req);
 });
 
 export const config = {

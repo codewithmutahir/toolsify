@@ -1,22 +1,46 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { PercentageMode, PercentageResult } from "@/lib/calculators/percentage";
 import { cn } from "@/lib/utils";
 
-const tabs: { id: PercentageMode; label: string; aLabel: string; bLabel: string }[] = [
-  { id: "of", label: "X% of Y", aLabel: "Percentage (X)", bLabel: "Number (Y)" },
-  { id: "what-percent", label: "X is what % of Y?", aLabel: "Number (X)", bLabel: "Number (Y)" },
-  { id: "change", label: "% change", aLabel: "From (X)", bLabel: "To (Y)" },
-];
-
 export default function PercentageCalculator() {
+  const t = useToolUi("percentage-calculator");
+  const tCommon = useTranslations("common");
   const [mode, setMode] = useState<PercentageMode>("of");
   const [a, setA] = useState("20");
   const [b, setB] = useState("150");
 
-  const activeTab = tabs.find((t) => t.id === mode)!;
+  const tabs: {
+    id: PercentageMode;
+    label: string;
+    aLabel: string;
+    bLabel: string;
+  }[] = [
+    {
+      id: "of",
+      label: t("tabOf"),
+      aLabel: t("labelPercentageX"),
+      bLabel: t("labelNumberY"),
+    },
+    {
+      id: "what-percent",
+      label: t("tabWhatPercent"),
+      aLabel: t("labelNumberX"),
+      bLabel: t("labelNumberY"),
+    },
+    {
+      id: "change",
+      label: t("tabChange"),
+      aLabel: t("labelFromX"),
+      bLabel: t("labelToY"),
+    },
+  ];
+
+  const activeTab = tabs.find((tab) => tab.id === mode)!;
 
   const requestBody = useMemo(() => {
     const aNum = parseFloat(a);
@@ -32,6 +56,15 @@ export default function PercentageCalculator() {
     "percentage-calculator",
     requestBody
   );
+
+  const resultDescription =
+    result && mode === "of"
+      ? t("resultOf", { a, b, value: result.value })
+      : result && mode === "what-percent"
+        ? t("resultWhatPercent", { a, b, value: result.value })
+        : result
+          ? t("resultChange", { a, b, value: result.value })
+          : "";
 
   return (
     <>
@@ -94,13 +127,13 @@ export default function PercentageCalculator() {
 
       {result && (
         <div className="tool-result">
-          <p className="tool-result-label mb-sm">Result</p>
+          <p className="tool-result-label mb-sm">{tCommon("result")}</p>
           <p className="tool-result-value mb-sm">
             {mode === "of"
               ? result.value.toLocaleString()
               : `${result.value}%`}
           </p>
-          <p className="font-body text-body text-on-surface-variant">{result.label}</p>
+          <p className="font-body text-body text-on-surface-variant">{resultDescription}</p>
         </div>
       )}
     </>
