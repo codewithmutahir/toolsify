@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { SignIn } from "@clerk/nextjs";
 import AuthBrandingPanelSignIn from "@/components/auth/AuthBrandingPanelSignIn";
 import AuthMobileBranding from "@/components/auth/AuthMobileBranding";
-import { clerkAuthAppearance } from "@/lib/clerk-appearance";
+import LocalizedSignIn from "@/components/auth/LocalizedSignIn";
 
 export const metadata: Metadata = {
   title: "Sign In | Toolsify",
@@ -26,12 +25,7 @@ export default function SignInPage() {
           </header>
 
           <div className="clerk-auth-form w-full overflow-visible">
-            <SignIn
-              appearance={clerkAuthAppearance}
-              routing="path"
-              path="/sign-in"
-              signUpUrl="/sign-up"
-            />
+            <LocalizedSignIn />
           </div>
         </div>
       </section>
