@@ -28,6 +28,7 @@ function getClerkErrorMessage(err: unknown): string {
 export default function SignUpWithVerification() {
   const router = useRouter();
   const signInPath = useLocalizedPath("/sign-in");
+  const signUpPath = useLocalizedPath("/sign-up");
   const { isLoaded, signUp, setActive } = useSignUp();
   const [previewVerify, setPreviewVerify] = useState(false);
 
@@ -131,7 +132,7 @@ export default function SignUpWithVerification() {
               <SignUp
                 appearance={clerkSignUpAppearance}
                 routing="path"
-                path="/sign-up"
+                path={signUpPath}
                 signInUrl={signInPath}
               />
             </div>
