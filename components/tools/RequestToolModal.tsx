@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useAuth } from "@clerk/nextjs";
+import RecaptchaNotice from "@/components/recaptcha/RecaptchaNotice";
+import { useRecaptchaToken } from "@/hooks/useRecaptchaToken";
 import posthog from "@/lib/posthog";
 
 type RequestToolModalProps = {
@@ -20,16 +22,23 @@ export default function RequestToolModal({
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const { getToken } = useRecaptchaToken();
 
   async function handleSubmit() {
     if (!toolName.trim()) return;
     setStatus("loading");
 
     try {
+      const recaptchaToken = await getToken("request_tool");
       const res = await fetch("/api/request-tool", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ toolName, description, email }),
+        body: JSON.stringify({
+          toolName,
+          description,
+          email,
+          recaptchaToken,
+        }),
       });
 
       if (res.ok) {
@@ -143,6 +152,8 @@ export default function RequestToolModal({
               >
                 {status === "loading" ? "Sending..." : "Submit Request"}
               </button>
+
+              <RecaptchaNotice />
             </div>
           </>
         )}

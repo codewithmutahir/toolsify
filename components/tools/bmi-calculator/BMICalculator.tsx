@@ -1,12 +1,24 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import UnitToggle from "@/components/tools/UnitToggle";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { BMIResult } from "@/lib/calculators/bmi";
 import type { HeightUnit, WeightUnit } from "@/lib/calculators/bmi";
 
+const categoryKey: Record<string, string> = {
+  Underweight: "categoryUnderweight",
+  "Normal weight": "categoryNormal",
+  Overweight: "categoryOverweight",
+  Obese: "categoryObese",
+};
+
 export default function BMICalculator() {
+  const t = useToolUi("bmi-calculator");
+  const tCommon = useTranslations("common");
+  const tUnits = useTranslations("common.units");
   const [weight, setWeight] = useState("70");
   const [height, setHeight] = useState("175");
   const [weightUnit, setWeightUnit] = useState<WeightUnit>("kg");
@@ -24,6 +36,8 @@ export default function BMICalculator() {
     requestBody
   );
 
+  const unitLabel = (unit: string) => tUnits(unit as "kg" | "lbs" | "cm" | "ft");
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
@@ -33,12 +47,13 @@ export default function BMICalculator() {
               htmlFor="bmi-weight"
               className="font-label text-label font-bold text-on-surface uppercase"
             >
-              Weight
+              {t("weight")}
             </label>
             <UnitToggle
               options={["kg", "lbs"] as const}
               value={weightUnit}
               onChange={setWeightUnit}
+              getLabel={unitLabel}
             />
           </div>
           <div className="relative">
@@ -52,7 +67,7 @@ export default function BMICalculator() {
               className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-h3 text-h3 focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all outline-none"
             />
             <span className="absolute right-lg top-1/2 -translate-y-1/2 text-on-surface-variant font-medium">
-              {weightUnit}
+              {unitLabel(weightUnit)}
             </span>
           </div>
         </div>
@@ -63,12 +78,13 @@ export default function BMICalculator() {
               htmlFor="bmi-height"
               className="font-label text-label font-bold text-on-surface uppercase"
             >
-              Height
+              {t("height")}
             </label>
             <UnitToggle
               options={["cm", "ft"] as const}
               value={heightUnit}
               onChange={setHeightUnit}
+              getLabel={unitLabel}
             />
           </div>
           <div className="relative">
@@ -82,13 +98,13 @@ export default function BMICalculator() {
               className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-h3 text-h3 focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all outline-none"
             />
             <span className="absolute right-lg top-1/2 -translate-y-1/2 text-on-surface-variant font-medium">
-              {heightUnit}
+              {unitLabel(heightUnit)}
             </span>
           </div>
         </div>
       </div>
 
-      <section aria-label="BMI results" aria-live="polite">
+      <section aria-label={t("resultsAriaLabel")} aria-live="polite">
         {error && (
           <p className="font-body text-small text-on-error-container bg-error-container rounded-lg px-md py-sm mb-lg">
             {error}
@@ -97,20 +113,20 @@ export default function BMICalculator() {
 
         {loading && !result && requestBody && (
           <p className="font-body text-body text-on-surface-variant text-center">
-            Calculating…
+            {tCommon("calculating")}
           </p>
         )}
 
         {result && (
           <div className="bg-surface-container-lowest border border-outline-variant rounded-2xl p-xl text-center">
             <p className="font-label text-label text-on-surface-variant uppercase mb-xs font-bold">
-              Your BMI is
+              {t("yourBmiIs")}
             </p>
             <div className="font-display text-display text-primary-container mb-sm">
               {result.bmi}
             </div>
             <div className="inline-block bg-tertiary-container/10 text-tertiary-container font-h3 text-h3 px-lg py-xs rounded-full mb-xl">
-              {result.category}
+              {t(categoryKey[result.category] ?? "categoryNormal")}
             </div>
             <div className="space-y-sm relative pt-4">
               <div className="bmi-gradient h-3 w-full rounded-full relative">

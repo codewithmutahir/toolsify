@@ -2,7 +2,8 @@
 
 import { SignUp } from "@clerk/nextjs";
 import { useSignUp } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { useLocalizedPath } from "@/hooks/useLocalizedPath";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import AuthBrandingPanelSignUp from "@/components/auth/AuthBrandingPanelSignUp";
 import AuthMobileBranding from "@/components/auth/AuthMobileBranding";
@@ -26,6 +27,7 @@ function getClerkErrorMessage(err: unknown): string {
 
 export default function SignUpWithVerification() {
   const router = useRouter();
+  const signInPath = useLocalizedPath("/sign-in");
   const { isLoaded, signUp, setActive } = useSignUp();
   const [previewVerify, setPreviewVerify] = useState(false);
 
@@ -130,7 +132,7 @@ export default function SignUpWithVerification() {
                 appearance={clerkSignUpAppearance}
                 routing="path"
                 path="/sign-up"
-                signInUrl="/sign-in"
+                signInUrl={signInPath}
               />
             </div>
           </div>

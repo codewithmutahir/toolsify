@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { getApiErrorKey } from "@/lib/i18n/map-api-error";
 
 type ToolApiResponse<T> =
   | { success: true; result: T }
@@ -14,6 +16,15 @@ export function useToolApi<T>(
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const tApi = useTranslations("toolApi");
+
+  const localizeError = useCallback(
+    (message: string) => {
+      const key = getApiErrorKey(message);
+      return key ? tApi(key) : message;
+    },
+    [tApi]
+  );
 
   const fetchResult = useCallback(async () => {
     if (!body) {
@@ -32,18 +43,18 @@ export function useToolApi<T>(
       const json = (await response.json()) as ToolApiResponse<T>;
       if (!json.success) {
         setData(null);
-        setError(json.error);
+        setError(localizeError(json.error));
         return;
       }
       setData(json.result);
       setError(null);
     } catch {
       setData(null);
-      setError("Unable to reach the calculation API.");
+      setError(tApi("networkError"));
     } finally {
       setLoading(false);
     }
-  }, [body, slug]);
+  }, [body, localizeError, slug, tApi]);
 
   useEffect(() => {
     const timer = window.setTimeout(fetchResult, debounceMs);

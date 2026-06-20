@@ -2,13 +2,23 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import {
   compoundingOptions,
   type CompoundingFrequency,
   type CompoundInterestResult,
 } from "@/lib/calculators/compound-interest";
 
+const frequencyKey: Record<CompoundingFrequency, string> = {
+  annually: "frequencyAnnually",
+  semiannually: "frequencySemiannually",
+  quarterly: "frequencyQuarterly",
+  monthly: "frequencyMonthly",
+  daily: "frequencyDaily",
+};
+
 export default function CompoundInterestCalculator() {
+  const t = useToolUi("compound-interest-calculator");
   const [principal, setPrincipal] = useState("10000");
   const [rate, setRate] = useState("8");
   const [years, setYears] = useState("10");
@@ -33,7 +43,7 @@ export default function CompoundInterestCalculator() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-lg">
         <div className="space-y-sm">
           <label htmlFor="ci-principal" className="font-label text-label font-bold text-on-surface uppercase">
-            Principal
+            {t("principal")}
           </label>
           <input
             id="ci-principal"
@@ -46,7 +56,7 @@ export default function CompoundInterestCalculator() {
         </div>
         <div className="space-y-sm">
           <label htmlFor="ci-rate" className="font-label text-label font-bold text-on-surface uppercase">
-            Annual rate (%)
+            {t("annualRate")}
           </label>
           <input
             id="ci-rate"
@@ -60,7 +70,7 @@ export default function CompoundInterestCalculator() {
         </div>
         <div className="space-y-sm">
           <label htmlFor="ci-years" className="font-label text-label font-bold text-on-surface uppercase">
-            Time (years)
+            {t("timeYears")}
           </label>
           <input
             id="ci-years"
@@ -73,7 +83,7 @@ export default function CompoundInterestCalculator() {
         </div>
         <div className="space-y-sm">
           <label htmlFor="ci-frequency" className="font-label text-label font-bold text-on-surface uppercase">
-            Compounding
+            {t("compounding")}
           </label>
           <select
             id="ci-frequency"
@@ -83,7 +93,7 @@ export default function CompoundInterestCalculator() {
           >
             {compoundingOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
-                {opt.label}
+                {t(frequencyKey[opt.value])}
               </option>
             ))}
           </select>
@@ -100,11 +110,11 @@ export default function CompoundInterestCalculator() {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-lg text-center">
-              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">Total amount</p>
+              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t("totalAmount")}</p>
               <p className="font-display text-h1 text-primary-container">{result.totalAmount.toLocaleString()}</p>
             </div>
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-lg text-center">
-              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">Total interest</p>
+              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t("totalInterest")}</p>
               <p className="font-display text-h1 text-tertiary-container">{result.totalInterest.toLocaleString()}</p>
             </div>
           </div>
@@ -112,14 +122,14 @@ export default function CompoundInterestCalculator() {
           {result.yearByYear.length > 0 && (
             <div className="overflow-x-auto">
               <p className="font-label text-label text-on-surface-variant uppercase font-bold mb-md">
-                Year-by-year breakdown
+                {t("yearByYearBreakdown")}
               </p>
               <table className="w-full font-small text-small">
                 <thead>
                   <tr className="border-b border-outline-variant text-left">
-                    <th className="py-sm pr-md text-on-surface-variant">Year</th>
-                    <th className="py-sm pr-md text-on-surface-variant">Balance</th>
-                    <th className="py-sm text-on-surface-variant">Interest earned</th>
+                    <th className="py-sm pr-md text-on-surface-variant">{t("year")}</th>
+                    <th className="py-sm pr-md text-on-surface-variant">{t("balance")}</th>
+                    <th className="py-sm text-on-surface-variant">{t("interestEarned")}</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -1,40 +1,50 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import RequestToolCta from "@/components/tools/RequestToolCta";
 import { categories } from "@/constants/categories";
 import { getFeaturedTools, getImplementedTools } from "@/constants/tools";
+import { getLocalizedTools } from "@/lib/i18n/server";
+import { localizeCategories } from "@/lib/i18n/localize";
+import { getMessages } from "next-intl/server";
 
-const toolLinks = getFeaturedTools().map((tool) => ({
-  href: `/${tool.slug}`,
-  label: tool.title,
-}));
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const tCommon = await getTranslations("common");
 
-const categoryLinks = categories
-  .filter((category) =>
-    getImplementedTools().some((tool) => tool.category === category.slug)
-  )
-  .map((category) => ({
-    href: `/tools/${category.slug}`,
-    label: category.title,
+  const featuredTools = await getLocalizedTools(getFeaturedTools());
+  const toolLinks = featuredTools.map((tool) => ({
+    href: `/${tool.slug}`,
+    label: tool.title,
   }));
 
-const companyLinks = [
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms of Service" },
-  { href: "/contact", label: "Contact Us" },
-];
+  const messages = await getMessages();
+  const localizedCategories = localizeCategories(categories, messages);
 
-const socialLinks = [
-  { href: "https://twitter.com", label: "Twitter", icon: "share" },
-  { href: "https://github.com", label: "GitHub", icon: "code" },
-  { href: "https://linkedin.com", label: "LinkedIn", icon: "work" },
-];
+  const categoryLinks = localizedCategories
+    .filter((category) =>
+      getImplementedTools().some((tool) => tool.category === category.slug)
+    )
+    .map((category) => ({
+      href: `/tools/${category.slug}`,
+      label: category.title,
+    }));
 
-export default function Footer() {
+  const companyLinks = [
+    { href: "/privacy-policy", label: t("privacyPolicy") },
+    { href: "/terms", label: t("termsOfService") },
+    { href: "/contact", label: t("contactUs") },
+  ];
+
+  const socialLinks = [
+    { href: "https://twitter.com", label: "Twitter", icon: "share" },
+    { href: "https://github.com", label: "GitHub", icon: "code" },
+    { href: "https://linkedin.com", label: "LinkedIn", icon: "work" },
+  ];
+
   return (
     <footer className="bg-on-background text-on-secondary">
       <div className="max-w-container-max mx-auto px-gutter py-2xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-xl">
-          {/* Logo + desc + socials */}
           <div>
             <Link href="/" className="flex items-center gap-sm">
               <span
@@ -48,8 +58,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-md font-small text-small text-surface-variant">
-              Free online calculators, converters, and utility tools. Fast,
-              accurate, and no signup required.
+              {t("description")}
             </p>
             <div className="mt-md flex gap-md">
               {socialLinks.map((social) => (
@@ -69,9 +78,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Tools + category links */}
           <div>
-            <h3 className="font-h3 text-h3 text-on-secondary mb-md">Tools</h3>
+            <h3 className="font-h3 text-h3 text-on-secondary mb-md">
+              {t("tools")}
+            </h3>
             <ul className="space-y-sm">
               {toolLinks.map((link) => (
                 <li key={link.href}>
@@ -87,7 +97,7 @@ export default function Footer() {
             {categoryLinks.length > 0 && (
               <>
                 <h3 className="font-h3 text-h3 text-on-secondary mb-md mt-lg">
-                  Categories
+                  {t("categories")}
                 </h3>
                 <ul className="space-y-sm">
                   {categoryLinks.map((link) => (
@@ -105,9 +115,10 @@ export default function Footer() {
             )}
           </div>
 
-          {/* Company links */}
           <div>
-            <h3 className="font-h3 text-h3 text-on-secondary mb-md">Company</h3>
+            <h3 className="font-h3 text-h3 text-on-secondary mb-md">
+              {t("company")}
+            </h3>
             <ul className="space-y-sm">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -124,17 +135,16 @@ export default function Footer() {
 
           <RequestToolCta
             variant="compact"
-            description="Suggest tools we should add to Toolsify."
+            description={t("requestToolDescription")}
           />
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-2xl pt-lg border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center gap-md">
           <p className="font-small text-small text-surface-variant">
-            © {new Date().getFullYear()} Toolsify. All rights reserved.
+            © {new Date().getFullYear()} Toolsify. {tCommon("allRightsReserved")}
           </p>
           <p className="font-small text-small text-surface-variant">
-            Built for speed, clarity, and professional reliability.
+            {tCommon("builtFor")}
           </p>
         </div>
       </div>

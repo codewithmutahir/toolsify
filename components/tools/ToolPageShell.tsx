@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import dynamic from "next/dynamic";
+import { getTranslations } from "next-intl/server";
 import JsonLd from "@/components/seo/JsonLd";
 import ToolHeader from "@/components/tools/ToolHeader";
 import ToolExamples from "@/components/tools/ToolExamples";
@@ -7,7 +8,7 @@ import ToolHowTo from "@/components/tools/ToolHowTo";
 import ToolFaq from "@/components/tools/shared/ToolFaq";
 import RelatedTools from "@/components/tools/RelatedTools";
 import ToolUsageProvider from "@/components/tools/ToolUsageProvider";
-import { getToolPageContent } from "@/lib/tools/page-content";
+import { getLocalizedToolPageContent } from "@/lib/i18n/tool-content";
 import { buildToolPageJsonLd } from "@/lib/seo/json-ld";
 import { areAdsEnabled } from "@/lib/ads";
 import type { ImplementedToolSlug } from "@/components/tools/tool-registry";
@@ -28,12 +29,13 @@ interface ToolPageShellProps {
   children: ReactNode;
 }
 
-export default function ToolPageShell({
+export default async function ToolPageShell({
   tool,
   slug,
   children,
 }: ToolPageShellProps) {
-  const content = getToolPageContent(slug);
+  const content = await getLocalizedToolPageContent(slug, tool);
+  const t = await getTranslations("toolPage");
   const jsonLd = buildToolPageJsonLd(tool, content.faqs, content.howToSteps);
   const adsEnabled = areAdsEnabled();
 
@@ -68,7 +70,7 @@ export default function ToolPageShell({
             )}
           >
             <div className="w-full max-w-[700px] mx-auto lg:mx-0 lg:max-w-none">
-              <section aria-label="Tool interface">
+              <section aria-label={t("toolInterface")}>
                 <ToolUsageProvider slug={slug}>
                   <div className="bg-surface-container-lowest rounded-xl border border-outline-variant p-lg md:p-xl shadow-sm">
                     {children}
@@ -86,7 +88,7 @@ export default function ToolPageShell({
 
               {content.article && (
                 <section
-                  aria-label="About this tool"
+                  aria-label={t("aboutTool")}
                   className="mt-2xl bg-surface-container-low rounded-2xl p-xl border border-outline-variant/30"
                 >
                   <p className="font-body text-body text-on-surface-variant leading-relaxed">

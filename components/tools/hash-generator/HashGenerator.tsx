@@ -1,15 +1,19 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import CopyButton from "@/components/tools/shared/CopyButton";
 import { useDebouncedValue } from "@/hooks/useDebouncedValue";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import { hashAll } from "@/lib/developer/hash";
 import { cn } from "@/lib/utils";
 
 type InputMode = "text" | "file";
 
 export default function HashGenerator() {
+  const t = useToolUi("hash-generator");
+  const tCommon = useTranslations("common");
   const [mode, setMode] = useState<InputMode>("text");
   const [text, setText] = useState("");
   const [fileName, setFileName] = useState<string | null>(null);
@@ -49,7 +53,7 @@ export default function HashGenerator() {
       setFileHashes(result);
     } catch (error) {
       console.error("Failed to hash file:", error);
-      setFileError("Failed to read or hash the selected file.");
+      setFileError(t("fileError"));
       setFileHashes(null);
       setFileBuffer(null);
     } finally {
@@ -72,7 +76,7 @@ export default function HashGenerator() {
                 : "bg-surface-container-low text-on-surface-variant hover:text-on-surface"
             )}
           >
-            {option === "text" ? "Text" : "File"}
+            {option === "text" ? t("modeText") : t("modeFile")}
           </button>
         ))}
       </div>
@@ -82,7 +86,7 @@ export default function HashGenerator() {
           value={text}
           onChange={(event) => setText(event.target.value)}
           rows={6}
-          placeholder="Enter text to hash..."
+          placeholder={t("textPlaceholder")}
           className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-mono text-small focus:ring-2 focus:ring-primary-container outline-none resize-y mb-lg"
         />
       ) : (
@@ -91,7 +95,7 @@ export default function HashGenerator() {
             upload_file
           </span>
           <p className="font-body text-body text-on-surface">
-            {fileName ?? "Drop or select a file to hash"}
+            {fileName ?? t("filePromptAlt")}
           </p>
           <input type="file" className="hidden" onChange={handleFileChange} />
         </label>
@@ -99,7 +103,7 @@ export default function HashGenerator() {
 
       {loading && (
         <p className="font-body text-small text-on-surface-variant mb-lg">
-          Computing hashes...
+          {t("computingHashes")}
         </p>
       )}
 
@@ -118,7 +122,7 @@ export default function HashGenerator() {
                 <p className="font-label text-label text-on-surface-variant uppercase font-bold">
                   {algorithm}
                 </p>
-                <CopyButton value={value} />
+                <CopyButton value={value} label={tCommon("copy")} />
               </div>
               <p className="font-mono text-small text-on-surface break-all">
                 {value}
@@ -130,7 +134,7 @@ export default function HashGenerator() {
 
       {mode === "file" && fileBuffer && (
         <p className="mt-md font-small text-small text-on-surface-variant">
-          File size: {fileBuffer.byteLength.toLocaleString()} bytes
+          {t("fileSize", { size: fileBuffer.byteLength.toLocaleString() })}
         </p>
       )}
     </>

@@ -1,6 +1,8 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { ToolCategory } from "@/types/tool";
 import { getToolsByCategory } from "@/constants/tools";
+import { getLocalizedTools } from "@/lib/i18n/server";
 import ToolCard from "./ToolCard";
 
 interface RelatedToolsProps {
@@ -8,25 +10,32 @@ interface RelatedToolsProps {
   currentSlug?: string;
 }
 
-export default function RelatedTools({
+export default async function RelatedTools({
   category,
   currentSlug,
 }: RelatedToolsProps) {
-  const related = getToolsByCategory(category)
-    .filter((tool) => tool.implemented && tool.slug !== currentSlug)
-    .slice(0, 4);
+  const t = await getTranslations("toolPage");
+  const tNav = await getTranslations("nav");
+
+  const related = await getLocalizedTools(
+    getToolsByCategory(category)
+      .filter((tool) => tool.implemented && tool.slug !== currentSlug)
+      .slice(0, 4)
+  );
 
   if (related.length === 0) return null;
 
   return (
     <section className="mt-2xl">
       <div className="flex items-center justify-between mb-lg">
-        <h2 className="font-h2 text-h2 text-on-surface">You might also like</h2>
+        <h2 className="font-h2 text-h2 text-on-surface">
+          {t("relatedTools")}
+        </h2>
         <Link
           href="/tools"
           className="text-primary font-label text-label flex items-center gap-xs hover:underline"
         >
-          View all tools
+          {tNav("allTools")}
           <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
         </Link>
       </div>

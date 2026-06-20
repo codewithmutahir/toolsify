@@ -1,5 +1,12 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ToolCategory } from "@/types/tool";
+import { useMessages } from "next-intl";
+import {
+  getLocalizedCategoryTitle,
+} from "@/lib/i18n/localize";
 import { getCategoryTitle } from "@/lib/category-colors";
 import CategoryBadge from "./CategoryBadge";
 
@@ -14,7 +21,13 @@ export default function ToolHeader({
   description,
   category,
 }: ToolHeaderProps) {
-  const categoryTitle = getCategoryTitle(category);
+  const t = useTranslations("common");
+  const messages = useMessages();
+  const categoryTitle = getLocalizedCategoryTitle(
+    category,
+    messages,
+    getCategoryTitle(category)
+  );
 
   return (
     <header className="mb-xl">
@@ -23,7 +36,7 @@ export default function ToolHeader({
         className="flex items-center gap-xs font-small text-small text-on-surface-variant mb-md flex-wrap"
       >
         <Link href="/" className="hover:text-primary transition-colors">
-          Home
+          {t("home")}
         </Link>
         <span className="material-symbols-outlined text-[16px]">chevron_right</span>
         <Link

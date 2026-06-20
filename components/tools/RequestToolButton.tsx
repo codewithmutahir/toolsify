@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 import RequestToolModal from "@/components/tools/RequestToolModal";
@@ -13,8 +14,9 @@ type RequestToolButtonProps = {
 
 export default function RequestToolButton({
   className,
-  children = "Request a Tool",
+  children,
 }: RequestToolButtonProps) {
+  const t = useTranslations("home.requestTool");
   const { isSignedIn, isLoaded } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +31,7 @@ export default function RequestToolButton({
           className
         )}
       >
-        Sign in to request a tool
+        {t("signInToRequest")}
       </Link>
     );
   }
@@ -44,7 +46,7 @@ export default function RequestToolButton({
           className
         )}
       >
-        {children}
+        {children ?? t("button")}
       </button>
       <RequestToolModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>

@@ -1,0 +1,655 @@
+{
+  "common": {
+    "siteName": "Toolsify",
+    "home": "ہوم",
+    "comingSoon": "جلد آ رہا ہے",
+    "calculateNow": "ابھی حساب کریں",
+    "copy": "کاپی",
+    "copied": "کاپی ہو گیا!",
+    "reset": "ری سیٹ",
+    "clear": "صاف کریں",
+    "result": "نتیجہ",
+    "results": "نتائج",
+    "loading": "لوڈ ہو رہا ہے...",
+    "error": "خرابی",
+    "closeMenu": "مینو بند کریں",
+    "openMenu": "مینو کھولیں",
+    "notFoundTitle": "صفحہ نہیں ملا",
+    "notFoundDescription": "آپ جو صفحہ تلاش کر رہے ہیں وہ موجود نہیں ہے یا منتقل ہو گیا ہے۔",
+    "backToHome": "ہوم پر واپس",
+    "builtFor": "رفتار، وضاحت اور پیشہ ورانہ اعتماد کے لیے بنایا گیا۔",
+    "allRightsReserved": "تمام حقوق محفوظ ہیں۔",
+    "calculating": "حساب ہو رہا ہے…",
+    "units": {
+      "years": "سال",
+      "months": "مہینے",
+      "days": "دن",
+      "yearShort": "سال",
+      "kg": "kg",
+      "lbs": "lbs",
+      "cm": "cm",
+      "ft": "ft",
+      "male": "مرد",
+      "female": "عورت"
+    }
+  },
+  "toolApi": {
+    "networkError": "حساب کی API تک رسائی نہیں ہو سکی۔",
+    "calculationFailed": "حساب ناکام ہو گیا۔",
+    "invalidJson": "درخواست کا جسم درست JSON ہونا چاہیے۔",
+    "toolNotFound": "ٹول نہیں ملا۔",
+    "invalidWeightOrHeight": "غلط وزن یا قد کی قیمتیں۔"
+  },
+  "nav": {
+    "home": "ہوم",
+    "allTools": "تمام ٹولز",
+    "categories": "زمرے",
+    "logIn": "لاگ ان",
+    "signUp": "سائن اپ",
+    "dashboard": "ڈیش بورڈ"
+  },
+  "footer": {
+    "description": "مفت آن لائن کیلکولیٹرز، کنورٹرز اور یوٹیلیٹی ٹولز۔ تیز، درست، اور سائن اپ کی ضرورت نہیں۔",
+    "tools": "ٹولز",
+    "categories": "زمرے",
+    "company": "کمپنی",
+    "privacyPolicy": "رازداری کی پالیسی",
+    "termsOfService": "سروس کی شرائط",
+    "contactUs": "ہم سے رابطہ کریں",
+    "requestToolDescription": "Toolsify میں شامل کرنے کے لیے ٹولز تجویز کریں۔"
+  },
+  "languageSwitcher": {
+    "label": "زبان",
+    "en": "انگریزی",
+    "ur": "اردو",
+    "es": "ہسپانوی"
+  },
+  "home": {
+    "heroTitle": "سب کے لیے مفت آن لائن ٹولز",
+    "heroDescription": "تیز، مفت اور استعمال میں آسان۔ سائن اپ کی ضرورت نہیں۔ دستاویز، ریاضی اور ڈویلپر ٹولز کا پیشہ ورانہ مجموعہ فوراً استعمال کریں۔",
+    "heroImageAlt": "Toolsify ہیرو تصویر",
+    "browseByCategory": "زمرے کے مطابق براؤز کریں",
+    "browseByCategoryDescription": "اپنے کام کے لیے صحیح ٹول تلاش کریں",
+    "viewAllTools": "تمام {count}+ ٹولز دیکھیں",
+    "popularTools": "مقبول ٹولز",
+    "howItWorks": "Toolsify کیسے کام کرتا ہے",
+    "suggestionPills": {
+      "bmiCalculator": "BMI کیلکولیٹر",
+      "wordCounter": "ورڈ کاؤنٹر",
+      "emiCalculator": "EMI کیلکولیٹر",
+      "percentageCalculator": "فیصد کیلکولیٹر",
+      "colorConverter": "رنگ کنورٹر"
+    },
+    "howItWorksSteps": {
+      "search": {
+        "title": "1. تلاش",
+        "description": "سرچ بار یا زمرے سے ہمارے وسیع لائبریری میں بہترین ٹول تلاش کریں۔"
+      },
+      "use": {
+        "title": "2. فوراً استعمال کریں",
+        "description": "اپنا ڈیٹا درج کریں یا فائلیں اپ لوڈ کریں۔ کوئی اکاؤنٹ یا انتظار نہیں۔"
+      },
+      "results": {
+        "title": "3. نتائج حاصل کریں",
+        "description": "فائلیں ڈاؤن لوڈ کریں یا ایک کلک میں نتائج کاپی کریں۔"
+      }
+    },
+    "stats": {
+      "proTools": "دستیاب پرو ٹولز",
+      "activeUsers": "ماہانہ فعال صارفین",
+      "signupRequired": "سائن اپ ضروری"
+    },
+    "requestTool": {
+      "heading": "ٹول کی درخواست",
+      "description": "سائن ان صارفین کیلکولیٹرز اور یوٹیلیٹیز کی تجویز دے سکتے ہیں۔",
+      "button": "ٹول کی درخواست",
+      "signInToRequest": "درخواست کے لیے سائن ان کریں",
+      "compactButton": "ٹول کی درخواست",
+      "signInCompact": "درخواست کے لیے سائن ان"
+    }
+  },
+  "search": {
+    "placeholder": "ٹولز تلاش کریں...",
+    "heroPlaceholder": "ٹول تلاش کریں (مثلاً BMI، Word Counter، EMI...)",
+    "quickSearch": "فوری تلاش",
+    "submit": "تلاش",
+    "noResults": "کوئی ٹول نہیں ملا",
+    "noResultsFor": "\"{query}\" کے لیے کوئی ٹول نہیں ملا",
+    "searchAllTools": "تمام ٹولز تلاش کریں",
+    "viewAllResults": "\"{query}\" کے تمام نتائج دیکھیں",
+    "resultsLabel": "تلاش کے نتائج",
+    "tryDifferent": "دوسرا تلاش لفظ استعمال کریں"
+  },
+  "toolsPage": {
+    "title": "تمام مفت آن لائن ٹولز",
+    "description": "{count}+ مفت کیلکولیٹرز، کنورٹرز اور ٹیکسٹ ٹولز براؤز کریں۔ زمرے سے فلٹر کریں یا تلاش کریں — سائن اپ کی ضرورت نہیں۔",
+    "filterAll": "تمام",
+    "searchPlaceholder": "ٹولز تلاش کریں...",
+    "showing": "{count} ٹولز دکھائے گئے",
+    "noToolsFound": "کوئی ٹول نہیں ملا",
+    "adjustFilters": "تلاش یا زمرے کا فلٹر تبدیل کریں۔",
+    "missingToolHeading": "آپ کا ٹول نہیں مل رہا؟",
+    "missingToolDescription": "نیا کیلکولیٹر یا یوٹیلیٹی کی درخواست کریں، ہم Toolsify میں شامل کرنے پر غور کریں گے۔"
+  },
+  "toolPage": {
+    "howToUse": "استعمال کا طریقہ",
+    "faqTitle": "اکثر پوچھے گئے سوالات",
+    "examplesTitle": "مثالیں",
+    "relatedTools": "متعلقہ ٹولز",
+    "aboutTool": "اس ٹول کے بارے میں",
+    "toolInterface": "ٹول انٹرفیس"
+  },
+  "toolCommon": {
+    "defaultHowTo": {
+      "open": "{tool} کھولیں",
+      "openText": "Toolsify پر {tool} صفحہ کھولیں۔",
+      "enterValues": "اپنی اقدار درج کریں",
+      "enterValuesText": "اوپر والے ٹول انٹرفیس میں مطلوبہ فیلڈز پُر کریں۔",
+      "viewResults": "نتائج دیکھیں",
+      "viewResultsText": "نتائج فوراً اپ ڈیٹ ہوتے ہیں۔ ضرورت کے مطابق کاپی یا استعمال کریں۔"
+    },
+    "defaultFaqs": {
+      "isFreeQuestion": "{tool} مفت ہے؟",
+      "isFreeAnswer": "ہاں۔ Toolsify پر ہر ٹول مفت ہے، سائن اپ کی ضرورت نہیں۔",
+      "dataQuestion": "کیا آپ میرا ڈیٹا محفوظ کرتے ہیں؟",
+      "dataAnswer": "زیادہ تر ٹولز براؤزر میں چلتے ہیں۔ API استعمال ہونے پر ان پٹ نتائج کے لیے پروسیس ہوتا ہے اور محفوظ نہیں ہوتا۔",
+      "accuracyQuestion": "یہ {tool} کتنا درست ہے؟",
+      "accuracyAnswer": "{description} نتائج عام استعمال کے لیے ہیں؛ اہم حسابات خود سے بھی چیک کریں۔"
+    },
+    "defaultExample": {
+      "title": "فوری شروعات",
+      "description": "اپنے کیس کے عام اقدار کے ساتھ {tool} استعمال کریں اور اوپر کا نتیجہ دیکھیں۔"
+    }
+  },
+  "signUpPrompt": {
+    "title": "Toolsify آپ کے لیے کام کر رہا ہے",
+    "subtitle": "مزید فیچرز کے لیے مفت اکاؤنٹ بنائیں — ٹولز مفت رہیں گے۔",
+    "dismiss": "بند کریں",
+    "createAccount": "مفت اکاؤنٹ بنائیں",
+    "signIn": "سائن ان",
+    "notNow": "ابھی نہیں",
+    "benefits": {
+      "earlyAccess": {
+        "title": "پریمیم ٹولز کی ابتدائی رسائی",
+        "description": "نئے فیچرز لانچ ہونے پر سب سے پہلے آزمائیں۔",
+        "badge": "جلد آ رہا ہے"
+      },
+      "requestTools": {
+        "title": "نئے ٹولز کی درخواست",
+        "description": "بتائیں ہم کیا بنائیں — members کو ترجیح ملتی ہے۔",
+        "badge": "صرف members"
+      },
+      "favorites": {
+        "title": "پسندیدہ اور تاریخ محفوظ کریں",
+        "description": "دوبارہ آئیں تو جہاں چھوڑا تھا وہاں سے شروع کریں۔"
+      }
+    }
+  },
+  "forms": {
+    "contact": {
+      "name": "نام",
+      "email": "ای میل",
+      "subject": "موضوع",
+      "message": "پیغام",
+      "namePlaceholder": "آپ کا نام",
+      "emailPlaceholder": "you@example.com",
+      "subjectPlaceholder": "یہ کس بارے میں ہے؟",
+      "messagePlaceholder": "ہم کیسے مدد کر سکتے ہیں؟",
+      "send": "پیغام بھیجیں",
+      "sending": "بھیجا جا رہا ہے...",
+      "successTitle": "پیغام بھیج دیا!",
+      "successDescription": "رابطہ کرنے کا شکریہ۔ ہم جلد از جلد جواب دیں گے۔",
+      "sendAnother": "دوسرا پیغام بھیجیں",
+      "error": "کچھ غلط ہو گیا۔ بعد میں دوبارہ کوشش کریں۔"
+    },
+    "requestTool": {
+      "title": "ٹول کی درخواست",
+      "toolName": "ٹول کا نام",
+      "description": "تفصیل",
+      "useCase": "استعمال کا کیس",
+      "submit": "درخواست جمع کریں",
+      "submitting": "جمع کیا جا رہا ہے...",
+      "success": "درخواست جمع ہو گئی!",
+      "error": "جمع نہیں ہوئی۔ دوبارہ کوشش کریں۔"
+    }
+  },
+  "metadata": {
+    "site": {
+      "title": "Toolsify — مفت آن لائن ٹولز",
+      "description": "مفت آن لائن کیلکولیٹرز، کنورٹرز اور یوٹیلیٹی ٹولز۔ تیز اور درست۔"
+    },
+    "home": {
+      "title": "مفت آن لائن ٹولز — کیلکولیٹرز اور کنورٹرز | Toolsify",
+      "description": "BMI، فیصد، ورڈ کاؤنٹر، EMI کیلکولیٹر اور 50+ مفت ٹولز۔ سائن اپ کی ضرورت نہیں۔",
+      "keywords": [
+        "مفت آن لائن ٹولز",
+        "کیلکولیٹر",
+        "کنورٹر",
+        "BMI کیلکولیٹر",
+        "ورڈ کاؤنٹر",
+        "toolsify"
+      ]
+    },
+    "tools": {
+      "title": "تمام مفت آن لائن ٹولز | Toolsify",
+      "description": "50+ مفت آن لائن ٹولز بشمول کیلکولیٹرز، کنورٹرز اور ٹیکسٹ ٹولز۔",
+      "keywords": [
+        "مفت آن لائن ٹولز",
+        "کیلکولیٹرز",
+        "toolsify"
+      ]
+    },
+    "categories": {
+      "title": "ٹول زمرے | Toolsify",
+      "description": "Toolsify پر زمرے کے مطابق مفت ٹولز براؤز کریں۔"
+    },
+    "contact": {
+      "title": "ہم سے رابطہ | Toolsify",
+      "description": "Toolsify ٹیم سے رابطہ کریں۔"
+    },
+    "privacy": {
+      "title": "رازداری کی پالیسی | Toolsify",
+      "description": "Toolsify رازداری کی پالیسی۔"
+    },
+    "terms": {
+      "title": "سروس کی شرائط | Toolsify",
+      "description": "Toolsify سروس کی شرائط۔"
+    },
+    "toolTitle": "{title} — مفت آن لائن ٹول | Toolsify",
+    "toolDescription": "ہمارا مفت {title} استعمال کریں۔ {description} سائن اپ کی ضرورت نہیں۔",
+    "categoryTitle": "مفت {category} — {count} ٹولز | Toolsify",
+    "categoryDescription": "{count} مفت {category}۔ سائن اپ کی ضرورت نہیں۔"
+  },
+  "categories": {
+    "math": {
+      "title": "ریاضی اور کیلکولیٹرز",
+      "description": "فیصد، فریکشن، اوسط اور مزید کے لیے مفت ریاضی کیلکولیٹرز۔",
+      "shortLabel": "ریاضی",
+      "shortName": "ریاضی"
+    },
+    "finance": {
+      "title": "فنانس",
+      "description": "EMI، سود، قرضے اور SIP کے لیے مفت فنانس کیلکولیٹرز۔",
+      "shortLabel": "فنانس",
+      "shortName": "فنانس"
+    },
+    "fitness": {
+      "title": "فٹنس اور صحت",
+      "description": "BMI، BMR، کیلوری اور مثالی وزن کیلکولیٹرز۔",
+      "shortLabel": "فٹنس",
+      "shortName": "فٹنس"
+    },
+    "text": {
+      "title": "ٹیکسٹ ٹولز",
+      "description": "ورڈز شمار کریں، کیس تبدیل کریں اور ٹیکسٹ میں ترمیم کریں۔",
+      "shortLabel": "ٹیکسٹ",
+      "shortName": "ٹیکسٹ ٹولز"
+    },
+    "color": {
+      "title": "رنگ اور ڈیزائن",
+      "description": "رنگ منتخب کریں اور HEX، RGB فارمیٹس میں کنورٹ کریں۔",
+      "shortLabel": "ڈیزائن",
+      "shortName": "ڈیزائن"
+    },
+    "converter": {
+      "title": "یونٹ کنورٹرز",
+      "description": "لمبائی، وزن، درجہ حرارت اور مزید کنورٹ کریں۔",
+      "shortLabel": "کنورٹر",
+      "shortName": "کنورٹرز"
+    },
+    "developer": {
+      "title": "ڈویلپر ٹولز",
+      "description": "JSON فارمیٹ، Base64 اور ڈویلپر یوٹیلیٹیز۔",
+      "shortLabel": "ڈیو",
+      "shortName": "ڈویلپر"
+    }
+  },
+  "tools": {
+    "percentage-calculator": {
+      "title": "فیصد کیلکولیٹر",
+      "description": "فیصد، اضافہ، کمی اور تناسب حساب کریں۔",
+      "shortDesc": "کوئی بھی فیصد فوراً حساب کریں",
+      "ui": {
+        "tabOf": "X% کا Y",
+        "tabWhatPercent": "X، Y کا کتنا % ہے؟",
+        "tabChange": "% تبدیلی",
+        "labelPercentageX": "فیصد (X)",
+        "labelNumberY": "عدد (Y)",
+        "labelNumberX": "عدد (X)",
+        "labelFromX": "سے (X)",
+        "labelToY": "تک (Y)",
+        "resultOf": "{a}% کا {b} ہے {value}",
+        "resultWhatPercent": "{a}، {b} کا {value}% ہے",
+        "resultChange": "{a} سے {b} کی تبدیلی {value}% ہے"
+      }
+    },
+    "simple-interest-calculator": {
+      "title": "سادہ سود کیلکولیٹر",
+      "description": "سرمایہ، شرح اور وقت سے سادہ سود اور کل رقم حساب کریں۔",
+      "shortDesc": "سرمایہ، شرح، وقت → سود",
+      "ui": {
+        "principal": "سرمایہ",
+        "rate": "شرح (%)",
+        "timeYears": "وقت (سال)",
+        "yearShort": "سال",
+        "interestEarned": "حاصل شدہ سود",
+        "totalAmount": "کل رقم"
+      }
+    },
+    "discount-calculator": {
+      "title": "ڈسکاؤنٹ کیلکولیٹر",
+      "description": "اصل قیمت اور ڈسکاؤنٹ فیصد سے حتمی قیمت اور بچت حساب کریں۔",
+      "shortDesc": "سیل کی قیمت اور بچت معلوم کریں",
+      "ui": {
+        "originalPrice": "اصل قیمت",
+        "discountPercent": "ڈسکاؤنٹ (%)",
+        "finalPrice": "حتمی قیمت",
+        "youSave": "آپ {amount} بچاتے ہیں"
+      }
+    },
+    "average-calculator": {
+      "title": "اوسط کیلکولیٹر",
+      "description": "اعداد کا میان، درمیانی، موڈ، کم اور زیادہ فوراً حساب کریں۔",
+      "shortDesc": "میان، درمیانی، موڈ، کم، زیادہ",
+      "ui": {
+        "numbersInput": "اعداد",
+        "numbersPlaceholder": "کوما یا نئی لائن سے الگ اعداد درج کریں...",
+        "mean": "میان",
+        "median": "درمیانی",
+        "mode": "موڈ",
+        "min": "کم",
+        "max": "زیادہ",
+        "count": "شمار",
+        "enterNumbers": "نتائج دیکھنے کے لیے کم از کم ایک درست عدد درج کریں۔"
+      }
+    },
+    "matrix-calculator": {
+      "title": "میٹرکس کیلکولیٹر",
+      "description": "میٹرکس جمع، ضرب، ٹرانسپوز اور determinant مرحلہ وار نتائج کے ساتھ۔",
+      "shortDesc": "جمع، ضرب، ٹرانسپوز، determinant"
+    },
+    "quadratic-solver": {
+      "title": "مربع مساوات سولور",
+      "description": "مربع مساوات بصری پیرابولا گراف اور مرحلہ وار حل کے ساتھ۔",
+      "shortDesc": "پیرابولا گراف کے ساتھ حل"
+    },
+    "standard-deviation-calculator": {
+      "title": "اسٹیٹسٹکس کیلکولیٹر",
+      "description": "کسی بھی ڈیٹا سیٹ کے لیے میان، درمیانی، موڈ، std dev اور variance۔",
+      "shortDesc": "میان، درمیانی، موڈ، std dev، variance"
+    },
+    "number-base-converter": {
+      "title": "نمبر بیس کنورٹر",
+      "description": "بائنری، آکٹل، ڈیسیمل اور hexadecimal میں نمبر تبدیل کریں۔",
+      "shortDesc": "بائنری، آکٹل، ڈیسیمل، hex کنورشن"
+    },
+    "emi-calculator": {
+      "title": "EMI کیلکولیٹر",
+      "description": "گھر، کار اور ذاتی قرضوں کی ماہانہ EMI حساب کریں۔",
+      "shortDesc": "ماہانہ EMI حساب کریں",
+      "ui": {
+        "loanAmount": "قرض کی رقم",
+        "interestRate": "سود کی شرح (% سالانہ)",
+        "tenure": "مدت",
+        "monthlyEmi": "ماہانہ EMI",
+        "totalInterest": "کل سود",
+        "totalPayment": "کل ادائیگی",
+        "principalVsInterest": "سرمایہ بمقابلہ سود",
+        "principalPercent": "سرمایہ {percent}%",
+        "interestPercent": "سود {percent}%"
+      }
+    },
+    "compound-interest-calculator": {
+      "title": "مرکب سود کیلکولیٹر",
+      "description": "وقت کے ساتھ مرکب سود سے سرمایہ کاری کی ترقی دیکھیں۔",
+      "shortDesc": "سرمایہ کاری کی ترقی",
+      "ui": {
+        "principal": "سرمایہ",
+        "annualRate": "سالانہ شرح (%)",
+        "timeYears": "وقت (سال)",
+        "compounding": "مرکب سود",
+        "totalAmount": "کل رقم",
+        "totalInterest": "کل سود",
+        "yearByYearBreakdown": "سال بہ سال تفصیل",
+        "year": "سال",
+        "balance": "بیلنس",
+        "interestEarned": "حاصل شدہ سود",
+        "frequencyAnnually": "سالانہ",
+        "frequencySemiannually": "نصف سالانہ",
+        "frequencyQuarterly": "سہ ماہی",
+        "frequencyMonthly": "ماہانہ",
+        "frequencyDaily": "روزانہ"
+      }
+    },
+    "salary-calculator": {
+      "title": "تنخواہ کیلکولیٹر",
+      "description": "سالانہ، ماہانہ اور گھنٹہ وار تنخواہ کی شرح تبدیل کریں۔",
+      "shortDesc": "تنخواہ کی شرح تبدیل کریں",
+      "ui": {
+        "annualSalary": "سالانہ تنخواہ",
+        "monthly": "ماہانہ",
+        "weekly": "ہفتہ وار",
+        "daily": "روزانہ",
+        "hourly": "گھنٹہ وار"
+      }
+    },
+    "tip-calculator": {
+      "title": "ٹپ کیلکولیٹر",
+      "description": "ٹپ کی رقم حساب کریں اور بل متعدد لوگوں میں تقسیم کریں۔",
+      "shortDesc": "ٹپ اور بل تقسیم کریں",
+      "ui": {
+        "billAmount": "بل کی رقم",
+        "tipPercent": "ٹپ (%)",
+        "people": "لوگ",
+        "tip": "ٹپ",
+        "total": "کل",
+        "perPerson": "فی شخص"
+      }
+    },
+    "percentage-change-calculator": {
+      "title": "فیصد تبدیلی کیلکولیٹر",
+      "description": "دو اقدار کے درمیان فیصد اضافہ یا کمی حساب کریں۔",
+      "shortDesc": "فیصد اضافہ یا کمی",
+      "ui": {
+        "originalValue": "اصل قیمت",
+        "newValue": "نئی قیمت",
+        "percentageChange": "فیصد تبدیلی",
+        "absoluteChange": "مطلوب تبدیلی: {change}"
+      }
+    },
+    "cagr-calculator": {
+      "title": "CAGR کیلکولیٹر",
+      "description": "انٹرایکٹو چارٹ کے ساتھ سالانہ مرکب ترقی کی شرح حساب کریں۔",
+      "shortDesc": "سالانہ مرکب ترقی کی شرح + چارٹ"
+    },
+    "roi-calculator": {
+      "title": "ROI کیلکولیٹر",
+      "description": "ٹائم لائن کے ساتھ سرمایہ کی واپسی اور تفصیلات حساب کریں۔",
+      "shortDesc": "سرمایہ کی واپسی + ٹائم لائن"
+    },
+    "break-even-calculator": {
+      "title": "بریک ایون کیلکولیٹر",
+      "description": "فکسڈ اور متغیر اخراج سے بریک ایون نقطہ بصری چارٹ کے ساتھ۔",
+      "shortDesc": "فکسڈ/متغیر اخراج، بصری چارٹ"
+    },
+    "bmi-calculator": {
+      "title": "BMI کیلکولیٹر",
+      "description": "قد اور وزن سے BMI اور وزن کا زمرہ معلوم کریں۔",
+      "shortDesc": "اپنا BMI چیک کریں",
+      "ui": {
+        "weight": "وزن",
+        "height": "قد",
+        "resultsAriaLabel": "BMI نتائج",
+        "yourBmiIs": "آپ کا BMI ہے",
+        "categoryUnderweight": "کم وزن",
+        "categoryNormal": "معمولی وزن",
+        "categoryOverweight": "زیادہ وزن",
+        "categoryObese": "موٹاپا"
+      }
+    },
+    "calorie-calculator": {
+      "title": "کیلوری کیلکولیٹر",
+      "description": "عمر، وزن، قد اور سرگرمی کی سطح سے روزانہ کیلوری کی ضرورت۔",
+      "shortDesc": "روزانہ کیلوری کی ضرورت",
+      "ui": {
+        "age": "عمر",
+        "gender": "جنس",
+        "weightKg": "وزن (kg)",
+        "heightCm": "قد (cm)",
+        "activityLevel": "سرگرمی کی سطح",
+        "bmr": "BMR",
+        "tdee": "TDEE",
+        "loseWeight": "وزن کم کریں",
+        "maintain": "برقرار رکھیں",
+        "gainWeight": "وزن بڑھائیں",
+        "loseWeightSub": "−500 cal",
+        "maintainSub": "TDEE",
+        "gainWeightSub": "+500 cal",
+        "activitySedentary": "بیہودہ (کم یا کوئی ورزش نہیں)",
+        "activityLight": "ہلکی (1–3 دن/ہفتہ)",
+        "activityModerate": "درمیانی (3–5 دن/ہفتہ)",
+        "activityActive": "فعال (6–7 دن/ہفتہ)",
+        "activityVeryActive": "بہت فعال (مشقت والا کام)"
+      }
+    },
+    "ideal-weight-calculator": {
+      "title": "مثالی وزن کیلکولیٹر",
+      "description": "قد کے مطابق متعدد فارمولوں سے مثالی وزن کا دائرہ معلوم کریں۔",
+      "shortDesc": "اپنا مثالی وزن معلوم کریں",
+      "ui": {
+        "heightCm": "قد (cm)",
+        "gender": "جنس",
+        "recommendedRange": "تجویز کردہ حد",
+        "formulaDevine": "Devine",
+        "formulaRobinson": "Robinson",
+        "formulaMiller": "Miller",
+        "formulaHamwi": "Hamwi"
+      }
+    },
+    "age-calculator": {
+      "title": "عمر کیلکولیٹر",
+      "description": "تاریخ پیدائش سے سال، مہینے اور دنوں میں عمر حساب کریں۔",
+      "shortDesc": "تاریخ پیدائش سے عمر",
+      "ui": {
+        "dateOfBirth": "تاریخ پیدائش",
+        "asOfDate": "تاریخ تک",
+        "yourAge": "آپ کی عمر",
+        "years": "سال",
+        "months": "مہینے",
+        "days": "دن",
+        "livedSummary": "آپ {days} دن، یا تقریباً {hours} گھنٹے جی چکے ہیں۔",
+        "invalidDateRange": "براہ کرم ایک درست تاریخ پیدائش درج کریں جو \"تاریخ تک\" سے پہلے ہو۔",
+        "nextBirthdayIn": "اگلا سالگرہ {days} دن میں",
+        "nextBirthdayToday": "سالگرہ مبارک! آج آپ کی سالگرہ ہے۔",
+        "ageSummary": "{years} سال، {months} مہینے، {days} دن"
+      }
+    },
+    "macro-calculator": {
+      "title": "میکرو کیلکولیٹر",
+      "description": "فٹنس مقصد اور جسمانی تفصیلات سے protein، carbs اور fat کے اہداف۔",
+      "shortDesc": "مقصد کے مطابق protein، carbs، fat"
+    },
+    "one-rep-max-calculator": {
+      "title": "ون ریپ میکس کیلکولیٹر",
+      "description": "تمام بڑی lifts کے لیے متعدد فارمولوں سے one-rep max اندازہ۔",
+      "shortDesc": "متعدد فارمول، تمام بڑی lifts"
+    },
+    "word-counter": {
+      "title": "ورڈ کاؤنٹر",
+      "description": "الفاظ، حروف، جملے اور پیراگراف شمار کریں۔",
+      "shortDesc": "الفاظ اور حروف شمار کریں"
+    },
+    "character-counter": {
+      "title": "حروف کاؤنٹر",
+      "description": "سوشل میڈیا اور SEO limits کے لیے خلا کے ساتھ/بغیر حروف شمار کریں۔",
+      "shortDesc": "خلا کے ساتھ حروف شمار کریں"
+    },
+    "case-converter": {
+      "title": "کیس کنورٹر",
+      "description": "ٹیکسٹ uppercase، lowercase، title case اور sentence case میں تبدیل کریں۔",
+      "shortDesc": "ٹیکسٹ کیس فوراً تبدیل کریں"
+    },
+    "text-repeater": {
+      "title": "ٹیکسٹ ریپیٹر",
+      "description": "کسی بھی ٹیکسٹ کو حسب ضرورت separator کے ساتھ متعدد بار دہرائیں۔",
+      "shortDesc": "separator کے ساتھ ٹیکسٹ دہرائیں"
+    },
+    "lorem-ipsum-generator": {
+      "title": "Lorem Ipsum جنریٹر",
+      "description": "ڈیزائن mockups کے لیے placeholder lorem ipsum ٹیکسٹ بنائیں۔",
+      "shortDesc": "placeholder ٹیکسٹ بنائیں"
+    },
+    "color-converter": {
+      "title": "رنگ کنورٹر",
+      "description": "HEX، RGB، HSL اور CMYK رنگ فارمیٹس میں تبدیل کریں۔",
+      "shortDesc": "رنگ فارمیٹس تبدیل کریں"
+    },
+    "unit-converter": {
+      "title": "یونٹ کنورٹر",
+      "description": "لمبائی، وزن، volume اور دیگر عام یونٹس تبدیل کریں۔",
+      "shortDesc": "کوئی بھی یونٹ تبدیل کریں"
+    },
+    "timezone-converter": {
+      "title": "ٹائم زون کنورٹر",
+      "description": "DST کے ساتھ عالمی گھڑیاں اور meeting planner۔",
+      "shortDesc": "عالمی گھڑی، DST، meeting planner"
+    },
+    "cooking-converter": {
+      "title": "کھانا پکانے کا کنورٹر",
+      "description": "کپ، tbsp، ml اور گرام ingredient کے مطابق recipes کے لیے۔",
+      "shortDesc": "کپ، tbsp، ml، گرام ingredient کے مطابق"
+    },
+    "regex-tester": {
+      "title": "Regex ٹیسٹر",
+      "description": "live match highlighting، capture groups اور flags کے ساتھ regex ٹیسٹ کریں۔",
+      "shortDesc": "live highlighting، capture groups"
+    },
+    "json-formatter": {
+      "title": "JSON فارمیٹر",
+      "description": "JSON format، minify، validate کریں tree view اور syntax highlighting کے ساتھ۔",
+      "shortDesc": "format، minify، validate، tree view"
+    },
+    "jwt-decoder": {
+      "title": "JWT ڈیکوڈر",
+      "description": "JWT header اور payload ڈیکوڈ کریں، expiry اور claims چیک کریں۔",
+      "shortDesc": "header/payload ڈیکوڈ، expiry چیک"
+    },
+    "cron-expression-generator": {
+      "title": "Cron ایکسپریشن جنریٹر",
+      "description": "cron expressions بصری builder اور human-readable ترجمہ کے ساتھ بنائیں۔",
+      "shortDesc": "بصری builder + readable output"
+    },
+    "gradient-generator": {
+      "title": "CSS Gradient جنریٹر",
+      "description": "live preview اور copy-ready CSS کے ساتھ gradients بنائیں۔",
+      "shortDesc": "live preview + CSS کاپی"
+    },
+    "color-palette-generator": {
+      "title": "رنگ پیلیٹ جنریٹر",
+      "description": "complementary، triadic اور analogous palettes ڈیزائن کے لیے بنائیں۔",
+      "shortDesc": "complementary، triadic، analogous palettes"
+    },
+    "hash-generator": {
+      "title": "Hash جنریٹر",
+      "description": "کسی بھی ٹیکسٹ سے MD5، SHA-1، SHA-256 اور SHA-512 hashes بنائیں۔",
+      "shortDesc": "MD5، SHA-1، SHA-256، SHA-512",
+      "ui": {
+        "modeText": "ٹیکسٹ",
+        "modeFile": "فائل",
+        "textPlaceholder": "ہیش کرنے کے لیے ٹیکسٹ درج کریں...",
+        "filePrompt": "ہیش کرنے کے لیے فائل کلک یا ڈریگ کریں",
+        "fileError": "منتخب فائل پڑھنے یا ہیش کرنے میں ناکام۔",
+        "algorithm": "الگورتھم",
+        "hash": "ہیش",
+        "filePromptAlt": "ہیش کرنے کے لیے فائل ڈریگ یا منتخب کریں",
+        "computingHashes": "ہیشز کا حساب ہو رہا ہے...",
+        "fileSize": "فائل کا سائز: {size} bytes"
+      }
+    },
+    "markdown-editor": {
+      "title": "Markdown ایڈیٹر",
+      "description": "split-pane editor میں markdown لکھیں live HTML preview کے ساتھ۔",
+      "shortDesc": "split-pane live preview"
+    }
+  }
+}

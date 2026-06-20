@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import {
   useCallback,
   useEffect,
@@ -11,7 +12,7 @@ import {
 } from "react";
 import ToolSearchDropdown from "@/components/search/ToolSearchDropdown";
 import posthog from "@/lib/posthog";
-import { searchTools } from "@/lib/search-tools";
+import { useLocalizedToolCatalog } from "@/hooks/useLocalizedToolCatalog";
 import { cn } from "@/lib/utils";
 import { Tool } from "@/types/tool";
 
@@ -29,6 +30,8 @@ interface ToolSearchProps {
 }
 
 function KeyboardShortcutBadge({ isMac }: { isMac: boolean }) {
+  const t = useTranslations("search");
+
   return (
     <div className="relative group hidden md:flex items-center gap-xs mr-sm flex-shrink-0">
       <kbd className="inline-flex items-center justify-center h-5 px-1.5 bg-surface-container border border-outline-variant rounded text-[10px] font-label text-on-surface-variant font-medium leading-none">
@@ -39,7 +42,7 @@ function KeyboardShortcutBadge({ isMac }: { isMac: boolean }) {
       </kbd>
       <div className="absolute top-full right-0 mt-xs opacity-0 invisible group-hover:opacity-100 group-hover:visible z-[60] pointer-events-none transition-opacity duration-150">
         <div className="bg-inverse-surface text-inverse-on-surface font-label text-label px-sm py-xs rounded-lg whitespace-nowrap shadow-lg">
-          Quick search
+          {t("quickSearch")}
         </div>
       </div>
     </div>
@@ -55,6 +58,8 @@ export default function ToolSearch({
   enableShortcut = false,
 }: ToolSearchProps) {
   const router = useRouter();
+  const t = useTranslations("search");
+  const { searchTools } = useLocalizedToolCatalog();
   const listboxId = useId();
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -68,7 +73,7 @@ export default function ToolSearch({
 
   const results = useMemo(
     () => searchTools(query, { limit: MAX_RESULTS, implementedOnly: true }),
-    [query]
+    [query, searchTools]
   );
 
   const showDropdown = isOpen && query.trim().length >= 2;
@@ -201,9 +206,7 @@ export default function ToolSearch({
   }, []);
 
   const defaultPlaceholder =
-    variant === "hero"
-      ? "What do you want to do? (e.g. Merge PDF, Word Counter)"
-      : "Search 50+ tools...";
+    variant === "hero" ? t("heroPlaceholder") : t("placeholder");
 
   if (variant === "hero") {
     return (
@@ -232,7 +235,7 @@ export default function ToolSearch({
             className="bg-primary-container text-on-primary px-lg sm:px-xl py-md sm:py-0 flex items-center justify-center gap-sm font-bold text-body sm:text-h3 hover:brightness-110 transition-all shrink-0"
           >
             <span className="material-symbols-outlined">search</span>
-            <span className="hidden sm:inline">Search</span>
+            <span className="hidden sm:inline">{t("submit")}</span>
           </button>
         </div>
 

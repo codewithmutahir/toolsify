@@ -2,9 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { DiscountResult } from "@/lib/calculators/discount";
 
 export default function DiscountCalculator() {
+  const t = useToolUi("discount-calculator");
   const [originalPrice, setOriginalPrice] = useState("100");
   const [discountPercent, setDiscountPercent] = useState("20");
 
@@ -26,7 +28,7 @@ export default function DiscountCalculator() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
         <div className="space-y-sm">
           <label htmlFor="discount-original" className="font-label text-label font-bold text-on-surface uppercase">
-            Original price
+            {t("originalPrice")}
           </label>
           <input
             id="discount-original"
@@ -40,7 +42,7 @@ export default function DiscountCalculator() {
         </div>
         <div className="space-y-sm">
           <label htmlFor="discount-percent" className="font-label text-label font-bold text-on-surface uppercase">
-            Discount (%)
+            {t("discountPercent")}
           </label>
           <input
             id="discount-percent"
@@ -63,12 +65,12 @@ export default function DiscountCalculator() {
 
       {result && (
         <div className="bg-surface-container-low border border-outline-variant rounded-2xl p-xl text-center">
-          <p className="font-label text-label text-on-surface-variant uppercase mb-xs">Final price</p>
+          <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t("finalPrice")}</p>
           <p className="font-display text-display text-primary-container mb-lg">
             {result.finalPrice.toLocaleString()}
           </p>
           <p className="font-body text-body text-tertiary-container font-bold">
-            You save {result.savings.toLocaleString()}
+            {t("youSave", { amount: result.savings.toLocaleString() })}
           </p>
         </div>
       )}

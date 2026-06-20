@@ -1,6 +1,11 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
 import { Category } from "@/types/tool";
-import { categoryHomeStyles, categoryShortNames } from "@/lib/category-colors";
+import { categoryHomeStyles } from "@/lib/category-colors";
+import { useMessages } from "next-intl";
+import { getLocalizedCategoryShortName } from "@/lib/i18n/localize";
+import { categoryShortNames } from "@/lib/category-colors";
 import { cn } from "@/lib/utils";
 
 interface CategoryCardProps {
@@ -8,8 +13,17 @@ interface CategoryCardProps {
   className?: string;
 }
 
-export default function CategoryCard({ category, className }: CategoryCardProps) {
+export default function CategoryCard({
+  category,
+  className,
+}: CategoryCardProps) {
+  const messages = useMessages();
   const styles = categoryHomeStyles[category.slug];
+  const shortName = getLocalizedCategoryShortName(
+    category.slug,
+    messages,
+    categoryShortNames[category.slug]
+  );
 
   return (
     <Link
@@ -31,7 +45,7 @@ export default function CategoryCard({ category, className }: CategoryCardProps)
         </span>
       </div>
       <h3 className="font-h3 text-small font-bold mb-xs text-on-background">
-        {categoryShortNames[category.slug]}
+        {shortName}
       </h3>
       <span
         className={cn(

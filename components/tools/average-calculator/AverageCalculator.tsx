@@ -2,10 +2,12 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import { parseNumbers } from "@/lib/calculators/average";
 import type { AverageResult } from "@/lib/calculators/average";
 
 export default function AverageCalculator() {
+  const t = useToolUi("average-calculator");
   const [input, setInput] = useState("10, 20, 30, 20, 15");
 
   const requestBody = useMemo(() => {
@@ -21,25 +23,25 @@ export default function AverageCalculator() {
 
   const statItems = result
     ? [
-        { label: "Mean", value: result.mean },
-        { label: "Median", value: result.median },
-        { label: "Mode", value: result.mode.join(", ") || "—" },
-        { label: "Min", value: result.min },
-        { label: "Max", value: result.max },
-        { label: "Count", value: result.count },
+        { key: "mean", value: result.mean },
+        { key: "median", value: result.median },
+        { key: "mode", value: result.mode.join(", ") || "—" },
+        { key: "min", value: result.min },
+        { key: "max", value: result.max },
+        { key: "count", value: result.count },
       ]
     : [];
 
   return (
     <>
       <label htmlFor="average-input" className="font-label text-label font-bold text-on-surface uppercase block mb-sm">
-        Numbers
+        {t("numbersInput")}
       </label>
       <textarea
         id="average-input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter numbers separated by commas or new lines..."
+        placeholder={t("numbersPlaceholder")}
         rows={5}
         className="w-full bg-surface-container-low border border-outline-variant rounded-xl px-lg py-md font-body text-body focus:ring-2 focus:ring-primary-container outline-none resize-y mb-xl"
       />
@@ -54,10 +56,10 @@ export default function AverageCalculator() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-md">
           {statItems.map((item) => (
             <div
-              key={item.label}
+              key={item.key}
               className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center"
             >
-              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{item.label}</p>
+              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t(item.key)}</p>
               <p className="font-h2 text-h2 text-primary-container">{item.value}</p>
             </div>
           ))}
@@ -65,7 +67,7 @@ export default function AverageCalculator() {
       ) : (
         !error && (
           <p className="font-body text-body text-on-surface-variant text-center">
-            Enter at least one valid number to see results.
+            {t("enterNumbers")}
           </p>
         )
       )}

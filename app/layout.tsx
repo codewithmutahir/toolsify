@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { Suspense } from "react";
@@ -7,6 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import PostHogProvider from "@/components/analytics/PostHogProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import ReCaptchaProvider from "@/components/recaptcha/ReCaptchaProvider";
 import WebMcpProvider from "@/components/webmcp/WebMcpProvider";
 import "@fontsource-variable/material-symbols-outlined/full.css";
 import "./globals.css";
@@ -31,9 +33,6 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://toolsify.online"),
-  title: "Toolsify — Free Online Tools",
-  description:
-    "Free online calculators, converters, and utility tools. Fast, accurate, and no signup required.",
   icons: {
     icon: "/favicon.svg",
     apple: "/apple-touch-icon.svg",
@@ -45,20 +44,33 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
+  let locale = "en";
+  try {
+    locale = await getLocale();
+  } catch {
+    // API routes and non-locale paths
+  }
+
+  const dir = locale === "ur" ? "rtl" : "ltr";
+
   return (
-    <ClerkProvider>
-      <html
-        lang="en"
-        className={`${plusJakarta.variable} ${inter.variable} scroll-smooth`}
-      >
-        <head>
+    <html
+      lang={locale}
+      dir={dir}
+      className={`${plusJakarta.variable} ${inter.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body className="font-body antialiased bg-background text-on-background min-h-screen">
+        <ClerkProvider>
+          <WebMcpProvider />
+          <GoogleAnalytics />
           {adsenseClientId && (
             <Script
               async
@@ -67,17 +79,15 @@ export default function RootLayout({
               strategy="lazyOnload"
             />
           )}
-        </head>
-        <body className="font-body antialiased bg-background text-on-background min-h-screen">
-          <WebMcpProvider />
-          <GoogleAnalytics />
           <Suspense fallback={null}>
-            <PostHogProvider>{children}</PostHogProvider>
+            <PostHogProvider>
+              <ReCaptchaProvider>{children}</ReCaptchaProvider>
+            </PostHogProvider>
           </Suspense>
-          <Analytics />
-          <SpeedInsights />
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
   );
 }

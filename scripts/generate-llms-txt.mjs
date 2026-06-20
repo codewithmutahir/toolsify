@@ -3,7 +3,7 @@ import { getImplementedTools } from "./constants/tools.ts";
 import { SITE_URL } from "./lib/config.ts";
 
 const tools = getImplementedTools();
-const byCategory = new Map<string, typeof tools>();
+const byCategory = new Map();
 
 for (const tool of tools) {
   const list = byCategory.get(tool.category) ?? [];
@@ -11,7 +11,7 @@ for (const tool of tools) {
   byCategory.set(tool.category, list);
 }
 
-const categoryTitles: Record<string, string> = {
+const categoryTitles = {
   math: "Math & Calculators",
   finance: "Finance",
   fitness: "Fitness & Health",

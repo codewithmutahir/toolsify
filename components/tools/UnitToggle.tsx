@@ -7,6 +7,7 @@ type UnitToggleProps<T extends string> = {
   value: T;
   onChange: (value: T) => void;
   className?: string;
+  getLabel?: (option: T) => string;
 };
 
 export default function UnitToggle<T extends string>({
@@ -14,6 +15,7 @@ export default function UnitToggle<T extends string>({
   value,
   onChange,
   className,
+  getLabel,
 }: UnitToggleProps<T>) {
   return (
     <div
@@ -34,7 +36,7 @@ export default function UnitToggle<T extends string>({
               : "bg-surface-container-low text-on-surface-variant hover:text-on-surface"
           )}
         >
-          {option}
+          {getLabel ? getLabel(option) : option}
         </button>
       ))}
     </div>

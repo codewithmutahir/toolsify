@@ -1,3 +1,7 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -36,6 +40,8 @@ const scriptSrc = [
   "https://www.google-analytics.com",
   "https://pagead2.googlesyndication.com",
   "https://va.vercel-scripts.com",
+  "https://www.google.com",
+  "https://www.gstatic.com",
 ].join(" ");
 
 const contentSecurityPolicy = [
@@ -44,7 +50,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https://img.clerk.com https://www.google-analytics.com https://www.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com",
   "font-src 'self' https://fonts.gstatic.com data:",
-  `connect-src 'self' ${clerkOrigins} https://clerk-telemetry.com https://*.clerk-telemetry.com https://us.i.posthog.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://pagead2.googlesyndication.com https://vitals.vercel-insights.com`,
+  `connect-src 'self' ${clerkOrigins} https://clerk-telemetry.com https://*.clerk-telemetry.com https://us.i.posthog.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.google.com https://pagead2.googlesyndication.com https://vitals.vercel-insights.com`,
   `frame-src 'self' ${clerkOrigins} https://challenges.cloudflare.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com`,
   "worker-src 'self' blob:",
   "object-src 'none'",
@@ -205,4 +211,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

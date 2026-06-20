@@ -1,10 +1,13 @@
 "use client";
 
 import { SignedIn, SignedOut } from "@clerk/nextjs";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import AppUserButton from "@/components/auth/AppUserButton";
 
 export default function HeaderAuthSection() {
+  const t = useTranslations("nav");
+
   return (
     <>
       <SignedOut>
@@ -12,13 +15,13 @@ export default function HeaderAuthSection() {
           href="/sign-in"
           className="font-body text-body text-on-surface-variant hover:text-primary font-medium px-md py-sm"
         >
-          Log In
+          {t("logIn")}
         </Link>
         <Link
           href="/sign-up"
           className="bg-primary-container text-on-primary font-bold px-lg py-sm rounded-lg hover:brightness-110 active:scale-95 transition-all"
         >
-          Sign Up
+          {t("signUp")}
         </Link>
       </SignedOut>
 
@@ -27,7 +30,7 @@ export default function HeaderAuthSection() {
           href="/dashboard"
           className="hidden lg:block font-body text-body text-on-surface-variant hover:text-primary font-medium px-sm py-sm"
         >
-          Dashboard
+          {t("dashboard")}
         </Link>
         <AppUserButton />
       </SignedIn>

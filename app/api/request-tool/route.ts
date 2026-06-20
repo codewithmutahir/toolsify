@@ -4,11 +4,26 @@ import {
   getResendClient,
   getResendFromAddress,
 } from "@/lib/resend";
+import { verifyRecaptchaToken } from "@/lib/recaptcha";
 import { escapeHtml } from "@/lib/utils";
 
 export async function POST(request: NextRequest) {
   try {
-    const { toolName, description, email } = await request.json();
+    const { toolName, description, email, recaptchaToken } =
+      await request.json();
+
+    const host = request.headers.get("host")?.split(":")[0];
+    const captcha = await verifyRecaptchaToken(
+      recaptchaToken,
+      "request_tool",
+      host
+    );
+    if (!captcha.ok) {
+      return NextResponse.json(
+        { error: "Captcha verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     const trimmedToolName = toolName?.trim();
     if (!trimmedToolName || trimmedToolName.length < 3) {

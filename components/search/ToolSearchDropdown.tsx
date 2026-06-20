@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import CategoryBadge from "@/components/tools/CategoryBadge";
 import { categoryColorMap } from "@/lib/category-colors";
@@ -25,6 +26,7 @@ export default function ToolSearchDropdown({
   onViewAll,
   className,
 }: ToolSearchDropdownProps) {
+  const t = useTranslations("search");
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export default function ToolSearchDropdown({
         id={listboxId}
       >
         <p className="px-lg py-md font-body text-small text-on-surface-variant text-center">
-          No tools found for &ldquo;{query}&rdquo;
+          {t("noResultsFor", { query })}
         </p>
         <button
           type="button"
@@ -52,7 +54,7 @@ export default function ToolSearchDropdown({
           onClick={onViewAll}
           className="w-full px-lg py-md font-body text-small text-primary-container font-semibold border-t border-outline-variant hover:bg-surface-container-low transition-colors"
         >
-          Search all tools
+          {t("searchAllTools")}
         </button>
       </div>
     );
@@ -66,7 +68,7 @@ export default function ToolSearchDropdown({
       )}
       id={listboxId}
       role="listbox"
-      aria-label="Search results"
+      aria-label={t("resultsLabel")}
     >
       <ul ref={listRef}>
         {results.map((tool, index) => {
@@ -80,7 +82,7 @@ export default function ToolSearchDropdown({
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => onSelect(tool)}
                 className={cn(
-                  "w-full flex items-center gap-sm sm:gap-md px-md sm:px-lg py-md text-left transition-colors",
+                  "w-full flex items-center gap-sm sm:gap-md px-md sm:px-lg py-md text-start transition-colors",
                   isActive
                     ? "bg-surface-container-low"
                     : "hover:bg-surface-container-low"
@@ -113,7 +115,7 @@ export default function ToolSearchDropdown({
           onClick={onViewAll}
           className="w-full px-lg py-sm font-body text-small text-primary-container font-semibold border-t border-outline-variant hover:bg-surface-container-low transition-colors"
         >
-          View all results for &ldquo;{query}&rdquo;
+          {t("viewAllResults", { query })}
         </button>
       )}
     </div>

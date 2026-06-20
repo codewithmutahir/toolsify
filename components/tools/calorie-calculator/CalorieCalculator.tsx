@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import UnitToggle from "@/components/tools/UnitToggle";
 import { useToolApi } from "@/hooks/useToolApi";
+import { useToolUi } from "@/hooks/useToolUi";
 import {
   activityLevels,
   type ActivityLevel,
@@ -10,7 +12,17 @@ import {
   type Gender,
 } from "@/lib/calculators/calorie";
 
+const activityKey: Record<ActivityLevel, string> = {
+  sedentary: "activitySedentary",
+  light: "activityLight",
+  moderate: "activityModerate",
+  active: "activityActive",
+  "very-active": "activityVeryActive",
+};
+
 export default function CalorieCalculator() {
+  const t = useToolUi("calorie-calculator");
+  const tUnits = useTranslations("common.units");
   const [age, setAge] = useState("30");
   const [gender, setGender] = useState<Gender>("male");
   const [weight, setWeight] = useState("70");
@@ -31,12 +43,22 @@ export default function CalorieCalculator() {
     requestBody
   );
 
+  const genderLabel = (value: Gender) => tUnits(value);
+
+  const goalItems = result
+    ? [
+        { key: "loseWeight", value: result.loseWeight, sub: t("loseWeightSub") },
+        { key: "maintain", value: result.maintain, sub: t("maintainSub") },
+        { key: "gainWeight", value: result.gainWeight, sub: t("gainWeightSub") },
+      ]
+    : [];
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-lg">
         <div className="space-y-sm">
           <label htmlFor="cal-age" className="font-label text-label font-bold text-on-surface uppercase">
-            Age
+            {t("age")}
           </label>
           <input
             id="cal-age"
@@ -49,17 +71,18 @@ export default function CalorieCalculator() {
         </div>
         <div className="space-y-sm">
           <div className="flex justify-between items-end">
-            <span className="font-label text-label font-bold text-on-surface uppercase">Gender</span>
+            <span className="font-label text-label font-bold text-on-surface uppercase">{t("gender")}</span>
             <UnitToggle
               options={["male", "female"] as const}
               value={gender}
               onChange={setGender}
+              getLabel={genderLabel}
             />
           </div>
         </div>
         <div className="space-y-sm">
           <label htmlFor="cal-weight" className="font-label text-label font-bold text-on-surface uppercase">
-            Weight (kg)
+            {t("weightKg")}
           </label>
           <input
             id="cal-weight"
@@ -72,7 +95,7 @@ export default function CalorieCalculator() {
         </div>
         <div className="space-y-sm">
           <label htmlFor="cal-height" className="font-label text-label font-bold text-on-surface uppercase">
-            Height (cm)
+            {t("heightCm")}
           </label>
           <input
             id="cal-height"
@@ -87,7 +110,7 @@ export default function CalorieCalculator() {
 
       <div className="space-y-sm mb-xl">
         <label htmlFor="cal-activity" className="font-label text-label font-bold text-on-surface uppercase">
-          Activity level
+          {t("activityLevel")}
         </label>
         <select
           id="cal-activity"
@@ -97,7 +120,7 @@ export default function CalorieCalculator() {
         >
           {activityLevels.map((level) => (
             <option key={level.value} value={level.value}>
-              {level.label}
+              {t(activityKey[level.value])}
             </option>
           ))}
         </select>
@@ -113,25 +136,21 @@ export default function CalorieCalculator() {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-md mb-xl">
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-lg text-center">
-              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">BMR</p>
+              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t("bmr")}</p>
               <p className="font-h2 text-h2 text-primary-container">{result.bmr.toLocaleString()} cal/day</p>
             </div>
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-lg text-center">
-              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">TDEE</p>
+              <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t("tdee")}</p>
               <p className="font-h2 text-h2 text-on-surface">{result.tdee.toLocaleString()} cal/day</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-            {[
-              { label: "Lose weight", value: result.loseWeight, sub: "−500 cal" },
-              { label: "Maintain", value: result.maintain, sub: "TDEE" },
-              { label: "Gain weight", value: result.gainWeight, sub: "+500 cal" },
-            ].map((item) => (
+            {goalItems.map((item) => (
               <div
-                key={item.label}
+                key={item.key}
                 className="bg-tertiary-container/10 border border-tertiary-container/30 rounded-xl p-md text-center"
               >
-                <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{item.label}</p>
+                <p className="font-label text-label text-on-surface-variant uppercase mb-xs">{t(item.key)}</p>
                 <p className="font-h3 text-h3 text-tertiary-container">{item.value.toLocaleString()}</p>
                 <p className="font-small text-small text-on-surface-variant">{item.sub}</p>
               </div>

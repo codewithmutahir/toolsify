@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useToolApi } from "@/hooks/useToolApi";
-import { formatAgeSummary } from "@/lib/calculators/age";
+import { useToolUi } from "@/hooks/useToolUi";
 import type { AgeResult } from "@/lib/calculators/age";
 
 function toInputDate(date: Date): string {
@@ -10,6 +10,7 @@ function toInputDate(date: Date): string {
 }
 
 export default function AgeCalculator() {
+  const t = useToolUi("age-calculator");
   const [birthDate, setBirthDate] = useState("1990-01-15");
   const [asOfDate, setAsOfDate] = useState(toInputDate(new Date()));
 
@@ -27,6 +28,12 @@ export default function AgeCalculator() {
     requestBody
   );
 
+  const nextBirthdayLabel = result
+    ? result.nextBirthdayDays === 0
+      ? t("nextBirthdayToday")
+      : t("nextBirthdayIn", { days: result.nextBirthdayDays })
+    : "";
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
@@ -35,7 +42,7 @@ export default function AgeCalculator() {
             htmlFor="birth-date"
             className="font-label text-label font-bold text-on-surface uppercase"
           >
-            Date of birth
+            {t("dateOfBirth")}
           </label>
           <input
             id="birth-date"
@@ -51,7 +58,7 @@ export default function AgeCalculator() {
             htmlFor="as-of-date"
             className="font-label text-label font-bold text-on-surface uppercase"
           >
-            As of date
+            {t("asOfDate")}
           </label>
           <input
             id="as-of-date"
@@ -73,52 +80,51 @@ export default function AgeCalculator() {
       {result ? (
         <>
           <div className="tool-result mb-xl">
-            <p className="tool-result-label mb-sm">Your age</p>
+            <p className="tool-result-label mb-sm">{t("yourAge")}</p>
             <p className="font-display text-h1 text-primary-container mb-md">
-              {formatAgeSummary(result)}
+              {t("ageSummary", {
+                years: result.years,
+                months: result.months,
+                days: result.days,
+              })}
             </p>
             <p className="font-body text-body text-on-surface-variant">
-              {result.nextBirthdayLabel}
+              {nextBirthdayLabel}
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-md">
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center">
               <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                Years
+                {t("years")}
               </p>
               <p className="font-h2 text-h2 text-on-surface">{result.years}</p>
             </div>
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center">
               <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                Months
+                {t("months")}
               </p>
               <p className="font-h2 text-h2 text-on-surface">{result.months}</p>
             </div>
             <div className="bg-surface-container-low border border-outline-variant rounded-xl p-md text-center">
               <p className="font-label text-label text-on-surface-variant uppercase mb-xs">
-                Days
+                {t("days")}
               </p>
               <p className="font-h2 text-h2 text-on-surface">{result.days}</p>
             </div>
           </div>
 
           <p className="mt-xl font-body text-body text-on-surface-variant text-center">
-            You&apos;ve lived{" "}
-            <span className="font-bold text-on-surface">
-              {result.totalDays.toLocaleString()} days
-            </span>
-            , or approximately{" "}
-            <span className="font-bold text-on-surface">
-              {result.totalHours.toLocaleString()} hours
-            </span>
-            .
+            {t("livedSummary", {
+              days: result.totalDays.toLocaleString(),
+              hours: result.totalHours.toLocaleString(),
+            })}
           </p>
         </>
       ) : (
         !error && (
           <p className="font-body text-body text-error text-center">
-            Please enter a valid birth date that is before the &quot;as of&quot; date.
+            {t("invalidDateRange")}
           </p>
         )
       )}
