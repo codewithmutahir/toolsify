@@ -1,4 +1,6 @@
 import { SITE_URL } from "@/lib/config";
+import { localePath } from "@/lib/i18n/metadata";
+import type { Locale } from "@/i18n/routing";
 import type { FaqItem, HowToStep } from "@/types/tool-content";
 import type { Tool } from "@/types/tool";
 
@@ -12,13 +14,13 @@ const CATEGORY_APPLICATION_TYPE: Record<Tool["category"], string> = {
   developer: "DeveloperApplication",
 };
 
-export function buildSoftwareApplicationSchema(tool: Tool) {
+export function buildSoftwareApplicationSchema(tool: Tool, locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: tool.title,
     description: tool.description,
-    url: `${SITE_URL}/${tool.slug}`,
+    url: `${SITE_URL}${localePath(locale, `/${tool.slug}`)}`,
     applicationCategory: CATEGORY_APPLICATION_TYPE[tool.category],
     operatingSystem: "Web browser",
     offers: {
@@ -66,9 +68,14 @@ export function buildHowToSchema(
   };
 }
 
-export function buildToolPageJsonLd(tool: Tool, faqs: FaqItem[], howToSteps: HowToStep[]) {
+export function buildToolPageJsonLd(
+  tool: Tool,
+  locale: Locale,
+  faqs: FaqItem[],
+  howToSteps: HowToStep[]
+) {
   return [
-    buildSoftwareApplicationSchema(tool),
+    buildSoftwareApplicationSchema(tool, locale),
     buildFaqPageSchema(faqs),
     buildHowToSchema(tool, howToSteps),
   ].filter(Boolean);

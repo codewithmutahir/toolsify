@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import AuthBrandingPanelSignIn from "@/components/auth/AuthBrandingPanelSignIn";
 import AuthMobileBranding from "@/components/auth/AuthMobileBranding";
 import LocalizedSignIn from "@/components/auth/LocalizedSignIn";
+import { NOINDEX_METADATA } from "@/lib/seo/noindex";
 
 export const metadata: Metadata = {
+  ...NOINDEX_METADATA,
   title: "Sign In | Toolsify",
   description: "Sign in to your Toolsify account to save history and favorites.",
 };

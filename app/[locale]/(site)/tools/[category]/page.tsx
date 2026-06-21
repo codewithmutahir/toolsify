@@ -4,6 +4,7 @@ import { categories } from "@/constants/categories";
 import { getToolsByCategory } from "@/constants/tools";
 import { generateCategoryMetadata } from "@/lib/seo";
 import { SITE_URL } from "@/lib/config";
+import { localePath } from "@/lib/i18n/metadata";
 import { getLocalizedCategoryBySlug, getLocalizedTools } from "@/lib/i18n/server";
 import { Link } from "@/i18n/navigation";
 import CategoryHero from "@/components/tools/CategoryHero";
@@ -60,19 +61,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "@type": "ListItem",
         position: 1,
         name: t("home"),
-        item: `${SITE_URL}/${params.locale}`,
+        item: `${SITE_URL}${localePath(params.locale as Locale)}`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: tNav("allTools"),
-        item: `${SITE_URL}/${params.locale}/tools`,
+        item: `${SITE_URL}${localePath(params.locale as Locale, "/tools")}`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.title,
-        item: `${SITE_URL}/${params.locale}/tools/${category.slug}`,
+        item: `${SITE_URL}${localePath(params.locale as Locale, `/tools/${category.slug}`)}`,
       },
     ],
   };
