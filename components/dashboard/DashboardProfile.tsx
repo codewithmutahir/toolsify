@@ -1,9 +1,12 @@
 "use client";
 
 import { UserProfile } from "@clerk/nextjs";
+import { useLocalizedPath } from "@/hooks/useLocalizedPath";
 import { clerkAuthAppearance } from "@/lib/clerk-appearance";
 
 export default function DashboardProfile() {
+  const profilePath = useLocalizedPath("/dashboard/profile");
+
   return (
     <div className="rounded-2xl border border-outline-variant bg-surface-container-lowest overflow-hidden">
       <UserProfile
@@ -21,7 +24,7 @@ export default function DashboardProfile() {
           },
         }}
         routing="path"
-        path="/dashboard/profile"
+        path={profilePath}
       />
     </div>
   );

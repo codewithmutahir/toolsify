@@ -28,15 +28,15 @@ export function getImplementedToolSlugs(): string[] {
   return getImplementedTools().map((tool) => tool.slug);
 }
 
-export function getPagesSitemapEntries(): SitemapUrlEntry[] {
+export async function getPagesSitemapEntries(): Promise<SitemapUrlEntry[]> {
   return buildMultilingualPageEntries(
     [...INDEXABLE_STATIC_PATHS],
     getStaticPageLastmod
   );
 }
 
-export function getCategoriesSitemapEntries(): SitemapUrlEntry[] {
-  const lastmod = getCategoryLastmod();
+export async function getCategoriesSitemapEntries(): Promise<SitemapUrlEntry[]> {
+  const lastmod = await getCategoryLastmod();
 
   return locales.flatMap((locale) =>
     categories.map((category) => ({
@@ -48,7 +48,9 @@ export function getCategoriesSitemapEntries(): SitemapUrlEntry[] {
   );
 }
 
-export function getToolsSitemapEntries(locale: Locale): SitemapUrlEntry[] {
+export async function getToolsSitemapEntries(
+  locale: Locale
+): Promise<SitemapUrlEntry[]> {
   return buildLocaleToolEntries(
     locale,
     getImplementedToolSlugs(),
@@ -56,8 +58,8 @@ export function getToolsSitemapEntries(locale: Locale): SitemapUrlEntry[] {
   );
 }
 
-export function getSitemapIndexEntries(): SitemapIndexEntry[] {
-  const lastmod = getSitemapIndexLastmod();
+export async function getSitemapIndexEntries(): Promise<SitemapIndexEntry[]> {
+  const lastmod = await getSitemapIndexLastmod();
 
   const childSitemaps = [
     `${SITE_URL}/sitemap-pages.xml`,

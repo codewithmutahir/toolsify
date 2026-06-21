@@ -138,6 +138,12 @@ async function main() {
       noToolsFound: "No tools found",
       adjustFilters: "Try adjusting your search or category filter.",
     },
+    contactPage: {
+      back: "Back to home",
+      title: "Contact Us",
+      description:
+        "Have a question, feedback, or partnership inquiry? Send us a message and we'll respond as soon as we can.",
+    },
     toolPage: {
       howToUse: "How to use",
       faqTitle: "Frequently Asked Questions",

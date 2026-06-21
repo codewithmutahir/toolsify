@@ -1,5 +1,14 @@
+import { locales } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/config";
 import { MetadataRoute } from "next";
+
+const LOCALE_PROTECTED_PATHS = ["/dashboard", "/sign-in", "/sign-up"] as const;
+
+const localeDisallowPaths = locales.flatMap((locale) =>
+  LOCALE_PROTECTED_PATHS.map((path) => `/${locale}${path}`),
+);
+
+const DISALLOW = ["/api/", ...localeDisallowPaths, "/__clerk/"];
 
 const AI_CRAWLERS = [
   "GPTBot",
@@ -16,24 +25,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/api/",
-          "/dashboard/",
-          "/sign-in",
-          "/sign-up",
-          "/__clerk/",
-        ],
+        disallow: DISALLOW,
       },
       ...AI_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: [
-          "/api/",
-          "/dashboard/",
-          "/sign-in",
-          "/sign-up",
-          "/__clerk/",
-        ],
+        disallow: DISALLOW,
       })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

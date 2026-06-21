@@ -77,29 +77,33 @@ ${sitemaps}
 </sitemapindex>`;
 }
 
-export function buildLocaleToolEntries(
+export async function buildLocaleToolEntries(
   locale: Locale,
   slugs: string[],
-  getLastmod: (slug: string, locale: Locale) => string | undefined
-): SitemapUrlEntry[] {
-  return slugs.map((slug) => ({
-    pathname: `/${slug}`,
-    locale,
-    lastmod: getLastmod(slug, locale),
-    includeHreflang: true,
-  }));
-}
-
-export function buildMultilingualPageEntries(
-  pathnames: string[],
-  getLastmod: (pathname: string) => string | undefined
-): SitemapUrlEntry[] {
-  return locales.flatMap((locale) =>
-    pathnames.map((pathname) => ({
-      pathname,
+  getLastmod: (slug: string, locale: Locale) => Promise<string | undefined>
+): Promise<SitemapUrlEntry[]> {
+  return Promise.all(
+    slugs.map(async (slug) => ({
+      pathname: `/${slug}`,
       locale,
-      lastmod: getLastmod(pathname),
-      includeHreflang: true,
+      lastmod: await getLastmod(slug, locale),
+      includeHreflang: true as const,
     }))
   );
+}
+
+export async function buildMultilingualPageEntries(
+  pathnames: string[],
+  getLastmod: (pathname: string) => Promise<string | undefined>
+): Promise<SitemapUrlEntry[]> {
+  const tasks = locales.flatMap((locale) =>
+    pathnames.map(async (pathname) => ({
+      pathname,
+      locale,
+      lastmod: await getLastmod(pathname),
+      includeHreflang: true as const,
+    }))
+  );
+
+  return Promise.all(tasks);
 }

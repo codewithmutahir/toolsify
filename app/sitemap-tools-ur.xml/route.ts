@@ -5,7 +5,7 @@ import {
 } from "@/lib/seo/sitemap-data";
 import { buildUrlsetXml } from "@/lib/seo/sitemap-xml";
 
-export function GET() {
-  const xml = buildUrlsetXml(getToolsSitemapEntries("ur"));
+export async function GET() {
+  const xml = buildUrlsetXml(await getToolsSitemapEntries("ur"));
   return new NextResponse(xml, { headers: SITEMAP_XML_HEADERS });
 }
