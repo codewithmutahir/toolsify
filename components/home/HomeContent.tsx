@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/config";
+import { localePath } from "@/lib/i18n/metadata";
 import AdBanner from "@/components/ads/AdBanner";
 import ToolSearch from "@/components/search/ToolSearch";
 import CategoryCard from "@/components/home/CategoryCard";
@@ -24,6 +26,7 @@ export default function HomeContent({
   featuredTools,
   totalTools,
 }: HomeContentProps) {
+  const locale = useLocale() as Locale;
   const t = useTranslations("home");
   const tMeta = useTranslations("metadata.site");
 
@@ -66,7 +69,7 @@ export default function HomeContent({
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/en/tools?q={search_term_string}`,
+        urlTemplate: `${SITE_URL}${localePath(locale, "/tools")}?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     },

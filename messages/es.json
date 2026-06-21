@@ -161,6 +161,11 @@
       "description": "Usa {tool} con valores típicos de tu caso y revisa el resultado arriba."
     }
   },
+  "contactPage": {
+    "back": "Volver al inicio",
+    "title": "Contáctanos",
+    "description": "¿Tienes una pregunta o comentario? Envíanos un mensaje y te responderemos lo antes posible."
+  },
   "signUpPrompt": {
     "title": "Toolsify te está siendo útil",
     "subtitle": "Crea una cuenta gratis para desbloquear más — las herramientas siguen siendo gratis.",

@@ -1,27 +1,40 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import type { Locale } from "@/i18n/routing";
 import { locales } from "@/i18n/routing";
 
 const ROOT = process.cwd();
 
-function getFileLastModified(relativePath: string): Date | undefined {
-  try {
-    const stat = fs.statSync(path.join(ROOT, relativePath));
-    return stat.mtime;
-  } catch {
-    return undefined;
+const mtimeCache = new Map<string, Date | undefined>();
+
+async function getFileLastModified(
+  relativePath: string
+): Promise<Date | undefined> {
+  if (mtimeCache.has(relativePath)) {
+    return mtimeCache.get(relativePath);
   }
+
+  let mtime: Date | undefined;
+  try {
+    const stat = await fs.stat(path.join(ROOT, relativePath));
+    mtime = stat.mtime;
+  } catch {
+    mtime = undefined;
+  }
+
+  mtimeCache.set(relativePath, mtime);
+  return mtime;
 }
 
-function getLatestMtime(relativePaths: string[]): Date | undefined {
-  const dates = relativePaths
-    .map(getFileLastModified)
-    .filter((date): date is Date => date !== undefined);
+async function getLatestMtime(
+  relativePaths: string[]
+): Promise<Date | undefined> {
+  const dates = await Promise.all(relativePaths.map(getFileLastModified));
+  const validDates = dates.filter((date): date is Date => date !== undefined);
 
-  if (dates.length === 0) return undefined;
+  if (validDates.length === 0) return undefined;
 
-  return new Date(Math.max(...dates.map((date) => date.getTime())));
+  return new Date(Math.max(...validDates.map((date) => date.getTime())));
 }
 
 const MESSAGE_FILES = locales.map((locale) => `messages/${locale}.json`);
@@ -39,16 +52,18 @@ export function formatLastmod(date: Date): string {
   return date.toISOString().split("T")[0]!;
 }
 
-export function getStaticPageLastmod(pathname: string): string | undefined {
+export async function getStaticPageLastmod(
+  pathname: string
+): Promise<string | undefined> {
   const sources = STATIC_PAGE_SOURCES[pathname];
   if (!sources) return undefined;
 
-  const mtime = getLatestMtime([...sources, ...MESSAGE_FILES]);
+  const mtime = await getLatestMtime([...sources, ...MESSAGE_FILES]);
   return mtime ? formatLastmod(mtime) : undefined;
 }
 
-export function getCategoryLastmod(): string | undefined {
-  const mtime = getLatestMtime([
+export async function getCategoryLastmod(): Promise<string | undefined> {
+  const mtime = await getLatestMtime([
     "constants/categories.ts",
     "app/[locale]/(site)/tools/[category]/page.tsx",
     ...MESSAGE_FILES,
@@ -56,8 +71,11 @@ export function getCategoryLastmod(): string | undefined {
   return mtime ? formatLastmod(mtime) : undefined;
 }
 
-export function getToolLastmod(slug: string, locale: Locale): string | undefined {
-  const mtime = getLatestMtime([
+export async function getToolLastmod(
+  slug: string,
+  locale: Locale
+): Promise<string | undefined> {
+  const mtime = await getLatestMtime([
     "constants/tools.ts",
     "lib/tools/page-content.ts",
     "lib/i18n/tool-content.ts",
@@ -70,8 +88,8 @@ export function getToolLastmod(slug: string, locale: Locale): string | undefined
   return mtime ? formatLastmod(mtime) : undefined;
 }
 
-export function getSitemapIndexLastmod(): string | undefined {
-  const mtime = getLatestMtime([
+export async function getSitemapIndexLastmod(): Promise<string | undefined> {
+  const mtime = await getLatestMtime([
     "constants/tools.ts",
     "constants/categories.ts",
     "lib/seo/sitemap-data.ts",

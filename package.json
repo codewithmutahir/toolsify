@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && node scripts/validate-i18n-namespaces.mjs",
+    "i18n:validate": "node scripts/validate-i18n-namespaces.mjs",
     "dns-aid:publish": "node scripts/publish-dns-aid.mjs"
   },
   "dependencies": {

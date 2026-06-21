@@ -139,6 +139,11 @@
     "aboutTool": "About this tool",
     "toolInterface": "Tool interface"
   },
+  "contactPage": {
+    "back": "Back to home",
+    "title": "Contact Us",
+    "description": "Have a question, feedback, or partnership inquiry? Send us a message and we'll respond as soon as we can."
+  },
   "signUpPrompt": {
     "title": "You're getting value from Toolsify",
     "subtitle": "Create a free account to unlock more — your tools stay free.",
