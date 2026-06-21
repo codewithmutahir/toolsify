@@ -9,6 +9,9 @@ node_modules/
 # testing
 /coverage
 .playwright-mcp/
+/test-results/
+playwright-debug.png
+playwright-fixed.png
 
 # next.js
 .next/
