@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import dynamic from "next/dynamic";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import JsonLd from "@/components/seo/JsonLd";
 import ToolHeader from "@/components/tools/ToolHeader";
 import ToolExamples from "@/components/tools/ToolExamples";
@@ -12,6 +12,7 @@ import { getLocalizedToolPageContent } from "@/lib/i18n/tool-content";
 import { buildToolPageJsonLd } from "@/lib/seo/json-ld";
 import { areAdsEnabled } from "@/lib/ads";
 import type { ImplementedToolSlug } from "@/components/tools/tool-registry";
+import type { Locale } from "@/i18n/routing";
 import type { Tool } from "@/types/tool";
 import { cn } from "@/lib/utils";
 
@@ -35,8 +36,9 @@ export default async function ToolPageShell({
   children,
 }: ToolPageShellProps) {
   const content = await getLocalizedToolPageContent(slug, tool);
+  const locale = (await getLocale()) as Locale;
   const t = await getTranslations("toolPage");
-  const jsonLd = buildToolPageJsonLd(tool, content.faqs, content.howToSteps);
+  const jsonLd = buildToolPageJsonLd(tool, locale, content.faqs, content.howToSteps);
   const adsEnabled = areAdsEnabled();
 
   return (

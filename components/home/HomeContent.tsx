@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { SITE_URL } from "@/lib/config";
 import AdBanner from "@/components/ads/AdBanner";
 import ToolSearch from "@/components/search/ToolSearch";
 import CategoryCard from "@/components/home/CategoryCard";
@@ -59,13 +60,13 @@ export default function HomeContent({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Toolsify",
-    url: "https://toolsify.online",
+    url: SITE_URL,
     description: tMeta("description"),
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://toolsify.online/en/tools?q={search_term_string}",
+        urlTemplate: `${SITE_URL}/en/tools?q={search_term_string}`,
       },
       "query-input": "required name=search_term_string",
     },

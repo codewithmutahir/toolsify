@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/config";
 import { getLocale } from "next-intl/server";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
@@ -32,7 +33,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toolsify.online"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: "/favicon.svg",
     apple: "/apple-touch-icon.svg",

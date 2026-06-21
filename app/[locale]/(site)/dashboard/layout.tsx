@@ -3,8 +3,10 @@ import { ReactNode } from "react";
 import { auth } from "@clerk/nextjs/server";
 import { getLocale } from "next-intl/server";
 import { redirect } from "@/i18n/navigation";
+import { NOINDEX_METADATA } from "@/lib/seo/noindex";
 
 export const metadata: Metadata = {
+  ...NOINDEX_METADATA,
   title: "Dashboard | Toolsify",
 };
 

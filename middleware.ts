@@ -22,11 +22,15 @@ export default clerkMiddleware((auth, req) => {
   const { pathname } = req.nextUrl;
   // API, metadata, and Clerk routes must not get locale redirects.
   if (
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/__clerk") ||
-    pathname.startsWith("/trpc") ||
+    pathname === "/api" ||
+    pathname.startsWith("/api/") ||
+    pathname === "/__clerk" ||
+    pathname.startsWith("/__clerk/") ||
+    pathname === "/trpc" ||
+    pathname.startsWith("/trpc/") ||
+    pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
-    pathname === "/robots.txt"
+    (pathname.startsWith("/sitemap-") && pathname.endsWith(".xml"))
   ) {
     return;
   }
