@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/config";
+import { buildOgImages, OG_IMAGE_URL } from "@/lib/seo/og";
 import { getLocale } from "next-intl/server";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
@@ -49,18 +50,13 @@ export const metadata: Metadata = {
     url: SITE_URL,                    // ← add karo
     title: "Toolsify - Free Online Tools",   // ← add karo
     description: "Free online tools for developers and creators.", // ← add karo
-    images: [{ 
-      url: "/og-image.png",  
-      width: 1200, 
-      height: 630,
-      alt: "Toolsify Preview"
-    }],
+    images: buildOgImages("Toolsify Preview"),
   },
   twitter: {
     card: "summary_large_image",
     title: "Toolsify - Free Online Tools",
     description: "Free online tools for developers and creators.",
-    images: ["/og-image.png"],
+    images: [OG_IMAGE_URL],
   },
 };
 
