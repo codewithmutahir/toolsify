@@ -34,16 +34,36 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Toolsify - Free Online Tools",
+    template: "%s | Toolsify", // per-page titles ke liye
+  },
+  description: "Free online tools for developers and creators.",
   icons: {
-    icon: "/favicon.svg",
-    apple: "/apple-touch-icon.svg",
+    icon: "/favicon.svg", // browser tab ke liye SVG theek hai
+    apple: "/apple-touch-icon.png", // ← PNG chahiye Apple ke liye
   },
   openGraph: {
     siteName: "Toolsify",
     type: "website",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
+    url: SITE_URL,                    // ← add karo
+    title: "Toolsify - Free Online Tools",   // ← add karo
+    description: "Free online tools for developers and creators.", // ← add karo
+    images: [{ 
+      url: "/og-image.png",  
+      width: 1200, 
+      height: 630,
+      alt: "Toolsify Preview"
+    }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Toolsify - Free Online Tools",
+    description: "Free online tools for developers and creators.",
+    images: ["/og-image.png"],
   },
 };
+
 
 export default async function RootLayout({
   children,
