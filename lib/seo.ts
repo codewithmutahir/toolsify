@@ -1,14 +1,12 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { SITE_URL } from "@/lib/config";
 import {
   buildAlternateLanguages,
   buildOpenGraphLocale,
 } from "@/lib/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { Category, Tool } from "@/types/tool";
-
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
+import { buildOgImages, OG_IMAGE_URL } from "@/lib/seo/og";
 
 export async function generateCategoryMetadata(
   category: Category,
@@ -42,13 +40,13 @@ export async function generateCategoryMetadata(
       siteName: "Toolsify",
       type: "website",
       locale: buildOpenGraphLocale(locale),
-      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Toolsify" }],
+      images: buildOgImages(`${categoryTitle} Tools | Toolsify`),
     },
     twitter: {
       card: "summary_large_image",
       title: `${categoryTitle} Tools | Toolsify`,
       description: category.description,
-      images: [OG_IMAGE],
+      images: [OG_IMAGE_URL],
     },
     alternates: {
       canonical: alternates.canonical,
@@ -87,13 +85,13 @@ export async function generateToolMetadata(
       siteName: "Toolsify",
       type: "website",
       locale: buildOpenGraphLocale(locale),
-      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: tool.title }],
+      images: buildOgImages(tool.title),
     },
     twitter: {
       card: "summary_large_image",
       title: `${tool.title} | Toolsify`,
       description: tool.description,
-      images: [OG_IMAGE],
+      images: [OG_IMAGE_URL],
     },
     alternates: {
       canonical: alternates.canonical,
@@ -125,11 +123,13 @@ export async function generatePageMetadata(
       siteName: "Toolsify",
       type: "website",
       locale: buildOpenGraphLocale(locale),
+      images: buildOgImages(),
     },
     twitter: {
       card: "summary_large_image",
       title: t(`${namespace}.title`),
       description: t(`${namespace}.description`),
+      images: [OG_IMAGE_URL],
     },
     alternates: {
       canonical: alternates.canonical,

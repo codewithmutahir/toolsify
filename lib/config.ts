@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://toolsify.online";
+const DEFAULT_SITE_URL = "https://www.toolsify.online";
 
 function normalizeSiteUrl(raw: string): string {
   const trimmed = raw.trim().replace(/\/$/, "");
