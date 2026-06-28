@@ -49,12 +49,16 @@
     "dashboard": "Dashboard"
   },
   "footer": {
-    "description": "Free online calculators, converters, and utility tools. Fast, accurate, and no signup required.",
+    "description": "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
     "tools": "Tools",
     "categories": "Categories",
     "company": "Company",
+    "aboutUs": "About Us",
+    "author": "Author",
     "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
     "termsOfService": "Terms of Service",
+    "disclaimer": "Disclaimer",
     "contactUs": "Contact Us",
     "requestToolDescription": "Suggest tools we should add to Toolsify."
   },
@@ -65,20 +69,20 @@
     "es": "Spanish"
   },
   "home": {
-    "heroTitle": "Free Online Tools for Everyone",
-    "heroDescription": "Fast, free, and easy-to-use. No signup required. Access a professional suite of document, math, and developer tools instantly.",
+    "heroTitle": "AI-Powered Digital Tools for Productivity",
+    "heroDescription": "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
     "heroImageAlt": "Toolsify hero illustration",
     "browseByCategory": "Browse by Category",
-    "browseByCategoryDescription": "Find the right tool for your specific task",
+    "browseByCategoryDescription": "Explore professional tools organized by workflow and use case",
     "viewAllTools": "View all {count}+ Tools",
     "popularTools": "Popular Tools",
     "howItWorks": "How Toolsify Works",
     "suggestionPills": {
-      "bmiCalculator": "BMI Calculator",
-      "wordCounter": "Word Counter",
-      "emiCalculator": "EMI Calculator",
-      "percentageCalculator": "Percentage Calculator",
-      "colorConverter": "Color Converter"
+      "finance": "Finance",
+      "fitness": "Health & Wellness",
+      "text": "Text & Content",
+      "math": "Data & Analytics",
+      "developer": "Developer"
     },
     "howItWorksSteps": {
       "search": {
@@ -101,7 +105,7 @@
     },
     "requestTool": {
       "heading": "Request a tool",
-      "description": "Signed-in members can suggest calculators and utilities we should build next.",
+      "description": "Signed-in members can suggest digital tools and utilities we should build next.",
       "button": "Request a Tool",
       "signInToRequest": "Sign in to request a tool",
       "compactButton": "Request a tool",
@@ -110,7 +114,7 @@
   },
   "search": {
     "placeholder": "Search tools...",
-    "heroPlaceholder": "Search for a tool (e.g. BMI, Word Counter, EMI...)",
+    "heroPlaceholder": "Search for a tool by name, category, or task...",
     "quickSearch": "Quick search",
     "submit": "Search",
     "noResults": "No tools found",
@@ -121,15 +125,15 @@
     "tryDifferent": "Try a different search term"
   },
   "toolsPage": {
-    "title": "All Free Online Tools",
-    "description": "Browse {count}+ free calculators, converters, and text tools. Filter by category or search to find exactly what you need — no signup required.",
+    "title": "All Digital Tools",
+    "description": "Browse {count}+ AI-powered digital tools for productivity, data, content, and workflow tasks. Filter by category or search — no signup required.",
     "filterAll": "All",
     "searchPlaceholder": "Search tools...",
     "showing": "Showing {count} tools",
     "noToolsFound": "No tools found",
     "adjustFilters": "Try adjusting your search or category filter.",
     "missingToolHeading": "Can't find the tool you need?",
-    "missingToolDescription": "Request a new calculator or utility and we'll consider adding it to Toolsify."
+    "missingToolDescription": "Request a new digital tool or utility and we'll consider adding it to Toolsify."
   },
   "toolPage": {
     "howToUse": "How to use",
@@ -142,7 +146,7 @@
   "contactPage": {
     "back": "Back to home",
     "title": "Contact Us",
-    "description": "Have a question, feedback, or partnership inquiry? Send us a message and we'll respond as soon as we can."
+    "description": "Questions about Toolsify, feedback on our digital tools, or a partnership inquiry? Send us a message and our team will respond promptly."
   },
   "signUpPrompt": {
     "title": "You're getting value from Toolsify",
@@ -220,48 +224,63 @@
   },
   "metadata": {
     "site": {
-      "title": "Toolsify — Free Online Tools",
-      "description": "Free online calculators, converters, and utility tools. Fast, accurate, and no signup required."
+      "title": "AI-Powered Digital Tools for Productivity | Toolsify",
+      "description": "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place."
     },
     "home": {
-      "title": "Free Online Tools — Calculators, Converters & More | Toolsify",
-      "description": "Free online tools including BMI calculator, percentage calculator, word counter, EMI calculator, and 50+ more. No signup required. Fast and accurate.",
+      "title": "AI-Powered Digital Tools for Productivity | Toolsify",
+      "description": "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
       "keywords": [
-        "free online tools",
-        "calculator",
-        "converter",
-        "BMI calculator",
-        "word counter",
-        "EMI calculator",
+        "AI-powered tools",
+        "digital tools",
+        "productivity tools",
+        "privacy-first",
+        "online utilities",
         "toolsify"
       ]
     },
     "tools": {
-      "title": "All Free Online Tools — 50+ Calculators & Converters | Toolsify",
-      "description": "Browse 50+ free online tools including calculators, converters, text tools, and more.",
+      "title": "All Digital Tools | Toolsify",
+      "description": "Browse 50+ AI-powered digital tools for productivity, data processing, content, and professional workflows.",
       "keywords": [
-        "free online tools",
+        "digital tools",
+        "productivity tools",
+        "online utilities",
         "all tools",
-        "calculators",
-        "converters",
         "toolsify"
       ]
     },
     "categories": {
       "title": "Tool Categories | Toolsify",
-      "description": "Browse free online tools by category on Toolsify."
+      "description": "Explore Toolsify digital tools organized by category for faster discovery."
     },
     "contact": {
       "title": "Contact Us | Toolsify",
-      "description": "Get in touch with the Toolsify team."
+      "description": "Reach the Toolsify team for support, feedback, partnerships, or general inquiries about our digital tools platform."
     },
     "privacy": {
       "title": "Privacy Policy | Toolsify",
-      "description": "Toolsify privacy policy and data practices."
+      "description": "How Toolsify collects, uses, and protects your data across our AI-powered digital tools platform."
     },
     "terms": {
       "title": "Terms of Service | Toolsify",
-      "description": "Toolsify terms of service."
+      "description": "Terms governing your use of Toolsify and its suite of digital productivity tools."
+    },
+    "about": {
+      "title": "About Us | Toolsify",
+      "description": "Toolsify delivers AI-powered, privacy-first digital tools built for speed, accuracy, and everyday productivity."
+    },
+    "cookies": {
+      "title": "Cookie Policy | Toolsify",
+      "description": "How Toolsify uses cookies for essential features, analytics, and advertising on our digital tools platform."
+    },
+    "disclaimer": {
+      "title": "Disclaimer | Toolsify",
+      "description": "Important limitations and disclaimers for using Toolsify digital tools and platform outputs."
+    },
+    "author": {
+      "title": "About the Author | Toolsify",
+      "description": "Meet Mutahir Hussain, the Full Stack Developer who builds and maintains the Toolsify platform."
     },
     "toolTitle": "{title} — Free Online Tool | Toolsify",
     "toolDescription": "Use our free online {title}. {description} No signup required. Fast and accurate.",

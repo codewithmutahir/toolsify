@@ -8,6 +8,9 @@ function normalizeSiteUrl(raw: string): string {
 
   try {
     const url = new URL(candidate);
+    if (url.hostname === "toolsify.online") {
+      url.hostname = "www.toolsify.online";
+    }
     return `${url.protocol}//${url.host}`;
   } catch {
     return DEFAULT_SITE_URL;

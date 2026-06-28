@@ -30,9 +30,13 @@ export default async function Footer() {
     }));
 
   const companyLinks = [
-    { href: "/privacy-policy", label: t("privacyPolicy") },
-    { href: "/terms", label: t("termsOfService") },
+    { href: "/about", label: t("aboutUs") },
+    { href: "/author", label: t("author") },
     { href: "/contact", label: t("contactUs") },
+    { href: "/privacy-policy", label: t("privacyPolicy") },
+    { href: "/cookie-policy", label: t("cookiePolicy") },
+    { href: "/terms", label: t("termsOfService") },
+    { href: "/disclaimer", label: t("disclaimer") },
   ];
 
   const socialLinks = [

@@ -1,0 +1,131 @@
+{
+  "en": {
+    "title": "About the Author",
+    "lastUpdated": "Last updated: {date}",
+    "back": "← Back to Toolsify",
+    "intro": {
+      "heading": "Mutahir Hussain",
+      "p1": "Mutahir Hussain is a Full Stack Developer specializing in Laravel, Next.js, WordPress, AI-powered web applications, automation, and modern web technologies.",
+      "p2": "He develops and maintains Toolsify with the goal of creating fast, accurate, privacy-first digital tools that help people work smarter and solve everyday problems efficiently."
+    },
+    "whyExists": {
+      "heading": "Why Toolsify exists",
+      "p1": "Too many useful utilities are buried behind sign-up walls, bloated downloads, or cluttered interfaces. Toolsify was built to offer a better alternative: AI-powered digital tools that load quickly, respect your privacy, and work on any device—no account required for most features.",
+      "p2": "Every tool on the platform reflects a practical focus on accuracy, performance, and clarity. New capabilities are added regularly based on real user needs and feedback."
+    },
+    "expertise": {
+      "heading": "Areas of expertise",
+      "skills": [
+        "Laravel",
+        "MERN",
+        "WordPress",
+        "Shopify",
+        "React Native",
+        "AI Applications",
+        "Web Performance",
+        "SEO",
+        "API Development",
+        "Digital Tools"
+      ]
+    },
+    "trust": {
+      "heading": "A note on experience and trust",
+      "p1": "Toolsify is independently developed and maintained by a solo Full Stack Developer focused on building fast, reliable, and user-friendly web applications. There is no large team or corporate backing behind the platform—just a commitment to shipping tools that work well and treating user privacy seriously.",
+      "getInTouch": "If you have questions, suggestions, or feedback, <link>get in touch</link>. Your input directly influences what gets built next."
+    },
+    "learnMore": {
+      "heading": "Learn more about Toolsify",
+      "aboutLink": "For details about the platform's mission, values, and approach to privacy and accuracy, visit our <link>About Us</link> page."
+    },
+    "schema": {
+      "jobTitle": "Full Stack Developer",
+      "description": "Full Stack Developer specializing in Laravel, MERN, WordPress, Shopify, React Native, AI-powered web applications, and modern web technologies. Creator and maintainer of Toolsify."
+    }
+  },
+  "es": {
+    "title": "Sobre el autor",
+    "lastUpdated": "Última actualización: {date}",
+    "back": "← Volver a Toolsify",
+    "intro": {
+      "heading": "Mutahir Hussain",
+      "p1": "Mutahir Hussain es un desarrollador Full Stack especializado en Laravel, Next.js, WordPress, aplicaciones web impulsadas por IA, automatización y tecnologías web modernas.",
+      "p2": "Desarrolla y mantiene Toolsify con el objetivo de crear herramientas digitales rápidas, precisas y centradas en la privacidad que ayuden a las personas a trabajar de forma más inteligente y resolver problemas cotidianos de manera eficiente."
+    },
+    "whyExists": {
+      "heading": "Por qué existe Toolsify",
+      "p1": "Demasiadas utilidades útiles están ocultas tras muros de registro, descargas pesadas o interfaces desordenadas. Toolsify se creó para ofrecer una alternativa mejor: herramientas digitales impulsadas por IA que cargan rápido, respetan tu privacidad y funcionan en cualquier dispositivo —sin necesidad de cuenta para la mayoría de las funciones.",
+      "p2": "Cada herramienta de la plataforma refleja un enfoque práctico en la precisión, el rendimiento y la claridad. Se añaden nuevas capacidades con regularidad según las necesidades reales de los usuarios y sus comentarios."
+    },
+    "expertise": {
+      "heading": "Áreas de especialización",
+      "skills": [
+        "Laravel",
+        "MERN",
+        "WordPress",
+        "Shopify",
+        "React Native",
+        "Aplicaciones de IA",
+        "Rendimiento web",
+        "SEO",
+        "Desarrollo de API",
+        "Herramientas digitales"
+      ]
+    },
+    "trust": {
+      "heading": "Una nota sobre experiencia y confianza",
+      "p1": "Toolsify es desarrollado y mantenido de forma independiente por un desarrollador Full Stack en solitario, centrado en crear aplicaciones web rápidas, fiables y fáciles de usar. No hay un gran equipo ni respaldo corporativo detrás de la plataforma —solo un compromiso de ofrecer herramientas que funcionen bien y tratar la privacidad del usuario con seriedad.",
+      "getInTouch": "Si tienes preguntas, sugerencias o comentarios, <link>ponte en contacto</link>. Tu opinión influye directamente en lo que se construirá a continuación."
+    },
+    "learnMore": {
+      "heading": "Más información sobre Toolsify",
+      "aboutLink": "Para conocer los detalles sobre la misión, los valores y el enfoque de la plataforma respecto a la privacidad y la precisión, visita nuestra página <link>Sobre nosotros</link>."
+    },
+    "schema": {
+      "jobTitle": "Desarrollador Full Stack",
+      "description": "Desarrollador Full Stack especializado en Laravel, MERN, WordPress, Shopify, React Native, aplicaciones web impulsadas por IA y tecnologías web modernas. Creador y mantenedor de Toolsify."
+    }
+  },
+  "ur": {
+    "title": "مصنف کے بارے میں",
+    "lastUpdated": "آخری تازہ کاری: {date}",
+    "back": "← Toolsify پر واپس",
+    "intro": {
+      "heading": "مطاہر حسین",
+      "p1": "مطاہر حسین ایک فل اسٹیک ڈویلپر ہیں جو Laravel، Next.js، WordPress، AI سے چلنے والی ویب ایپلیکیشنز، آٹومیشن اور جدید ویب ٹیکنالوجیز میں مہارت رکھتے ہیں۔",
+      "p2": "وہ Toolsify کو تیزی سے، درست اور پرائیویسی کو اولین ترجیح دینے والے ڈیجیٹل ٹولز بنانے کے مقصد سے تیار اور برقرار رکھتے ہیں، تاکہ لوگ زیادہ ہوشیاری سے کام کر سکیں اور روزمرہ کے مسائل مؤثر طریقے سے حل کر سکیں۔"
+    },
+    "whyExists": {
+      "heading": "Toolsify کیوں موجود ہے",
+      "p1": "بہت سی مفید یوٹیلیٹیز سائن اپ کی دیواروں، بھاری ڈاؤن لوڈز یا بے ترتیب انٹرفیس کے پیچھے دفن ہیں۔ Toolsify ایک بہتر متبادل پیش کرنے کے لیے بنایا گیا: AI سے چلنے والے ڈیجیٹل ٹولز جو تیزی سے لوڈ ہوتے ہیں، آپ کی پرائیویسی کا احترام کرتے ہیں، اور کسی بھی ڈیوائس پر کام کرتے ہیں —زیادہ تر خصوصیات کے لیے اکاؤنٹ کی ضرورت نہیں۔",
+      "p2": "پلیٹ فارم پر ہر ٹول درستگی، کارکردگی اور وضاحت پر عملی توجہ کی عکاسی کرتا ہے۔ حقیقی صارف کی ضروریات اور رائے کی بنیاد پر نئی صلاحیتیں باقاعدگی سے شامل کی جاتی ہیں۔"
+    },
+    "expertise": {
+      "heading": "مہارت کے شعبے",
+      "skills": [
+        "Laravel",
+        "MERN",
+        "WordPress",
+        "Shopify",
+        "React Native",
+        "AI ایپلیکیشنز",
+        "ویب کارکردگی",
+        "SEO",
+        "API ڈویلپمنٹ",
+        "ڈیجیٹل ٹولز"
+      ]
+    },
+    "trust": {
+      "heading": "تجربے اور اعتماد کے بارے میں ایک نوٹ",
+      "p1": "Toolsify ایک سولو فل اسٹیک ڈویلپر کے ذریعے آزادانہ طور پر تیار اور برقرار رکھا جاتا ہے، جو تیز، قابل اعتماد اور صارف دوست ویب ایپلیکیشنز بنانے پر توجہ مرکوز کرتا ہے۔ پلیٹ فارم کے پیچھے کوئی بڑی ٹیم یا کارپوریٹ سپورٹ نہیں —صرف اچھے کام کرنے والے ٹولز فراہم کرنے اور صارف کی پرائیویسی کو سنجیدگی سے لینے کا عزم ہے۔",
+      "getInTouch": "اگر آپ کے پاس سوالات، تجاویز یا رائے ہو، تو <link>رابطہ کریں</link>۔ آپ کا ان پٹ براہ راست اگلے مرحلے میں بننے والی چیزوں پر اثر انداز ہوتا ہے۔"
+    },
+    "learnMore": {
+      "heading": "Toolsify کے بارے میں مزید جانیں",
+      "aboutLink": "پلیٹ فارم کے مشن، اقدار، اور پرائیویسی و درستگی کے نقطہ نظر کی تفصیلات کے لیے ہمارا <link>ہمارے بارے میں</link> صفحہ دیکھیں۔"
+    },
+    "schema": {
+      "jobTitle": "فل اسٹیک ڈویلپر",
+      "description": "فل اسٹیک ڈویلپر جو Laravel، MERN، WordPress، Shopify، React Native، AI سے چلنے والی ویب ایپلیکیشنز اور جدید ویب ٹیکنالوجیز میں مہارت رکھتا ہے۔ Toolsify کا تخلیق کار اور نگہبان۔"
+    }
+  }
+}

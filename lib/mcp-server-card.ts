@@ -10,7 +10,7 @@ export function buildMcpServerCard() {
       name: MCP_SERVER_NAME,
       version: MCP_SERVER_VERSION,
       description:
-        "Free online calculators, converters, and utility tools for math, finance, fitness, text, design, and developers.",
+        "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
     },
     transport: {
       type: "streamable-http",

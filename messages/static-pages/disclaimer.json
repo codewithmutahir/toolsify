@@ -1,0 +1,191 @@
+{
+  "en": {
+    "title": "Disclaimer",
+    "lastUpdated": "Last updated: {date}",
+    "back": "← Back to Toolsify",
+    "generalInfo": {
+      "heading": "General information only",
+      "p1": "The information, outputs, and results provided by Toolsify at toolsify.online are for general informational and educational purposes only. By using any tool on this website, you acknowledge and agree to the terms outlined on this page.",
+      "p2": "Nothing on Toolsify constitutes professional, medical, legal, financial, tax, engineering, or safety advice. Always consult a qualified professional before making decisions that could affect your health, finances, legal rights, or safety."
+    },
+    "noGuarantee": {
+      "heading": "No guarantee of accuracy",
+      "p1": "We work hard to keep our digital tools accurate and up to date. Tools are built on established standards and tested against known reference values. However, errors, omissions, rounding differences, and outdated information can occur.",
+      "p2": "Results may vary based on the data you enter, browser limitations, or changes in standards and regulations. Do not rely solely on Toolsify outputs for critical, high-stakes, or compliance-related decisions without independent verification."
+    },
+    "useAtOwnRisk": {
+      "heading": "Use at your own risk",
+      "p": "You use Toolsify and its tools entirely at your own risk. We are not responsible for any loss, damage, or consequence arising from your use of the site or reliance on any result, including but not limited to:",
+      "items": [
+        "Financial losses or miscalculated budgets",
+        "Health or wellness decisions based on tool outputs",
+        "Legal or contractual outcomes",
+        "Data loss from file processing tools",
+        "Business, academic, or professional decisions"
+      ]
+    },
+    "noProfessional": {
+      "heading": "No professional relationship",
+      "p": "Using Toolsify does not create any professional, advisory, or fiduciary relationship between you and Toolsify or its operator. Our tools are self-service utilities, not personalized consultations or certified assessments."
+    },
+    "health": {
+      "heading": "Health and wellness tools",
+      "p": "Health and wellness tools on Toolsify provide general estimates only. They do not diagnose conditions, prescribe treatment, or replace advice from a doctor, dietitian, or other healthcare provider. Individual circumstances vary—always seek professional guidance for health-related decisions."
+    },
+    "financial": {
+      "heading": "Financial and legal tools",
+      "p": "Financial and legal tools produce approximations based on the inputs and assumptions you provide. They do not account for every fee, regulation, or market condition. For financial planning, tax filing, or legal matters, consult a licensed accountant, financial advisor, or attorney in your jurisdiction."
+    },
+    "fileData": {
+      "heading": "File and data processing tools",
+      "p": "Document, media, and data processing tools operate according to their design. While many operations run locally in your browser, we cannot guarantee that processed files will meet your specific requirements or that no data loss will occur. Always keep backups of important files before processing them."
+    },
+    "externalLinks": {
+      "heading": "External links",
+      "p": "Toolsify may contain links to third-party websites or services. We do not control and are not responsible for the content, accuracy, or privacy practices of those external sites. Following a link is at your own discretion and risk."
+    },
+    "noWarranty": {
+      "heading": "No warranty",
+      "p": "Toolsify and all tools are provided \"as is\" and \"as available\" without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement."
+    },
+    "limitation": {
+      "heading": "Limitation of liability",
+      "p1": "To the fullest extent permitted by applicable law, Toolsify and its operator shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from your access to or use of the site, even if we have been advised of the possibility of such damages.",
+      "seeTerms": "For additional legal terms, see our <link>Terms of Service</link>."
+    },
+    "reporting": {
+      "heading": "Reporting issues",
+      "reportBody": "If you find an error in a tool or believe a result is incorrect, please let us know. User reports help us fix bugs and improve accuracy for everyone. <link>Contact us</link> with a description of the issue, your inputs, and the unexpected result."
+    },
+    "changes": {
+      "heading": "Changes to this disclaimer",
+      "p": "We may update this disclaimer from time to time. The \"Last updated\" date at the top reflects the most recent revision. Continued use of Toolsify after changes constitutes acceptance of the updated disclaimer."
+    }
+  },
+  "es": {
+    "title": "Aviso legal",
+    "lastUpdated": "Última actualización: {date}",
+    "back": "← Volver a Toolsify",
+    "generalInfo": {
+      "heading": "Solo información general",
+      "p1": "La información, los resultados y las salidas proporcionados por Toolsify en toolsify.online son únicamente con fines informativos y educativos generales. Al utilizar cualquier herramienta de este sitio web, reconoces y aceptas los términos descritos en esta página.",
+      "p2": "Nada en Toolsify constituye asesoramiento profesional, médico, legal, financiero, fiscal, de ingeniería o de seguridad. Consulta siempre a un profesional cualificado antes de tomar decisiones que puedan afectar tu salud, finanzas, derechos legales o seguridad."
+    },
+    "noGuarantee": {
+      "heading": "Sin garantía de precisión",
+      "p1": "Trabajamos arduamente para mantener nuestras herramientas digitales precisas y actualizadas. Las herramientas se basan en estándares establecidos y se prueban con valores de referencia conocidos. Sin embargo, pueden producirse errores, omisiones, diferencias de redondeo e información desactualizada.",
+      "p2": "Los resultados pueden variar según los datos que introduzcas, las limitaciones del navegador o los cambios en estándares y regulaciones. No confíes únicamente en los resultados de Toolsify para decisiones críticas, de alto riesgo o relacionadas con el cumplimiento normativo sin una verificación independiente."
+    },
+    "useAtOwnRisk": {
+      "heading": "Uso bajo tu propio riesgo",
+      "p": "Utilizas Toolsify y sus herramientas enteramente bajo tu propio riesgo. No somos responsables de ninguna pérdida, daño o consecuencia derivada de tu uso del sitio o de la confianza en cualquier resultado, incluyendo, entre otros:",
+      "items": [
+        "Pérdidas financieras o presupuestos mal calculados",
+        "Decisiones de salud o bienestar basadas en los resultados de las herramientas",
+        "Resultados legales o contractuales",
+        "Pérdida de datos por herramientas de procesamiento de archivos",
+        "Decisiones empresariales, académicas o profesionales"
+      ]
+    },
+    "noProfessional": {
+      "heading": "Sin relación profesional",
+      "p": "El uso de Toolsify no crea ninguna relación profesional, de asesoramiento o fiduciaria entre tú y Toolsify o su operador. Nuestras herramientas son utilidades de autoservicio, no consultas personalizadas ni evaluaciones certificadas."
+    },
+    "health": {
+      "heading": "Herramientas de salud y bienestar",
+      "p": "Las herramientas de salud y bienestar en Toolsify proporcionan solo estimaciones generales. No diagnostican condiciones, prescriben tratamiento ni sustituyen el consejo de un médico, dietista u otro profesional de la salud. Las circunstancias individuales varían —busca siempre orientación profesional para decisiones relacionadas con la salud."
+    },
+    "financial": {
+      "heading": "Herramientas financieras y legales",
+      "p": "Las herramientas financieras y legales producen aproximaciones basadas en los datos y supuestos que proporciones. No tienen en cuenta todas las tarifas, regulaciones o condiciones del mercado. Para planificación financiera, declaración de impuestos o asuntos legales, consulta a un contador licenciado, asesor financiero o abogado en tu jurisdicción."
+    },
+    "fileData": {
+      "heading": "Herramientas de procesamiento de archivos y datos",
+      "p": "Las herramientas de documentos, medios y procesamiento de datos funcionan según su diseño. Aunque muchas operaciones se ejecutan localmente en tu navegador, no podemos garantizar que los archivos procesados cumplan tus requisitos específicos ni que no se produzca pérdida de datos. Guarda siempre copias de seguridad de archivos importantes antes de procesarlos."
+    },
+    "externalLinks": {
+      "heading": "Enlaces externos",
+      "p": "Toolsify puede contener enlaces a sitios web o servicios de terceros. No controlamos ni somos responsables del contenido, la precisión o las prácticas de privacidad de esos sitios externos. Seguir un enlace es bajo tu propia discreción y riesgo."
+    },
+    "noWarranty": {
+      "heading": "Sin garantía",
+      "p": "Toolsify y todas las herramientas se proporcionan \"tal cual\" y \"según disponibilidad\" sin garantías de ningún tipo, ya sean expresas o implícitas, incluyendo, entre otras, garantías de comerciabilidad, idoneidad para un propósito particular, precisión o no infracción."
+    },
+    "limitation": {
+      "heading": "Limitación de responsabilidad",
+      "p1": "En la máxima medida permitida por la ley aplicable, Toolsify y su operador no serán responsables de ningún daño directo, indirecto, incidental, especial, consecuente o punitivo derivado de tu acceso o uso del sitio, incluso si se nos ha informado de la posibilidad de dichos daños.",
+      "seeTerms": "Para términos legales adicionales, consulta nuestros <link>Términos de servicio</link>."
+    },
+    "reporting": {
+      "heading": "Reportar problemas",
+      "reportBody": "Si encuentras un error en una herramienta o crees que un resultado es incorrecto, háznoslo saber. Los informes de los usuarios nos ayudan a corregir errores y mejorar la precisión para todos. <link>Contáctanos</link> con una descripción del problema, tus entradas y el resultado inesperado."
+    },
+    "changes": {
+      "heading": "Cambios en este aviso legal",
+      "p": "Podemos actualizar este aviso legal de vez en cuando. La fecha de \"Última actualización\" en la parte superior refleja la revisión más reciente. El uso continuado de Toolsify después de los cambios constituye la aceptación del aviso legal actualizado."
+    }
+  },
+  "ur": {
+    "title": "ڈس کلیمر",
+    "lastUpdated": "آخری تازہ کاری: {date}",
+    "back": "← Toolsify پر واپس",
+    "generalInfo": {
+      "heading": "صرف عمومی معلومات",
+      "p1": "toolsify.online پر Toolsify کی فراہم کردہ معلومات، آؤٹ پٹ اور نتائج صرف عمومی معلوماتی اور تعلیمی مقاصد کے لیے ہیں۔ اس ویب سائٹ پر کسی بھی ٹول کا استعمال کرتے ہوئے، آپ اس صفحہ پر بیان کردہ شرائط کو تسلیم اور قبول کرتے ہیں۔",
+      "p2": "Toolsify پر کچھ بھی پیشہ ورانہ، طبی، قانونی، مالی، ٹیکس، انجینئرنگ، یا حفاظتی مشورہ نہیں ہے۔ اپنی صحت، مالیات، قانونی حقوق، یا حفاظت پر اثر انداز ہونے والے فیصلے کرنے سے پہلے ہمیشہ ایک اہل پیشہ ور سے مشورہ کریں۔"
+    },
+    "noGuarantee": {
+      "heading": "درستگی کی کوئی ضمانت نہیں",
+      "p1": "ہم اپنے ڈیجیٹل ٹولز کو درست اور تازہ ترین رکھنے کے لیے سخت محنت کرتے ہیں۔ ٹولز قائم شدہ معیارات پر بنائے گئے ہیں اور معلوم حوالہ جاتی اقدار کے خلاف جانچے گئے ہیں۔ تاہم، غلطیاں، چھوٹ، راؤنڈنگ کے فرق، اور پرانی معلومات ہو سکتی ہیں۔",
+      "p2": "نتائج آپ کے درج کردہ ڈیٹا، براؤزر کی حدود، یا معیارات اور ضوابط میں تبدیلیوں کی بنیاد پر مختلف ہو سکتے ہیں۔ اہم، زیادہ خطرے والے، یا تعمیل سے متعلق فیصلوں کے لیے آزادانہ تصدیق کے بغیر صرف Toolsify کے نتائج پر بھروسہ نہ کریں۔"
+    },
+    "useAtOwnRisk": {
+      "heading": "اپنے خطرے پر استعمال کریں",
+      "p": "آپ Toolsify اور اس کے ٹولز مکمل طور پر اپنے خطرے پر استعمال کرتے ہیں۔ ہم سائٹ کے استعمال یا کسی بھی نتیجے پر بھروسے سے پیدا ہونے والے کسی بھی نقصان، نقصان، یا نتیجے کے ذمہ دار نہیں ہیں، بشمول مگر ان تک محدود نہیں:",
+      "items": [
+        "مالی نقصانات یا غلط حساب شدہ بجٹ",
+        "ٹول کے نتائج کی بنیاد پر صحت یا تندرستی کے فیصلے",
+        "قانونی یا معاہداتی نتائج",
+        "فائل پروسیسنگ ٹولز سے ڈیٹا کا نقصان",
+        "کاروباری، تعلیمی، یا پیشہ ورانہ فیصلے"
+      ]
+    },
+    "noProfessional": {
+      "heading": "کوئی پیشہ ورانہ تعلق نہیں",
+      "p": "Toolsify کا استعمال آپ اور Toolsify یا اس کے آپریٹر کے درمیان کوئی پیشہ ورانہ، مشاورتی، یا فڈیوشیری تعلق نہیں بناتا۔ ہمارے ٹولز خود خدمت کی یوٹیلیٹیز ہیں، ذاتی مشاورت یا تصدیق شدہ تشخیص نہیں۔"
+    },
+    "health": {
+      "heading": "صحت اور تندرستی کے ٹولز",
+      "p": "Toolsify پر صحت اور تندرستی کے ٹولز صرف عمومی تخمینے فراہم کرتے ہیں۔ یہ حالات کی تشخیص نہیں کرتے، علاج تجویز نہیں کرتے، اور ڈاکٹر، غذائی ماہر، یا دیگر صحت کی دیکھ بھال فراہم کنندہ کے مشورے کی جگہ نہیں لے سکتے۔ انفرادی حالات مختلف ہوتے ہیں — صحت سے متعلق فیصلوں کے لیے ہمیشہ پیشہ ورانہ رہنمائی حاصل کریں۔"
+    },
+    "financial": {
+      "heading": "مالی اور قانونی ٹولز",
+      "p": "مالی اور قانونی ٹولز آپ کے فراہم کردہ ان پٹس اور مفروضوں کی بنیاد پر تخمینے پیدا کرتے ہیں۔ یہ ہر فیس، ضابطے، یا مارکیٹ کی صورتحال کو شامل نہیں کرتے۔ مالی منصوبہ بندی، ٹیکس فائلنگ، یا قانونی معاملات کے لیے اپنے علاقے میں لائسنس یافتہ اکاؤنٹنٹ، مالی مشیر، یا وکیل سے مشورہ کریں۔"
+    },
+    "fileData": {
+      "heading": "فائل اور ڈیٹا پروسیسنگ ٹولز",
+      "p": "دستاویز، میڈیا، اور ڈیٹا پروسیسنگ ٹولز اپنے ڈیزائن کے مطابق کام کرتے ہیں۔ اگرچہ بہت سے آپریشنز مقامی طور پر آپ کے براؤزر میں چلتے ہیں، ہم یہ ضمانت نہیں دے سکتے کہ پروسیس شدہ فائلیں آپ کی مخصوص ضروریات پوری کریں گی یا کہ ڈیٹا کا کوئی نقصان نہیں ہوگا۔ پروسیسنگ سے پہلے اہم فائلوں کا ہمیشہ بیک اپ رکھیں۔"
+    },
+    "externalLinks": {
+      "heading": "بیرونی لنکس",
+      "p": "Toolsify میں فریق ثالث ویب سائٹس یا خدمات کے لنکس ہو سکتے ہیں۔ ہم ان بیرونی سائٹس کے مواد، درستگی، یا پرائیویسی کے طریقوں کو کنٹرول یا ذمہ دار نہیں ہیں۔ کسی لنک پر جانا آپ کی اپنی صوابدید اور خطرے پر ہے۔"
+    },
+    "noWarranty": {
+      "heading": "کوئی وارنٹی نہیں",
+      "p": "Toolsify اور تمام ٹولز \"جیسا ہے\" اور \"جیسا دستیاب ہے\" کی بنیاد پر بغیر کسی قسم کی وارنٹی کے فراہم کیے جاتے ہیں، چاہے واضح ہوں یا مضمر، بشمول مگر ان تک محدود نہیں: تجارتی قابلیت، کسی خاص مقصد کے لیے موزونیت، درستگی، یا عدم خلاف ورزی کی وارنٹیاں۔"
+    },
+    "limitation": {
+      "heading": "ذمہ داری کی حد",
+      "p1": "قابل اطلاق قانون کی اجازت کی پوری حد تک، Toolsify اور اس کا آپریٹر سائٹ تک رسائی یا استعمال سے پیدا ہونے والے کسی بھی براہ راست، بالواسطہ، حادثاتی، خاص، نتیجے میں ہونے والے، یا سزائی نقصانات کا ذمہ دار نہیں ہوگا، چاہے ہمیں ایسے نقصانات کے امکان کے بارے میں مطلع کیا گیا ہو۔",
+      "seeTerms": "اضافی قانونی شرائط کے لیے، ہمارے <link>سروس کی شرائط</link> دیکھیں۔"
+    },
+    "reporting": {
+      "heading": "مسائل کی اطلاع",
+      "reportBody": "اگر آپ کو کسی ٹول میں غلطی ملے یا آپ کو لگے کہ کوئی نتیجہ غلط ہے، تو ہمیں بتائیں۔ صارف کی رپورٹس ہمیں بگز ٹھیک کرنے اور سب کے لیے درستگی بہتر بنانے میں مدد دیتی ہیں۔ مسئلے کی تفصیل، اپنے ان پٹس، اور غیر متوقع نتیجے کے ساتھ <link>ہم سے رابطہ کریں</link>۔"
+    },
+    "changes": {
+      "heading": "اس ڈس کلیمر میں تبدیلیاں",
+      "p": "ہم وقتاً فوقتاً اس ڈس کلیمر کو اپ ڈیٹ کر سکتے ہیں۔ اوپر \"آخری تازہ کاری\" کی تاریخ تازہ ترین نظر ثانی کی عکاسی کرتی ہے۔ تبدیلیوں کے بعد Toolsify کا مسلسل استعمال اپ ڈیٹ شدہ ڈس کلیمر کی قبولیت سمجھا جائے گا۔"
+    }
+  }
+}

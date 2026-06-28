@@ -1,18 +1,28 @@
-import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import CategoryCard from "@/components/home/CategoryCard";
 import { categories } from "@/constants/categories";
+import { generatePageMetadata } from "@/lib/seo";
+import { routing, type Locale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Browse Tool Categories — Calculators, Converters & More | Toolsify",
-  description:
-    "Browse free online tools by category: math, finance, fitness, text, design, converters, and developer utilities.",
-  alternates: {
-    canonical: "https://toolsify.online/tools/categories",
-  },
-  robots: { index: true, follow: true },
+type CategoriesPageProps = {
+  params: { locale: string };
 };
 
-export default function CategoriesPage() {
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: CategoriesPageProps) {
+  return generatePageMetadata(
+    params.locale as Locale,
+    "/tools/categories",
+    "categories"
+  );
+}
+
+export default function CategoriesPage({ params }: CategoriesPageProps) {
+  setRequestLocale(params.locale);
+
   return (
     <main>
       <section className="max-w-container-max mx-auto px-gutter pt-xl pb-lg text-center">

@@ -1,0 +1,179 @@
+{
+  "en": {
+    "title": "About Us",
+    "lastUpdated": "Last updated: {date}",
+    "back": "← Back to Toolsify",
+    "whatIs": {
+      "heading": "What is Toolsify?",
+      "p1": "Toolsify is a modern platform offering AI-powered digital tools designed to simplify everyday work. From productivity utilities and data processing to workflow automation, we bring professional-grade solutions together in one fast, privacy-first place.",
+      "p2": "Our mission is straightforward: help you get accurate results in seconds, without downloads, complicated setup, or unnecessary friction."
+    },
+    "whatYouCanUse": {
+      "heading": "What you can use today",
+      "toolsList": [
+        "Productivity & Workflow Tools",
+        "Data Processing Utilities",
+        "Document & Media Tools",
+        "Developer Utilities",
+        "Text & Content Tools",
+        "Business & Analytics Tools",
+        "AI-Powered Tools (expanding)"
+      ],
+      "browseTools": "Browse the full collection on our <link>tools page</link>."
+    },
+    "whatWeCare": {
+      "heading": "What we care about",
+      "values": [
+        "<bold>Accuracy</bold> — every tool is built with care and reviewed regularly",
+        "<bold>Speed</bold> — lightweight tools that load fast and respond instantly",
+        "<bold>Privacy</bold> — most tools process your input directly in your browser",
+        "<bold>Simplicity</bold> — clean interfaces that work on any device",
+        "<bold>Modern UI</bold> — a thoughtful, mobile-first experience",
+        "<bold>No unnecessary downloads</bold> — use tools right in your browser whenever possible"
+      ]
+    },
+    "whoBuilds": {
+      "heading": "Who builds Toolsify?",
+      "p1": "Toolsify is independently developed and maintained by a solo Full Stack Developer focused on building fast, reliable, and user-friendly web applications. Every tool, design decision, and performance improvement comes from a single vision: make useful software that respects your time and your data.",
+      "learnAuthor": "Learn more about the developer behind the platform on our <link>author page</link>."
+    },
+    "accuracy": {
+      "heading": "How we keep results accurate",
+      "p1": "Each tool is built on established formulas, standards, and well-documented algorithms. We test outputs against known values, compare results with trusted reference sources, and refine tools when users report edge cases or inconsistencies.",
+      "seeDisclaimer": "That said, no automated tool is perfect. For important decisions, always verify critical results independently. See our <link>disclaimer</link> for more detail."
+    },
+    "privacy": {
+      "heading": "Your privacy matters",
+      "p1": "Most Toolsify tools run entirely in your browser. That means your input—whether it is data you enter, text you process, or a file you upload—often never leaves your device. We do not sell personal data, and we are transparent about the limited analytics and advertising services we use to keep the platform free.",
+      "policies": "Read our full <link>Privacy Policy</link> and <cookie>Cookie Policy</cookie> for complete details."
+    },
+    "helpImprove": {
+      "heading": "Help us improve",
+      "p1": "User feedback shapes Toolsify. If a tool behaves unexpectedly, if you have an idea for a new feature, or if something is hard to use, we want to hear from you. Suggestions help us fix bugs faster, prioritize new capabilities, and build a platform that genuinely solves real problems.",
+      "contact": "<link>Contact us</link> or use the request-a-tool option in the footer to share your ideas."
+    },
+    "alwaysGrowing": {
+      "heading": "Always growing",
+      "alwaysGrowingBody": "Toolsify is continuously expanding. New digital tools and utilities are added regularly based on user demand and emerging needs. Check back often—or explore what is new on the <link>tools page</link>."
+    },
+    "quote": "Digital tools should be fast, accurate, and respectful of your privacy. That is the standard we hold ourselves to every day."
+  },
+  "es": {
+    "title": "Sobre nosotros",
+    "lastUpdated": "Última actualización: {date}",
+    "back": "← Volver a Toolsify",
+    "whatIs": {
+      "heading": "¿Qué es Toolsify?",
+      "p1": "Toolsify es una plataforma moderna que ofrece herramientas digitales impulsadas por IA, diseñadas para simplificar el trabajo cotidiano. Desde utilidades de productividad y procesamiento de datos hasta automatización de flujos de trabajo, reunimos soluciones de nivel profesional en un solo lugar rápido y centrado en la privacidad.",
+      "p2": "Nuestra misión es sencilla: ayudarte a obtener resultados precisos en segundos, sin descargas, configuraciones complicadas ni fricción innecesaria."
+    },
+    "whatYouCanUse": {
+      "heading": "Lo que puedes usar hoy",
+      "toolsList": [
+        "Herramientas de productividad y flujo de trabajo",
+        "Utilidades de procesamiento de datos",
+        "Herramientas de documentos y medios",
+        "Utilidades para desarrolladores",
+        "Herramientas de texto y contenido",
+        "Herramientas de negocio y análisis",
+        "Herramientas impulsadas por IA (en expansión)"
+      ],
+      "browseTools": "Explora la colección completa en nuestra <link>página de herramientas</link>."
+    },
+    "whatWeCare": {
+      "heading": "Lo que nos importa",
+      "values": [
+        "<bold>Precisión</bold> — cada herramienta se construye con cuidado y se revisa con regularidad",
+        "<bold>Velocidad</bold> — herramientas ligeras que cargan rápido y responden al instante",
+        "<bold>Privacidad</bold> — la mayoría de las herramientas procesan tu entrada directamente en tu navegador",
+        "<bold>Simplicidad</bold> — interfaces limpias que funcionan en cualquier dispositivo",
+        "<bold>Interfaz moderna</bold> — una experiencia cuidada, pensada primero para móviles",
+        "<bold>Sin descargas innecesarias</bold> — usa las herramientas directamente en tu navegador siempre que sea posible"
+      ]
+    },
+    "whoBuilds": {
+      "heading": "¿Quién desarrolla Toolsify?",
+      "p1": "Toolsify es desarrollado y mantenido de forma independiente por un desarrollador Full Stack en solitario, centrado en crear aplicaciones web rápidas, fiables y fáciles de usar. Cada herramienta, decisión de diseño y mejora de rendimiento proviene de una sola visión: crear software útil que respete tu tiempo y tus datos.",
+      "learnAuthor": "Conoce más sobre el desarrollador detrás de la plataforma en nuestra <link>página del autor</link>."
+    },
+    "accuracy": {
+      "heading": "Cómo mantenemos la precisión de los resultados",
+      "p1": "Cada herramienta se basa en fórmulas, estándares y algoritmos bien documentados. Probamos los resultados con valores conocidos, los comparamos con fuentes de referencia confiables y refinamos las herramientas cuando los usuarios reportan casos límite o inconsistencias.",
+      "seeDisclaimer": "Dicho esto, ninguna herramienta automatizada es perfecta. Para decisiones importantes, verifica siempre los resultados críticos de forma independiente. Consulta nuestro <link>aviso legal</link> para más detalles."
+    },
+    "privacy": {
+      "heading": "Tu privacidad importa",
+      "p1": "La mayoría de las herramientas de Toolsify se ejecutan completamente en tu navegador. Eso significa que tu entrada —ya sean datos que introduces, texto que procesas o un archivo que subes— a menudo nunca sale de tu dispositivo. No vendemos datos personales y somos transparentes sobre los servicios limitados de análisis y publicidad que usamos para mantener la plataforma gratuita.",
+      "policies": "Lee nuestra <link>Política de privacidad</link> y nuestra <cookie>Política de cookies</cookie> para obtener todos los detalles."
+    },
+    "helpImprove": {
+      "heading": "Ayúdanos a mejorar",
+      "p1": "Los comentarios de los usuarios dan forma a Toolsify. Si una herramienta se comporta de forma inesperada, si tienes una idea para una nueva función o si algo es difícil de usar, queremos saberlo. Las sugerencias nos ayudan a corregir errores más rápido, priorizar nuevas capacidades y construir una plataforma que resuelva problemas reales.",
+      "contact": "<link>Contáctanos</link> o usa la opción de solicitar una herramienta en el pie de página para compartir tus ideas."
+    },
+    "alwaysGrowing": {
+      "heading": "Siempre en crecimiento",
+      "alwaysGrowingBody": "Toolsify se expande continuamente. Se añaden nuevas herramientas y utilidades digitales con regularidad según la demanda de los usuarios y las necesidades emergentes. Vuelve a visitarnos con frecuencia —o descubre las novedades en la <link>página de herramientas</link>."
+    },
+    "quote": "Las herramientas digitales deben ser rápidas, precisas y respetuosas con tu privacidad. Ese es el estándar al que nos exigimos cada día."
+  },
+  "ur": {
+    "title": "ہمارے بارے میں",
+    "lastUpdated": "آخری تازہ کاری: {date}",
+    "back": "← Toolsify پر واپس",
+    "whatIs": {
+      "heading": "Toolsify کیا ہے؟",
+      "p1": "Toolsify ایک جدید پلیٹ فارم ہے جو روزمرہ کے کام کو آسان بنانے کے لیے AI سے چلنے والے ڈیجیٹل ٹولز فراہم کرتا ہے۔ پروڈکٹیویٹی یوٹیلیٹیز اور ڈیٹا پروسیسنگ سے لے کر ورک فلو آٹومیشن تک، ہم پیشہ ورانہ معیار کے حل ایک تیز، پرائیویسی کو اولین ترجیح دینے والے مقام پر یکجا کرتے ہیں۔",
+      "p2": "ہمارا مشن سیدھا سادہ ہے: آپ کو سیکنڈوں میں درست نتائج حاصل کرنے میں مدد دینا، بغیر ڈاؤن لوڈ، پیچیدہ سیٹ اپ یا غیر ضروری رکاوٹوں کے۔"
+    },
+    "whatYouCanUse": {
+      "heading": "آج آپ کیا استعمال کر سکتے ہیں",
+      "toolsList": [
+        "پروڈکٹیویٹی اور ورک فلو ٹولز",
+        "ڈیٹا پروسیسنگ یوٹیلیٹیز",
+        "دستاویز اور میڈیا ٹولز",
+        "ڈویلپر یوٹیلیٹیز",
+        "ٹیکسٹ اور مواد کے ٹولز",
+        "کاروبار اور تجزیاتی ٹولز",
+        "AI سے چلنے والے ٹولز (توسیع پذیر)"
+      ],
+      "browseTools": "ہماری <link>ٹولز صفحہ</link> پر مکمل مجموعہ دیکھیں۔"
+    },
+    "whatWeCare": {
+      "heading": "ہمیں کیا اہمیت ہے",
+      "values": [
+        "<bold>درستگی</bold> — ہر ٹول احتیاط سے بنایا جاتا ہے اور باقاعدگی سے جائزہ لیا جاتا ہے",
+        "<bold>رفتار</bold> — ہلکے ٹولز جو تیزی سے لوڈ ہوتے ہیں اور فوری جواب دیتے ہیں",
+        "<bold>پرائیویسی</bold> — زیادہ تر ٹولز آپ کا ان پٹ براہ راست آپ کے براؤزر میں پروسیس کرتے ہیں",
+        "<bold>سادگی</bold> — صاف انٹرفیس جو کسی بھی ڈیوائس پر کام کرتے ہیں",
+        "<bold>جدید UI</bold> — ایک سوچ سمجھ کر بنایا گیا، موبائل کو اولین ترجیح دینے والا تجربہ",
+        "<bold>غیر ضروری ڈاؤن لوڈ نہیں</bold> — جب بھی ممکن ہو براؤزر میں ہی ٹولز استعمال کریں"
+      ]
+    },
+    "whoBuilds": {
+      "heading": "Toolsify کون بناتا ہے؟",
+      "p1": "Toolsify ایک سولو فل اسٹیک ڈویلپر کے ذریعے آزادانہ طور پر تیار اور برقرار رکھا جاتا ہے، جو تیز، قابل اعتماد اور صارف دوست ویب ایپلیکیشنز بنانے پر توجہ مرکوز کرتا ہے۔ ہر ٹول، ڈیزائن کا فیصلہ اور کارکردگی کی بہتری ایک ہی وژن سے آتی ہے: مفید سافٹ ویئر بنانا جو آپ کے وقت اور آپ کے ڈیٹا کا احترام کرے۔",
+      "learnAuthor": "پلیٹ فارم کے پیچھے ڈویلپر کے بارے میں مزید جانیں ہمارے <link>مصنف صفحہ</link> پر۔"
+    },
+    "accuracy": {
+      "heading": "ہم نتائج کی درستگی کیسے برقرار رکھتے ہیں",
+      "p1": "ہر ٹول قائم شدہ فارمولوں، معیارات اور اچھی طرح دستاویزی الگورتھمز پر بنایا جاتا ہے۔ ہم نتائج کو معلوم اقدار کے خلاف جانچتے ہیں، قابل اعتماد حوالہ جاتی ذرائع سے موازنہ کرتے ہیں، اور جب صارفین کنارے کے معاملات یا تضادات کی اطلاع دیتے ہیں تو ٹولز کو بہتر بناتے ہیں۔",
+      "seeDisclaimer": "تاہم، کوئی بھی خودکار ٹول مکمل نہیں ہوتا۔ اہم فیصلوں کے لیے، ہمیشہ اہم نتائج کی آزادانہ طور پر تصدیق کریں۔ مزید تفصیلات کے لیے ہمارا <link>ڈس کلیمر</link> دیکھیں۔"
+    },
+    "privacy": {
+      "heading": "آپ کی پرائیویسی اہم ہے",
+      "p1": "زیادہ تر Toolsify ٹولز مکمل طور پر آپ کے براؤزر میں چلتے ہیں۔ اس کا مطلب ہے کہ آپ کا ان پٹ —چاہے آپ درج کردہ ڈیٹا ہو، پروسیس کیا گیا ٹیکسٹ ہو، یا اپ لوڈ کی گئی فائل— اکثر آپ کے ڈیوائس سے باہر نہیں جاتا۔ ہم ذاتی ڈیٹا نہیں بیچتے، اور پلیٹ فارم کو مفت رکھنے کے لیے استعمال ہونے والی محدود تجزیاتی اور اشتہاری خدمات کے بارے میں شفاف ہیں۔",
+      "policies": "مکمل تفصیلات کے لیے ہماری <link>پرائیویسی پالیسی</link> اور <cookie>کوکی پالیسی</cookie> پڑھیں۔"
+    },
+    "helpImprove": {
+      "heading": "بہتر بنانے میں ہماری مدد کریں",
+      "p1": "صارف کی رائے Toolsify کی شکل دیتی ہے۔ اگر کوئی ٹول غیر متوقع طریقے سے کام کرے، اگر آپ کے پاس نئی خصوصیت کا کوئی خیال ہو، یا اگر کچھ استعمال میں مشکل ہو، تو ہم آپ سے سننا چاہتے ہیں۔ تجاویز ہمیں بگز تیزی سے ٹھیک کرنے، نئی صلاحیتوں کو ترجیح دینے، اور ایک ایسا پلیٹ فارم بنانے میں مدد دیتی ہیں جو حقیقی مسائل حل کرے۔",
+      "contact": "<link>ہم سے رابطہ کریں</link> یا اپنے خیالات شیئر کرنے کے لیے فوٹر میں ٹول کی درخواست کا آپشن استعمال کریں۔"
+    },
+    "alwaysGrowing": {
+      "heading": "ہمیشہ بڑھتا جا رہا ہے",
+      "alwaysGrowingBody": "Toolsify مسلسل توسیع پذیر ہے۔ صارف کی طلب اور ابھرتے ہوئے ضروریات کی بنیاد پر نئے ڈیجیٹل ٹولز اور یوٹیلیٹیز باقاعدگی سے شامل کیے جاتے ہیں۔ بار بار واپس آئیں —یا <link>ٹولز صفحہ</link> پر نیا کیا ہے دیکھیں۔"
+    },
+    "quote": "ڈیجیٹل ٹولز تیز، درست اور آپ کی پرائیویسی کا احترام کرنے والے ہونے چاہئیں۔ یہی وہ معیار ہے جس پر ہم ہر روز خود کو پورا کرتے ہیں۔"
+  }
+}

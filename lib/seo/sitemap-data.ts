@@ -20,8 +20,12 @@ export const INDEXABLE_STATIC_PATHS = [
   "/tools",
   "/tools/categories",
   "/contact",
+  "/about",
+  "/author",
   "/privacy-policy",
   "/terms",
+  "/cookie-policy",
+  "/disclaimer",
 ] as const;
 
 export function getImplementedToolSlugs(): string[] {

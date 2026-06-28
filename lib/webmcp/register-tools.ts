@@ -68,7 +68,7 @@ export async function registerWebMcpTools({
         name: "search-tools",
         title: "Search Tools",
         description:
-          "Search Toolsify for calculators, converters, and utility tools by keyword. Returns matching tools with titles, descriptions, categories, and URLs.",
+          "Search Toolsify for digital tools and productivity utilities by keyword. Returns matching tools with titles, descriptions, categories, and URLs.",
         inputSchema: {
           type: "object",
           properties: {

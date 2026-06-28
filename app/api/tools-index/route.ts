@@ -12,7 +12,7 @@ export async function GET() {
     {
       site: "Toolsify",
       description:
-        "Free online calculators, converters, and utility tools with structured JSON APIs.",
+        "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
       toolCount: tools.length,
       tools,
     },
