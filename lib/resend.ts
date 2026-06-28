@@ -14,6 +14,10 @@ export function getReportIssueEmail() {
   return process.env.REPORT_ISSUE_EMAIL ?? "admin@toolsify.online";
 }
 
+export function getFeedbackEmail() {
+  return process.env.FEEDBACK_EMAIL ?? "admin@toolsify.online";
+}
+
 export function getResendFromAddress() {
   const fromEmail = process.env.RESEND_FROM_EMAIL;
 

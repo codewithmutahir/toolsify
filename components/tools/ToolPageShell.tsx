@@ -8,6 +8,7 @@ import ToolHowTo from "@/components/tools/ToolHowTo";
 import ToolFaq from "@/components/tools/shared/ToolFaq";
 import RelatedTools from "@/components/tools/RelatedTools";
 import ToolUsageProvider from "@/components/tools/ToolUsageProvider";
+import FeedbackWidget from "@/components/feedback-widget";
 import { getLocalizedToolPageContent } from "@/lib/i18n/tool-content";
 import { buildToolPageJsonLd } from "@/lib/seo/json-ld";
 import { areAdsEnabled } from "@/lib/ads";
@@ -80,6 +81,7 @@ export default async function ToolPageShell({
                 <ToolUsageProvider slug={slug}>
                   <div className="bg-surface-container-lowest rounded-xl border border-outline-variant p-lg md:p-xl shadow-sm">
                     {children}
+                    <FeedbackWidget toolName={tool.title} toolSlug={slug} />
                   </div>
                 </ToolUsageProvider>
               </section>
