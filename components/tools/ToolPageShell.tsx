@@ -23,6 +23,10 @@ const FavoriteButton = dynamic(
   () => import("@/components/tools/FavoriteButton"),
   { ssr: false }
 );
+const ReportIssueButton = dynamic(
+  () => import("@/components/report-issue-button"),
+  { ssr: false }
+);
 
 interface ToolPageShellProps {
   tool: Tool;
@@ -118,6 +122,8 @@ export default async function ToolPageShell({
 
         <RelatedTools category={tool.category} currentSlug={slug} />
       </main>
+
+      <ReportIssueButton />
     </>
   );
 }

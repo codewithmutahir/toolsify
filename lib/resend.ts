@@ -10,6 +10,10 @@ export function getContactEmail() {
   return process.env.CONTACT_EMAIL ?? null;
 }
 
+export function getReportIssueEmail() {
+  return process.env.REPORT_ISSUE_EMAIL ?? "admin@toolsify.online";
+}
+
 export function getResendFromAddress() {
   const fromEmail = process.env.RESEND_FROM_EMAIL;
 

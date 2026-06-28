@@ -12,6 +12,7 @@ import PostHogProvider from "@/components/analytics/PostHogProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import ReCaptchaProvider from "@/components/recaptcha/ReCaptchaProvider";
 import WebMcpProvider from "@/components/webmcp/WebMcpProvider";
+import { Toaster } from "sonner";
 import "@fontsource-variable/material-symbols-outlined/full.css";
 import "./globals.css";
 
@@ -107,6 +108,7 @@ export default async function RootLayout({
         </ClerkProvider>
         <Analytics />
         <SpeedInsights />
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );
