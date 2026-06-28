@@ -58,9 +58,17 @@ export async function POST(request: NextRequest) {
     const ratingEmoji = rating === "up" ? "👍" : "👎";
     const ratingLabel = rating === "up" ? "Helpful" : "Not helpful";
 
+    const feedbackEmail = getFeedbackEmail();
+    if (!feedbackEmail) {
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 503 }
+      );
+    }
+
     await resend.emails.send({
       from: "Toolsify <noreply@toolsify.online>",
-      to: getFeedbackEmail(),
+      to: feedbackEmail,
       ...(trimmedEmail ? { replyTo: trimmedEmail } : {}),
       subject: `[Toolsify Feedback] ${ratingEmoji} ${trimmedToolName}`,
       html: `

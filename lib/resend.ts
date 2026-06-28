@@ -10,12 +10,20 @@ export function getContactEmail() {
   return process.env.CONTACT_EMAIL ?? null;
 }
 
-export function getReportIssueEmail() {
-  return process.env.REPORT_ISSUE_EMAIL ?? "admin@toolsify.online";
+export function getReportIssueEmail(): string | null {
+  const email = process.env.REPORT_ISSUE_EMAIL;
+  if (process.env.NODE_ENV === "production") {
+    return email ?? null;
+  }
+  return email ?? "admin@toolsify.online";
 }
 
-export function getFeedbackEmail() {
-  return process.env.FEEDBACK_EMAIL ?? "admin@toolsify.online";
+export function getFeedbackEmail(): string | null {
+  const email = process.env.FEEDBACK_EMAIL;
+  if (process.env.NODE_ENV === "production") {
+    return email ?? null;
+  }
+  return email ?? "admin@toolsify.online";
 }
 
 export function getResendFromAddress() {

@@ -61,7 +61,7 @@ export default function FeedbackWidget({ toolName, toolSlug }: FeedbackWidgetPro
     setLoading(true);
 
     try {
-      await fetch("/api/feedback", {
+      const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -72,18 +72,21 @@ export default function FeedbackWidget({ toolName, toolSlug }: FeedbackWidgetPro
           userEmail: user?.primaryEmailAddress?.emailAddress,
         }),
       });
-    } catch {
-      // silent fail — still thank the user
-    }
 
-    try {
-      localStorage.setItem(`${STORAGE_PREFIX}${toolSlug}`, "1");
-    } catch {
-      // localStorage unavailable
-    }
+      if (!res.ok) return;
 
-    setSubmitted(true);
-    setLoading(false);
+      try {
+        localStorage.setItem(`${STORAGE_PREFIX}${toolSlug}`, "1");
+      } catch {
+        // localStorage unavailable
+      }
+
+      setSubmitted(true);
+    } catch {
+      // network error — allow retry
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (alreadySubmitted || submitted) {

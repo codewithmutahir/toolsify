@@ -1,0 +1,218 @@
+{
+  "en": {
+    "title": "Cookie Policy",
+    "lastUpdated": "Last updated: {date}",
+    "back": "← Back to Toolsify",
+    "overview": {
+      "heading": "Overview",
+      "p1": "This Cookie Policy explains how Toolsify (\"we\", \"us\") uses cookies and similar technologies when you visit toolsify.online. It should be read alongside our <link>Privacy Policy</link>.",
+      "p2": "Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences, keep sessions secure, and understand how the site is used."
+    },
+    "howWeUse": {
+      "heading": "How Toolsify uses cookies",
+      "p": "We use cookies for three main purposes: to make the site work properly, to understand how visitors use our tools, and to display relevant advertisements that help keep Toolsify free."
+    },
+    "types": {
+      "heading": "Types of cookies we use"
+    },
+    "essential": {
+      "heading": "Essential cookies",
+      "p": "These cookies are necessary for the website to function. They enable core features such as language preference and secure sign-in. Without them, parts of the site may not work correctly.",
+      "items": [
+        "<bold>Language preference</bold> — remembers your selected locale (e.g. English, Urdu, Spanish) so you do not have to choose it on every visit",
+        "<bold>Authentication</bold> — if you create an optional account, session cookies managed by Clerk keep you signed in securely"
+      ]
+    },
+    "analytics": {
+      "heading": "Analytics cookies",
+      "p": "These cookies help us understand how visitors interact with Toolsify—which tools are popular, where users encounter issues, and how we can improve performance. Data is generally aggregated and does not identify you personally.",
+      "items": [
+        "<bold>PostHog</bold> — product analytics (page views, tool usage events). See <link>PostHog's privacy policy</link>",
+        "<bold>Google Analytics 4</bold> — aggregated traffic and usage statistics. See <link>Google's privacy policy</link>",
+        "<bold>Vercel Analytics & Speed Insights</bold> — anonymous performance and Core Web Vitals data"
+      ]
+    },
+    "advertising": {
+      "heading": "Advertising cookies",
+      "p1": "We use <bold>Google AdSense</bold> to display advertisements. Google and its advertising partners may set cookies to serve ads based on your visits to this site and other websites, measure ad performance, and prevent fraud.",
+      "p2": "Learn more at <link>Google's advertising policy</link> and <link2>Google Ads Settings</link2>."
+    },
+    "thirdParty": {
+      "heading": "Third-party cookies",
+      "p": "Some cookies are placed by third-party services that appear on our pages. We do not control these cookies directly. Third parties include:",
+      "items": [
+        "Google (Analytics, AdSense, reCAPTCHA where applicable)",
+        "PostHog (analytics)",
+        "Clerk (authentication, for optional accounts)",
+        "Vercel (hosting analytics and performance monitoring)"
+      ],
+      "p2": "Each provider has its own privacy and cookie policies. We encourage you to review them if you want more detail on how your data is handled."
+    },
+    "toolData": {
+      "heading": "Cookies and your tool data",
+      "p": "Cookies used on Toolsify are separate from the data you enter into our digital tools. Most tools process your input locally in your browser. Analytics cookies may record which tool you used, but not the specific values or files you submitted."
+    },
+    "managing": {
+      "heading": "Managing your cookie preferences",
+      "p": "You can control cookies in several ways:",
+      "items": [
+        "<bold>Browser settings</bold> — most browsers let you block or delete cookies. Check your browser's help section for instructions",
+        "<bold>Google Ads personalization</bold> — opt out of personalized advertising via <link>Google Ads Settings</link>",
+        "<bold>Industry opt-out tools</bold> — visit <link>aboutads.info</link> or <link2>youronlinechoices.eu</link2> for additional options"
+      ],
+      "p2": "Blocking all cookies may affect site functionality, including language preferences and optional account features."
+    },
+    "changes": {
+      "heading": "Changes to this policy",
+      "p": "We may update this Cookie Policy when we add new services or when legal requirements change. The \"Last updated\" date at the top of this page reflects the most recent revision. Continued use of Toolsify after changes constitutes acceptance of the updated policy."
+    },
+    "contact": {
+      "heading": "Contact",
+      "contactBody": "Questions about cookies or this policy? Email us at <mailto>privacy@toolsify.online</mailto> or visit our <link>contact page</link>."
+    }
+  },
+  "es": {
+    "title": "Política de cookies",
+    "lastUpdated": "Última actualización: {date}",
+    "back": "← Volver a Toolsify",
+    "overview": {
+      "heading": "Resumen",
+      "p1": "Esta Política de cookies explica cómo Toolsify (\"nosotros\") utiliza cookies y tecnologías similares cuando visitas toolsify.online. Debe leerse junto con nuestra <link>Política de privacidad</link>.",
+      "p2": "Las cookies son pequeños archivos de texto almacenados en tu dispositivo cuando visitas un sitio web. Ayudan al sitio a recordar tus preferencias, mantener las sesiones seguras y comprender cómo se utiliza el sitio."
+    },
+    "howWeUse": {
+      "heading": "Cómo Toolsify utiliza las cookies",
+      "p": "Utilizamos cookies para tres propósitos principales: hacer que el sitio funcione correctamente, comprender cómo los visitantes usan nuestras herramientas y mostrar anuncios relevantes que ayudan a mantener Toolsify gratuito."
+    },
+    "types": {
+      "heading": "Tipos de cookies que utilizamos"
+    },
+    "essential": {
+      "heading": "Cookies esenciales",
+      "p": "Estas cookies son necesarias para que el sitio web funcione. Permiten funciones básicas como la preferencia de idioma y el inicio de sesión seguro. Sin ellas, algunas partes del sitio pueden no funcionar correctamente.",
+      "items": [
+        "<bold>Preferencia de idioma</bold> — recuerda el idioma seleccionado (p. ej., inglés, urdu, español) para que no tengas que elegirlo en cada visita",
+        "<bold>Autenticación</bold> — si creas una cuenta opcional, las cookies de sesión gestionadas por Clerk te mantienen conectado de forma segura"
+      ]
+    },
+    "analytics": {
+      "heading": "Cookies de análisis",
+      "p": "Estas cookies nos ayudan a comprender cómo los visitantes interactúan con Toolsify: qué herramientas son populares, dónde encuentran problemas los usuarios y cómo podemos mejorar el rendimiento. Los datos suelen ser agregados y no te identifican personalmente.",
+      "items": [
+        "<bold>PostHog</bold> — análisis de producto (vistas de página, eventos de uso de herramientas). Consulta la <link>política de privacidad de PostHog</link>",
+        "<bold>Google Analytics 4</bold> — estadísticas agregadas de tráfico y uso. Consulta la <link>política de privacidad de Google</link>",
+        "<bold>Vercel Analytics y Speed Insights</bold> — datos anónimos de rendimiento y Core Web Vitals"
+      ]
+    },
+    "advertising": {
+      "heading": "Cookies publicitarias",
+      "p1": "Utilizamos <bold>Google AdSense</bold> para mostrar anuncios. Google y sus socios publicitarios pueden establecer cookies para mostrar anuncios según tus visitas a este sitio y a otros sitios web, medir el rendimiento de los anuncios y prevenir el fraude.",
+      "p2": "Más información en la <link>política publicitaria de Google</link> y en la <link2>configuración de anuncios de Google</link2>."
+    },
+    "thirdParty": {
+      "heading": "Cookies de terceros",
+      "p": "Algunas cookies son colocadas por servicios de terceros que aparecen en nuestras páginas. No controlamos estas cookies directamente. Los terceros incluyen:",
+      "items": [
+        "Google (Analytics, AdSense, reCAPTCHA cuando corresponda)",
+        "PostHog (análisis)",
+        "Clerk (autenticación, para cuentas opcionales)",
+        "Vercel (análisis de alojamiento y monitorización del rendimiento)"
+      ],
+      "p2": "Cada proveedor tiene sus propias políticas de privacidad y cookies. Te recomendamos revisarlas si deseas más detalles sobre cómo se gestionan tus datos."
+    },
+    "toolData": {
+      "heading": "Cookies y los datos de tus herramientas",
+      "p": "Las cookies utilizadas en Toolsify son independientes de los datos que introduces en nuestras herramientas digitales. La mayoría de las herramientas procesan tu entrada localmente en tu navegador. Las cookies de análisis pueden registrar qué herramienta utilizaste, pero no los valores específicos ni los archivos que enviaste."
+    },
+    "managing": {
+      "heading": "Gestión de tus preferencias de cookies",
+      "p": "Puedes controlar las cookies de varias maneras:",
+      "items": [
+        "<bold>Configuración del navegador</bold> — la mayoría de los navegadores permiten bloquear o eliminar cookies. Consulta la sección de ayuda de tu navegador para obtener instrucciones",
+        "<bold>Personalización de anuncios de Google</bold> — desactiva la publicidad personalizada a través de la <link>configuración de anuncios de Google</link>",
+        "<bold>Herramientas de exclusión del sector</bold> — visita <link>aboutads.info</link> o <link2>youronlinechoices.eu</link2> para opciones adicionales"
+      ],
+      "p2": "Bloquear todas las cookies puede afectar la funcionalidad del sitio, incluidas las preferencias de idioma y las funciones de cuenta opcional."
+    },
+    "changes": {
+      "heading": "Cambios en esta política",
+      "p": "Podemos actualizar esta Política de cookies cuando añadamos nuevos servicios o cambien los requisitos legales. La fecha de \"Última actualización\" en la parte superior de esta página refleja la revisión más reciente. El uso continuado de Toolsify después de los cambios constituye la aceptación de la política actualizada."
+    },
+    "contact": {
+      "heading": "Contacto",
+      "contactBody": "¿Preguntas sobre cookies o esta política? Escríbenos a <mailto>privacy@toolsify.online</mailto> o visita nuestra <link>página de contacto</link>."
+    }
+  },
+  "ur": {
+    "title": "کوکی پالیسی",
+    "lastUpdated": "آخری تازہ کاری: {date}",
+    "back": "← Toolsify پر واپس",
+    "overview": {
+      "heading": "جائزہ",
+      "p1": "یہ کوکی پالیسی وضاحت کرتی ہے کہ Toolsify (\"ہم\") toolsify.online پر آنے پر کوکیز اور اسی طرح کی ٹیکنالوجیز کیسے استعمال کرتا ہے۔ اسے ہماری <link>پرائیویسی پالیسی</link> کے ساتھ پڑھنا چاہیے۔",
+      "p2": "کوکیز چھوٹی ٹیکسٹ فائلیں ہیں جو ویب سائٹ پر آنے پر آپ کے ڈیوائس پر محفوظ ہوتی ہیں۔ یہ سائٹ کو آپ کی ترجیحات یاد رکھنے، سیشنز محفوظ رکھنے، اور سائٹ کے استعمال کو سمجھنے میں مدد دیتی ہیں۔"
+    },
+    "howWeUse": {
+      "heading": "Toolsify کوکیز کیسے استعمال کرتا ہے",
+      "p": "ہم کوکیز تین اہم مقاصد کے لیے استعمال کرتے ہیں: سائٹ کو صحیح طریقے سے چلانا، یہ سمجھنا کہ زائرین ہمارے ٹولز کیسے استعمال کرتے ہیں، اور متعلقہ اشتہارات دکھانا جو Toolsify کو مفت رکھنے میں مدد دیتے ہیں۔"
+    },
+    "types": {
+      "heading": "ہم جو کوکیز استعمال کرتے ہیں ان کی اقسام"
+    },
+    "essential": {
+      "heading": "ضروری کوکیز",
+      "p": "یہ کوکیز ویب سائٹ کے کام کرنے کے لیے ضروری ہیں۔ یہ زبان کی ترجیح اور محفوظ سائن ان جیسی بنیادی خصوصیات کو فعال کرتی ہیں۔ ان کے بغیر، سائٹ کے کچھ حصے صحیح طریقے سے کام نہیں کر سکتے۔",
+      "items": [
+        "<bold>زبان کی ترجیح</bold> — آپ کی منتخب کردہ لوکل (مثلاً انگریزی، اردو، ہسپانوی) یاد رکھتی ہے تاکہ ہر دورے پر دوبارہ منتخب نہ کرنا پڑے",
+        "<bold>تصدیق</bold> — اگر آپ اختیاری اکاؤنٹ بناتے ہیں، تو Clerk کے ذریعے منظم سیشن کوکیز آپ کو محفوظ طریقے سے سائن ان رکھتی ہیں"
+      ]
+    },
+    "analytics": {
+      "heading": "تجزیاتی کوکیز",
+      "p": "یہ کوکیز ہمیں یہ سمجھنے میں مدد دیتی ہیں کہ زائرین Toolsify کے ساتھ کیسے تعامل کرتے ہیں — کون سے ٹولز مقبول ہیں، صارفین کو کہاں مسائل کا سامنا ہوتا ہے، اور ہم کارکردگی کیسے بہتر بنا سکتے ہیں۔ ڈیٹا عام طور پر مجموعی ہوتا ہے اور آپ کو ذاتی طور پر شناخت نہیں کرتا۔",
+      "items": [
+        "<bold>PostHog</bold> — پروڈکٹ تجزیہ (صفحہ کے مشاہدات، ٹول کے استعمال کے واقعات)۔ <link>PostHog کی پرائیویسی پالیسی</link> دیکھیں",
+        "<bold>Google Analytics 4</bold> — مجموعی ٹریفک اور استعمال کے اعداد و شمار۔ <link>Google کی پرائیویسی پالیسی</link> دیکھیں",
+        "<bold>Vercel Analytics اور Speed Insights</bold> — گمنام کارکردگی اور Core Web Vitals کا ڈیٹا"
+      ]
+    },
+    "advertising": {
+      "heading": "اشتہاری کوکیز",
+      "p1": "ہم اشتہارات دکھانے کے لیے <bold>Google AdSense</bold> استعمال کرتے ہیں۔ Google اور اس کے اشتہاری شراکت دار اس سائٹ اور دیگر ویب سائٹس پر آپ کے دوروں کی بنیاد پر اشتہارات دکھانے، اشتہار کی کارکردگی کی پیمائش کرنے، اور دھوکہ دہی روکنے کے لیے کوکیز سیٹ کر سکتے ہیں۔",
+      "p2": "مزید معلومات <link>Google کی اشتہاری پالیسی</link> اور <link2>Google Ads Settings</link2> پر دیکھیں۔"
+    },
+    "thirdParty": {
+      "heading": "فریق ثالث کی کوکیز",
+      "p": "کچھ کوکیز فریق ثالث کی خدمات کے ذریعے ہمارے صفحات پر لگائی جاتی ہیں۔ ہم ان کوکیز کو براہ راست کنٹرول نہیں کرتے۔ فریق ثالث میں شامل ہیں:",
+      "items": [
+        "Google (Analytics، AdSense، جہاں لاگو ہو reCAPTCHA)",
+        "PostHog (تجزیہ)",
+        "Clerk (تصدیق، اختیاری اکاؤنٹس کے لیے)",
+        "Vercel (ہوسٹنگ تجزیہ اور کارکردگی کی نگرانی)"
+      ],
+      "p2": "ہر فراہم کنندہ کی اپنی پرائیویسی اور کوکی پالیسیاں ہیں۔ اگر آپ اپنے ڈیٹا کے انتظام کے بارے میں مزید تفصیل چاہتے ہیں تو ہم انہیں دیکھنے کی ترغیب دیتے ہیں۔"
+    },
+    "toolData": {
+      "heading": "کوکیز اور آپ کے ٹول کا ڈیٹا",
+      "p": "Toolsify پر استعمال ہونے والی کوکیز ہمارے ڈیجیٹل ٹولز میں آپ کے درج کردہ ڈیٹا سے الگ ہیں۔ زیادہ تر ٹولز آپ کا ان پٹ مقامی طور پر آپ کے براؤزر میں پروسیس کرتے ہیں۔ تجزیاتی کوکیز یہ ریکارڈ کر سکتی ہیں کہ آپ نے کون سا ٹول استعمال کیا، لیکن آپ کے جمع کرائے گئے مخصوص اقدار یا فائلیں نہیں۔"
+    },
+    "managing": {
+      "heading": "اپنی کوکی ترجیحات کا انتظام",
+      "p": "آپ کئی طریقوں سے کوکیز کو کنٹرول کر سکتے ہیں:",
+      "items": [
+        "<bold>براؤزر کی ترتیبات</bold> — زیادہ تر براؤزرز کوکیز کو بلاک یا حذف کرنے دیتے ہیں۔ ہدایات کے لیے اپنے براؤزر کے مدد سیکشن کو دیکھیں",
+        "<bold>Google Ads ذاتی نوعیت</bold> — <link>Google Ads Settings</link> کے ذریعے ذاتی نوعیت کے اشتہارات سے آپٹ آؤٹ کریں",
+        "<bold>صنعت کے آپٹ آؤٹ ٹولز</bold> — اضافی اختیارات کے لیے <link>aboutads.info</link> یا <link2>youronlinechoices.eu</link2> پر جائیں"
+      ],
+      "p2": "تمام کوکیز کو بلاک کرنے سے سائٹ کی فعالیت متاثر ہو سکتی ہے، بشمول زبان کی ترجیحات اور اختیاری اکاؤنٹ کی خصوصیات۔"
+    },
+    "changes": {
+      "heading": "اس پالیسی میں تبدیلیاں",
+      "p": "جب ہم نئی خدمات شامل کریں یا قانونی تقاضے تبدیل ہوں تو ہم اس کوکی پالیسی کو اپ ڈیٹ کر سکتے ہیں۔ اس صفحہ کے اوپر \"آخری تازہ کاری\" کی تاریخ تازہ ترین نظر ثانی کی عکاسی کرتی ہے۔ تبدیلیوں کے بعد Toolsify کا مسلسل استعمال اپ ڈیٹ شدہ پالیسی کی قبولیت سمجھا جائے گا۔"
+    },
+    "contact": {
+      "heading": "رابطہ",
+      "contactBody": "کوکیز یا اس پالیسی کے بارے میں سوالات؟ ہمیں <mailto>privacy@toolsify.online</mailto> پر ای میل کریں یا ہمارا <link>رابطہ صفحہ</link> دیکھیں۔"
+    }
+  }
+}

@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { toast } from "sonner";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const ISSUE_TYPE_OPTIONS = [
   { value: "bug", label: "Bug / Not Working" },
@@ -94,27 +101,22 @@ export default function ReportIssueModal({
     }
   }
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center p-lg">
-      <div className="bg-white rounded-xl border border-outline-variant shadow-xl w-full max-w-md p-xl">
-        <div className="flex items-center justify-between mb-xl">
-          <div>
-            <h3 className="font-h2 text-h2 text-on-surface">Report Issue</h3>
-            <p className="font-small text-small text-on-surface-variant mt-xs">
-              Found a problem with this tool? Let us know.
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="text-on-surface-variant hover:text-on-surface"
-            aria-label="Close"
-          >
-            <span className="material-symbols-outlined">close</span>
-          </button>
-        </div>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => {
+        if (!open) onClose();
+      }}
+    >
+      <DialogContent className="sm:max-w-md bg-white p-xl gap-0">
+        <DialogHeader className="mb-xl text-left">
+          <DialogTitle className="font-h2 text-h2 text-on-surface">
+            Report Issue
+          </DialogTitle>
+          <DialogDescription className="font-small text-small text-on-surface-variant">
+            Found a problem with this tool? Let us know.
+          </DialogDescription>
+        </DialogHeader>
 
         <div className="space-y-md">
           <div>
@@ -204,7 +206,7 @@ export default function ReportIssueModal({
             )}
           </button>
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }

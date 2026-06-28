@@ -12,7 +12,7 @@ import PostHogProvider from "@/components/analytics/PostHogProvider";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import ReCaptchaProvider from "@/components/recaptcha/ReCaptchaProvider";
 import WebMcpProvider from "@/components/webmcp/WebMcpProvider";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 import "@fontsource-variable/material-symbols-outlined/full.css";
 import "./globals.css";
 

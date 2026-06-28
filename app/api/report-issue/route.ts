@@ -27,10 +27,10 @@ export async function POST(request: NextRequest) {
   try {
     const { toolUrl, issueType, description, userEmail } = await request.json();
 
-    const trimmedToolUrl = toolUrl?.trim();
-    if (!trimmedToolUrl) {
+    if (typeof toolUrl !== "string" || !toolUrl.trim()) {
       return NextResponse.json({ error: "Tool URL is required" }, { status: 400 });
     }
+    const trimmedToolUrl = toolUrl.trim();
 
     if (!issueType || !isIssueType(issueType)) {
       return NextResponse.json({ error: "Invalid issue type" }, { status: 400 });
@@ -60,6 +60,12 @@ export async function POST(request: NextRequest) {
     const issueTypeLabel = ISSUE_TYPE_LABELS[issueType];
     const timestamp = new Date().toUTCString();
     const reportEmail = getReportIssueEmail();
+    if (!reportEmail) {
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 503 }
+      );
+    }
 
     await resend.emails.send({
       from: getResendFromAddress(),
