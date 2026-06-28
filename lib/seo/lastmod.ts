@@ -46,6 +46,10 @@ const STATIC_PAGE_SOURCES: Record<string, string[]> = {
   "/contact": ["app/[locale]/contact/page.tsx"],
   "/privacy-policy": ["app/[locale]/privacy-policy/page.tsx"],
   "/terms": ["app/[locale]/terms/page.tsx"],
+  "/about": ["app/[locale]/about/page.tsx"],
+  "/cookie-policy": ["app/[locale]/cookie-policy/page.tsx"],
+  "/disclaimer": ["app/[locale]/disclaimer/page.tsx"],
+  "/author": ["app/[locale]/author/page.tsx"],
 };
 
 export function formatLastmod(date: Date): string {

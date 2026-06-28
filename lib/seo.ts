@@ -104,7 +104,17 @@ export async function generateToolMetadata(
 export async function generatePageMetadata(
   locale: Locale,
   pathname: string,
-  namespace: "home" | "tools" | "categories" | "contact" | "privacy" | "terms"
+  namespace:
+    | "home"
+    | "tools"
+    | "categories"
+    | "contact"
+    | "privacy"
+    | "terms"
+    | "about"
+    | "cookies"
+    | "disclaimer"
+    | "author"
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata" });
   const alternates = buildAlternateLanguages(locale, pathname);

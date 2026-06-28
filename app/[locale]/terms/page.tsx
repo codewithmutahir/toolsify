@@ -51,7 +51,7 @@ export default function TermsPage({ params }: PageProps) {
               Use of tools
             </h2>
             <p>
-              Toolsify provides free online calculators, converters, and
+              Toolsify provides AI-powered digital tools and productivity
               utilities for personal and professional use. You may use the site
               for lawful purposes and in accordance with fair use. Do not
               attempt to disrupt the service, scrape at scale, or misuse our

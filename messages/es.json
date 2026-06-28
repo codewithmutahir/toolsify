@@ -49,12 +49,16 @@
     "dashboard": "Panel"
   },
   "footer": {
-    "description": "Calculadoras, convertidores y herramientas en línea gratis. Rápidas, precisas y sin registro.",
+    "description": "Herramientas digitales con IA, rápidas y centradas en la privacidad para simplificar el trabajo, impulsar la productividad y resolver tareas cotidianas, todo en un solo lugar.",
     "tools": "Herramientas",
     "categories": "Categorías",
     "company": "Empresa",
+    "aboutUs": "Sobre nosotros",
+    "author": "Autor",
     "privacyPolicy": "Política de privacidad",
+    "cookiePolicy": "Política de cookies",
     "termsOfService": "Términos de servicio",
+    "disclaimer": "Aviso legal",
     "contactUs": "Contáctanos",
     "requestToolDescription": "Sugiere herramientas para agregar a Toolsify."
   },
@@ -65,20 +69,20 @@
     "es": "Español"
   },
   "home": {
-    "heroTitle": "Herramientas en línea gratis para todos",
-    "heroDescription": "Rápidas, gratis y fáciles de usar. Sin registro. Accede a documentos, matemáticas y herramientas para desarrolladores al instante.",
+    "heroTitle": "Herramientas digitales con IA para la productividad",
+    "heroDescription": "Herramientas digitales con IA, rápidas y centradas en la privacidad para simplificar el trabajo, impulsar la productividad y resolver tareas cotidianas, todo en un solo lugar.",
     "heroImageAlt": "Ilustración principal de Toolsify",
     "browseByCategory": "Explorar por categoría",
-    "browseByCategoryDescription": "Encuentra la herramienta adecuada para tu tarea",
+    "browseByCategoryDescription": "Explora herramientas profesionales organizadas por flujo de trabajo y caso de uso",
     "viewAllTools": "Ver todas las {count}+ herramientas",
     "popularTools": "Herramientas populares",
     "howItWorks": "Cómo funciona Toolsify",
     "suggestionPills": {
-      "bmiCalculator": "Calculadora BMI",
-      "wordCounter": "Contador de palabras",
-      "emiCalculator": "Calculadora EMI",
-      "percentageCalculator": "Calculadora de porcentajes",
-      "colorConverter": "Convertidor de colores"
+      "finance": "Finanzas",
+      "fitness": "Salud y bienestar",
+      "text": "Texto y contenido",
+      "math": "Datos y análisis",
+      "developer": "Desarrollador"
     },
     "howItWorksSteps": {
       "search": {
@@ -101,7 +105,7 @@
     },
     "requestTool": {
       "heading": "Solicitar una herramienta",
-      "description": "Los miembros registrados pueden sugerir calculadoras y utilidades.",
+      "description": "Los miembros registrados pueden sugerir herramientas digitales y utilidades que debemos desarrollar.",
       "button": "Solicitar herramienta",
       "signInToRequest": "Inicia sesión para solicitar",
       "compactButton": "Solicitar herramienta",
@@ -110,7 +114,7 @@
   },
   "search": {
     "placeholder": "Buscar herramientas...",
-    "heroPlaceholder": "Buscar herramienta (ej. BMI, contador de palabras, EMI...)",
+    "heroPlaceholder": "Buscar herramienta por nombre, categoría o tarea...",
     "quickSearch": "Búsqueda rápida",
     "submit": "Buscar",
     "noResults": "No se encontraron herramientas",
@@ -121,15 +125,15 @@
     "tryDifferent": "Prueba con otra búsqueda"
   },
   "toolsPage": {
-    "title": "Todas las herramientas en línea gratis",
-    "description": "Explora {count}+ calculadoras, convertidores y herramientas de texto. Filtra por categoría o busca — sin registro.",
+    "title": "Todas las herramientas digitales",
+    "description": "Explora {count}+ herramientas digitales con IA para productividad, datos, contenido y flujos de trabajo. Filtra por categoría o busca — sin registro.",
     "filterAll": "Todas",
     "searchPlaceholder": "Buscar herramientas...",
     "showing": "Mostrando {count} herramientas",
     "noToolsFound": "No se encontraron herramientas",
     "adjustFilters": "Ajusta la búsqueda o el filtro de categoría.",
     "missingToolHeading": "¿No encuentras la herramienta que necesitas?",
-    "missingToolDescription": "Solicita una nueva calculadora o utilidad y la consideraremos para Toolsify."
+    "missingToolDescription": "Solicita una nueva herramienta digital o utilidad y la consideraremos para Toolsify."
   },
   "toolPage": {
     "howToUse": "Cómo usar",
@@ -164,7 +168,7 @@
   "contactPage": {
     "back": "Volver al inicio",
     "title": "Contáctanos",
-    "description": "¿Tienes una pregunta o comentario? Envíanos un mensaje y te responderemos lo antes posible."
+    "description": "¿Preguntas sobre Toolsify, comentarios sobre nuestras herramientas digitales o una consulta de colaboración? Envíanos un mensaje y nuestro equipo responderá pronto."
   },
   "signUpPrompt": {
     "title": "Toolsify te está siendo útil",
@@ -220,45 +224,62 @@
   },
   "metadata": {
     "site": {
-      "title": "Toolsify — Herramientas en línea gratis",
-      "description": "Calculadoras, convertidores y herramientas en línea gratis. Rápidas y precisas."
+      "title": "Herramientas digitales con IA para la productividad | Toolsify",
+      "description": "Herramientas digitales con IA, rápidas y centradas en la privacidad para simplificar el trabajo, impulsar la productividad y resolver tareas cotidianas, todo en un solo lugar."
     },
     "home": {
-      "title": "Herramientas en línea gratis — Calculadoras y convertidores | Toolsify",
-      "description": "BMI, porcentajes, contador de palabras, EMI y 50+ herramientas gratis. Sin registro.",
+      "title": "Herramientas digitales con IA para la productividad | Toolsify",
+      "description": "Herramientas digitales con IA, rápidas y centradas en la privacidad para simplificar el trabajo, impulsar la productividad y resolver tareas cotidianas, todo en un solo lugar.",
       "keywords": [
-        "herramientas en línea gratis",
-        "calculadora",
-        "convertidor",
-        "calculadora BMI",
-        "contador de palabras",
+        "herramientas con IA",
+        "herramientas digitales",
+        "productividad",
+        "privacidad",
+        "utilidades en línea",
         "toolsify"
       ]
     },
     "tools": {
-      "title": "Todas las herramientas gratis | Toolsify",
-      "description": "50+ herramientas en línea gratis: calculadoras, convertidores y texto.",
+      "title": "Todas las herramientas digitales | Toolsify",
+      "description": "Explora 50+ herramientas digitales con IA para productividad, procesamiento de datos, contenido y flujos profesionales.",
       "keywords": [
-        "herramientas en línea gratis",
-        "calculadoras",
+        "herramientas digitales",
+        "productividad",
+        "utilidades en línea",
         "toolsify"
       ]
     },
     "categories": {
       "title": "Categorías de herramientas | Toolsify",
-      "description": "Explora herramientas gratis por categoría en Toolsify."
+      "description": "Explora las herramientas digitales de Toolsify organizadas por categoría."
     },
     "contact": {
       "title": "Contáctanos | Toolsify",
-      "description": "Contacta al equipo de Toolsify."
+      "description": "Contacta al equipo de Toolsify para soporte, comentarios, colaboraciones o consultas generales sobre nuestra plataforma."
     },
     "privacy": {
       "title": "Política de privacidad | Toolsify",
-      "description": "Política de privacidad de Toolsify."
+      "description": "Cómo Toolsify recopila, usa y protege tus datos en nuestra plataforma de herramientas digitales con IA."
     },
     "terms": {
       "title": "Términos de servicio | Toolsify",
-      "description": "Términos de servicio de Toolsify."
+      "description": "Términos que rigen el uso de Toolsify y su suite de herramientas digitales de productividad."
+    },
+    "about": {
+      "title": "Sobre nosotros | Toolsify",
+      "description": "Toolsify ofrece herramientas digitales con IA, centradas en la privacidad, diseñadas para velocidad, precisión y productividad diaria."
+    },
+    "cookies": {
+      "title": "Política de cookies | Toolsify",
+      "description": "Cómo Toolsify usa cookies para funciones esenciales, analítica y publicidad en nuestra plataforma de herramientas digitales."
+    },
+    "disclaimer": {
+      "title": "Aviso legal | Toolsify",
+      "description": "Limitaciones y avisos importantes al usar las herramientas digitales y los resultados de la plataforma Toolsify."
+    },
+    "author": {
+      "title": "Sobre el autor | Toolsify",
+      "description": "Conoce a Mutahir Hussain, el desarrollador Full Stack que crea y mantiene la plataforma Toolsify."
     },
     "toolTitle": "{title} — Herramienta en línea gratis | Toolsify",
     "toolDescription": "Usa nuestra {title} gratis. {description} Sin registro.",

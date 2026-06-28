@@ -40,9 +40,9 @@ export default function PrivacyPolicyPage({ params }: PageProps) {
               Overview
             </h2>
             <p>
-              Toolsify (&quot;we&quot;, &quot;us&quot;) provides free online
-              calculators and utility tools at toolsify.online. This policy
-              explains what information we collect and how we use it.
+              Toolsify (&quot;we&quot;, &quot;us&quot;) provides AI-powered
+              digital tools and productivity utilities at toolsify.online. This
+              policy explains what information we collect and how we use it.
             </p>
           </section>
 
@@ -52,9 +52,8 @@ export default function PrivacyPolicyPage({ params }: PageProps) {
             </h2>
             <p>
               Our tools process your input locally in your browser whenever
-              possible. We do not store the data you enter into calculators,
-              converters, or text tools on our servers. No account is required
-              to use the tools.
+              possible. We do not store the data you enter into our digital
+              tools on our servers. No account is required to use the platform.
             </p>
           </section>
 

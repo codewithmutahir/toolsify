@@ -197,8 +197,12 @@ token=<access_token>
 
 ## Policies
 
+- [About Us](${SITE_URL}/about)
+- [Author](${SITE_URL}/author)
 - [Privacy Policy](${SITE_URL}/privacy-policy)
+- [Cookie Policy](${SITE_URL}/cookie-policy)
 - [Terms of Service](${SITE_URL}/terms)
+- [Disclaimer](${SITE_URL}/disclaimer)
 - [Contact](${SITE_URL}/contact)
 `;
 }

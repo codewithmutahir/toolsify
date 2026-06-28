@@ -36,26 +36,29 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Toolsify - Free Online Tools",
-    template: "%s | Toolsify", // per-page titles ke liye
+    default: "AI-Powered Digital Tools for Productivity",
+    template: "%s | Toolsify",
   },
-  description: "Free online tools for developers and creators.",
+  description:
+    "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
   icons: {
-    icon: "/favicon.svg", // browser tab ke liye SVG theek hai
-    apple: "/apple-touch-icon.png", // ← PNG chahiye Apple ke liye
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     siteName: "Toolsify",
     type: "website",
-    url: SITE_URL,                    // ← add karo
-    title: "Toolsify - Free Online Tools",   // ← add karo
-    description: "Free online tools for developers and creators.", // ← add karo
+    url: SITE_URL,
+    title: "AI-Powered Digital Tools for Productivity | Toolsify",
+    description:
+      "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
     images: buildOgImages("Toolsify Preview"),
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toolsify - Free Online Tools",
-    description: "Free online tools for developers and creators.",
+    title: "AI-Powered Digital Tools for Productivity | Toolsify",
+    description:
+      "AI-powered, fast, and privacy-first digital tools to simplify work, boost productivity, and solve everyday tasks—all in one place.",
     images: [OG_IMAGE_URL],
   },
 };

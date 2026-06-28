@@ -31,14 +31,11 @@ export default function HomeContent({
   const tMeta = useTranslations("metadata.site");
 
   const suggestionPills = [
-    { label: t("suggestionPills.bmiCalculator"), href: "/bmi-calculator" },
-    { label: t("suggestionPills.wordCounter"), href: "/word-counter" },
-    { label: t("suggestionPills.emiCalculator"), href: "/emi-calculator" },
-    {
-      label: t("suggestionPills.percentageCalculator"),
-      href: "/percentage-calculator",
-    },
-    { label: t("suggestionPills.colorConverter"), href: "/color-converter" },
+    { label: t("suggestionPills.finance"), href: "/tools/finance" },
+    { label: t("suggestionPills.fitness"), href: "/tools/fitness" },
+    { label: t("suggestionPills.text"), href: "/tools/text" },
+    { label: t("suggestionPills.math"), href: "/tools/math" },
+    { label: t("suggestionPills.developer"), href: "/tools/developer" },
   ];
 
   const howItWorksSteps = [

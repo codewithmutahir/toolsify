@@ -49,12 +49,16 @@
     "dashboard": "ڈیش بورڈ"
   },
   "footer": {
-    "description": "مفت آن لائن کیلکولیٹرز، کنورٹرز اور یوٹیلیٹی ٹولز۔ تیز، درست، اور سائن اپ کی ضرورت نہیں۔",
+    "description": "AI-powered، تیز اور privacy-first ڈیجیٹل ٹولز جو کام آسان بنائیں، productivity بڑھائیں، اور روزمرہ کے کام حل کریں—سب ایک جگہ پر۔",
     "tools": "ٹولز",
     "categories": "زمرے",
     "company": "کمپنی",
+    "aboutUs": "ہمارے بارے میں",
+    "author": "مصنف",
     "privacyPolicy": "رازداری کی پالیسی",
+    "cookiePolicy": "کوکی پالیسی",
     "termsOfService": "سروس کی شرائط",
+    "disclaimer": "دستبرداری",
     "contactUs": "ہم سے رابطہ کریں",
     "requestToolDescription": "Toolsify میں شامل کرنے کے لیے ٹولز تجویز کریں۔"
   },
@@ -65,20 +69,20 @@
     "es": "ہسپانوی"
   },
   "home": {
-    "heroTitle": "سب کے لیے مفت آن لائن ٹولز",
-    "heroDescription": "تیز، مفت اور استعمال میں آسان۔ سائن اپ کی ضرورت نہیں۔ دستاویز، ریاضی اور ڈویلپر ٹولز کا پیشہ ورانہ مجموعہ فوراً استعمال کریں۔",
+    "heroTitle": "Productivity کے لیے AI-Powered Digital Tools",
+    "heroDescription": "AI-powered، تیز اور privacy-first ڈیجیٹل ٹولز جو کام آسان بنائیں، productivity بڑھائیں، اور روزمرہ کے کام حل کریں—سب ایک جگہ پر۔",
     "heroImageAlt": "Toolsify ہیرو تصویر",
     "browseByCategory": "زمرے کے مطابق براؤز کریں",
-    "browseByCategoryDescription": "اپنے کام کے لیے صحیح ٹول تلاش کریں",
+    "browseByCategoryDescription": "workflow اور use case کے مطابق منظم پیشہ ورانہ ٹولز دریافت کریں",
     "viewAllTools": "تمام {count}+ ٹولز دیکھیں",
     "popularTools": "مقبول ٹولز",
     "howItWorks": "Toolsify کیسے کام کرتا ہے",
     "suggestionPills": {
-      "bmiCalculator": "BMI کیلکولیٹر",
-      "wordCounter": "ورڈ کاؤنٹر",
-      "emiCalculator": "EMI کیلکولیٹر",
-      "percentageCalculator": "فیصد کیلکولیٹر",
-      "colorConverter": "رنگ کنورٹر"
+      "finance": "فنانس",
+      "fitness": "صحت و تندرستی",
+      "text": "متن و مواد",
+      "math": "ڈیٹا و تجزیہ",
+      "developer": "ڈویلپر"
     },
     "howItWorksSteps": {
       "search": {
@@ -101,7 +105,7 @@
     },
     "requestTool": {
       "heading": "ٹول کی درخواست",
-      "description": "سائن ان صارفین کیلکولیٹرز اور یوٹیلیٹیز کی تجویز دے سکتے ہیں۔",
+      "description": "سائن ان صارفین ڈیجیٹل ٹولز اور utilities کی تجویز دے سکتے ہیں۔",
       "button": "ٹول کی درخواست",
       "signInToRequest": "درخواست کے لیے سائن ان کریں",
       "compactButton": "ٹول کی درخواست",
@@ -110,7 +114,7 @@
   },
   "search": {
     "placeholder": "ٹولز تلاش کریں...",
-    "heroPlaceholder": "ٹول تلاش کریں (مثلاً BMI، Word Counter، EMI...)",
+    "heroPlaceholder": "نام، زمرے یا کام سے ٹول تلاش کریں...",
     "quickSearch": "فوری تلاش",
     "submit": "تلاش",
     "noResults": "کوئی ٹول نہیں ملا",
@@ -121,15 +125,15 @@
     "tryDifferent": "دوسرا تلاش لفظ استعمال کریں"
   },
   "toolsPage": {
-    "title": "تمام مفت آن لائن ٹولز",
-    "description": "{count}+ مفت کیلکولیٹرز، کنورٹرز اور ٹیکسٹ ٹولز براؤز کریں۔ زمرے سے فلٹر کریں یا تلاش کریں — سائن اپ کی ضرورت نہیں۔",
+    "title": "تمام Digital Tools",
+    "description": "{count}+ AI-powered digital tools براؤز کریں—productivity، data، content اور workflow کے لیے۔ زمرے سے فلٹر کریں یا تلاش کریں — سائن اپ کی ضرورت نہیں۔",
     "filterAll": "تمام",
     "searchPlaceholder": "ٹولز تلاش کریں...",
     "showing": "{count} ٹولز دکھائے گئے",
     "noToolsFound": "کوئی ٹول نہیں ملا",
     "adjustFilters": "تلاش یا زمرے کا فلٹر تبدیل کریں۔",
     "missingToolHeading": "آپ کا ٹول نہیں مل رہا؟",
-    "missingToolDescription": "نیا کیلکولیٹر یا یوٹیلیٹی کی درخواست کریں، ہم Toolsify میں شامل کرنے پر غور کریں گے۔"
+    "missingToolDescription": "نیا digital tool یا utility کی درخواست کریں، ہم Toolsify میں شامل کرنے پر غور کریں گے۔"
   },
   "toolPage": {
     "howToUse": "استعمال کا طریقہ",
@@ -164,7 +168,7 @@
   "contactPage": {
     "back": "ہوم پر واپس",
     "title": "ہم سے رابطہ کریں",
-    "description": "کوئی سوال یا رائے ہے؟ ہمیں پیغام بھیجیں، ہم جلد جواب دیں گے۔"
+    "description": "Toolsify، digital tools پر رائے، یا partnership کے بارے میں سوال ہے؟ ہمیں پیغام بھیجیں، ہماری ٹیم جلد جواب دے گی۔"
   },
   "signUpPrompt": {
     "title": "Toolsify آپ کے لیے کام کر رہا ہے",
@@ -220,45 +224,62 @@
   },
   "metadata": {
     "site": {
-      "title": "Toolsify — مفت آن لائن ٹولز",
-      "description": "مفت آن لائن کیلکولیٹرز، کنورٹرز اور یوٹیلیٹی ٹولز۔ تیز اور درست۔"
+      "title": "Productivity کے لیے AI-Powered Digital Tools | Toolsify",
+      "description": "AI-powered، تیز اور privacy-first ڈیجیٹل ٹولز جو کام آسان بنائیں، productivity بڑھائیں، اور روزمرہ کے کام حل کریں—سب ایک جگہ پر۔"
     },
     "home": {
-      "title": "مفت آن لائن ٹولز — کیلکولیٹرز اور کنورٹرز | Toolsify",
-      "description": "BMI، فیصد، ورڈ کاؤنٹر، EMI کیلکولیٹر اور 50+ مفت ٹولز۔ سائن اپ کی ضرورت نہیں۔",
+      "title": "Productivity کے لیے AI-Powered Digital Tools | Toolsify",
+      "description": "AI-powered، تیز اور privacy-first ڈیجیٹل ٹولز جو کام آسان بنائیں، productivity بڑھائیں، اور روزمرہ کے کام حل کریں—سب ایک جگہ پر۔",
       "keywords": [
-        "مفت آن لائن ٹولز",
-        "کیلکولیٹر",
-        "کنورٹر",
-        "BMI کیلکولیٹر",
-        "ورڈ کاؤنٹر",
+        "AI-powered tools",
+        "digital tools",
+        "productivity",
+        "privacy-first",
+        "online utilities",
         "toolsify"
       ]
     },
     "tools": {
-      "title": "تمام مفت آن لائن ٹولز | Toolsify",
-      "description": "50+ مفت آن لائن ٹولز بشمول کیلکولیٹرز، کنورٹرز اور ٹیکسٹ ٹولز۔",
+      "title": "تمام Digital Tools | Toolsify",
+      "description": "50+ AI-powered digital tools براؤز کریں—productivity، data processing، content اور professional workflows کے لیے۔",
       "keywords": [
-        "مفت آن لائن ٹولز",
-        "کیلکولیٹرز",
+        "digital tools",
+        "productivity tools",
+        "online utilities",
         "toolsify"
       ]
     },
     "categories": {
       "title": "ٹول زمرے | Toolsify",
-      "description": "Toolsify پر زمرے کے مطابق مفت ٹولز براؤز کریں۔"
+      "description": "Toolsify digital tools زمرے کے مطابق دریافت کریں۔"
     },
     "contact": {
       "title": "ہم سے رابطہ | Toolsify",
-      "description": "Toolsify ٹیم سے رابطہ کریں۔"
+      "description": "Toolsify ٹیم سے support، feedback، partnerships یا عمومی سوالات کے لیے رابطہ کریں۔"
     },
     "privacy": {
       "title": "رازداری کی پالیسی | Toolsify",
-      "description": "Toolsify رازداری کی پالیسی۔"
+      "description": "Toolsify آپ کا ڈیٹا AI-powered digital tools platform پر کیسے جمع، استعمال اور محفوظ کرتا ہے۔"
     },
     "terms": {
       "title": "سروس کی شرائط | Toolsify",
-      "description": "Toolsify سروس کی شرائط۔"
+      "description": "Toolsify اور اس کے digital productivity tools کے استعمال کے شرائط۔"
+    },
+    "about": {
+      "title": "ہمارے بارے میں | Toolsify",
+      "description": "Toolsify AI-powered، privacy-first digital tools فراہم کرتا ہے—رفتار، درستگی اور روزمرہ productivity کے لیے۔"
+    },
+    "cookies": {
+      "title": "کوکی پالیسی | Toolsify",
+      "description": "Toolsify digital tools platform پر ضروری خصوصیات، analytics اور ads کے لیے cookies کیسے استعمال کرتا ہے۔"
+    },
+    "disclaimer": {
+      "title": "دستبرداری | Toolsify",
+      "description": "Toolsify digital tools اور platform outputs استعمال کرنے کے لیے اہم حدود اور دستبرداریاں۔"
+    },
+    "author": {
+      "title": "مصنف کے بارے میں | Toolsify",
+      "description": "Mutahir Hussain سے ملیں، وہ Full Stack Developer جو Toolsify platform بناتا اور برقرار رکھتا ہے۔"
     },
     "toolTitle": "{title} — مفت آن لائن ٹول | Toolsify",
     "toolDescription": "ہمارا مفت {title} استعمال کریں۔ {description} سائن اپ کی ضرورت نہیں۔",
